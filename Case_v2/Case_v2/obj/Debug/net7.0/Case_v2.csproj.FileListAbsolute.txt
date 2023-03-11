@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/bin/Debug/net7.0/Case_v2
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/bin/Debug/net7.0/Case_v2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/bin/Debug/net7.0/Case_v2.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/refint/Case_v2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case_v2/Case_v2/obj/Debug/net7.0/Case_v2.pdb
