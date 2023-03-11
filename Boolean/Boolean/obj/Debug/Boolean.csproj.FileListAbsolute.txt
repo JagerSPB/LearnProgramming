@@ -1,0 +1,6 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/bin/Debug/Boolean.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/bin/Debug/Boolean.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/obj/Debug/Boolean.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/obj/Debug/Boolean.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/obj/Debug/Boolean.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Boolean/Boolean/obj/Debug/Boolean.pdb

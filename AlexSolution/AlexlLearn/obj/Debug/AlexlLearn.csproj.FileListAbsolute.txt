@@ -1,0 +1,6 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/obj/Debug/AlexlLearn.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/obj/Debug/AlexlLearn.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/bin/Debug/AlexlLearn.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/bin/Debug/AlexlLearn.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/obj/Debug/AlexlLearn.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/AlexSolution/AlexlLearn/obj/Debug/AlexlLearn.pdb

@@ -1,0 +1,6 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/obj/Debug/Case.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/obj/Debug/Case.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/bin/Debug/Case.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/bin/Debug/Case.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/obj/Debug/Case.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Case/Case/obj/Debug/Case.pdb

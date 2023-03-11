@@ -1,0 +1,6 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/bin/Debug/IF.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/bin/Debug/IF.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/obj/Debug/IF.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/obj/Debug/IF.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/obj/Debug/IF.exe
+/Users/vaysmans/Downloads/Учёба/C#Alexey/IF/IF/obj/Debug/IF.pdb

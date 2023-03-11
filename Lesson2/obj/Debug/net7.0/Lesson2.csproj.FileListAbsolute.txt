@@ -1,0 +1,15 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/bin/Debug/net7.0/Lesson2
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/bin/Debug/net7.0/Lesson2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/bin/Debug/net7.0/Lesson2.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/refint/Lesson2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/bin/Debug/net7.0/Lesson2.deps.json
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/bin/Debug/net7.0/Lesson2.runtimeconfig.json
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/Lesson2.genruntimeconfig.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson2/obj/Debug/net7.0/ref/Lesson2.dll

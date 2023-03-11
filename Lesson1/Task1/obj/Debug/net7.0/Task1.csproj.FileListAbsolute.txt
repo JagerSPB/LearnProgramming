@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/bin/Debug/net7.0/Task1
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/bin/Debug/net7.0/Task1.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/bin/Debug/net7.0/Task1.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/refint/Task1.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Lesson1/Task1/obj/Debug/net7.0/Task1.pdb
