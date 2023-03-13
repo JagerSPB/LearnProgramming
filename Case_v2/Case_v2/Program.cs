@@ -339,30 +339,18 @@
             int month = int.Parse(Console.ReadLine());
             switch (month)
             {
-                case 1: if (day > 19) Console.WriteLine("Водолей");
-                    else Console.WriteLine("козерог"); return;
-                case 2: if (day > 18) Console.WriteLine("Рыбы");
-                    else Console.WriteLine("Водолей"); return;
-                case 3: if (day > 20) Console.WriteLine("Овен");
-                    else Console.WriteLine("Рыбы"); return;
-                case 4: if (day > 19) Console.WriteLine("Телец");
-                    else Console.WriteLine("Овен"); return;
-                case 5: if (day > 20) Console.WriteLine("Близнецы");
-                    else Console.WriteLine("Телец"); return;
-                case 6: if (day > 21) Console.WriteLine("Рак");
-                    else Console.WriteLine("Близнецы"); return;
-                case 7: if (day > 22) Console.WriteLine("Лев");
-                    else Console.WriteLine("Рак"); return;
-                case 8: if (day > 22) Console.WriteLine("Дева");
-                    else Console.WriteLine("Лев"); return;
-                case 9: if (day > 22) Console.WriteLine("Весы");
-                    else Console.WriteLine("Дева"); return;
-                case 10: if (day > 22) Console.WriteLine("Скорпион");
-                    else Console.WriteLine("Весы"); return;
-                case 11: if (day > 22) Console.WriteLine("Стрелец");
-                    else Console.WriteLine("Скорпион"); return;
-                case 12: if (day > 21) Console.WriteLine("Козерог");
-                    else Console.WriteLine("Стрелец"); return;
+                case 1: Console.WriteLine(day > 19 ? "Водолей" : "козерог"); return;
+                case 2: Console.WriteLine(day > 18 ? "Рыбы" : "Водолей"); return;
+                case 3: Console.WriteLine(day > 20 ? "Овен" : "Рыбы"); return;
+                case 4: Console.WriteLine(day > 19 ? "Телец" : "Овен"); return;
+                case 5: Console.WriteLine(day > 20 ? "Близнецы" : "Телец"); return;
+                case 6: Console.WriteLine(day > 21 ? "Рак" : "Близнецы"); return;
+                case 7: Console.WriteLine(day > 22 ? "Лев" : "Рак"); return;
+                case 8: Console.WriteLine(day > 22 ? "Дева" : "Лев"); return;
+                case 9: Console.WriteLine(day > 22 ? "Весы" : "Дева"); return;
+                case 10: Console.WriteLine(day > 22 ? "Скорпион" : "Весы"); return;
+                case 11: Console.WriteLine(day > 22 ? "Стрелец" : "Скорпион"); return;
+                case 12: Console.WriteLine(day > 21 ? "Козерог" : "Стрелец"); return;
             }
             */
         }

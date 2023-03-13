@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/bin/Debug/net7.0/for
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/bin/Debug/net7.0/for.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/bin/Debug/net7.0/for.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/refint/for.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/for/obj/Debug/net7.0/for.pdb
