@@ -116,8 +116,61 @@
             }
             Console.WriteLine(result);
             */
-            
-           // For9. Даны два целых числа A и B (A < B). Найти сумму квадратов всех целых чисел от A до B включительно.
+
+            // For9. Даны два целых числа A и B (A < B). Найти сумму квадратов всех целых чисел от A до B включительно.
+            /*
+            int a = 2, b = 5, result = 0;
+            for (int i = a; i <= b; i++)
+            {
+                result += i * i;
+            }
+            Console.WriteLine(result);
+            */
+            // For10. Дано целое число N (> 0). Найти сумму
+            // 1 + 1/2 + 1/3 + . . . + 1/N (вещественное число).
+            /*
+            double a = 10, result = 0;
+            for (double i = 1; i <= a; i++)
+            {
+                result += 1/i;
+                Console.WriteLine(result);
+            }
+            */
+            // For11. Дано целое число N (> 0). Найти сумму
+            // N2 +(N+1)2 +(N+2)2 +...+(2·N)2 (целое число)
+            /*
+            int n = 2, result = 0;
+            for (int i = 0; i <= n; i++)
+            {
+                result += (n + i) * (n + i);
+                Console.WriteLine(result);
+            }
+            Console.WriteLine($"{ result + Math.Pow(2*n,2)} ");
+            */
+            // For12◦. Дано целое число N (> 0). Найти произведение
+            // 1.1·1.2·1.3·... (N сомножителей).   
+            /*
+             int n = 3;
+             double result = 1;
+             for (double i = 1; i <= n; i++)
+             {
+                 result *= 1 + (i / 10);
+                 Console.WriteLine(result);
+             }
+             */
+            // For13◦. Дано целое число N (> 0). Найти значение выражения
+            // 1.1 − 1.2 + 1.3 − . . .
+            // (N слагаемых, знаки чередуются). Условный оператор не использовать.
+            int n = 12;
+            double result = 1;
+            for (double i = 1; i <= n; i++)
+            {
+                result =- (i / 10);
+                Console.WriteLine($"{result} ");
+                result =+ (i / 10);
+                Console.WriteLine($"{result} ");
+                
+            }
         }
     }
 }
