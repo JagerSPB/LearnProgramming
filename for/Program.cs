@@ -129,10 +129,10 @@
             // For10. Дано целое число N (> 0). Найти сумму
             // 1 + 1/2 + 1/3 + . . . + 1/N (вещественное число).
             /*
-            double a = 10, result = 0;
+            double a = 3, result = 0;
             for (double i = 1; i <= a; i++)
             {
-                result += 1/i;
+                result += 1 + 1/i;
                 Console.WriteLine(result);
             }
             */
@@ -162,7 +162,7 @@
             // 1.1 − 1.2 + 1.3 − . . .
             // (N слагаемых, знаки чередуются). Условный оператор не использовать.
             /*
-            int n = 12;
+            int n = 6;
             double result = 1;
             for (double i = 1; i <= n; i++)
             {
@@ -328,7 +328,6 @@
             }
             Console.WriteLine($"сумма {sum}");
             */
-            
         }
     }
 }
