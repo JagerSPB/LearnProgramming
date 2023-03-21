@@ -331,14 +331,57 @@ namespace For_v2
             double result = 1, sum = 0;
             for (int i = 1; i <= n; i++)
             {
-                for (int j = 0; j <= n; j++)
+                for (int j = 1; j <= i; j++)
                 {
-                    result *= i;
+                    result *= i ;
                 }
+                Console.WriteLine($"квадрат числа {i} будет {result}");
                 sum += result;
                 result = 1;
             }
-            Console.WriteLine($"сумма: {sum}");
+            Console.WriteLine($"сумма квадратов: {sum}");
+            */
+            // For38. Дано целое число N (> 0). Найти сумму 1N +2N−1 +...+N1.Чтобы избежать целочисленного переполнения,
+            //   вычислять слагаемые этой суммы с помощью вещественной переменной и выводить результат как вещественное число.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            double result = 1, sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = n; j >= i; j--)
+                {
+                    result *= i ;
+                }
+                Console.WriteLine($"степень числа {i} будет {result}");
+                sum += result;
+                result = 1;
+            }
+            Console.WriteLine($"сумма вычислений: {sum}");
+            */
+            // For39. Даны целые положительные числа A и B (A < B). Вывести все целые числа от A до B включительно; при 
+            //     этом каждое число должно выводиться столько раз, каково его значение (например, число 3 выводится 3 раза).
+            /*
+            int a = 3, b = 5;
+            for (int i = a; i <= b ; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write($"{i}  ");
+                }
+            }
+            */
+            // For40. Даны целые числа A и B (A < B). Вывести все целые числа от A до B включительно;
+            // при этом число A должно выводиться 1 раз, число A + 1 должно выводиться 2 раза и т. д.
+            /*
+            int a = 3, b = 7;
+            for (int i = a; i <= b; i++)
+            {
+                for (int j = 1; j < i-1; j++)
+                {
+                    Console.Write($"{i}  ");
+                }
+            }
             */
         }
     }
