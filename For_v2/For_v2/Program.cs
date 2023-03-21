@@ -132,16 +132,18 @@
             */
             // For13◦. Дано целое число N (> 0). Найти значение выражения 1.1 − 1.2 + 1.3 − . . .
             // (N слагаемых, знаки чередуются). Условный оператор не использовать.
-            // Console.WriteLine("Введите число: ");
             /*
+            Console.WriteLine("Введите число: ");
             int n = 5; //int.Parse(Console.ReadLine());
-            double result = 0;
-            for (double i = 1; i <= n; i++)
+            double result = 1.1, num = 1.2;
+            for (double i = 1; i <= n; i+=2, num += 0.1)
             {
-                result += (1 + i / 10);
-                result =- result;
+                result -= num;
+                Console.WriteLine(result);
+                num += 0.1;
+                result += num;
+                Console.WriteLine(result);
             }
-            Console.WriteLine($"результат перемножения будет: {result}");
             */
             // For14. Дано целое число N (> 0). Найти квадрат данного числа, используя для его вычисления следующую формулу:
             // N2 =1+3+5+...+(2·N−1).После добавления к сумме каждого слагаемого выводить текущее значение
@@ -159,14 +161,14 @@
             // For15◦. Дано вещественное число A и целое число N (> 0). Найти A в степени N: A N = A·A· . . . ·A
             //     (числа A перемножаются N раз).
             /*
-             double a = 4, result = 1;
+             double a = 5, result = 1;
              int n = 6;
              for (int i = 1; i <=n; i++)
              {
                  result *= a;
                  Console.WriteLine(result);
              }
-             */
+            // */
             // For16◦. Дано вещественное число A и целое число N (>0). Используя один цикл, вывести все 
             //     целые степени числа A от 1 до N.
             /*
@@ -181,26 +183,29 @@
             // For17. Дано вещественное число A и целое число N (>0). Используя один цикл, найти сумму
             // 1+A+A2 +A3 +...+AN.
             /*
-            double a = 5, result = 1;
+            double a = 5, sum = 1, degree = 1;
             int n = 6;
             for (double i = 1; i <= n; i++)
             {
-                result += a*i ;
-                Console.WriteLine($" {i} {result}");
+                degree *= a;
+                sum += degree;
+                Console.WriteLine(sum);
             }
             */
             // For18. Дано вещественное число A и целое число N (>0). Используя один
             //     цикл, найти значение выражения 1−A+A2 −A3 +...+(−1)N·AN. Условный оператор не использовать.
+            ///* to doo
             /*
-            double a = 5, result = 1, pow = 1;
-            int n = 4, polar = -1 ;
-            for (int i = 1; i <= n; i++)
+            double a = 5, result = 0, degree = 1;
+            int n = 7;
+            for (int i = 1; i <= n; i+= 2, degree *=a)
             {
-                pow *= a;
-                pow = polar * pow;
-                result += pow;
+            result += degree;
+            Console.WriteLine($" {result}");
+            degree *= a;
+            result -= degree;
+            Console.WriteLine($" {result}");
             }
-            Console.WriteLine($"  {result}");
             */
             // For19◦. Дано целое число N (> 0). Найти произведение N! = 1·2·...·N  (N–факториал). Чтобы избежать целочисленного
             //     переполнения, вычислять это произведение с помощью вещественной переменной и вывести
@@ -231,7 +236,7 @@
                 sum += result;
                 Console.WriteLine($"сумма факториалов числа {i}! будет: {sum}");
             }
-           */
+            */
             // For33◦. Дано целое число N (>1). Последовательность чисел Фибоначчи FK(целого типа) определяется 
             //     следующим образом: F1 =1, F2 =1, FK =FK−2 +FK−1, K =3,4,.... Вывести элементы F1, F2, ..., FN .
             /*
@@ -268,7 +273,7 @@
             */
             // For37. Дано целое число N (> 0). Найти сумму 11 +22 +...+NN. Чтобы избежать целочисленного переполнения, 
             //     вычислять слагаемые этой суммы с помощью вещественной переменной и выводить результат как вещественное число.
-
+            /*
             Console.WriteLine("Введите число: ");
             int n = int.Parse(Console.ReadLine());
             double result = 1, sum = 0;
@@ -278,11 +283,11 @@
                 {
                     result *= i;
                 }
-
                 sum += result;
                 result = 1;
             }
             Console.WriteLine($"сумма: {sum}");
+            */
         }
     }
 }
