@@ -1,4 +1,6 @@
-﻿namespace For_v2
+﻿using System.Security.Cryptography;
+
+namespace For_v2
 {
     internal class Program
     {
@@ -237,6 +239,28 @@
                 Console.WriteLine($"сумма факториалов числа {i}! будет: {sum}");
             }
             */
+            // For31. Дано целое число N (> 0). Последовательность вещественных чисел AK определяется следующим образом:
+            //    A0 =2, AK =2+1/AK−1, K=1,2,.... Вывести элементы A1, A2, . . . , AN .
+            /*
+             int n = 6, a = 2;
+             double result = a;
+             for (int i = 1; i <=n; i++)
+             {
+                 result = a + 1 / result;
+                 Console.WriteLine($"A{i}, {result}");
+             }
+             //*/
+            // For32. Дано целое число N (> 0). Последовательность вещественных чисел AK определяется следующим 
+            // образом: A0 = 1, AK = (AK−1 + 1)/K, K = 1,2,... . Вывести элементы A1, A2, . . . , AN .
+            /*
+            int n = 5;
+            double result = 1;
+            for (int i = 1; i <=n; i++)
+            {
+                result = (result+1) / i;
+                Console.WriteLine($"A{i}, {result}");
+            }
+            */
             // For33◦. Дано целое число N (>1). Последовательность чисел Фибоначчи FK(целого типа) определяется 
             //     следующим образом: F1 =1, F2 =1, FK =FK−2 +FK−1, K =3,4,.... Вывести элементы F1, F2, ..., FN .
             /*
@@ -250,6 +274,34 @@
                 num1 = num2;
                 num2 = num3;
                 Console.WriteLine($"{i} = F[{num3}]");
+            }
+            */
+            // For34. Дано целое число N (> 1). Последовательность вещественных чисел AK определяется следующим образом:
+            // A1 =1, A2 =2, AK =(AK−2 +2·AK−1)/3, K =3,4,.... Вывести элементы A1, A2, . . . , AN .
+            /*
+            int n = 7;
+            double result = 1, temp1 = 1, temp2 = 2;
+            Console.WriteLine($"A1, 1 \nA2, 2");
+            for (int i = 3; i <= n; i++)
+            {
+                result = (temp1 + 2 * temp2) / 3;
+                temp1 = temp2;
+                temp2 = result;
+                Console.WriteLine($"A{i}, {result}");
+            }
+            */
+            // For35. Дано целое число N (> 2). Последовательность целых чисел AK определяется следующим образом:
+            // A1 =1, A2 =2, A3 =3, AK = AK−1 + AK−2 − 2·AK−3, K = 4,5,... . Вывести элементы A1, A2, . . . , AN .
+            /*
+            int n = 7, result = 1, temp1 = 1, temp2 = 2, temp3 = 3;
+            Console.WriteLine($"A1, 1 \nA2, 2\nA3, 3");
+            for (int i = 4; i <= n; i++)
+            {
+                result = temp3 + temp2 - (2 * temp1);
+                temp1 = temp2;
+                temp2 = temp3;
+                temp3 = result;
+                Console.WriteLine($"A{i}, {result}");
             }
             */
             // ================Вложенные циклы===================
