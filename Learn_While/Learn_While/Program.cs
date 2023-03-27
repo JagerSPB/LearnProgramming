@@ -93,16 +93,20 @@
             {
                 k++;
                 sum = k + sum;
+                Console.Write($" К: {k}   ");
+                Console.WriteLine($"сумма: {sum}");
+                
             }
             Console.WriteLine($"наименьшее число К: {k}   ");
             Console.WriteLine($"сумма чисел (от 1 до К): {sum}");
-            */
+           */
             // While12◦. Дано целое число N (> 1). Вывести наибольшее из целых чисел K, для которых 
             //     сумма 1 + 2 + ... + K будет меньше или равна N, и саму эту сумму.
+          // /*
             Console.WriteLine("Введите число: ");
             int n = int.Parse(Console.ReadLine());
             int sum = 0, k = 0;
-            while (n >= sum)
+            while (n >= sum+k)
             {
                 k++;
                 sum = k + sum;
@@ -111,8 +115,9 @@
                 Console.WriteLine($"сумма: {sum}");
             }
 
-            Console.WriteLine($"наибольшее число К: {k - 1}   ");
-            Console.WriteLine($"сумма чисел (от 1 до К): {sum - k}");
+            Console.WriteLine($"наибольшее число К: {k}  ");
+            Console.WriteLine($"сумма чисел (от 1 до К): {sum }");
+            //*/
         }
     }
 }
