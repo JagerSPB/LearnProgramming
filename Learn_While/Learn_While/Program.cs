@@ -50,39 +50,84 @@
             }
             Console.WriteLine($"частное: {count} остаток от деления: {n}");
             */
-            //While4◦. Дано целое число N (>0). Если оно является степенью числа 3,
-            //то вывести TRUE, если не является  вывести FALSE.
+            //While4◦. Дано целое число N (>0). Если оно является степенью числа
+            //   то вывести TRUE, если не является  вывести FALSE.
             /*
             Console.Write("Введите число N: ");
             int n = int.Parse(Console.ReadLine());
-            while (n%3 == 0)
+            double oldNum = n;
+            while (oldNum >= 3)
             {
-                Console.WriteLine($"{true}");
-                break;
+                oldNum /= 3;
             }
-            if (n%3 != 0) Console.WriteLine($"{false}");
+            Console.WriteLine(oldNum == 1);
+            Console.WriteLine(oldNum);
             */
-            /*
-
-           Console.Write("Введите число N: ");
-           int n = int.Parse(Console.ReadLine());
-           Console.WriteLine(n % 3 == 0 ? "True" : "False");
-
-           */
             // While5. Дано целое число N (> 0), являющееся некоторой степенью числа 2: N = 2K.
             // Найти целое число K — показатель этой степени.
-            //     Console.Write("Введите число N: ");
-            //     int n = int.Parse(Console.ReadLine());
-            //     int count = n;
-            //     while (count == 1)
-            //     {
-            //         n -= 2;
-            //         count--;
-            //     }
-            //
-            //     Console.Write(count);
-
-
+            /*
+            int n = 64, oldNum = n, degree = 0;
+            while (n >= 2) 
+            {
+                n /= 2;
+                degree++;
+            }
+            Console.WriteLine($"{oldNum} = 2^{degree}");
+            */
+            // While7◦. Дано целое число N (>0). Найти наименьшее целое положительное число K, квадрат которого
+            // превосходит N: K2 > N. Функцию извлечения квадратного корня не использовать.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int pow = 1, k = 0;
+            while (n >= pow)
+            {
+                k++;
+                pow = k*k;
+                Console.WriteLine($" К: {k} \t {pow} ");
+            }
+            Console.WriteLine($"наименьшее число К: {k}");
+            */
+            // While8. Дано целое число N (> 0). Найти наибольшее целое число K, квадрат которого не превосходит
+            // N: K2 ≤ N. Функцию извлечения квадратного корня не использовать.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int pow = 1, k = 0;
+            while (pow <= n)
+            {
+                k++;
+                pow = k*k;
+                Console.WriteLine($" К: {k} \t {pow} ");
+            }
+            Console.WriteLine($"наименьшее число К: {k-1}");
+            */
+            // While9. Дано целое число N (>1). Найти наименьшее целое число K, при котором выполняется неравенство 3K > N.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int pow3 = 1, k = 0;
+            while (n > pow3)
+            {
+                k++;
+                pow3 = k * k * k;
+                Console.WriteLine($" К: {k} \t {pow3} ");
+            }
+            Console.WriteLine($"наименьшее число К: {k}");
+            */
+            // While10. Дано целое число N (>1). Найти наибольшее целое число K, при котором выполняется неравенство 3K < N.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int pow3 = 1, k = 0;
+            while (n > pow3)
+            {
+                pow3 = k * k * k;
+                k++;
+                Console.WriteLine($" К: {k} \t {pow3} ");
+            }
+            Console.WriteLine($"наименьшее число К: {k-1}");
+            */
             // While11◦. Дано целое число N (> 1). Вывести наименьшее из целых чисел K, для которых 
             //     сумма 1 + 2 + ... + K будет больше или равна N, и саму эту сумму.
             /*
@@ -93,31 +138,94 @@
             {
                 k++;
                 sum = k + sum;
-                Console.Write($" К: {k}   ");
-                Console.WriteLine($"сумма: {sum}");
-                
+                Console.WriteLine($" К: {k} \t {sum} ");               
             }
-            Console.WriteLine($"наименьшее число К: {k}   ");
-            Console.WriteLine($"сумма чисел (от 1 до К): {sum}");
+            Console.WriteLine($"наименьшее число К: {k}  сумма чисел (от 1 до К): {sum} ");
            */
             // While12◦. Дано целое число N (> 1). Вывести наибольшее из целых чисел K, для которых 
             //     сумма 1 + 2 + ... + K будет меньше или равна N, и саму эту сумму.
-          // /*
+            /*
+             Console.WriteLine("Введите число: ");
+             int n = int.Parse(Console.ReadLine());
+             int sum = 0, k = 0;
+             while (n >= sum+k)
+             {
+                 k++;
+                 sum = k + sum;
+                 Console.Write($" К: {k}   ");
+                 Console.WriteLine($"сумма: {sum}");
+             }
+             Console.WriteLine($"наибольшее число К: {k}  ");
+             Console.WriteLine($"сумма чисел (от 1 до К): {sum }");
+             */
+            // While17. Дано целое число N (>0). Используя операции деления нацело и взятия остатка от деления,
+            //     вывести все его цифры, начиная с самой правой (разряда единиц).
+            /*
+             Console.WriteLine("Введите число: ");
+             int n = int.Parse(Console.ReadLine());
+             int oldNum = n;
+             while (n > 0)
+             {
+                 oldNum = n % 10;
+                 Console.Write($"{oldNum}");
+                 n = n / 10;
+             }
+              */
+            // While18. Дано целое число N (>0). Используя операции деления нацело и взятия остатка от деления,
+            //     найти количество и сумму его цифр.
+            /*
             Console.WriteLine("Введите число: ");
             int n = int.Parse(Console.ReadLine());
-            int sum = 0, k = 0;
-            while (n >= sum+k)
+            int oldNum = n, count = 0, sum = 0;
+            while (n > 0)
             {
-                k++;
-                sum = k + sum;
-
-                Console.Write($" К: {k}   ");
-                Console.WriteLine($"сумма: {sum}");
+                count++;
+                oldNum = n % 10;
+                sum += oldNum;
+                n = n / 10;
+                Console.WriteLine($"{count} Сумма: {sum}");     
             }
+            */
+            // While19. Дано целое число N (> 0). Используя операции деления нацело и взятия остатка от деления,
+            //     найти число, полученное при прочтении числа N справа налево.
 
-            Console.WriteLine($"наибольшее число К: {k}  ");
-            Console.WriteLine($"сумма чисел (от 1 до К): {sum }");
-            //*/
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int oldNum = n;
+            while (n > 0)
+            {
+                oldNum = n % 10;
+                Console.Write($"{oldNum}");
+                n = n / 10;
+            }
+            // While20. Дано целое число N (>0). С помощью операций деления нацело и взятия остатка от деления определить, 
+            //     имеется ли в записи числа N цифра «2». Если имеется, то вывести TRUE, если нет  вывести FALSE.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int oldNum = n, checkNum = 0;
+            while (n > 0)
+            {
+                oldNum = n % 10;
+                n = n / 10;
+                if (oldNum == 2) checkNum = 2;
+            }
+            Console.WriteLine(checkNum == 2);
+            */
+            // While21. Дано целое число N (>0). С помощью операций деления нацело и взятия остатка от деления определить,
+            //     имеются ли в записи числа N нечетные цифры. Если имеются, то вывести TRUE, если нет вывести FALSE.
+            /*
+            Console.WriteLine("Введите число: ");
+            int n = int.Parse(Console.ReadLine());
+            int oldNum = n, checkNum = 0;
+            while (n > 0)
+            {
+                oldNum = n % 10;
+                n = n / 10;
+                if (oldNum %2==0) checkNum = 2;
+            }
+            Console.WriteLine(checkNum == 2);
+            */
         }
     }
 }
