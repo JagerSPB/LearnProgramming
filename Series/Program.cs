@@ -154,6 +154,84 @@ namespace Series
             }
             Console.WriteLine($"количество нечётных чисел: {k}");
             */
+            // Series10. Дано целое число N и набор из N целых чисел. Если в наборе имеются положительные числа,
+            //     то вывести TRUE; в противном случае вывести FALSE.
+            /*
+            int n = 5, num, isPositive = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write($"[{i}] = ");
+                num = Int32.Parse(Console.ReadLine());
+                if (num > 0) isPositive = 1;
+            }
+            Console.WriteLine(isPositive==1);
+            */
+            // Series11. Даны целые числа K, N и набор из N целых чисел. Если в наборе имеются числа, меньшие K, 
+            // то вывести TRUE; в противном случае вывести FALSE.
+            /*
+            Console.Write("Введите число N: ");
+            int n = Int32.Parse(Console.ReadLine());
+            Console.Write("Введите число K: ");
+            int k = Int32.Parse(Console.ReadLine());
+            int num, flage = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write($"[{i}] = ");
+                num = Int32.Parse(Console.ReadLine());
+                if (num < k) flage = 1;
+            }
+            Console.WriteLine(flage == 1);
+            */
+            // Series12. Дан набор ненулевых целых чисел; признак его завершения — число 0. 
+            //     Вывести количество чисел в наборе.
+            /*
+            int num = 1;
+            for (int i = 1; num != 0; i++)
+            {
+                Console.Write("Введите число: ");
+                num = Int32.Parse(Console.ReadLine());
+                Console.WriteLine($"кол-во: {i}");
+            }
+            */
+            // Series13. Дан набор ненулевых целых чисел; признак его завершения — число 0. Вывести сумму всех 
+            // положительных четных чисел из данного набора. Если требуемые числа в наборе отсутствуют, то вывести 0.
+            /*
+             int num = 1, sum = 0;
+             for (int i = 1; num != 0; i++)
+             {
+                 Console.Write("Введите число: ");
+                 num = Int32.Parse(Console.ReadLine());
+                 if (num > 0 && num % 2 == 0) sum += num;
+             }
+             Console.WriteLine($"сумма: {sum}");
+            
+             */
+            // Series14. Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0.
+            //     Вывести количество чисел в наборе, меньших K.
+            /*
+            int k = 5, num = 1, count = 0;
+            for (int i = 1; num != 0; i++)
+            {
+                Console.Write("Введите число: ");
+                num = Int32.Parse(Console.ReadLine());
+                if (num < k) count += num;
+            }
+            Console.WriteLine($"кол-во: {count}");
+            */
+            // Series15◦. Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0.
+            //     Вывести номер первого числа в наборе, большего K. Если таких чисел нет, то вывести 0.
+            /*
+            int k = 5, num = 1, id=0;
+            for (int i = 1; num != 0; i++)
+            {
+                Console.Write($"[{i}] = ");
+                Console.Write("Введите число: ");
+                num = Int32.Parse(Console.ReadLine());
+                if (num > k && id == 0) id = i;
+            }
+            Console.WriteLine($"номер первого числа (>K): {id}");
+            */
+            
         }
     }
 }
