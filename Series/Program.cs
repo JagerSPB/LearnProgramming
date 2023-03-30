@@ -212,9 +212,10 @@ namespace Series
             int k = 5, num = 1, count = 0;
             for (int i = 1; num != 0; i++)
             {
+                Console.Write($"[{i}] = ");
                 Console.Write("Введите число: ");
                 num = Int32.Parse(Console.ReadLine());
-                if (num < k) count += num;
+                if (num < k) count ++;
             }
             Console.WriteLine($"кол-во: {count}");
             */
@@ -231,7 +232,19 @@ namespace Series
             }
             Console.WriteLine($"номер первого числа (>K): {id}");
             */
-            
+            // Series16◦. Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0. 
+            //     Вывести номер последнего числа в наборе, большего K. Если таких чисел нет, то вывести 0.
+            /*
+            int k = 5, num = 1, maxNumIndex =0;
+            for (int i = 1; num != 0; i++)
+            {
+                Console.Write($"[{i}] = ");
+                Console.Write("Введите число: ");
+                num = Int32.Parse(Console.ReadLine());
+                if (num > k ) maxNumIndex = i;
+            }
+            Console.WriteLine($"номер последнего числа (>K): {maxNumIndex}");
+            */
         }
     }
 }
