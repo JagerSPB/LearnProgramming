@@ -245,21 +245,17 @@ namespace Series
             }
             Console.WriteLine($"номер последнего числа (>K): {maxNumIndex}");
             */
-            // Series17◦. Дано вещественное число B, целое число N и набор из N вещественных чисел, упорядоченных 
-            //     по возрастанию. Вывести элементы набора вместе с числом B, сохраняя упорядоченность выводимых чисел.
-
-
             // Series19◦. Дано целое число N (>1) и набор из N целых чисел. Вывести те элементы в наборе, которые меньше
             //     своего левого соседа, и количество K таких элементов.
             /*
-            int k = 5, num, countNum = 0, numBefore = 0;
-            for (int i = 1; i <= k; i++, numBefore = num)
+            int k = 5, num, countNum = 0, tempNum = 0;
+            for (int i = 1; i <= k; i++, tempNum = num)
             {
                 Console.Write("Введите число: ");
                 num = Int32.Parse(Console.ReadLine());
-                if (num < numBefore)
+                if (num < tempNum)
                 {
-                    Console.WriteLine($"[{num}]");
+                    Console.WriteLine($"-->[{num}]");
                     countNum++;
                 }
             }
@@ -267,6 +263,22 @@ namespace Series
             */
             // Series20. Дано целое число N (>1) и набор из N целых чисел. Вывести те элементы в наборе, которые меньше
             //     своего правого соседа, и количество K таких элементов.
+            /*
+            int k = 5, newNum, oldNum = 0, countNum = 0;
+            for (int i = 1; i <= k; i++, oldNum = newNum)
+            {
+                Console.Write("Введите число: ");
+                newNum = Int32.Parse(Console.ReadLine());
+                if (oldNum < newNum && i != 1)
+                {
+                    Console.WriteLine($"-->[{newNum}]");
+                    countNum++;
+                }
+            }
+            Console.WriteLine($"кол-во чисел, меньше следущего: {countNum}");
+            */
+            // Series21◦. Дано целое число N (> 1) и набор из N вещественных чисел. Проверить, образует ли данный набор 
+            // возрастающую последовательность. Если образует, то вывести TRUE, если нет — вывести FALSE.
             
         }
     }
