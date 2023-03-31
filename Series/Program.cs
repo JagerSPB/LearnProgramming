@@ -279,6 +279,18 @@ namespace Series
             */
             // Series21◦. Дано целое число N (> 1) и набор из N вещественных чисел. Проверить, образует ли данный набор 
             // возрастающую последовательность. Если образует, то вывести TRUE, если нет — вывести FALSE.
+            /*
+            int n = 5;
+            double num, tempNum = 0;
+            bool hasGrowNums = true;
+            for (int i = 1; i <= n; i++, tempNum = num)
+            {
+                Console.Write("Введите число: ");
+                num = double.Parse(Console.ReadLine());
+                if (num <= tempNum ) hasGrowNums = false;
+            }
+            Console.WriteLine(hasGrowNums);
+            */
             
         }
     }
