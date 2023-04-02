@@ -329,21 +329,53 @@ namespace Series
             //
             // Series26. Даны целые числа K, N и набор из N вещественных чисел: A1, A2, . . ., AN .
             // Вывести K-e степени чисел из данного набора:(A1)K, (A2)K, ..., (AN)K.
-           /*
-            int k = 3, n = 5;
-            double degree = 1, numA;
-            for (int i = 0; i < n; i++)
+            /*
+             int k = 3, n = 5;
+             double degree = 1, numA;
+             for (int i = 0; i < n; i++)
+             {
+                 Console.Write("Введите число: ");
+                 numA = double.Parse(Console.ReadLine());
+                 for (int j = 0; j < k; j++)
+                 {
+                     degree *= numA;
+                 }
+                 Console.WriteLine($"{numA}^{k}=[{degree}]");
+                 degree = 1;
+             }
+             */
+            // Series27. Дано целое число N и набор из N вещественных чисел: A1, A2, . . .,AN . Вывести следующие числа:
+            // A1, (A2)2, ..., (AN−1)N−1, (AN)N.
+            // int  n = 5;
+            // double degree = 1, numA;
+            // for (int i = 0; i < n; i++)
+            // {
+            //     Console.Write("Введите число: ");
+            //     numA = double.Parse(Console.ReadLine());
+            //     for (int j = 0; j < n; j++)
+            //     {
+            //         degree *= numA;
+            //     }
+            //     Console.WriteLine($"{numA}^{n}=[{degree}]");
+            //     degree = 1;
+            // }
+            // Series30◦. Даны целые числа K, N, а также K наборов целых чисел по N эле-
+            //     ментов в каждом наборе. Для каждого набора вывести сумму его элемен-
+            //     тов.
+            int k = 5, n = 4, sum1 = 0, sum2=0, num;
+            for (int i = 0; i < k; i++)
             {
-                Console.Write("Введите число: ");
-                numA = double.Parse(Console.ReadLine());
-                for (int j = 0; j < k; j++)
+                Console.Write("Введите число: "); 
+                num = int.Parse(Console.ReadLine());
+                for (int j = 0; j < n; j++)
                 {
-                    degree *= numA;
+                    sum1 += num;
                 }
-                Console.WriteLine($"{numA}^{k}=[{degree}]");
-                degree = 1;
+            
+                sum2 += num;
             }
-            */
+            Console.WriteLine($" 1: {sum1}   2: {sum2}");
+
         }
     }
 }
