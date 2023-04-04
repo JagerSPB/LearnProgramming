@@ -312,6 +312,7 @@ namespace Series
             // Series25. Дано целое число N и набор из N целых чисел, содержащий по крайней мере два нуля. 
             //     Вывести сумму чисел из данного набора, расположенных между первым и последним нулем 
             //     (если первый и последний нули идут подряд, то вывести 0).
+            //
             /*
             int n = 8, num, sum = 0, num2 = 1;
             bool hasZero = false;
@@ -319,7 +320,7 @@ namespace Series
             {
                 Console.Write("Введите число: ");
                 num = Int32.Parse(Console.ReadLine());
-                if (num == 0 && hasZero == false)  hasZero = true; // ловим первый 0
+                if (num == 0)  hasZero = true; // ловим первый 0
                 if (hasZero)   sum += num; // суммируем числа после первого 0
                 if (num == 0 && (num2 == 0 || sum!=0) && hasZero)   hasZero = false; // ловим второй 0 
             }
@@ -346,36 +347,35 @@ namespace Series
              */
             // Series27. Дано целое число N и набор из N вещественных чисел: A1, A2, . . .,AN . Вывести следующие числа:
             // A1, (A2)2, ..., (AN−1)N−1, (AN)N.
-            // int  n = 5;
-            // double degree = 1, numA;
-            // for (int i = 0; i < n; i++)
-            // {
-            //     Console.Write("Введите число: ");
-            //     numA = double.Parse(Console.ReadLine());
-            //     for (int j = 0; j < n; j++)
-            //     {
-            //         degree *= numA;
-            //     }
-            //     Console.WriteLine($"{numA}^{n}=[{degree}]");
-            //     degree = 1;
-            // }
+            /*
+            int  n = 5;
+            double degree = 1, numA;
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Введите число: ");
+                numA = double.Parse(Console.ReadLine());
+                for (int j = 0; j < n; j++)
+                {
+                    degree *= numA;
+                }
+                Console.WriteLine($"{numA}^{n}=[{degree}]");
+                degree = 1;
+            }
+            */
             // Series30◦. Даны целые числа K, N, а также K наборов целых чисел по N эле-
             //     ментов в каждом наборе. Для каждого набора вывести сумму его элемен-
             //     тов.
-            int k = 5, n = 4, sum1 = 0, sum2=0, num;
+            int k = 5, n = 4, sum = 0;
             for (int i = 0; i < k; i++)
             {
-                Console.Write("Введите число: "); 
-                num = int.Parse(Console.ReadLine());
                 for (int j = 0; j < n; j++)
                 {
-                    sum1 += num;
+                    Console.Write("Введите число: "); 
+                    sum += int.Parse(Console.ReadLine());
                 }
-            
-                sum2 += num;
+                Console.WriteLine($"Cумма: {sum}");
+                sum = 0;
             }
-            Console.WriteLine($" 1: {sum1}   2: {sum2}");
-
         }
     }
 }

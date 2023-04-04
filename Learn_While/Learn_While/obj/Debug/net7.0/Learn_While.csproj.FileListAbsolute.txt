@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/bin/Debug/net7.0/Learn_While
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/bin/Debug/net7.0/Learn_While.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/bin/Debug/net7.0/Learn_While.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/refint/Learn_While.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Learn_While/Learn_While/obj/Debug/net7.0/Learn_While.pdb

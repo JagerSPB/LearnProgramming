@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/bin/Debug/net7.0/metod
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/bin/Debug/net7.0/metod.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/bin/Debug/net7.0/metod.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/refint/metod.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/metod/obj/Debug/net7.0/metod.pdb

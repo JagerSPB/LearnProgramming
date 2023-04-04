@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace For_v2
+﻿namespace For_v2
 {
     internal class Program
     {
@@ -361,29 +359,46 @@ namespace For_v2
             */
             // For39. Даны целые положительные числа A и B (A < B). Вывести все целые числа от A до B включительно; при 
             //     этом каждое число должно выводиться столько раз, каково его значение (например, число 3 выводится 3 раза).
-           /*
-            int a = 3, b = 5;
-            for (int i = a; i <= b ; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write($"{i}  ");
-                }
-            }
-           */
+            /*
+             int a = 3, b = 5;
+             for (int i = a; i <= b ; i++)
+             {
+                 for (int j = 1; j <= i; j++)
+                 {
+                     Console.Write($"{i}  ");
+                 }
+             }
+            */
             // For40. Даны целые числа A и B (A < B). Вывести все целые числа от A до B включительно;
             // при этом число A должно выводиться 1 раз, число A + 1 должно выводиться 2 раза и т. д.
-            /*
-            int a = 30, b = 40, count = 0 ;
-            for (int i = a; i <= b; i++)
-            {
-                for (int j = 0; j <= count; j++)
+           
+          
+                try
                 {
-                    Console.Write($"{i}  ");
+                    Console.Write("Введите число А: ");
+                    int a = int.Parse(Console.ReadLine());
+                    Console.Write("Введите число B: ");
+                    int b = int.Parse(Console.ReadLine());
+                    int count = 0;
+                    for (int i = a; i <= b; i++)
+                    {
+                        for (int j = 0; j <= count; j++)
+                        {
+                            Console.Write($"{i}  ");
+                        }
+
+                        count++;
+                    }
+
+                    //break;
                 }
-                count++;
-            }
-            */
+
+                catch (FormatException)
+                {
+                    Console.WriteLine("фигня случилась!  ");
+                }
+
+            
         }
     }
 }
