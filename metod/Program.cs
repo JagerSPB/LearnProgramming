@@ -106,7 +106,96 @@ namespace Method
             //     AMean = (X+Y)/2 и среднее геометрическое GMean = √X·Y двух положительных чисел X и Y (X и Y — входные, 
             //     AMean и GMean — выходные параметры вещественного типа). С помощью этой процедуры найти среднее
             //     арифметическое и среднее геометрическое для пар (A, B), (A, C), (A, D), если даны A, B, C, D
+            /*
+             static void Mean(double x, double y)
+             {
+                 double aMean = (x + y) / 2;
+                 double gMean = Math.Sqrt(x * y);
+                 Console.WriteLine($"среднее арифметическое [{aMean}], среднее геометрическое [{gMean}]");
+             }
+ 
+             Console.Write("Введите число X: ");
+             double x = double.Parse(Console.ReadLine());
+             Console.Write("Введите число Y: ");
+             double y = double.Parse(Console.ReadLine());
+             double a = 4, b = 5, c = 6.7, d = 8.4;
+ 
+             Mean(x, y);
+             Mean(a, b);
+             Mean(a, c);
+             Mean(a, d);
+             */
+            // Proc4◦. Описать процедуру TrianglePS(a, P, S), вычисляющую по стороне a равностороннего треугольника 
+            // его периметр P = 3·a и площадь S = a2·√3/4 (a — входной, P и S — выходные параметры; все параметры 
+            // являются вещественными). С помощью этой процедуры найти периметры и площади трех равносторонних 
+            // треугольников с данными сторонами.
+            /*
+            static void TrianglePS(double a)
+            {
+                double p = a * 3;
+                double s = (a * a * Math.Sqrt(3)) / 4;
+                Console.WriteLine($"Сторона: {a}  Площадь: {s}");
+            }
             
+            Console.Write("Введите размер стороны треугольника: ");
+            double a = double.Parse(Console.ReadLine());
+            double b = 5.8, c = 8, d = 5.3;
+            TrianglePS(a);
+            TrianglePS(b);
+            TrianglePS(c);
+            TrianglePS(d);
+            */
+
+            //
+            // Console.Write("Введите число: ");
+            // int num = Int32.Parse(Console.ReadLine());
+            // int pow = 5;
+            // int degree = MathPow(num, pow);
+            // Console.WriteLine(degree);
+
+            //Proc2
+            /*
+             Console.WriteLine("Ведите число: ");
+             double a = double.Parse(Console.ReadLine()), b, c, d;
+             Proc2PowerA234(a, out b, out c, out d);
+             Console.WriteLine($" {a}^2 = {b}, {a}^3 = {c}, {a}^4 = {d}");
+             */
+            //Proc3
+            /*
+            Console.Write("Введите число X: ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write("Введите число Y: ");
+            double y = double.Parse(Console.ReadLine());
+            double aMean, gMean, a = 4, b = 5, c = 6.7, d = 8.4;
+
+            Mean(x, y, out aMean, out gMean);
+            Console.WriteLine($"среднее арифметическое X Y  [{aMean}], среднее геометрическое X Y [{gMean}]");
+            Mean(a, b, out aMean, out gMean);
+            Console.WriteLine($"среднее арифметическое A B  [{aMean}], среднее геометрическое A B [{gMean}]");
+            Mean(a, c, out aMean, out gMean);
+            Console.WriteLine($"среднее арифметическое A C  [{aMean}], среднее геометрическое A C [{gMean}]");
+            Mean(a, d, out aMean, out gMean);
+            Console.WriteLine($"среднее арифметическое A D [{aMean}], среднее геометрическое A D [{gMean}]");
+            */
+        }
+
+        /// <summary>
+        /// Proc2.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        // static void Proc2PowerA234(double a, out double b, out double c, out double d)
+        // {
+        //     b = Math.Pow(a, 2);
+        //     c = Math.Pow(a, 3);
+        //     d = Math.Pow(a, 4);
+        // }
+        static void Mean(double value1, double value2, out double aMean, out double gMean)
+        {
+            aMean = (value1 + value2) / 2;
+            gMean = Math.Sqrt(value1 * value2);
         }
     }
 }
