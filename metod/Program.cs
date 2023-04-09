@@ -168,34 +168,110 @@ namespace Method
             double y = double.Parse(Console.ReadLine());
             double aMean, gMean, a = 4, b = 5, c = 6.7, d = 8.4;
 
-            Mean(x, y, out aMean, out gMean);
+            Proc3Mean(x, y, out aMean, out gMean);
             Console.WriteLine($"среднее арифметическое X Y  [{aMean}], среднее геометрическое X Y [{gMean}]");
-            Mean(a, b, out aMean, out gMean);
+            Proc3Mean(a, b, out aMean, out gMean);
             Console.WriteLine($"среднее арифметическое A B  [{aMean}], среднее геометрическое A B [{gMean}]");
-            Mean(a, c, out aMean, out gMean);
+            Proc3Mean(a, c, out aMean, out gMean);
             Console.WriteLine($"среднее арифметическое A C  [{aMean}], среднее геометрическое A C [{gMean}]");
-            Mean(a, d, out aMean, out gMean);
+            Proc3Mean(a, d, out aMean, out gMean);
             Console.WriteLine($"среднее арифметическое A D [{aMean}], среднее геометрическое A D [{gMean}]");
+            */
+            /*
+            Console.Write("Введите размер стороны треугольника: ");
+            double a = double.Parse(Console.ReadLine());
+            double p, s, b = 5.8, c = 8, d = 5.3;
+            Proc4TrianglePS(a, out p, out s);
+            Console.WriteLine($"Треугольник А Периметр: {p}  Площадь: {s} ");
+            Proc4TrianglePS(b, out p, out s);
+            Console.WriteLine($"Треугольник B Периметр: {p}  Площадь: {s} ");
+            Proc4TrianglePS(c, out p, out s);
+            Console.WriteLine($"Треугольник C Периметр: {p}  Площадь: {s} ");
+            Proc4TrianglePS(d, out p, out s);
+            Console.WriteLine($"Треугольник D Периметр: {p}  Площадь: {s} ");
+            */
+            // Proc6. Описать процедуру DigitCountSum(K, C, S), находящую количество C цифр целого положительного числа K, 
+            // а также их сумму S (K — входной, C и S — выходные параметры целого типа). С помощью этой процедуры найти 
+            // количество и сумму цифр для каждого из пяти данных целых чисел.
+            /*
+            Console.Write("Введите число: ");
+            int k = Int32.Parse(Console.ReadLine()), c, s;
+            int digit1 = 1234, digit2 = 239873, digit3 = 3451234, digit4 = 235, digit5 = 2335;
+            Proc6DigitCountSum(k, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
+            Proc6DigitCountSum(digit1, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
+            Proc6DigitCountSum(digit2, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
+            Proc6DigitCountSum(digit3, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
+            Proc6DigitCountSum(digit4, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
+            Proc6DigitCountSum(digit5, out c, out s);
+            Console.WriteLine($"кол-во {c}, сумма: {s}");
             */
         }
 
+        /*
+       /// <summary>
+       /// Proc2.
+       /// </summary>
+       /// <param name="a"></param>
+       /// <param name="b"></param>
+       /// <param name="c"></param>
+       /// <param name="d"></param>
+     
+       static void Proc2PowerA234(double a, out double b, out double c, out double d)
+       {
+           b = Math.Pow(a, 2);
+           c = Math.Pow(a, 3);
+           d = Math.Pow(a, 4);
+       }
+       */
+        /*
         /// <summary>
-        /// Proc2.
+        /// Proc3.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        /// <param name="d"></param>
-        // static void Proc2PowerA234(double a, out double b, out double c, out double d)
-        // {
-        //     b = Math.Pow(a, 2);
-        //     c = Math.Pow(a, 3);
-        //     d = Math.Pow(a, 4);
-        // }
-        static void Mean(double value1, double value2, out double aMean, out double gMean)
-        {
+        /// <param name="value1"></param>
+        /// <param name="value2"></param>
+        /// <param name="aMean"></param>
+        /// <param name="gMean"></param>
+         static void Proc3Mean(double value1, double value2, out double aMean, out double gMean)
+         {
             aMean = (value1 + value2) / 2;
             gMean = Math.Sqrt(value1 * value2);
+         }
+        */
+        /*
+        /// <summary>
+        /// Proc4.
+        /// </summary>
+        /// <param name="a"></param>
+        static void Proc4TrianglePS(double a, out double p, out double s)
+        {
+            p = a * 3;
+            s = (a * a * Math.Sqrt(3)) / 4;
         }
+        */
+        /*
+        /// <summary>
+        /// Proc6.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <param name="c"></param>
+        /// <param name="s"></param>
+        static void Proc6DigitCountSum(int k, out int c, out int s)
+        {
+            c = 0;
+            s = 0;
+            while (k > 0)
+            {
+                int digit = k % 10;
+                c++;
+                s += digit;
+                k /= 10;
+            }
+        }
+        */
     }
 }
