@@ -190,9 +190,7 @@ namespace Method
             Proc4TrianglePS(d, out p, out s);
             Console.WriteLine($"Треугольник D Периметр: {p}  Площадь: {s} ");
             */
-            // Proc6. Описать процедуру DigitCountSum(K, C, S), находящую количество C цифр целого положительного числа K, 
-            // а также их сумму S (K — входной, C и S — выходные параметры целого типа). С помощью этой процедуры найти 
-            // количество и сумму цифр для каждого из пяти данных целых чисел.
+            // Proc6. 
             /*
             Console.Write("Введите число: ");
             int k = Int32.Parse(Console.ReadLine()), c, s;
@@ -210,6 +208,22 @@ namespace Method
             Proc6DigitCountSum(digit5, out c, out s);
             Console.WriteLine($"кол-во {c}, сумма: {s}");
             */
+            //Proc7.
+            /*
+            Console.Write("Введите число: ");
+            int k = Int32.Parse(Console.ReadLine()),
+                digit1 = 23456,
+                digit2 = 98765,
+                digit3 = 123432,
+                digit4 = 54323456,
+                digit5 = 34542;
+            int result = Proc7InvertDigits(k);
+            Console.WriteLine(result);
+            int result1 = Proc7InvertDigits(digit1);
+            Console.WriteLine(result1);
+            int result2 = Proc7InvertDigits(digit2);
+            Console.WriteLine(result2);
+            //*/
         }
 
         /*
@@ -230,7 +244,10 @@ namespace Method
        */
         /*
         /// <summary>
-        /// Proc3.
+        /// Proc3.Описать процедуру Mean(X, Y, AMean, GMean), вычисляющую среднее арифметическое AMean = (X+Y)/2 
+        /// и среднее геометрическое GMean = √X·Y двух положительных чисел X и Y (X и Y — входные, 
+        /// AMean и GMean — выходные параметры вещественного типа). С помощью этой процедуры найти среднее арифметическое
+        /// и среднее геометрическое для пар (A, B), (A, C), (A, D), если даны A, B, C, D.
         /// </summary>
         /// <param name="value1"></param>
         /// <param name="value2"></param>
@@ -244,7 +261,10 @@ namespace Method
         */
         /*
         /// <summary>
-        /// Proc4.
+        /// Proc4. Описать процедуру TrianglePS(a, P, S), вычисляющую по стороне a равностороннего треугольника его 
+        /// периметр P = 3·a и площадь S = a2·√3/4 (a — входной, P и S — выходные параметры; все
+        /// параметры являются ве- щественными). С помощью этой процедуры найти периметры и площади трех равносторонних 
+        /// треугольников с данными сторонами.
         /// </summary>
         /// <param name="a"></param>
         static void Proc4TrianglePS(double a, out double p, out double s)
@@ -255,7 +275,9 @@ namespace Method
         */
         /*
         /// <summary>
-        /// Proc6.
+        /// Proc6.Описать процедуру DigitCountSum(K, C, S), находящую количество C цифр целого положительного числа K, 
+        /// а также их сумму S (K — входной, C и S — выходные параметры целого типа). С помощью этой процедуры найти 
+        /// количество и сумму цифр для каждого из пяти данных целых чисел.
         /// </summary>
         /// <param name="k"></param>
         /// <param name="c"></param>
@@ -271,6 +293,28 @@ namespace Method
                 s += digit;
                 k /= 10;
             }
+        }
+        */
+        /*
+        /// <summary>
+        ///  Proc7. Описать процедуру InvertDigits(K), меняющую порядок следования цифр целого положительного числа K на 
+        /// обратный (K — параметр целого типа, являющийся одновременно входным и выходным).С помощью этой процедуры
+        /// поменять порядок следования цифр на обратный для каждого из пяти данных целых чисел.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static int Proc7InvertDigits(int k)
+        {
+            int invers = 0;
+            while (k > 0)
+            {
+                int digit = k % 10;
+                invers *= 10;
+                invers += digit;
+                k /= 10;
+            }
+
+            return invers;
         }
         */
     }
