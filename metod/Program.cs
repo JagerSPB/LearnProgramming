@@ -224,6 +224,12 @@ namespace Method
             int result2 = Proc7InvertDigits(digit2);
             Console.WriteLine(result2);
             //*/
+            //Proc8
+            Console.Write("Введите число: ");
+            int d = int.Parse(Console.ReadLine());
+            int k = 8;
+            int result = Proc8AddRightDigit(d, k);
+            Console.WriteLine(result);
         }
 
         /*
@@ -317,5 +323,21 @@ namespace Method
             return invers;
         }
         */
+        // /*
+        /// <summary>
+        /// Proc8◦. Описать процедуру AddRightDigit(D, K), добавляющую к целому по- ложительному числу K справа цифру D
+        /// (D — входной параметр целого типа, лежащий в диапазоне 0–9, K — параметр целого типа, являющийся
+        /// одновременно входным и выходным). С помощью этой процедуры после- довательно добавить к данному числу
+        /// K справа данные цифры D1 и D2, выводя результат каждого добавления.
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static int Proc8AddRightDigit(int d, int k)
+        {
+            int newNum = d * 10 + k;
+            return newNum;
+        }
+        // */
     }
 }
