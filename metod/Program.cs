@@ -6,17 +6,19 @@ namespace Method
     {
         static void Main()
         {
+            //Console.Write("Введите число: ");
+            int a = 13, b = 10;
 
-            // Console.Write("Введите число: ");
-            // int x = int.Parse(Console.ReadLine());
-            // double a = 1000, b = 2000, c = 3;
-            // Proc12SortInc3(ref a, ref b, ref c);
+
+            Console.WriteLine(Proc21SumRange(a, b));
+
+            // double a = 1, b = 2, c = 3;
+            // Proc15ShiftLeft3(ref a, ref b, ref c);
             // Console.WriteLine($"{a}  {b}  {c}");
-            double x = 10, y = 2;
-            Proc11Minmax(ref x, ref y);
-            Console.WriteLine($"{x}  {y}");
+            // double x = 10, y = 2;
+            // Proc11Minmax(ref x, ref y);
+            // Console.WriteLine($"{x}  {y}");
         }
-
 
         /// <summary>
         /// Proc2.
@@ -31,7 +33,6 @@ namespace Method
             c = Math.Pow(a, 3);
             d = Math.Pow(a, 4);
         }
-
 
         /// <summary>
         /// Proc3.Описать процедуру Mean(X, Y, AMean, GMean), вычисляющую среднее арифметическое AMean = (X+Y)/2 
@@ -135,8 +136,8 @@ namespace Method
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        static void Proc10Swap(ref double x, ref double y) => (x, y) = (y, x)
-        
+        static void Proc10Swap(ref double x, ref double y) => (x, y) = (y, x);
+
         /// <summary>
         /// Proc11. Описать процедуру Minmax(X, Y), записывающую в переменную X минимальное из значений X и Y, а в
         /// переменную Y — максимальное из этих значений (X и Y — вещественные параметры, являющиеся одновременно
@@ -150,7 +151,6 @@ namespace Method
         }
         //V2
         //static void Proc11Minmax(ref double x, ref double y) => (x, y) = (y < x) ? (y, x) : (x, y);
-
 
         /// <summary>
         /// Proc12. Описать процедуру SortInc3(A, B, C), меняющую содержимое пере- менных A, B, C таким образом, чтобы
@@ -166,6 +166,7 @@ namespace Method
             if (a > c) (a, c) = (c, a);
             if (b > c) (b, c) = (c, b);
         }
+
         /// <summary>
         /// Proc13. Описать процедуру SortDec3(A, B, C), меняющую содержимое переменных A, B, C таким образом,
         /// чтобы их значения оказались упорядоченными по убыванию
@@ -177,6 +178,92 @@ namespace Method
             if (a < c) (a, c) = (c, a);
             if (b < c) (b, c) = (c, b);
         }
-        
+
+        /// <summary>
+        /// Proc14. Описать процедуру ShiftRight3(A, B, C), выполняющую правый циклический сдвиг:
+        /// значение A переходит в B, значение B — в C, значение C — в A (A, B, C — вещественные параметры,
+        /// являющиеся одновременно входными и выходными). 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        static void Proc14ShiftRight3(ref double a, ref double b, ref double c) => (a, b, c) = (b, c, a);
+
+        /// <summary>
+        ///Proc15. Описать процедуру ShiftLeft3(A, B, C), выполняющую левый циклический сдвиг: значение A переходит
+        /// в C, значение C — в B, значение B — в A (A, B, C — вещественные параметры,
+        /// являющиеся одновременно входными и выходными).
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        static void Proc15ShiftLeft3(ref double a, ref double b, ref double c) => (a, b, c) = (c, a, b);
+
+        /// <summary>
+        /// Proc16. Описать функцию Sign(X) целого типа, возвращающую для вещественного числа X следующие
+        /// значения:−1, еслиX <0; 0, еслиX =0; 1, еслиX >0.
+        /// </summary>
+        static double Proc16Sign(double x)
+        {
+            if (x < 0) x = -1;
+            if (x == 0) x = 0;
+            if (x > 0) x = 1;
+            return x;
+        }
+
+        /// <summary>
+        /// Proc18. Описать функцию CircleS(R) вещественного типа, находящую площадь круга радиуса R (R — вещественное).
+        /// С помощью этой функции найти площади трех кругов с данными радиусами.
+        ///   Площадь круга радиуса R вычисляется по формуле S = π·R2. В качестве значения π использовать 3.14.
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        static double Proc18CircleS(double r) => 3.14 * r * r;
+
+        /// <summary>
+        /// Proc19. Описать функцию RingS(R1, R2) вещественного типа, находящую площадь кольца, заключенного между
+        /// двумя окружностями с общим центром и радиусами R1 и R2 (R1 и R2 — вещественные, R1 > R2).
+        /// С ее помощью найти площади трех колец, для которых даны внешние и внутренние ра- диусы.
+        /// Воспользоваться формулой площади круга радиуса R: S = π·R2. В качестве значения π использовать 3.14.
+        /// </summary>
+        /// <param name="r1"></param>
+        /// <param name="r2"></param>
+        /// <returns></returns>
+        static double Proc19RingS(double r1, double r2) => (3.14 * r2 * r2) - (3.14 * r1 * r1);
+
+        /// <summary>
+        /// Proc20. Описать функцию TriangleP(a, h), находящую периметр равнобедренного треугольника по его основанию
+        /// a и высоте h, проведенной к основанию (a и h — вещественные). С помощью этой функции найти периметры
+        /// трех треугольников, для которых даны основания и высоты.
+        /// Для нахождения боковой стороны b треугольника использовать теорему Пифагора: b2 = (a/2)2 + h2.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="h"></param>
+        /// <returns></returns>
+        static double Proc20TriangleP(double a, double h)
+        {
+            double result = 2 * a + 2 * Math.Sqrt(h * h + (a / 2) * (a / 2));
+            return result;
+        }
+        //v2 static double Proc20TriangleP(double a, double h) => 2 * a + 2 * Math.Sqrt(h * h + (a / 2) * (a / 2));
+       
+        /// <summary>
+        /// Proc21◦. Описать функцию SumRange(A, B) целого типа, находящую сумму всех целых чисел от A до B включительно
+        /// (A и B — целые). Если A > B,то функция возвращает 0. С помощью этой функции найти суммы чиселот A до B
+        /// и от B до C, если даны числа A, B, C.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static int Proc21SumRange(int a, int b)
+        {
+            int sum = 0;
+            for (int i = a; i <= b; i++)
+            {
+                sum += i;
+            }
+
+            return sum;
+        }
     }
 }
