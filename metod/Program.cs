@@ -227,7 +227,7 @@ namespace Method
             //Proc8
             // Console.Write("Введите число: ");
             // int x = int.Parse(Console.ReadLine());
-            double a = 10, b = 20, c = 3;
+            double a = 1000, b = 2000, c = 3;
             Proc13SortDec3(ref a, ref b, ref c);
             Console.WriteLine($"{a}  {b}  {c}");
         }
@@ -384,28 +384,10 @@ namespace Method
         /// <param name="c"></param>
         static void Proc12SortInc3(ref double a, ref double b, ref double c)
         {
-            if (b < a)
-            {
-                double tempNum = a;
-                a = b;
-                b = tempNum;
-            }
-
-            if (c < b)
-            {
-                double tempNum = b;
-                b = c;
-                c = tempNum;
-
-                if (b < a)
-                {
-                    tempNum = a;
-                    a = b;
-                    b = tempNum;
-                }
-            }
+            if (a > b) (a, b) = (b, a);
+            if (a > c) (a, c) = (c, a);
+            if (b > c) (b, c) = (c, b);
         }
-
         /// <summary>
         /// Proc13. Описать процедуру SortDec3(A, B, C), меняющую содержимое переменных A, B, C таким образом,
         /// чтобы их значения оказались упорядоченными по убыванию
@@ -413,24 +395,9 @@ namespace Method
         /// </summary>
         static void Proc13SortDec3(ref double a, ref double b, ref double c)
         {
-            if (a < b)
-            {
-                double tempNum = a;
-                a = b;
-                b = tempNum;
-            }
-            if (a < c)
-            {
-                double tempNum = a;
-                a = c;
-                c = tempNum;
-            }
-            if (b < c)
-            {
-                double tempNum = b;
-                b = c;
-                c = tempNum;
-            }
+            if (a < b) (a, b) = (b, a);
+            if (a < c) (a, c) = (c, a);
+            if (b < c) (b, c) = (c, b);
         }
     }
 }
