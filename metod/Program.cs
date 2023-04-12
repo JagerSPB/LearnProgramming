@@ -7,10 +7,12 @@ namespace Method
         static void Main()
         {
             //Console.Write("Введите число: ");
-            int a = 13, b = 10;
+            int k = 975694;
+            int n = 3;
 
+            // int operation = 3;
 
-            Console.WriteLine(Proc21SumRange(a, b));
+            Console.WriteLine(Proc30DigitN(k, n));
 
             // double a = 1, b = 2, c = 3;
             // Proc15ShiftLeft3(ref a, ref b, ref c);
@@ -246,7 +248,7 @@ namespace Method
             return result;
         }
         //v2 static double Proc20TriangleP(double a, double h) => 2 * a + 2 * Math.Sqrt(h * h + (a / 2) * (a / 2));
-       
+
         /// <summary>
         /// Proc21◦. Описать функцию SumRange(A, B) целого типа, находящую сумму всех целых чисел от A до B включительно
         /// (A и B — целые). Если A > B,то функция возвращает 0. С помощью этой функции найти суммы чиселот A до B
@@ -264,6 +266,127 @@ namespace Method
             }
 
             return sum;
+        }
+
+        /// <summary>
+        /// Proc22. Описать функцию Calc(A, B, Op) вещественного типа, выполняющуюнад ненулевыми вещественными числами
+        /// A и B одну из арифметических операций и возвращающую ее результат Вид операции определяется
+        /// целым параметром Op: 1 — вычитание, 2 — умножение, 3 — деление, остальные значения — сложение.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="operation"></param>
+        /// <returns></returns>
+        static double Proc22Calc(double a, double b, int operation)
+        {
+            double result = 0;
+            if (operation == 1) result = a - b;
+            else if (operation == 2) result = a * b;
+            else if (operation == 3) result = a / b;
+            else result = a + b;
+            return result;
+        }
+
+        /// <summary>
+        /// Proc23. Описать функцию Quarter(x, y) целого типа, определяющую номер координатной четверти,
+        /// в которой находится точка с ненулевыми веще- ственными координатами (x, y).
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        static int Proc23Quarter(int x, int y)
+        {
+            int result = 0;
+            if (x > 0 && y > 0) result = 1;
+            else if (x > 0 && y < 0) result = 2;
+            else if (x < 0 && y < 0) result = 3;
+            else if (x < 0 && y > 0) result = 4;
+            return result;
+        }
+
+        /// <summary>
+        /// Proc24. Описать функцию Even(K) логического типа, возвращающую TRUE, если целый параметр K является четным,
+        /// и FALSE в противном случае. С ее помощью найти количество четных чисел в наборе из 10 целых чисел.
+        /// </summary>
+        /// <returns></returns>
+        static bool Proc24Even(int k) => k % 2 == 0;
+
+        /// <summary>
+        /// Proc25◦. Описать функцию IsSquare(K) логического типа, возвращающую TRUE, если целый параметр K (>0)
+        /// является квадратом некоторого целого числа, и FALSE в противном случае.
+        /// С ее помощью найти количество квадратов в наборе из 10 целых положительных чисел.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static bool Proc25IsSquare(int k)
+        {
+            double square = Math.Sqrt(k);
+            return square == Math.Floor(square);
+        }
+
+        /// <summary>
+        /// Proc26. Описать функцию IsPower5(K) логического типа, возвращающую TRUE, если целый параметр K (> 0)
+        /// является степенью числа 5, и FALSE в противном случае.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static bool Proc26IsPower5(int k)
+        {
+            while (k % 5 == 0)
+            {
+                k /= 5;
+            }
+
+            return k == 1;
+        }
+
+        /// <summary>
+        /// Proc27. Описать функцию IsPowerN(K, N) логического типа, возвращающую TRUE, если целый параметр K (>0)
+        /// является степенью числа N (>1), и FALSE в противном случае. 
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static bool Proc27IsPowerN(int k, int n)
+        {
+            while (k % n == 0)
+            {
+                k /= n;
+            }
+
+            return k == 1;
+        }
+
+        /// <summary>
+        /// Proc29. Описать функцию DigitCount(K) целого типа, находящую количество цифр целого положительного числа K.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        static int Proc29DigitCount(int k)
+        {
+            int result = 0;
+            for (int i = 1; i <= k; i++)
+            {
+                k = k / 10;
+                result++;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Proc30. Описать функцию DigitN(K, N ) целого типа, возвращающую N -ю цифру целого положительного числа K
+        /// (цифры в числе нумеруются справа налево). Если количество цифр в числе K меньше N, то функция возвращает −1.
+        /// </summary>
+        /// <returns></returns>
+        static int Proc30DigitN(int k, int n)
+        {
+            for (int i = 1; i < n; i++)
+            {
+                k = k / 10;
+            }
+            k = k % 10;
+            if (k == 0) return -1;
+            return k;
         }
     }
 }
