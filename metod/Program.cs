@@ -6,20 +6,9 @@ namespace Method
     {
         static void Main()
         {
-            //Console.Write("Введите число: ");
-            // int k = 975694;
-            //int r = 1;
-            int n = 5;
-            // int operation = 1;
+            double a = 5, b=2;
 
-            Console.WriteLine(Proc36Fib(n));
-
-            // double a = 1, b = 2, c = 3;
-            // Proc15ShiftLeft3(ref a, ref b, ref c);
-            // Console.WriteLine($"{a}  {b}  {c}");
-            // double x = 10, y = 2;
-            // Proc11Minmax(ref x, ref y);
-            // Console.WriteLine($"{x}  {y}");
+            Console.WriteLine(Proc37Power1(a,b));
         }
 
         /// <summary>
@@ -473,11 +462,18 @@ namespace Method
             for (int i = 3; i <= n; i++)
             {
                 num3 = num1 + num2;
-                num1 = num2;
-                num2 = num3;
+                (num1, num2) = (num2, num3);
             }
-
             return num3;
         }
+
+        /// <summary>
+        /// Proc37. Описать функцию Power1(A, B) вещественного типа, находящую величину AB по формуле AB = exp(B·ln(A))
+        /// (параметры A и B — вещественные). В случае нулевого или отрицательного параметра A функция возвращает 0.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static double Proc37Power1(double a, double b) => Math.Exp(b * Math.Log(a));
     }
 }
