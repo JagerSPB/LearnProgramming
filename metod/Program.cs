@@ -6,9 +6,9 @@ namespace Method
     {
         static void Main()
         {
-            double a = 5, b=2;
+            int y = 2024;
 
-            Console.WriteLine(Proc37Power1(a,b));
+            Console.WriteLine(Proc52IsLeapYear(y));
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Method
 
         /// <summary>
         /// Proc23. Описать функцию Quarter(x, y) целого типа, определяющую номер координатной четверти,
-        /// в которой находится точка с ненулевыми веще- ственными координатами (x, y).
+        /// в которой находится точка с ненулевыми вещественными координатами (x, y).
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -464,6 +464,7 @@ namespace Method
                 num3 = num1 + num2;
                 (num1, num2) = (num2, num3);
             }
+
             return num3;
         }
 
@@ -475,5 +476,64 @@ namespace Method
         /// <param name="b"></param>
         /// <returns></returns>
         static double Proc37Power1(double a, double b) => Math.Exp(b * Math.Log(a));
+
+        /// <summary>
+        /// Proc38. Описать функцию Power2(A, N) вещественного типа, находящую величину
+        /// AN (A — вещественный, N — целый параметр) по следующим формулам:A0 = 1; AN = A·A·. . .·A (N сомножителей),
+        /// если N > 0; AN = 1/(A·A·. . .·A) (|N | сомножителей) если n меньше 0
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static double Proc38Power2(double a, double n)
+        {
+            if (n == 0) return 1;
+            else if (n > 0) return Math.Pow(a, n);
+            else return Math.Pow(1 / a, n);
+        }
+
+        /// <summary>
+        /// Proc39. Используя функции Power1 и Power2 (задания Proc37 и Proc38), опи- сать функцию Power3(A, B)
+        /// вещественного типа с вещественными параметрами, находящую AB следующим образом: если B имеет нулевую дробную
+        /// часть, то вызывается функция Power2(A, Round(B)); в противном случае вызывается функция Power1(A, B).
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static double Proc39Power3(double a, double b)
+        {
+            if (b % 1 == 0) return Proc38Power2(a, Math.Round(b));
+            else return Proc37Power1(a, b);
+        }
+
+        /// <summary>
+        /// Proc46. Описать функцию NOD2(A, B) целого типа, находящую наибольший общий делитель
+        /// (НОД) двух целых положительных чисел A и B, используя алгоритм Евклида: НОД(A, B) = НОД(B, A mod B),
+        /// если B ̸= 0; НОД(A, 0) = A.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static int Proc46NOD2(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+
+        /// <summary>
+        /// Proc52. Описать функцию IsLeapYear(Y) логического типа, которая возвращает TRUE, если год Y
+        /// (целое положительное число) является високосным, и FALSE в противном случае. 
+        ///  Високосным считается год, делящийся на 4,
+        /// за исключением тех годов, которые делятся на 100 и не делятся на 400.
+        /// </summary>
+        /// <returns></returns>
+        static bool Proc52IsLeapYear(int y) => y % 4 == 0 && (y % 100 != 0 || y % 400 == 0);
+
     }
 }
