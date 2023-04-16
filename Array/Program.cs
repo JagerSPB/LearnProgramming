@@ -61,6 +61,20 @@
             for (int i = 0; i < array.Length; i++)
                 Console.WriteLine($"[{i}] = {array[i]}");
             */
+            // Array5. Дано целое число N (>2). Сформировать и вывести целочисленный массив размера N, содержащий N первых 
+            // элементов последовательности чисел Фибоначчи FK: F1 =1, F2 =1, FK =FK−2 +FK−1, K =3,4,....4
+            /*
+            int n = 10, num1 = 0, num2 = 1, fib = num1 + num2;
+            int[] array = new int[n];
+            for (int i = 1; i < array.Length; i++)
+            {
+                array[i] = fib;
+                fib = num1 + num2;
+                (num1, num2) = (num2, fib);
+            }
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine($"[{i}] = {array[i]}");
+            */
         }
     }
 }
