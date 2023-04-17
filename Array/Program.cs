@@ -66,32 +66,144 @@
             /*
             int n = 10, num1 = 0, num2 = 1, fib = num1 + num2;
             int[] array = new int[n];
-            for (int i = 1; i < array.Length; i++)
+            array[0] = num1;
+            array[1] = num2;
+
+            for (int i = 2; i < array.Length; i++)
             {
-                array[i] = fib;
-                fib = num1 + num2;
-                (num1, num2) = (num2, fib);
+                array[i] = array[i - 1] + array[i - 2];
             }
+
             for (int i = 0; i < array.Length; i++)
                 Console.WriteLine($"[{i}] = {array[i]}");
-            */
+             */
             // Array6. Даны целые числа N (>2), A и B. Сформировать и вывести целочисленный массив размера N, первый 
             // элемент которого равен A, второй равен B, а каждый последующий элемент равен сумме всех предыдущих.
-
-            int n = 10, a = 2, b = 3, sum = a;
+            /*
+            int n = 10, a = 2, b = 3, sum = a + b;
             int[] array = new int[n];
-            for (int i = 0; i < array.Length; i++)
+            array[0] = a;
+            array[1] = b;
+            for (int i = 2; i < array.Length; i++)
             {
                 array[i] += sum;
-                sum = a + b;
-                a = b;
-                b = sum;
+                sum += array[i];
             }
 
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine($"[{i}] = {array[i]}");
             }
+            */
+            // Array7◦. Дан массив размера N. Вывести его элементы в обратном порядке.
+            /*
+            int n = 10;
+            int[] array = new int[] { 3, 2, 1, 5, 9, 7, 4, 2, 3, 6 };
+            
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine($"[{i}] = {array[i]}");
+            }
+            */
+            // Array8. Дан целочисленный массив размера N. Вывести все содержащиеся в данном массиве нечетные числа в
+            //     порядке возрастания их индексов, а также их количество K.
+            /*
+            int[] array = new int[] { 2, 4, 5, 1, 8, 5, 1, 3, 6, 8 };
+            int  k = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 != 0)
+                {
+                    k++;
+                    Console.WriteLine($"[{i}] = {array[i]}");
+                }
+            }
+            Console.WriteLine($"кол-во нечётных чисел в массиве: {k}");
+            */
+            // Array9. Дан целочисленный массив размера N. Вывести все содержащиеся в данном массиве четные числа в 
+            //     порядке убывания их индексов, а также их количество K.
+            /*
+            int[] array = new int[] { 2, 4, 5, 1, 8, 5, 1, 3, 6, 8 };
+            int  k = 0;
+            for (int i = array.Length -1; i >=0; i--)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    k++;
+                    Console.WriteLine($"[{i}] = {array[i]}");
+                }
+            }
+            Console.WriteLine($"кол-во чётных чисел в массиве: {k}");
+            */
+            // Array10. Дан целочисленный массив размера N. Вывести вначале все содержащиеся в данном массиве четные числа
+            //     в порядке возрастания их индексов, а затем  все нечетные числа в порядке убывания их индексов.
+            /*
+            int[] array = new[] { 2, 4, 5, 1, 3, 5, 1, 3, 6, 8 };
+            for (int i = 0; i < array.Length; i++)
+                if (array[i] % 2 == 0) Console.WriteLine($"[{i}] = {array[i]}");
+
+            for (int i = array.Length - 1; i >= 0; i--)
+                if (array[i] % 2 != 0) Console.WriteLine($"[{i}] = {array[i]}");
+            */
+            // Array11. Дан массив A размера N и целое число K (1 ≤ K ≤ N). Вывести элементы массива с порядковыми
+            //     номерами, кратными K : AK , A2·K , A3·K , . . . .Условный оператор не использовать.
+            /*
+            int[] array = new[] { 2, 4, 5, 4, 3, 5, 1, 3, 6, 8 };
+            int k = 4;
+            for (int i = k; i < array.Length; i+=k)
+                Console.WriteLine($"  {array[i]}");
+            */
+            // Array12. Дан массив A размера N (N — четное число). Вывести его элементы с четными номерами в порядке
+            //     возрастания номеров: A2, A4, A6, . . ., AN .Условный оператор не использовать.
+            /*
+            int[] array = new[] { 2, 4, 5, 1, 3, 5, 1, 3, 6, 8 };
+            for (int i = 0; i < array.Length; i+=2)
+                Console.WriteLine($"  {array[i]}");
+            */
+            // Array13. Дан массив A размера N (N — нечетное число). Вывести его элементы с нечетными номерами в порядке 
+            //     убывания номеров: AN, AN−2, AN−4, ..., A1. Условный оператор не использовать.
+            /*
+            int[] array = new[] { 2, 4, 5, 1, 3, 5, 1, 3, 6, 8, 9 };
+            for (int i = array.Length - 1; i >= 0; i -= 2)
+                Console.WriteLine($"  {array[i]}");
+            */
+            // Array14. Дан массив A размера N. Вывести вначале его элементы с четными номерами (в порядке возрастания
+            // номеров), а затем — элементы с нечетными номерами (также в порядке возрастания номеров):A2, A4, A6, ..., 
+            // A1, A3, A5, .... Условный оператор не использовать.
+            /*
+            int[] array = new[] { 2, 4, 5, 1, 3, 5, 1, 3, 6, 8, 9 };
+            for (int i = 2; i < array.Length; i+=2)
+                Console.WriteLine($"[{i}] = {array[i]}");
+            Console.WriteLine();
+            for (int i = 1; i < array.Length; i+=2)
+                Console.WriteLine($"[{i}] =  {array[i]}");
+            */
+            // Array15. Дан массив A размера N. Вывести вначале его элементы с нечетными номерами в порядке возрастания
+            //     номеров, а затем — элементы с четными номерами в порядке убывания номеров: A1, A3, A5, ..., A6, A4, A2. 
+            //     Условный оператор не использовать.
+            /*
+            int[] array = new[] { 5, 25, 6, 3, 29, 57, 45, 9, 62, 192 };
+            for (int i = 1; i < array.Length; i += 2)
+                Console.WriteLine($"[{i}] = {array[i]}");
+            Console.WriteLine();
+            for (int i = array.Length - 2; i >= 0; i -= 2)
+                Console.WriteLine($"[{i}] =  {array[i]}");
+            */
+            // Array16. Дан массив A размера N. Вывести его элементы в следующем порядке:A1, AN, A2, AN−1, A3, AN−2, ....
+            /*
+           int[] array = new[] { 5, 225, 6, 3, 29, 57, 45, 9, 62, 192 };
+           for (int i = 0; i < array.Length / 2; i++)
+               Console.Write($" {array[i]} {array[array.Length - 1 - i]}");
+            */
+            // Array17.Дан массив A размера N.Вывести его элементы в следующем поряд ке:
+            // A1, A2, AN, AN−1, A3, A4, AN−2, AN−3, ....
+            /*
+            int[] array = new[] { 11, 22, 33, 44, 55, 66, 77, 88, 99, 110 };
+            for (int i = 0; i < array.Length / 2; i += 2)
+                Console.Write($" {array[i]} {array[i+1]} {array[array.Length - 1 - i]} {array[array.Length - 2 - i ]}");
+            */
+            
+            
         }
     }
 }
