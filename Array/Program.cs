@@ -75,6 +75,23 @@
             for (int i = 0; i < array.Length; i++)
                 Console.WriteLine($"[{i}] = {array[i]}");
             */
+            // Array6. Даны целые числа N (>2), A и B. Сформировать и вывести целочисленный массив размера N, первый 
+            // элемент которого равен A, второй равен B, а каждый последующий элемент равен сумме всех предыдущих.
+
+            int n = 10, a = 2, b = 3, sum = a;
+            int[] array = new int[n];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] += sum;
+                sum = a + b;
+                a = b;
+                b = sum;
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine($"[{i}] = {array[i]}");
+            }
         }
     }
 }
