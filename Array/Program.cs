@@ -202,8 +202,49 @@
             for (int i = 0; i < array.Length / 2; i += 2)
                 Console.Write($" {array[i]} {array[i+1]} {array[array.Length - 1 - i]} {array[array.Length - 2 - i ]}");
             */
-            
-            
+            // Array18. Дан массив A ненулевых целых чисел размера 10. Вывести значение первого из тех его элементов AK, 
+            //     которые удовлетворяют неравенству AK < A10. Если таких элементов нет, то вывести 0.
+            /*
+             int[] array = new[] { 41, 22, 33, 44, 55, 66, 77, 88, 99, 30};
+             int result = 0;
+             for (int i = 0; i < array.Length; i++)
+             {
+                 if (array[i] < array[array.Length - 1])
+                 {
+                     result = array[i];
+                     break; 
+                 }
+             }
+             // if (result !=0)  Console.WriteLine(result) ;
+             // else Console.WriteLine("0") ;
+             Console.WriteLine(result != 0 ? result : "0");
+            */
+            // Array19. Дан целочисленный массив A размера 10. Вывести порядковый номер последнего из тех его элементов 
+            //     AK, которые удовлетворяют двойному неравенству A1 < AK < A10. Если таких элементов нет,
+            //     то вывести 0.
+            /*
+            int[] array = new[] { 41, 52, 133, 40, 55, 66, 77, 88, 99, 80};
+            int result = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] <  array[0] && array[i] < array[array.Length - 1])
+                {
+                    result = array[i];
+                    break; 
+                }
+            }
+            Console.WriteLine(result != 0 ? result : "0");
+            */
+            // Array20.ДанмассивразмераN ицелыечислаK иL(1≤K ≤L≤N).Найти сумму элементов массива с номерами от K до L
+            // включительно.
+            /*
+            int[] array = new[] { 2, 12, 2, 2, 2, 2, 77, 88, 99, 80 };
+            int k = 2, l = 5, sum = 0;
+            for (int i = k; i <= l; i++)
+                sum += array[i];
+                
+            Console.WriteLine(sum);
+            */
         }
     }
 }
