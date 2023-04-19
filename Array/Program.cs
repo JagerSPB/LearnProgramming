@@ -312,6 +312,118 @@
             }
             Console.WriteLine(0);
             */
+            //Array28. Дан массив A размера N. Найти минимальный элемент из его элементов с четными номерами: A2, A4, A6, . . .
+            /*
+            int[] array = new [] { 10, 112, 21, 12, 3, 29, 70, 88, 99, 80 };
+            int min = 0;
+            for (int i = 2; i < array.Length; i+=2)
+            {
+                if (array[i] < array[i - 1])
+                    min = array[i];
+            }
+            Console.WriteLine(min);
+            */
+            // Array29. Дан массив A размера N. Найти максимальный элемент из его элементов с нечетными номерами: A1, A3, A5, . . .
+            /*
+            int[] array = new[] { 12, 334, 56, 78, 43, 47, 22, 45, 51, 89 };
+            int max = array[1];
+            for (int i = 1; i < array.Length; i += 2)
+            {
+                if (max < array[i])
+                    max = array[i];
+            }
+            Console.WriteLine(max);
+            */
+            // Array30. Дан массив размера N. Найти номера тех элементов массива, которые больше своего правого соседа,
+            //     и количество таких элементов. Найденные номера выводить в порядке их возрастания.
+            /*
+            int[] array = new[] { 12, 34, 56, 78, 43, 47, 22, 45, 51, 89 };
+            int sum = 0;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i-1] > array[i])
+                {
+                    sum ++;
+                    Console.WriteLine($"[{i-1}]");
+                }
+            }
+            Console.WriteLine($"кол-во {sum}");
+            */
+            // Array31. Дан массив размера N. Найти номера тех элементов массива, которые больше своего левого соседа, 
+            //     и количество таких элементов. Найденные номера выводить в порядке их убывания.
+            /*
+            int[] array = new[] { 12, 10, 56, 78, 43, 47, 22, 45, 51, 9 };
+            int sum = 0;
+            for (int i = array[^1]; i > 0; i--)
+            {
+                if (array[i - 1] < array[i])
+                {
+                    Console.WriteLine($"[{i}]");
+                    sum++;
+                }
+            }
+
+            Console.WriteLine($"кол-во {sum}");
+            */
+
+            // Array32. Дан массив размера N. Найти номер его первого локального минимума (локальный минимум — это элемент,
+            //     который меньше любого из своих соседей).
+            /*
+            int[] array = new[] { 12, 100, 506, 78, 43, 47, 220, 45, 51, 9 };
+            for (int i = 1; i < array[^1]; i++)
+            {
+                if (array[i] < array[i - 1] && array[i] < array[i + 1])
+                {
+                    Console.WriteLine(i); return;
+                }
+            }
+            */
+            // Array33. Дан массив размера N. Найти номер его последнего локального максимума (локальный максимум — 
+            // это элемент, который больше любого из своих соседей).
+            /*
+            int[] array = new[] { 12, 100, 506, 78, 43, 47, 220, 45, 51, 9 };
+            for (int i = array[^1]; i > 0; i--)
+            {
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                {
+                    Console.WriteLine(i); return;        
+                }
+            }
+            */
+            // Array34. Дан массив размера N. Найти максимальный из его локальных минимумов
+            /*
+            int[] array = new[] { 12, 100, 506, 78, 30, 47, 220, 28, 51, 9 };
+            int tempIndex = array[0], localMaxOfMin = 0;
+            for (int i = 1; i < array[^1]; i++)
+            {
+                if (array[i] < array[i - 1] && array[i] < array[i + 1])
+                {
+                    if (tempIndex < array[i])
+                    {
+                        localMaxOfMin = i;
+                        tempIndex = array[i];
+                    }
+                }
+            }
+            Console.WriteLine(localMaxOfMin);
+            */
+            //Array35. Дан массив размера N. Найти минимальный из его локальных максимумов 
+            /*
+            int[] array = new[] { 12, 10, 50, 38, 30, 47, 2200, 28, 51, 9 };
+            int tempIndex = Int32.MaxValue, localMinOfMax = 0;
+            for (int i = 1; i < array[^1]; i++)
+            {
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                {
+                    if (tempIndex > array[i])
+                    {
+                        tempIndex = array[i];
+                        localMinOfMax = i;
+                    }
+                }
+            }
+            Console.WriteLine(localMinOfMax);
+            */
         }
     }
 }
