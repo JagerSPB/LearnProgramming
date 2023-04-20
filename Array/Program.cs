@@ -449,13 +449,13 @@
             // Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
             //     (то есть такой элемент AK, для которого величина |AK − R| является минимальной). 
             int[] array = new[] { 12, 15, 50, 38, 30, 47, 220, 28, 51, 9 };
-            int r = 180, minDiffR = Math.Abs(r - array[0]), temp = 0, result = 0;
+            int r = 180, minDiffR = Math.Abs(r - array[0]), tempDiff = 0, result = 0;
             for (int i = 0; i < array[^1]; i++)
             {
-                temp = Math.Abs(r - array[i]);
-                if (minDiffR > temp)
+                tempDiff = Math.Abs(r - array[i]);
+                if (minDiffR > tempDiff)
                 {
-                    minDiffR = temp;
+                    minDiffR = tempDiff;
                     result = array[i];
                 }
             }
