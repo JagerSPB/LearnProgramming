@@ -424,6 +424,42 @@
             }
             Console.WriteLine(localMinOfMax);
             */
+            // Array37. Дан массив размера N. Найти количество участков, на которых его элементы монотонно возрастают.
+            /*
+            int[] array = new[] { 12, 15, 50, 38, 30, 47, 2200, 28, 51, 9 };
+            int count = 0;
+            for (int i = 1; i < array[^1]; i++)
+            {
+                if (array[i-1] < array[i] && array[i] < array[i+1])
+                    count++;
+            }
+            Console.WriteLine(count);
+            */
+            // Array38. Дан массив размера N. Найти количество участков, на которых его элементы монотонно убывают.
+            /*
+            int[] array = new[] { 12, 15, 50, 38, 30, 47, 2200, 28, 51, 9 };
+            int count = 0;
+            for (int i = 1; i < array[^1]; i++)
+            {
+                if (array[i - 1] > array[i] && array[i] > array[i + 1])
+                    count++;
+            }
+            Console.WriteLine(count);
+            */
+            // Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
+            //     (то есть такой элемент AK, для которого величина |AK − R| является минимальной). 
+            int[] array = new[] { 12, 15, 50, 38, 30, 47, 220, 28, 51, 9 };
+            int r = 180, minDiffR = Math.Abs(r - array[0]), temp = 0, result = 0;
+            for (int i = 0; i < array[^1]; i++)
+            {
+                temp = Math.Abs(r - array[i]);
+                if (minDiffR > temp)
+                {
+                    minDiffR = temp;
+                    result = array[i];
+                }
+            }
+            Console.WriteLine($"Елемент массива: {result}, разница между заданным числом {r} будет: {minDiffR}  ");
         }
     }
 }
