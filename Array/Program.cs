@@ -448,18 +448,156 @@
             */
             // Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
             //     (то есть такой элемент AK, для которого величина |AK − R| является минимальной). 
+            /*
             int[] array = new[] { 12, 15, 50, 38, 30, 47, 220, 28, 51, 9 };
-            int r = 180, minDiffR = Math.Abs(r - array[0]), tempDiff = 0, result = 0;
-            for (int i = 0; i < array[^1]; i++)
+            int r = 180, minDiffR = Math.Abs(r - array[0]), result = 0;
+            for (int i = 0; i < array.Length; i++)
             {
-                tempDiff = Math.Abs(r - array[i]);
-                if (minDiffR > tempDiff)
+                
+                if (minDiffR > Math.Abs(r - array[i]))
                 {
-                    minDiffR = tempDiff;
+                    minDiffR = Math.Abs(r - array[i]);
                     result = array[i];
                 }
             }
             Console.WriteLine($"Елемент массива: {result}, разница между заданным числом {r} будет: {minDiffR}  ");
+            */
+
+            Array45();
+        }
+
+        /// <summary>
+        ///    Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
+        /// (то есть такой элемент AK, для которого величина |AK − R| является минимальной). 
+        /// </summary>
+        static void Array40()
+        {
+            int[] array = new[] { 12, 15, 50, 38, 30, 47, 220, 28, 51, 9 };
+            int r = 180, minDiffR = Math.Abs(r - array[0]), result = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (minDiffR > Math.Abs(r - array[i]))
+                {
+                    minDiffR = Math.Abs(r - array[i]);
+                    result = array[i];
+                }
+            }
+
+            Console.WriteLine($"Елемент массива: {result}, разница между заданным числом {r} будет: {minDiffR}  ");
+        }
+
+        /// <summary>
+        /// Дан массив размера N. Найти количество участков, на которых его элементы монотонно возрастают.
+        /// </summary>
+        static void Array37()
+        {
+            //int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //int[] array = new[] { 1, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            int[] array = new[] { 1, 2, 3, 4, 1, 2, 1, 2, 1, 4 };
+            int count = 0;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] < array[i])
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine(count);
+        }
+
+        /// <summary>
+        /// Array41. Дан массив размера N. Найти два соседних элемента, сумма которых максимальна, и вывести эти
+        /// элементы в порядке возрастания их индексов.
+        /// </summary>
+        static void Array41()
+        {
+            int[] array = new[] { 1, 2, 3, 4, 1, 2, 1, 2, 9, 4 };
+            int sumOfTwoElements = array[0] + array[1], maxElem1 = array[0], maxElem2 = array[1];
+            ;
+            for (int i = 2; i < array.Length - 1; i++)
+            {
+                if (sumOfTwoElements < (array[i] + array[i + 1]))
+                {
+                    sumOfTwoElements = array[i] + array[i + 1];
+                    maxElem1 = array[i];
+                    maxElem2 = array[i + 1];
+                }
+            }
+
+            Console.WriteLine($"1: {maxElem1}  2:  {maxElem2}");
+        }
+
+        /// <summary>
+        /// Array42. Дано число R и массив размера N. Найти два соседних элемента массива, сумма которых наиболее
+        /// близка к числу R, и вывести эти элементы в порядке возрастания их индексов
+        /// </summary>
+        static void Array42()
+        {
+            int[] array = new[] { 12, 15, 50, 38, 30, 47, 220, 28, 51, 9 };
+            int r = 186,
+                sumOfTwoElements = array[0] + array[1],
+                minDiffR = Math.Abs(r - sumOfTwoElements),
+                element1 = 0,
+                element2 = 0;
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                sumOfTwoElements = array[i] + array[i + 1];
+
+                if (minDiffR > Math.Abs(r - sumOfTwoElements))
+                {
+                    minDiffR = Math.Abs(r - sumOfTwoElements);
+                    element1 = array[i];
+                    element2 = array[i + 1];
+                }
+            }
+
+            Console.WriteLine($"Первый элемент массива: {element1}, Второй элемент массива: {element2}, {minDiffR}");
+        }
+
+        /// <summary>
+        ///Array44. Дан целочисленный массив размера N, содержащий ровно два одинаковых элемента. Найти номера
+        /// одинаковых элементов и вывести этиномера в порядке возрастания.
+        /// </summary>
+        static void Array44()
+        {
+            int[] array = new[] { 1, 5, 3, 40, 17, 72, 18, 1, 55, 45 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        Console.WriteLine($"[{j}]  [{i}]");
+                        break;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Дан массив размера N. Найти номера двух ближайших элементовиз этого массива (то есть элементов с наименьшим
+        /// модулем разности) ивывести эти номера в порядке возрастания.
+        /// </summary>
+        static void Array45()
+        {
+            int[] array = new[] { 1, 5, 9, 40, 17, 72, 18, 33, 55, 45 };
+            int minDiff = Math.Abs(array[0] - array[1]);
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    int diff = Math.Abs(array[i] - array[j]);
+                    if (diff < minDiff)
+                    {
+                        minDiff = diff;
+
+                        Console.WriteLine($"[{j}]  [{i}]");
+                        break;
+                    }
+                }
+            }
+          
         }
     }
 }
