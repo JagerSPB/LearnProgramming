@@ -462,8 +462,9 @@
             }
             Console.WriteLine($"Елемент массива: {result}, разница между заданным числом {r} будет: {minDiffR}  ");
             */
-
-            Array45();
+            //=============================================================================
+            //=============================================================================
+            Array38();
         }
 
         /// <summary>
@@ -491,15 +492,50 @@
         /// </summary>
         static void Array37()
         {
-            //int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            // int[] array = new[] { 1, 2, 3, 4, 5, 1, 7, 8, 9, 10 };
             //int[] array = new[] { 1, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            int[] array = new[] { 1, 2, 3, 4, 1, 2, 1, 2, 1, 4 };
+            int[] array = new[] { 1, 2, 3, 1, 2, 3, 1, 9, 5, 6 };
             int count = 0;
-            for (int i = 1; i < array.Length; i++)
+            bool isGrowing = false;
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                if (array[i - 1] < array[i])
+                if (isGrowing == false && array[i] < array[i + 1])
                 {
                     count++;
+                    isGrowing = true;
+                }
+                
+                if (array[i] > array[i + 1])
+                {
+                    isGrowing = false;
+                }
+            }
+
+            Console.WriteLine(count);
+        }
+        /// <summary>
+        /// Array38. Дан массив размера N. Найти количество участков, на которых его элементы монотонно убывают.
+        /// </summary>
+        static void Array38()
+        {
+            //int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            // int[] array = new[] { 1, 2, 3, 4, 5, 1, 7, 8, 9, 10 };
+            int[] array = new[] { 10, 9, 8, 7, 6, 10, 9, 8, 2, 1 };
+           // int[] array = new[] { 10, 9, 7, 10, 6, 3, 1, 9, 8, 6 };
+            int count = 0;
+            bool isGrowing = false;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (isGrowing == false && array[i] > array[i + 1])
+                {
+                    count++;
+                    isGrowing = true;
+                }
+                
+                if (array[i] < array[i + 1])
+                {
+                    isGrowing = false;
                 }
             }
 
@@ -564,12 +600,12 @@
             int[] array = new[] { 1, 5, 3, 40, 17, 72, 18, 1, 55, 45 };
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < i; j++)
+                for (int j = i + 1; j < array.Length; j++)
                 {
                     if (array[i] == array[j])
                     {
-                        Console.WriteLine($"[{j}]  [{i}]");
-                        break;
+                        Console.WriteLine($"[{i}]  [{j}]");
+                        return;
                     }
                 }
             }
@@ -597,7 +633,91 @@
                     }
                 }
             }
-          
         }
+
+        /// <summary>
+        /// Array46. Дано число R и массив размера N. Найти два различных элемента массива, сумма которых наиболее
+        /// близка к числу R, и вывести эти элементы в порядке возрастания их индексов
+        /// </summary>
+        static void Array46()
+        {
+            int[] array = { 11, 4, 6, 5, 3, 7, 13, 23, 16, 33 };
+            int r = 12, item1 = array[0], item2 = array[1];
+            int diff = Math.Abs(r - (array[0] + array[1]));
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (diff > Math.Abs(r - (array[i] + array[j])))
+                    {
+                        diff = Math.Abs(r - (array[i] + array[j]));
+                        item1 = array[i];
+                        item2 = array[j];
+                    }
+                }
+            }
+
+            Console.WriteLine($"элемент1: [{item1}], элемент2: [{item2}]");
+        }
+
+        /// <summary>
+        /// Array47◦. Дан целочисленный массив размера N. Найти количество различных элементов в данном массиве.
+        /// </summary>
+        static void Array47()
+        {
+            int[] array = { 11, 71, 7, 3, 7, 7, 13, 23, 16, 8 }; // задаём массив
+            int countOfDifferentUnit = 0; // переменная для посчёта различных элементов
+            bool isDifferentNuber = true; // флаг для переключения если найден совпадающий элемент
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++) // во вложенном цикле сравниваем все числа в массиве
+                {
+                    isDifferentNuber = true; // в начале итерации скидывание флага на true
+                    if (array[i] == array[j]) // если находим одинаковые элементы
+                    {
+                        isDifferentNuber = false; // переключаем флаг на false и прерываем внутренний цикл
+                        break;
+                    }
+                }
+
+                if (isDifferentNuber) //  если флаг true 
+                {
+                    countOfDifferentUnit++; // считаем уникальный и неповторимый элемент
+                }
+            }
+
+            Console.WriteLine($"{countOfDifferentUnit}"); // выводим результат 
+        }
+
+        /// <summary>
+        /// Array48. Дан целочисленный массив размера N. Найти максимальное количество его одинаковых элементов.
+        /// </summary>
+        static void Array48()
+        {
+            int[] array = { 11, 71, 72, 3, 74, 6, 75, 7, 16, 8 }; // задаём массив
+            int countOfSameUnit = 0; // переменная для посчёта различных элементов
+            bool isSameNumber = false; // флаг для переключения если найден совпадающий элемент
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    isSameNumber = false;
+                    if (array[i] == array[j])
+                    {
+                        isSameNumber = true;
+                        break;
+                    }
+                }
+
+                if (isSameNumber)
+                {
+                    countOfSameUnit++;
+                }
+            }
+
+            Console.WriteLine(countOfSameUnit + 1);
+        }
+
+
     }
 }
