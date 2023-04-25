@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array38();
+            Array51();
         }
 
         /// <summary>
@@ -505,7 +505,7 @@
                     count++;
                     isGrowing = true;
                 }
-                
+
                 if (array[i] > array[i + 1])
                 {
                     isGrowing = false;
@@ -514,6 +514,7 @@
 
             Console.WriteLine(count);
         }
+
         /// <summary>
         /// Array38. Дан массив размера N. Найти количество участков, на которых его элементы монотонно убывают.
         /// </summary>
@@ -522,7 +523,7 @@
             //int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             // int[] array = new[] { 1, 2, 3, 4, 5, 1, 7, 8, 9, 10 };
             int[] array = new[] { 10, 9, 8, 7, 6, 10, 9, 8, 2, 1 };
-           // int[] array = new[] { 10, 9, 7, 10, 6, 3, 1, 9, 8, 6 };
+            // int[] array = new[] { 10, 9, 7, 10, 6, 3, 1, 9, 8, 6 };
             int count = 0;
             bool isGrowing = false;
             for (int i = 0; i < array.Length - 1; i++)
@@ -532,7 +533,7 @@
                     count++;
                     isGrowing = true;
                 }
-                
+
                 if (array[i] < array[i + 1])
                 {
                     isGrowing = false;
@@ -718,6 +719,52 @@
             Console.WriteLine(countOfSameUnit + 1);
         }
 
+        /// <summary>
+        /// Array49. Дан целочисленный массив размера N. Если он является перестановкой, то есть содержит все числа
+        /// от 1 до N, то вывести 0; в противном случае вывести номер первого недопустимого элемента.
+        /// </summary>
+        static void Array49()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            // int[] array = { 1, 31, 52, 7, 5, 8, 32, 2, 3, 4, 19 };
+            int[] permutation = new int [array.Length];
+            int result = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                permutation[i] = i + 1;
+            }
 
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] != permutation[j])
+                    {
+                        Console.WriteLine("массив не является перестановкой");
+                        return;
+                    }
+                }
+            }
+
+            Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Array51. Даны массивы A и B одинакового размера N. Поменять местами их содержимое и вывести вначале
+        /// элементы преобразованного массива A, а затем — элементы преобразованного массива B.
+        /// </summary>
+        static void Array51()
+        {
+            int[] arrayA = { 2, 4, 6, 4, 7, 9, 0, 7, 8 };
+            int[] arrayB = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int tempNum = 0;
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                tempNum = arrayA[i];
+                arrayA[i] = arrayB[i];
+                arrayB[i] = tempNum;
+                Console.WriteLine($"{arrayA[i]}    {arrayB[i]}");
+            }
+        }
     }
 }
