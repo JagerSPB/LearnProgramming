@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array51();
+            Array53();
         }
 
         /// <summary>
@@ -755,15 +755,74 @@
         /// </summary>
         static void Array51()
         {
+            int[] arrayA = { 2, 4, 6, 4, 7, 9, 0, 7, 8 }; // Создаем массив arrayA и заполняем его значениями
+            int[] arrayB = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }; // Создаем массив arrayB и заполняем его значениями
+            //int tempNum = 0;
+            for (int i = 0; i < arrayA.Length; i++) // Проходим по всем элементам массива arrayA
+            {
+                arrayA[i] ^= arrayB[i]; // используем операцию обмена значениями с помощью оператора ^=
+                arrayB[i] ^= arrayA[i];
+                arrayA[i] ^= arrayB[i];
+                // tempNum = arrayA[i]; // перенос значений классическим способом через переменнную tempNum
+                // arrayA[i] = arrayB[i];
+                // arrayB[i] = tempNum;
+
+                // Выводим значение текущего элемента массива arrayA и arrayB
+                Console.WriteLine($"{arrayA[i]}    {arrayB[i]}");
+            }
+        }
+
+        /// <summary>
+        /// Array52. Дан массив A размера N. Сформировать новый массив B того же размера, элементы которого
+        /// определяются следующим образом BK = 2·AK, если AK < 5 AK/2 в противном случае.
+        /// </summary>
+        static void Array52()
+        {
+            // Создаем массив arrayA и заполняем его значениями
             int[] arrayA = { 2, 4, 6, 4, 7, 9, 0, 7, 8 };
-            int[] arrayB = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int tempNum = 0;
+
+            // Создаем новый массив arrayB той же длины, что и arrayA
+            int[] arrayB = new int [arrayA.Length];
+
+            // Проходим по всем элементам массива arrayA
             for (int i = 0; i < arrayA.Length; i++)
             {
-                tempNum = arrayA[i];
-                arrayA[i] = arrayB[i];
-                arrayB[i] = tempNum;
-                Console.WriteLine($"{arrayA[i]}    {arrayB[i]}");
+                // Если текущий элемент меньше 5, то умножаем его на 2 и записываем в arrayB
+                if (arrayA[i] < 5)
+                    arrayB[i] = arrayA[i] * 2;
+
+                // Если текущий элемент больше 5, то делим его на 2 и записываем в arrayB
+                if (arrayA[i] > 5)
+                    arrayB[i] = arrayA[i] / 2;
+
+                // Выводим значение текущего элемента массива arrayB
+                Console.WriteLine(arrayB[i]);
+            }
+        }
+
+        /// <summary>
+        /// Array53. Даны два массива A и B одинакового размера N. Сформировать новый массив C того же размера, каждый
+        /// элемент которого равен максимальному из элементов массивов A и B с тем же индексом.
+        /// </summary>
+        static void Array53()
+        {
+            // Создаем массив arrayA и заполняем его значениями
+            int[] arrayA = { 1, 5, 6, 13, 7, 9, 0, 10, 8 };
+            // Создаем новый массив arrayB той же длины, что и arrayA
+            int[] arrayB = { 15, 2, 1, 4, 9, 2, 10, 4, 3 };
+            // Создаём пустой массив arrayNEW той же длины, что и предидущие два
+            int[] arrayNEW = new int[arrayA.Length];
+            // В цикле for находим наибольшее значение текущего елемента из двух массивов arrayA и arrayB и записываем в
+            // новый массив arrayNEW
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] > arrayB[i])
+                    arrayNEW[i] = arrayA[i];
+
+                else
+                    arrayNEW[i] = arrayB[i];
+
+                Console.WriteLine(arrayNEW[i]); // Вывод на консоль  
             }
         }
     }
