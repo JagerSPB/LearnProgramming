@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array53();
+            Array54();
         }
 
         /// <summary>
@@ -760,7 +760,9 @@
             //int tempNum = 0;
             for (int i = 0; i < arrayA.Length; i++) // Проходим по всем элементам массива arrayA
             {
-                arrayA[i] ^= arrayB[i]; // используем операцию обмена значениями с помощью оператора ^=
+                // тут я хотел показать, новый для меня способ, переноса значений без использования временной переменной
+                // с помощью оператора ^=
+                arrayA[i] ^= arrayB[i];
                 arrayB[i] ^= arrayA[i];
                 arrayA[i] ^= arrayB[i];
                 // tempNum = arrayA[i]; // перенос значений классическим способом через переменнную tempNum
@@ -824,6 +826,32 @@
 
                 Console.WriteLine(arrayNEW[i]); // Вывод на консоль  
             }
+        }
+
+        /// <summary>
+        /// Array54. Дан целочисленный массив A размера N. Переписать в новый целочисленный массив B все четные
+        /// числа из исходного массива (в том же порядке) и вывести размер полученного массива B и его содержимое.
+        /// </summary>
+        static void Array54()
+        {
+            int[] arrayA = { 1, 2, 6, 4, 5, 1, 7, 8, 9, 11 };
+            int[] arrayB = new int[arrayA.Length];
+            int countOfEvenNumbers = 0;
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] % 2 == 0)
+                {
+                    arrayB[countOfEvenNumbers] = arrayA[i];
+                    countOfEvenNumbers++;
+                }
+            }
+
+            for (int i = 0; i < countOfEvenNumbers; i++)
+            {
+                Console.Write($"[{arrayB[i]}] "); 
+            }
+
+            Console.WriteLine($" всего {countOfEvenNumbers} чётных элементов");
         }
     }
 }
