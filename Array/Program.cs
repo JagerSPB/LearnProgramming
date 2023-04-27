@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array54();
+            Array55();
         }
 
         /// <summary>
@@ -848,10 +848,33 @@
 
             for (int i = 0; i < countOfEvenNumbers; i++)
             {
-                Console.Write($"[{arrayB[i]}] "); 
+                Console.Write($"[{arrayB[i]}] ");
             }
 
             Console.WriteLine($" всего {countOfEvenNumbers} чётных элементов");
+        }
+
+        /// <summary>
+        /// Array55. Дан целочисленный массив A размера N (≤ 15). Переписать в новый целочисленный массив B все элементы
+        /// с нечетными порядковыми номерами (1, 3, . . .) и вывести размер полученного массива B и его содержимое.
+        /// Условный оператор не использовать.
+        /// </summary>
+        static void Array55()
+        {
+            int[] arrayA = { 1, 2, 6, 4, 5, 1, 7, 8, 9, 11 };
+            int[] arrayB = new int[arrayA.Length];
+            int countOfOddItems = 0;
+            for (int i = 1; i < arrayA.Length; i += 2)
+            {
+                arrayB[countOfOddItems] = arrayA[i];
+                countOfOddItems++;
+            }
+
+            for (int i = 0; i < countOfOddItems; i++)
+            {
+                Console.Write($"[{arrayB[i]}]");
+            }
+            Console.WriteLine($" размер {countOfOddItems} элементов");
         }
     }
 }
