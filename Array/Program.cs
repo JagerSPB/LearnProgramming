@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array55();
+            Array57();
         }
 
         /// <summary>
@@ -874,7 +874,61 @@
             {
                 Console.Write($"[{arrayB[i]}]");
             }
+
             Console.WriteLine($" размер {countOfOddItems} элементов");
+        }
+
+        /// <summary>
+        /// Array56. Дан целочисленный массив A размера N (≤ 15). Переписать в новый целочисленный массив B все
+        /// элементы с порядковыми номерами, кратными трем (3, 6, ...), и вывести размер полученного массива B и его
+        /// содержимое. Условный оператор не использовать.
+        /// </summary>
+        static void Array56()
+        {
+            int[] arrayA = { 1, 2, 6, 4, 5, 3, 7, 8, 9, 11 };
+            int[] arrayB = new int[arrayA.Length];
+            int countOfOddItems = 0;
+            for (int i = 2; i < arrayA.Length; i += 3)
+            {
+                arrayB[countOfOddItems] = arrayA[i];
+                countOfOddItems++;
+            }
+
+            for (int i = 0; i < countOfOddItems; i++)
+            {
+                Console.Write($"[{arrayB[i]}]");
+            }
+
+            Console.WriteLine($" всего: {countOfOddItems} ");
+        }
+
+        /// <summary>
+        /// Array57. Дан целочисленный массив A размера N. Переписать в новый целочисленный массив B того же размера
+        /// вначале все элементы исходного массива с четными номерами, а затем с нечетными:
+        /// A2, A4, A6, ..., A1, A3, A5, .... Условный оператор не использовать.
+        /// </summary>
+        static void Array57()
+        {
+            int[] arrayA = { 1, 2, 6, 4, 5, 3, 7, 8, 9, 11 };
+            int[] arrayB = new int[arrayA.Length];
+            int oddIndex = 0, evenIndex = 0;
+
+            for (int i = 1; i < arrayA.Length; i += 2)
+            {
+                arrayB[evenIndex] = arrayA[i];
+                evenIndex++;
+            }
+
+            for (int i = 0; i < arrayA.Length; i += 2)
+            {
+                arrayB[oddIndex + arrayA.Length/2] = arrayA[i];
+                oddIndex++;
+            }
+
+            for (int i = 0; i < arrayB.Length; i++)
+            {
+                Console.Write($"[{arrayB[i]}]");
+            }
         }
     }
 }
