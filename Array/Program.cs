@@ -464,7 +464,7 @@
             */
             //=============================================================================
             //=============================================================================
-            Array57();
+            Array58();
         }
 
         /// <summary>
@@ -909,7 +909,7 @@
         /// </summary>
         static void Array57()
         {
-            int[] arrayA = { 1, 2, 6, 4, 5, 3, 7, 8, 9, 11 };
+            int[] arrayA = { 1, 2, 6, 4, 5, 3, 7, 8, 9, 11, 38 };
             int[] arrayB = new int[arrayA.Length];
             int oddIndex = 0, evenIndex = 0;
 
@@ -921,12 +921,29 @@
 
             for (int i = 0; i < arrayA.Length; i += 2)
             {
-                arrayB[oddIndex + arrayA.Length/2] = arrayA[i];
+                arrayB[oddIndex + arrayA.Length / 2] = arrayA[i];
                 oddIndex++;
             }
 
             for (int i = 0; i < arrayB.Length; i++)
             {
+                Console.Write($"[{arrayB[i]}]");
+            }
+        }
+
+        /// <summary>
+        /// Array58. Дан массив A размера N. Сформировать новый массив B того жеразмера по следующему правилу:
+        /// элемент BK равен сумме элементовмассива A с номерами от 1 до K.
+        /// </summary>
+        static void Array58()
+        {
+            int[] arrayA = { 1, 2, 6, 4, 5, 3, 7, 8, 9, 11, 38 };
+            int[] arrayB = new int[arrayA.Length];
+            int sumOfElementsArrayA = 0;
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                sumOfElementsArrayA += arrayA[i];
+                arrayB[i] = sumOfElementsArrayA;
                 Console.Write($"[{arrayB[i]}]");
             }
         }
