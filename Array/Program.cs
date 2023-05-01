@@ -464,7 +464,12 @@
             */
             //=============================================================================
             //=============================================================================
-            Array58();
+            Array60();
+        }
+        public static void Show(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine($"[{i}] = {array[i]}");
         }
 
         /// <summary>
@@ -666,28 +671,21 @@
         /// </summary>
         static void Array47()
         {
-            int[] array = { 11, 71, 7, 3, 7, 7, 13, 23, 16, 8 }; // задаём массив
-            int countOfDifferentUnit = 0; // переменная для посчёта различных элементов
-            bool isDifferentNuber = true; // флаг для переключения если найден совпадающий элемент
+            int[] array = { 11, 71, 7, 3, 7, 7, 13, 23, 8, 8 };
+            int sameItemsCount = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = i + 1; j < array.Length; j++) // во вложенном цикле сравниваем все числа в массиве
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    isDifferentNuber = true; // в начале итерации скидывание флага на true
-                    if (array[i] == array[j]) // если находим одинаковые элементы
+                    if (array[i] == array[j])
                     {
-                        isDifferentNuber = false; // переключаем флаг на false и прерываем внутренний цикл
+                        sameItemsCount++;
                         break;
                     }
                 }
-
-                if (isDifferentNuber) //  если флаг true 
-                {
-                    countOfDifferentUnit++; // считаем уникальный и неповторимый элемент
-                }
             }
 
-            Console.WriteLine($"{countOfDifferentUnit}"); // выводим результат 
+            Console.WriteLine($"{array.Length - sameItemsCount}");
         }
 
         /// <summary>
@@ -695,29 +693,23 @@
         /// </summary>
         static void Array48()
         {
-            int[] array = { 11, 71, 72, 3, 74, 6, 75, 7, 16, 8 }; // задаём массив
-            int countOfSameUnit = 0; // переменная для посчёта различных элементов
-            bool isSameNumber = false; // флаг для переключения если найден совпадающий элемент
+            int[] array = { 1, 3, 4, 2, 4, 7, 8 };
+            int countOfSameUnit = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    isSameNumber = false;
                     if (array[i] == array[j])
                     {
-                        isSameNumber = true;
+                        countOfSameUnit++;
                         break;
                     }
-                }
-
-                if (isSameNumber)
-                {
-                    countOfSameUnit++;
                 }
             }
 
             Console.WriteLine(countOfSameUnit + 1);
         }
+
 
         /// <summary>
         /// Array49. Дан целочисленный массив размера N. Если он является перестановкой, то есть содержит все числа
@@ -725,28 +717,19 @@
         /// </summary>
         static void Array49()
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-            // int[] array = { 1, 31, 52, 7, 5, 8, 32, 2, 3, 4, 19 };
-            int[] permutation = new int [array.Length];
+            int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             int result = 0;
+            bool isUsed;
             for (int i = 0; i < array.Length; i++)
             {
-                permutation[i] = i + 1;
-            }
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = i + 1; j < array.Length; j++)
+                if (expr)
                 {
-                    if (array[i] != permutation[j])
-                    {
-                        Console.WriteLine("массив не является перестановкой");
-                        return;
-                    }
+                    
                 }
+        
             }
-
-            Console.WriteLine(result);
+        
+            Console.WriteLine($"{count}");
         }
 
         /// <summary>
@@ -808,14 +791,9 @@
         /// </summary>
         static void Array53()
         {
-            // Создаем массив arrayA и заполняем его значениями
             int[] arrayA = { 1, 5, 6, 13, 7, 9, 0, 10, 8 };
-            // Создаем новый массив arrayB той же длины, что и arrayA
             int[] arrayB = { 15, 2, 1, 4, 9, 2, 10, 4, 3 };
-            // Создаём пустой массив arrayNEW той же длины, что и предидущие два
             int[] arrayNEW = new int[arrayA.Length];
-            // В цикле for находим наибольшее значение текущего елемента из двух массивов arrayA и arrayB и записываем в
-            // новый массив arrayNEW
             for (int i = 0; i < arrayA.Length; i++)
             {
                 if (arrayA[i] > arrayB[i])
@@ -824,7 +802,7 @@
                 else
                     arrayNEW[i] = arrayB[i];
 
-                Console.WriteLine(arrayNEW[i]); // Вывод на консоль  
+                Console.WriteLine(arrayNEW[i]);
             }
         }
 
@@ -835,23 +813,21 @@
         static void Array54()
         {
             int[] arrayA = { 1, 2, 6, 4, 5, 1, 7, 8, 9, 11 };
-            int[] arrayB = new int[arrayA.Length];
-            int countOfEvenNumbers = 0;
+            int evensCount = 0;
             for (int i = 0; i < arrayA.Length; i++)
-            {
                 if (arrayA[i] % 2 == 0)
-                {
-                    arrayB[countOfEvenNumbers] = arrayA[i];
-                    countOfEvenNumbers++;
-                }
-            }
+                    evensCount++;
 
-            for (int i = 0; i < countOfEvenNumbers; i++)
-            {
-                Console.Write($"[{arrayB[i]}] ");
-            }
+            int[] evensArray = new int[evensCount];
 
-            Console.WriteLine($" всего {countOfEvenNumbers} чётных элементов");
+            for (int i = 0, j = 0; i < arrayA.Length; i++)
+                if (arrayA[i] % 2 == 0)
+                    evensArray[j++] = arrayA[i];
+
+            for (int i = 0; i < evensArray.Length; i++)
+                Console.Write($"[{evensArray[i]}] ");
+
+            Console.WriteLine($"Всего {evensArray.Length} чётных элементов");
         }
 
         /// <summary>
@@ -946,6 +922,43 @@
                 arrayB[i] = sumOfElementsArrayA;
                 Console.Write($"[{arrayB[i]}]");
             }
+        }
+
+        /// <summary>
+        /// Array59. Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу: элемент
+        /// BK равен среднему арифметическому элементов массива A с номерами от 1 до K.
+        /// </summary>
+        static void Array59()
+        {
+            int[] arrayA = { 1, 3, 6, 4, 2, 6, 8, 9 };
+            double[] arrayB = new double[arrayA.Length];
+            double average = 0;
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                average += arrayA[i];
+                arrayB[i] = average / (i + 1);
+                Console.Write($"[{Math.Round(arrayB[i], 2)}]");
+            }
+        }
+
+        /// <summary>
+        /// Array60◦. Дан массив A размера N. Сформировать новый массив B того жеразмера по следующему правилу: элемент
+        /// BK равен сумме элементомассива A с номерами от K до N.
+        /// </summary>
+        static void Array60()
+        {
+            // Array 60 Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу:
+            // элемент BK равен сумме элементов массива A с номерами от K до N.
+
+            int[] array = {1, 2, 3, 4, 5, 6, 7};
+            int[] b = new int[array.Length];
+            for (int i = array.Length - 1, sum = 0; i >= 0; i--)
+            {
+                sum += array[i];
+                b[i] = sum;
+            }
+            Show(b);
+
         }
     }
 }
