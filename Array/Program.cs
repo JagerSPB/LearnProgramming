@@ -570,36 +570,80 @@
         /// Array63. Даны два массива A и B размера 5, элементы которых упорядочены по возрастанию. Объединить эти
         /// массивы так, чтобы результирующий массив C (размера 10) остался упорядоченным по возрастанию.
         /// </summary>
+        // static void Array63()
+        // {
+        //     int[] arrayA = { 9, 3, 5, 7, 8 };
+        //     int[] arrayB = { 1, 4, 6, 8, 9 };
+        //     int[] arrayC = new int[arrayA.Length + arrayB.Length];
+        //     for (int i = 0; i < arrayC.Length; i++)
+        //     {
+        //         if (i < arrayA.Length) arrayC[i] = arrayA[i];
+        //         if (i >= arrayB.Length) arrayC[i] = arrayB[i - arrayA.Length];
+        //     }
+        //
+        //     int tempItem = 0;
+        //     for (int i = 1; i < arrayC.Length; i++)
+        //     {
+        //         for (int j = 0; j < arrayC.Length - i - 1; j++)
+        //         {
+        //             if (arrayC[j] > arrayC[j + 1])
+        //             {
+        //                 tempItem = arrayC[j];
+        //                 arrayC[j] = arrayC[j + 1];
+        //                 arrayC[j + 1] = tempItem;
+        //             }
+        //         }
+        //     }
+        //
+        //     Show(arrayC);
+        // }
         static void Array63()
         {
-            int[] arrayA = { 9, 3, 5, 7, 8 };
+            int[] arrayA = { 5, 6, 7, 8, 10 };
             int[] arrayB = { 1, 4, 6, 8, 9 };
-            int[] arrayC = new int[10];
-            for (int i = 0; i < arrayC.Length; i++)
-            {
-                if (i < arrayA.Length) arrayC[i] = arrayA[i];
-                if (i >= arrayB.Length) arrayC[i] = arrayB[i - arrayA.Length];
-            }
-            int tempItem = 0;
-            for (int i = 1; i < arrayC.Length ; i++)
-            {
-                for (int j = 0; j < arrayC.Length - i - 1; j++)
-                {
-                    if (arrayC[j] > arrayC[j + 1])
-                    {
-                        tempItem = arrayC[j];
-                        arrayC[j] = arrayC[j + 1];
-                        arrayC[j + 1] = tempItem;
-                    }
-                }
-            }
+            int[] arrayC = arrayA.Concat(arrayB).Order().ToArray();
 
             Show(arrayC);
         }
 
+        /// <summary>
+        /// Array64. Даны три целочисленных массива A, B и C размера NA, NB, NC соответственно, элементы которых
+        /// упорядочены по убыванию. Объединить эти массивы так, чтобы результирующий целочисленный массив D
+        /// (размера NA + NB + NC) остался упорядоченным по убыванию.
+        /// </summary>
+        static void Array64()
+        {
+            int[] arrayA = { 9, 3, 5, 7, 8 };
+            int[] arrayB = { 1, 4, 6, 8, 9 };
+            int[] arrayC = { 10, 8, 6, 4, 1 };
+            int[] arrayD = arrayA.Concat(arrayB).Concat(arrayC).OrderDescending().ToArray();
+
+            Show(arrayD);
+        }
+
+        /// <summary>
+        /// Array65. Дан массив A размера N и целое число K (1 ≤ K ≤ N). Преобразовать массив, увеличив каждый его
+        /// элемент на исходное значение элемента AK .
+        /// </summary>
+        static void Array65()
+        {
+            int[] arrayA = { 1, 3, 3, 5, 7, 9 };
+            int n = 2;
+            for (int i = 0; i < n; i++)
+            {
+                arrayA[i] += arrayA[n];
+            }
+            for (int i = n+1; i < arrayA.Length; i++)
+            {
+                arrayA[i] += arrayA[n];
+            }
+            arrayA[n] = arrayA[n+n];
+            Show(arrayA);
+        }
+        
         static void Main()
         {
-            Array63();
+            Array65();
         }
     }
 }
