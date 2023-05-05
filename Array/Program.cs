@@ -570,41 +570,36 @@
         /// Array63. Даны два массива A и B размера 5, элементы которых упорядочены по возрастанию. Объединить эти
         /// массивы так, чтобы результирующий массив C (размера 10) остался упорядоченным по возрастанию.
         /// </summary>
-        // static void Array63()
-        // {
-        //     int[] arrayA = { 9, 3, 5, 7, 8 };
-        //     int[] arrayB = { 1, 4, 6, 8, 9 };
-        //     int[] arrayC = new int[arrayA.Length + arrayB.Length];
-        //     for (int i = 0; i < arrayC.Length; i++)
-        //     {
-        //         if (i < arrayA.Length) arrayC[i] = arrayA[i];
-        //         if (i >= arrayB.Length) arrayC[i] = arrayB[i - arrayA.Length];
-        //     }
-        //
-        //     int tempItem = 0;
-        //     for (int i = 1; i < arrayC.Length; i++)
-        //     {
-        //         for (int j = 0; j < arrayC.Length - i - 1; j++)
-        //         {
-        //             if (arrayC[j] > arrayC[j + 1])
-        //             {
-        //                 tempItem = arrayC[j];
-        //                 arrayC[j] = arrayC[j + 1];
-        //                 arrayC[j + 1] = tempItem;
-        //             }
-        //         }
-        //     }
-        //
-        //     Show(arrayC);
-        // }
         static void Array63()
         {
-            int[] arrayA = { 5, 6, 7, 8, 10 };
-            int[] arrayB = { 1, 4, 6, 8, 9 };
-            int[] arrayC = arrayA.Concat(arrayB).Order().ToArray();
+            int[] arrayA = { 10, 40, 60, 80 };
+            int[] arrayB = { 2, 3, 50, 70 };
+            int[] arrayC = new int [arrayA.Length + arrayB.Length];
+            int i = 0, j = 0, k = 0;
+            while (i < arrayA.Length && j < arrayB.Length)
+            {
+                if (arrayA[i] < arrayB[j])
+                    arrayC[k++] = arrayA[i++];
+                else
+                    arrayC[k++] = arrayB[j++];
+            }
+
+            while (i < arrayA.Length)
+                arrayC[k++] = arrayA[i++];
+            while (j < arrayB.Length)
+                arrayC[k++] = arrayB[j++];
 
             Show(arrayC);
         }
+        // =====  Ultimate edition  =======
+        // static void Array63()
+        // {
+        //     int[] arrayA = { 5, 6, 7, 8, 10 };
+        //     int[] arrayB = { 1, 4, 6, 8, 9 };
+        //     int[] arrayC = arrayA.Concat(arrayB).Order().ToArray();
+        //
+        //     Show(arrayC);
+        // }
 
         /// <summary>
         /// Array64. Даны три целочисленных массива A, B и C размера NA, NB, NC соответственно, элементы которых
@@ -613,13 +608,67 @@
         /// </summary>
         static void Array64()
         {
-            int[] arrayA = { 9, 3, 5, 7, 8 };
-            int[] arrayB = { 1, 4, 6, 8, 9 };
-            int[] arrayC = { 10, 8, 6, 4, 1 };
-            int[] arrayD = arrayA.Concat(arrayB).Concat(arrayC).OrderDescending().ToArray();
+            int[] arrayA = { 900, 7, 5, 4, 1 };
+            int[] arrayB = { 185, 100, 89, 25, 9, 2 };
+            int[] arrayC = { 300, 260, 240, 39, 19, 12, 3 };
+            int[] arrayD = new int [arrayA.Length + arrayB.Length + arrayC.Length];
+            int indexA = 0, indexB = 0, indexC = 0, indexD = 0;
+            while (indexA < arrayA.Length && indexB < arrayB.Length && indexC < arrayC.Length)
+            {
+                if (arrayA[indexA] > arrayB[indexB] && arrayA[indexA] > arrayC[indexC])
+                    arrayD[indexD++] = arrayA[indexA++];
+                else if (arrayB[indexB] > arrayA[indexA] && arrayB[indexB] > arrayC[indexC])
+                    arrayD[indexD++] = arrayB[indexB++];
+                else
+                    arrayD[indexD++] = arrayC[indexC++];
+            }
+
+            while (indexA < arrayA.Length && indexB < arrayB.Length)
+            {
+                if (arrayA[indexA] > arrayB[indexB])
+                    arrayD[indexD++] = arrayA[indexA++];
+                else
+                    arrayD[indexD++] = arrayB[indexB++];
+            }
+
+
+            while (indexB < arrayB.Length && indexC < arrayC.Length)
+            {
+                if (arrayB[indexB] > arrayC[indexC])
+                    arrayD[indexD++] = arrayA[indexB++];
+                else
+                    arrayD[indexD++] = arrayB[indexC++];
+            }
+
+            while (indexC < arrayC.Length && indexA < arrayA.Length)
+            {
+                if (arrayC[indexC] > arrayA[indexA])
+                    arrayD[indexD++] = arrayC[indexC++];
+                else
+                    arrayD[indexD++] = arrayA[indexA++];
+            }
+
+            while (indexA < arrayA.Length)
+                arrayD[indexD++] = arrayA[indexA++];
+            while (indexB < arrayB.Length)
+                arrayD[indexD++] = arrayB[indexB++];
+            while (indexC < arrayC.Length)
+                arrayD[indexD++] = arrayC[indexC++];
 
             Show(arrayD);
         }
+
+
+        // === ultima ====
+        // static void Array64()
+        // {
+        //     int[] arrayA = { 9, 3, 5, 7, 8 };
+        //     int[] arrayB = { 1, 4, 6, 8, 9 };
+        //     int[] arrayC = { 10, 8, 6, 4, 1 };
+        //     int[] arrayD = arrayA.Concat(arrayB).Concat(arrayC).OrderDescending().ToArray();
+        //
+        //     Show(arrayD);
+        // }
 
         /// <summary>
         /// Array65. Дан массив A размера N и целое число K (1 ≤ K ≤ N). Преобразовать массив, увеличив каждый его
@@ -627,23 +676,116 @@
         /// </summary>
         static void Array65()
         {
-            int[] arrayA = { 1, 3, 3, 5, 7, 9 };
-            int n = 2;
+            int[] arrayA = { 3, 10, 1, 4, 5, 6 };
+            int n = 3;
             for (int i = 0; i < n; i++)
-            {
                 arrayA[i] += arrayA[n];
-            }
-            for (int i = n+1; i < arrayA.Length; i++)
-            {
+
+            for (int i = n + 1; i < arrayA.Length; i++)
                 arrayA[i] += arrayA[n];
-            }
-            arrayA[n] = arrayA[n+n];
+
+            arrayA[n] += arrayA[n];
             Show(arrayA);
         }
+
+        /// <summary>
+        /// Array66. Дан целочисленный массив размера N. Увеличить все четные числа, содержащиеся в массиве, на исходное
+        /// значение первого четного числа. Если четные числа в массиве отсутствуют, то оставить массив без изменений.
+        /// </summary>
+        static void Array66()
+        {
+            int[] arrayA = { 4, 3, 5, 6, 8, 9, 7, 5, 4, 3 };
+            int firstEven = 0;
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] % 2 == 0)
+                {
+                    firstEven = arrayA[i];
+                    break;
+                }
+            }
+
+            for (int i = 0; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] % 2 == 0)
+                    arrayA[i] += firstEven;
+            }
+
+            Show(arrayA);
+        }
+
+        /// <summary>
+        /// Array67. Дан целочисленный массив размера N. Увеличить все нечетные числа, содержащиеся в массиве, на
+        /// исходное значение последнего нечетного числа. Если нечетные числа в массиве отсутствуют, то оставить
+        /// массив без изменений.
+        /// </summary>
+        static void Array67()
+        {
+            int[] array = { 2, 3, 5, 3, 68, 987, 21, 1, 6 };
+            int lastNotEven = 0;
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                if (array[i] % 2 != 0)
+                {
+                    lastNotEven = array[i];
+                    break;
+                }
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 != 0)
+                    array[i] += lastNotEven;
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array68◦. Дан массив размера N. Поменять местами его минимальный и максимальный элементы.
+        /// </summary>
+        static void Array68()
+        {
+            int[] array = { 20, 40, 999, 65, 31, 34, 560, 7 };
+            int maxItem = 0, indexMax = 0, minItem = array[0], indexMin = 0;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] > maxItem)
+                {
+                    maxItem = array[i];
+                    indexMax = i;
+                }
+                else if (array[i] < minItem)
+                {
+                    minItem = array[i];
+                    indexMin = i;
+                }
+            }
+
+            (array[indexMax], array[indexMin]) = (array[indexMin], array[indexMax]);
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array69. Дан массив размера N (N — четное число). Поменять местами его первый элемент со вторым,
+        /// третий с четвертым и т. д.
+        /// </summary>
+        static void Array69()
+        {
+            int[] array = { 2, 3, 4, 6, 8, 5, 2, 4 };
+            for (int i = 0; i < array.Length; i += 2)
+            {
+                (array[i], array[i + 1]) = (array[i + 1], array[i]);
+            }
+
+            Show(array);
+        }
         
+
         static void Main()
         {
-            Array65();
+            Array69();
         }
     }
 }
