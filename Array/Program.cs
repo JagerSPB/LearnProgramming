@@ -578,10 +578,11 @@
             int i = 0, j = 0, k = 0;
             while (i < arrayA.Length && j < arrayB.Length)
             {
-                if (arrayA[i] < arrayB[j])
-                    arrayC[k++] = arrayA[i++];
-                else
-                    arrayC[k++] = arrayB[j++];
+                arrayC[k++] = arrayA[i] < arrayB[j] ? arrayA[i++] : arrayB[j++];
+                //     if (arrayA[i] < arrayB[j])
+                //         arrayC[k++] = arrayA[i++];
+                //     else
+                //         arrayC[k++] = arrayB[j++];
             }
 
             while (i < arrayA.Length)
@@ -624,29 +625,13 @@
             }
 
             while (indexA < arrayA.Length && indexB < arrayB.Length)
-            {
-                if (arrayA[indexA] > arrayB[indexB])
-                    arrayD[indexD++] = arrayA[indexA++];
-                else
-                    arrayD[indexD++] = arrayB[indexB++];
-            }
-
+                arrayD[indexD++] = arrayA[indexA] > arrayB[indexB] ? arrayA[indexA++] : arrayB[indexB++];
 
             while (indexB < arrayB.Length && indexC < arrayC.Length)
-            {
-                if (arrayB[indexB] > arrayC[indexC])
-                    arrayD[indexD++] = arrayA[indexB++];
-                else
-                    arrayD[indexD++] = arrayB[indexC++];
-            }
+                arrayD[indexD++] = arrayB[indexB] > arrayC[indexC] ? arrayB[indexB++] : arrayC[indexC++];
 
             while (indexC < arrayC.Length && indexA < arrayA.Length)
-            {
-                if (arrayC[indexC] > arrayA[indexA])
-                    arrayD[indexD++] = arrayC[indexC++];
-                else
-                    arrayD[indexD++] = arrayA[indexA++];
-            }
+                arrayD[indexD++] = arrayC[indexC] > arrayA[indexA] ? arrayC[indexC++] : arrayA[indexA++];
 
             while (indexA < arrayA.Length)
                 arrayD[indexD++] = arrayA[indexA++];
@@ -781,11 +766,54 @@
 
             Show(array);
         }
-        
 
-        static void Main()
+        /// <summary>
+        /// Array70. Дан массив размера N (N — четное число). Поменять местами первую и вторую половины массива.
+        /// </summary>
+        static void Array70()
         {
-            Array69();
+            int[] array = { 2, 3, 17, 8, 7, 4, 16, 9 };
+            for (int i = 0; i < array.Length / 2; i++)
+            {
+                (array[i], array[i + array.Length / 2]) = (array[i + array.Length / 2], array[i]);
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array71. Дан массив размера N. Поменять порядок его элементов на обратный.
+        /// </summary>
+        static void Array71()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+            int halfLenght = array.Length / 2;
+            for (int i = 0, j = array.Length - 1; i < halfLenght; i++, j--)
+            {
+                (array[i], array[j]) = (array[j], array[i]);
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array72. Дан массив A размера N и целые числа K и L (1 ≤ K < L ≤ N). Переставить в обратном порядке
+        /// элементы массива, расположенные между элементами AK и AL, включая эти элементы.
+        /// </summary>
+        static void Array72()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int k = 2, l = 8;
+            for (int i = k, j = l; i <= l/2; i++,j--)
+            {
+                (array[i], array[j]) = (array[j], array[i]);
+            }
+            Show(array);
+        }
+
+        static void Main() 
+        {
+            Array72();
         }
     }
 }
