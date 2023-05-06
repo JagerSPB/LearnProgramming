@@ -908,7 +908,6 @@
                     array[i] = 0;
                     i++;
                 }
-                    
             }
 
             Show(array);
@@ -921,18 +920,18 @@
         static void Array77()
         {
             int[] array = { 2, 4, 3, 4, 6, 8, 3, 9, 3 };
-            for (int i = 1; i < array.Length-1; i++)
+            for (int i = 1; i < array.Length - 1; i++)
             {
                 if (array[i] < array[i - 1] && array[i] < array[i + 1])
                 {
                     array[i] *= array[i];
                     i++;
                 }
-           
             }
-            
+
             Show(array);
         }
+
         /// <summary>
         /// Array78. Дан массив размера N. Заменить каждый элемент массива на среднее арифметическое этого
         /// элемента и его соседей.
@@ -941,18 +940,50 @@
         {
             int[] array = { 2, 4, 3, 4, 6, 5, 3, 7, 3 };
             int sumOfNeighbors = 0;
-            for (int i = 1; i < array.Length-1; i++)
+            for (int i = 1; i < array.Length - 1; i++)
             {
                 sumOfNeighbors = array[i - 1] + array[i] + array[i + 1];
                 array[i] = sumOfNeighbors / 3;
             }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array79. Дан массив размера N. Осуществить сдвиг элементов массива вправо на одну позицию (при этом A1
+        /// перейдет в A2, A2 — в A3, ..., AN−1 — в AN, a исходное значение последнего элемента будет потеряно).
+        /// Первый элемент полученного массива положить равным 0.
+        /// </summary>
+        static void Array79()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            for (int i = array.Length -1 ; i > 0; i--)
+            {
+                array[i] = array[i-1];
+            }
+            array[0] = 0;
+            Show(array);
+        }
+        /// <summary>
+        /// Array80. Дан массив размера N. Осуществить сдвиг элементов массива влево на одну позицию (при этом AN
+        /// перейдет в AN−1, AN−1 — в AN−2, ..., A2 — в A1, a исходное значение первого элемента будет потеряно).
+        /// Последний элемент полученного массива положить равным 0.
+        /// </summary>
+        static void Array80()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            for (int i = 0 ; i <  array.Length -1; i++)
+            {
+                array[i] = array[i+1];
+            }
+            array[^1] = 0;
+            //array[array.Length-1] = 0;
             
             Show(array);
         }
-        
         static void Main()
         {
-            Array78();
+            Array80();
         }
     }
 }
