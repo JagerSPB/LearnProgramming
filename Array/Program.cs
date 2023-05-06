@@ -1065,15 +1065,11 @@
             int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             int k = 3;
             int[] arrayB = new int[k];
-            for (int i = array.Length-k, j = 0; i <= array.Length-1; i++, j++)
-            {
+            for (int i = array.Length - k, j = 0; i < array.Length; i++, j++)
                 arrayB[j] = array[i];
-            }
 
             for (int i = array.Length - 1; i >= k; i--)
-            {
                 array[i] = array[i - k];
-            }
 
             for (int i = 0; i < k; i++)
             {
@@ -1083,9 +1079,76 @@
             Show(array);
         }
 
+        /// <summary>
+        /// Array86. Дан массив A размера N и целое число K (1 ≤ K ≤ 4, K < N). Осуществить циклический сдвиг элементов
+        /// массива влево на K позиций (при этом AN перейдет в AN−K, AN−1 — в AN−K−1, ..., A1 — в AN−K+1).
+        /// Допускается использовать вспомогательный массив из 4 элементов.
+        /// </summary>
+        static void Array86()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int k = 3;
+            int[] arrayB = new int[k];
+            for (int i = 0; i < k; i++)
+                arrayB[i] = array[i];
+
+            for (int i = 0; i < array.Length - k; i++)
+                array[i] = array[i + k];
+
+            for (int i = array.Length - k, j = 0; i < array.Length; i++, j++)
+                array[i] = arrayB[j];
+        }
+
+        /// <summary>
+        /// Array87. Дан массив размера N, все элементы которого, кроме первого, упорядочены по возрастанию. Сделать
+        /// массив упорядоченным, переместив первый элемент на новую позицию.
+        /// </summary>
+        static void Array87()
+        {
+            int[] array = { 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15 };
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i + 1])
+                    (array[i + 1], array[i]) = (array[i], array[i + 1]);
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array88. Дан массив размера N, все элементы которого, кроме последнего, упорядочены по возрастанию.
+        /// Сделать массив упорядоченным, переместив последний элемент на новую позицию.
+        /// </summary>
+        static void Array88()
+        {
+            int[] array = { 3, 4, 5, 6, 7, 8, 9, 10, 12, 6 };
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                if (array[i] < array[i - 1])
+                    (array[i], array[i - 1]) = (array[i - 1], array[i]);
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array89. Дан массив размера N, все элементы которого, кроме одного, упорядочены по убыванию. Сделать массив
+        /// упорядоченным, переместив элемент, нарушающий упорядоченность, на новую позицию.
+        /// </summary>
+        static void Array89()
+        {
+            int[] array = { 10, 9, 8, 7, 6, 8, 5, 4, 3, 2, 1 };
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                if (array[i] > array[i - 1])
+                    (array[i - 1], array[i]) = (array[i], array[i - 1]);
+            }
+            Show(array);
+        }
+
         static void Main()
         {
-            Array85();
+            Array89();
         }
     }
 }
