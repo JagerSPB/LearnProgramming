@@ -854,14 +854,40 @@
             {
                 array[i] = 0;
             }
-
             Show(array);
-            
         }
-
+        /// <summary>
+        /// Array75. Дан массив размера N. Переставить в обратном порядке элементы массива, расположенные между его минимальным и максимальным элементами, включая минимальный и максимальный элементы.
+        /// </summary>
+        static void Array75()
+        {
+            int[] array = { 5, 1, 3, 4, 5, 6, 7, 8, 90, 10 };
+            int  minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > maxItem)
+                {
+                    maxItem = array[i];
+                    maxIndex = i;
+                }
+                if (array[i] < minItem)
+                {
+                    minItem = array[i];
+                    minIndex = i;
+                }
+            }
+            for (int i = minIndex, j = maxIndex; i < j; i++, j--)
+            {
+                (array[i], array[j]) = (array[j], array[i]);
+            }
+            Show(array);
+        }
+        
+        
+        
         static void Main()
         {
-            Array74();
+            Array75();
         }
     }
 }
