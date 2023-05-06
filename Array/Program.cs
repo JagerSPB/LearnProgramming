@@ -820,7 +820,7 @@
         {
             int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int k = 2, l = 5;
-            for (int i = k + 1, j = l-1; i < j; i++, j--)
+            for (int i = k + 1, j = l - 1; i < j; i++, j--)
             {
                 (array[i], array[j]) = (array[j], array[i]);
             }
@@ -834,8 +834,8 @@
         /// </summary>
         static void Array74()
         {
-            int[] array = { 5, 4, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int  minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
+            int[] array = { 50, 40, 30, 24, 5, 6, 7, 8, 9, 1 };
+            int minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] > maxItem)
@@ -843,26 +843,31 @@
                     maxItem = array[i];
                     maxIndex = i;
                 }
+
                 if (array[i] < minItem)
                 {
                     minItem = array[i];
                     minIndex = i;
                 }
             }
-           
-            for (int i = minIndex +1 ; i < maxIndex; i++)
-            {
+
+            if (minIndex > maxIndex)
+                (minIndex, maxIndex) = (maxIndex, minIndex);
+
+            for (int i = minIndex + 1; i < maxIndex; i++)
                 array[i] = 0;
-            }
+
             Show(array);
         }
+
         /// <summary>
-        /// Array75. Дан массив размера N. Переставить в обратном порядке элементы массива, расположенные между его минимальным и максимальным элементами, включая минимальный и максимальный элементы.
+        /// Array75. Дан массив размера N. Переставить в обратном порядке элементы массива, расположенные между его
+        /// минимальным и максимальным элементами, включая минимальный и максимальный элементы.
         /// </summary>
         static void Array75()
         {
             int[] array = { 5, 1, 3, 4, 5, 6, 7, 8, 90, 10 };
-            int  minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
+            int minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] > maxItem)
@@ -870,24 +875,84 @@
                     maxItem = array[i];
                     maxIndex = i;
                 }
+
                 if (array[i] < minItem)
                 {
                     minItem = array[i];
                     minIndex = i;
                 }
             }
+
+            if (minIndex > maxIndex)
+                (minIndex, maxIndex) = (maxIndex, minIndex);
+
             for (int i = minIndex, j = maxIndex; i < j; i++, j--)
             {
                 (array[i], array[j]) = (array[j], array[i]);
             }
+
+            Show(array);
+        }
+
+
+        /// <summary>
+        /// Array76. Дан массив размера N. Обнулить все его локальные максимумы (то есть числа, большие своих соседей).
+        /// </summary>
+        static void Array76()
+        {
+            int[] array = { 2, 3, 50, 45, 40, 6, 8, 76, 3, 5 };
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                {
+                    array[i] = 0;
+                    i++;
+                }
+                    
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array77. Дан массив размера N. Возвести в квадрат все его локальные минимумы
+        /// (то есть числа, меньшие своих соседей).
+        /// </summary>
+        static void Array77()
+        {
+            int[] array = { 2, 4, 3, 4, 6, 8, 3, 9, 3 };
+            for (int i = 1; i < array.Length-1; i++)
+            {
+                if (array[i] < array[i - 1] && array[i] < array[i + 1])
+                {
+                    array[i] *= array[i];
+                    i++;
+                }
+           
+            }
+            
+            Show(array);
+        }
+        /// <summary>
+        /// Array78. Дан массив размера N. Заменить каждый элемент массива на среднее арифметическое этого
+        /// элемента и его соседей.
+        /// </summary>
+        static void Array78()
+        {
+            int[] array = { 2, 4, 3, 4, 6, 5, 3, 7, 3 };
+            int sumOfNeighbors = 0;
+            for (int i = 1; i < array.Length-1; i++)
+            {
+                sumOfNeighbors = array[i - 1] + array[i] + array[i + 1];
+                array[i] = sumOfNeighbors / 3;
+            }
+            
             Show(array);
         }
         
-        
-        
         static void Main()
         {
-            Array75();
+            Array78();
         }
     }
 }
