@@ -609,8 +609,8 @@
         /// </summary>
         static void Array64()
         {
-            int[] arrayA = { 900, 7, 5, 4, 1 };
-            int[] arrayB = { 185, 100, 89, 25, 9, 2 };
+            int[] arrayA = { 900, 70, 56, 45, 31, 30 };
+            int[] arrayB = { 185, 100, 89, 25, 9 };
             int[] arrayC = { 300, 260, 240, 39, 19, 12, 3 };
             int[] arrayD = new int [arrayA.Length + arrayB.Length + arrayC.Length];
             int indexA = 0, indexB = 0, indexC = 0, indexD = 0;
@@ -786,7 +786,7 @@
         /// </summary>
         static void Array71()
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
             int halfLenght = array.Length / 2;
             for (int i = 0, j = array.Length - 1; i < halfLenght; i++, j--)
             {
@@ -802,18 +802,66 @@
         /// </summary>
         static void Array72()
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            int k = 2, l = 8;
-            for (int i = k, j = l; i <= l/2; i++,j--)
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 5, l = 8;
+            for (int i = k, j = l; i < j; i++, j--)
             {
                 (array[i], array[j]) = (array[j], array[i]);
             }
+
             Show(array);
         }
 
-        static void Main() 
+        /// <summary>
+        /// Array73. Дан массив A размера N и целые числа K и L (1 ≤ K < L ≤ N). Переставить в обратном порядке
+        /// элементы массива, расположенные междуэлементами AK и AL, не включая эти элементы.
+        /// </summary>
+        static void Array73()
         {
-            Array72();
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 2, l = 5;
+            for (int i = k + 1, j = l-1; i < j; i++, j--)
+            {
+                (array[i], array[j]) = (array[j], array[i]);
+            }
+
+            Show(array);
+        }
+
+        /// <summary>
+        /// Array74. Дан массив размера N. Обнулить элементы массива, расположенные между его минимальным и
+        /// максимальным элементами (не включаяминимальный и максимальный элементы).
+        /// </summary>
+        static void Array74()
+        {
+            int[] array = { 5, 4, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int  minItem = array[0], minIndex = 0, maxItem = array[0], maxIndex = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > maxItem)
+                {
+                    maxItem = array[i];
+                    maxIndex = i;
+                }
+                if (array[i] < minItem)
+                {
+                    minItem = array[i];
+                    minIndex = i;
+                }
+            }
+           
+            for (int i = minIndex +1 ; i < maxIndex; i++)
+            {
+                array[i] = 0;
+            }
+
+            Show(array);
+            
+        }
+
+        static void Main()
+        {
+            Array74();
         }
     }
 }
