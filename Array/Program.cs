@@ -10,6 +10,17 @@
                 Console.WriteLine($"[{i}] = {array[i]}");
         }
 
+        public static void MyResize(ref int[] array, int newSize)
+        {
+            int[] newArray = new int [newSize];
+            int length = array.Length < newSize ? array.Length : newSize;
+            for (int i = 0; i < length; i++)
+                newArray[i] = array[i];
+
+            array = newArray;
+        }
+
+
         /// <summary>
         ///    Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
         /// (то есть такой элемент AK, для которого величина |AK − R| является минимальной). 
@@ -1143,12 +1154,192 @@
                 if (array[i] > array[i - 1])
                     (array[i - 1], array[i]) = (array[i], array[i - 1]);
             }
+
             Show(array);
+        }
+
+        /// <summary>
+        /// Array90. Дан массив размера N и целое число K (1 ≤ K ≤ N). Удалить из массива элемент с порядковым номером K.
+        /// </summary>
+        static void Array90()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 6;
+            int[] arrayB = new int[array.Length - 1];
+            for (int i = 0; i < k - 1; i++)
+                arrayB[i] = array[i];
+
+            for (int i = k, j = k - 1; i < array.Length; i++)
+                arrayB[j++] = array[i];
+
+            Show(arrayB);
+        }
+
+        // "Друг" предложил сместить массив влево начиная с числа к, а вконце использовать метод Resize,
+        // что бы избавиться от последнего элемента.
+        static void Array90_1()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 5;
+            for (int i = k; i < array.Length; i++)
+            {
+                array[i - 1] = array[i];
+            }
+
+            System.Array.Resize(ref array, array.Length - 1);
+            Show(array);
+        }
+
+        // мой вариант 2 без метода Resize
+        static void Array90_2()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 6;
+            int[] arrayB = new int[array.Length - 1];
+            for (int i = k; i < array.Length; i++)
+                array[i - 1] = array[i];
+
+            for (int i = 0; i < arrayB.Length; i++)
+                arrayB[i] = array[i];
+
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array91. Дан массив размера N и целые числа K и L (1 ≤ K < L ≤ N). Удалить из массива элементы с номерами
+        /// от K до L включительно и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        static void Array91()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 3, l = 6;
+            int[] arrayB = new int[array.Length - 1 - (l - k)];
+            for (int i = 0; i < k - 1; i++)
+                arrayB[i] = array[i];
+
+            for (int i = l, j = k - 1; i < array.Length; i++)
+                arrayB[j++] = array[i];
+            Console.WriteLine($"Размер нового массива: {array.Length - 1 - (l - k)}");
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array92. Дан целочисленный массив размера N. Удалить из массива все нечетные числа и вывести размер полученного
+        /// массива и его содержимое.
+        /// </summary>
+        static void Array92()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 4, 8, 9, 10 };
+            int countEven = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                    countEven++;
+            }
+
+            int[] arrayB = new int [countEven];
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                    arrayB[j++] = array[i];
+            }
+
+            Console.WriteLine($"размер нового массива: {countEven}");
+            Show(arrayB);
+        }
+
+        static void Array92_2()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 4, 8, 9, 10 };
+            int[] arrayB = new int [array.Length];
+            int countEven = 0;
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    arrayB[j++] = array[i];
+                    countEven++;
+                }
+            }
+
+            System.Array.Resize(ref arrayB, countEven);
+            Console.WriteLine($"размер нового массива: {countEven}");
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array93. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с четными номерами
+        /// (2, 4, . . .).Условный оператор не использовать.
+        /// </summary>
+        static void Array93()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arrayB = new int [array.Length / 2];
+            for (int i = 1, j = 0; i < array.Length; i += 2)
+            {
+                arrayB[j++] = array[i];
+            }
+
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array94. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с нечетными номерами
+        /// (1, 3, ...). Условный оператор не ис-пользовать.
+        /// </summary>
+        static void Array94()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arrayB = new int [array.Length / 2];
+            for (int i = 0, j = 0; i < array.Length; i += 2)
+            {
+                arrayB[j++] = array[i];
+            }
+
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array95. Дан целочисленный массив размера N. Удалить из массива все соседние одинаковые элементы, оставив
+        /// их первые вхождения.
+        /// </summary>
+        static void Array95()
+        {
+            int[] array = { 1, 2, 2, 3, 3, 3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7 };
+            int[] arrayB = new int[array.Length];
+            int newIndex = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i == 0 || array[i] != array[i - 1])
+                    arrayB[newIndex++] = array[i];
+            }
+
+            MyResize(ref arrayB, newIndex);
+            Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их первые вхождения.
+        /// </summary>
+        static void Array96()
+        {
+            int[] array = { 10, 2, 3, 3, 4, 3, 4, 5, 2 };
+            int[] arrayB = new int[array.Length];
+            int count = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] == array[j])
+                        count++;
+                }
+            }
+            Console.WriteLine(count);
         }
 
         static void Main()
         {
-            Array89();
+            Array96();
         }
     }
 }
