@@ -1318,23 +1318,70 @@
             Show(arrayB);
         }
 
+
         /// <summary>
-        /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их первые вхождения.
+        /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
+        /// первые вхождения.
         /// </summary>
         static void Array96()
         {
-            int[] array = { 10, 2, 3, 3, 4, 3, 4, 5, 2 };
+            int[] array = { 10, 7, 3, 4, 4, 6, 7, 8, 9, 10 };
             int[] arrayB = new int[array.Length];
-            int count = 0;
+            int[] dublicate = new int[array.Length];
+            int countOfSame = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < array.Length; j++)
+                for (int j = i + 1; j < array.Length; j++)
                 {
                     if (array[i] == array[j])
-                        count++;
+                    {
+                        dublicate[i] = array[j];
+                        countOfSame++;
+                        break;
+                    }
                 }
             }
-            Console.WriteLine(count);
+
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (dublicate[i] != array[i])
+                    arrayB[j++] = array[i];
+            }
+
+            MyResize(ref arrayB, array.Length - countOfSame);
+            Show(dublicate);
+        }
+        /// <summary>
+        /// Array97. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы,
+        /// оставив их последние вхождения.
+        /// </summary>
+        static void Array97()
+        {
+            int[] array = { 10, 2, 3, 4, 4, 6, 7, 8, 9, 10 };
+            int[] arrayB = new int[array.Length];
+            int[] dublicate = new int[array.Length];
+            int countOfSame = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        dublicate[i] = array[j];
+                        countOfSame++;
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (dublicate[i] != array[i])
+                    arrayB[j++] = array[i];
+            }
+
+            MyResize(ref arrayB, array.Length - countOfSame);
+            Show(arrayB);
         }
 
         static void Main()
