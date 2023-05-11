@@ -10,6 +10,12 @@
                 Console.WriteLine($"[{i}] = {array[i]}");
         }
 
+        public static void Show(int?[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine($"[{i}] = {array[i]}");
+        }
+
         public static void MyResize(ref int[] array, int newSize)
         {
             int[] newArray = new int [newSize];
@@ -1148,7 +1154,7 @@
         /// </summary>
         static void Array89()
         {
-            int[] array = { 10, 9, 8, 7, 6, 8, 5, 4, 3, 2, 1 };
+            int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11 };
             for (int i = array.Length - 1; i > 0; i--)
             {
                 if (array[i] > array[i - 1])
@@ -1318,75 +1324,266 @@
             Show(arrayB);
         }
 
-
         /// <summary>
         /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
         /// первые вхождения.
         /// </summary>
         static void Array96()
         {
-            int[] array = { 10, 7, 3, 4, 4, 6, 7, 8, 9, 10 };
-            int[] arrayB = new int[array.Length];
-            int[] dublicate = new int[array.Length];
+            int?[] array = { 10, 7, 3, 4, 4, 6, 7, 8, 9, 10 };
             int countOfSame = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (array[i] == array[j])
+                    if (array[i] == array[j] && array[j] != null)
                     {
-                        dublicate[i] = array[j];
+                        array[j] = null;
                         countOfSame++;
-                        break;
                     }
                 }
             }
 
+            int?[] arrayB = new int?[array.Length - countOfSame];
             for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (dublicate[i] != array[i])
+                if (array[i] != null)
                     arrayB[j++] = array[i];
             }
 
-            MyResize(ref arrayB, array.Length - countOfSame);
-            Show(dublicate);
+            Show(arrayB);
         }
+
         /// <summary>
         /// Array97. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы,
         /// оставив их последние вхождения.
         /// </summary>
         static void Array97()
         {
-            int[] array = { 10, 2, 3, 4, 4, 6, 7, 8, 9, 10 };
-            int[] arrayB = new int[array.Length];
-            int[] dublicate = new int[array.Length];
+            int?[] array = { 10, 2, 3, 4, 4, 6, 7, 2, 9, 10 };
             int countOfSame = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (array[i] == array[j])
+                    if (array[i] == array[j] && array[j] != null)
                     {
-                        dublicate[i] = array[j];
+                        array[i] = array[j];
+                        array[i] = null;
                         countOfSame++;
-                        break;
                     }
                 }
             }
 
+            int?[] arrayB = new int?[array.Length - countOfSame];
             for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (dublicate[i] != array[i])
+                if (array[i] != null)
                     arrayB[j++] = array[i];
             }
 
-            MyResize(ref arrayB, array.Length - countOfSame);
             Show(arrayB);
+        }
+
+        /// <summary>
+        /// Array98. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся менее трех раз,
+        /// и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        static void Array98()
+        {
+            int[] originalArray = { 1, 2, 2, 2, 3, 4, 5, 6, 5, 4, 5 };
+            int[] newArray = new int[originalArray.Length];
+            int countThreeTimesItem, itemCount = 0;
+            for (int i = 0; i < originalArray.Length; i++)
+            {
+                countThreeTimesItem = 0;
+                for (int j = 0; j < originalArray.Length; j++)
+                {
+                    if (originalArray[i] == originalArray[j])
+                        countThreeTimesItem++;
+                }
+
+                if (countThreeTimesItem >= 3)
+                    newArray[itemCount++] = originalArray[i];
+            }
+
+            MyResize(ref newArray, itemCount);
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array99. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся более двух раз,
+        /// и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        static void Array99()
+        {
+            int[] originalArray = { 1, 2, 2, 2, 3, 4, 5, 6, 5, 4, 5 };
+            int[] newArray = new int[originalArray.Length];
+            int countTwoTimeItem, sizeOfNewArray = 0;
+            for (int i = 0; i < originalArray.Length; i++)
+            {
+                countTwoTimeItem = 0;
+                for (int j = 0; j < originalArray.Length; j++)
+                {
+                    if (originalArray[i] == originalArray[j])
+                        countTwoTimeItem++;
+                }
+
+                if (countTwoTimeItem <= 2)
+                    newArray[sizeOfNewArray++] = originalArray[i];
+            }
+
+            MyResize(ref newArray, sizeOfNewArray);
+            Show(newArray);
+            Console.WriteLine($"количетво элементов в новом массиве: {sizeOfNewArray}");
+        }
+
+        /// <summary>
+        /// Array100. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся ровно два
+        /// раза, и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        static void Array100()
+        {
+            int[] originalArray = { 1, 2, 2, 2, 3, 4, 5, 6, 5, 4, 5 };
+            int[] newArray = new int[originalArray.Length];
+            int countTwoTimeItem, sizeOfNewArray = 0;
+            for (int i = 0; i < originalArray.Length; i++)
+            {
+                countTwoTimeItem = 0;
+                for (int j = 0; j < originalArray.Length; j++)
+                {
+                    if (originalArray[i] == originalArray[j])
+                        countTwoTimeItem++;
+                }
+
+                if (countTwoTimeItem != 2)
+                    newArray[sizeOfNewArray++] = originalArray[i];
+            }
+
+            MyResize(ref newArray, sizeOfNewArray);
+            Show(newArray);
+            Console.WriteLine($"количетво элементов в новом массиве: {sizeOfNewArray}");
+        }
+
+        /// <summary>
+        /// Array101. Дан массив размера N и целое число K (1 ≤ K ≤ N). Перед элементом массива с порядковым номером K
+        /// вставить новый элемент с нулевым значением.
+        /// </summary>
+        static void Array101()
+        {
+            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 2;
+            int[] newArray = new int [originalArray.Length + 1];
+            for (int i = 0; i < k; i++)
+                newArray[i] = originalArray[i];
+            newArray[k] = 0;
+            for (int i = k; i < newArray.Length - 1; i++)
+                newArray[i + 1] = originalArray[i];
+
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array102. Дан массив размера N и целое число K (1 ≤ K ≤ N). После элемента массива с порядковым номером K
+        /// вставить новый элемент с нулевым значением.
+        /// </summary>
+        static void Array102()
+        {
+            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 3;
+            int[] newArray = new int [originalArray.Length + 1];
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                if (i < k)
+                    newArray[i] = originalArray[i];
+
+                else if (i == k)
+                    newArray[i] = 10000000;
+
+                else if (i > k)
+                    newArray[i] = originalArray[i - 1];
+            }
+
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array103. Дан массив размера N. Вставить элемент с нулевым значением перед минимальным и
+        /// после максимального элемента массива.
+        /// </summary>
+        ///*
+        static void Array103()// НЕ ГОТОВО 
+        {
+            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 90, 10 };
+            int minValue = originalArray[0],
+                maxValue = originalArray[0],
+                indexOfMin = 0,
+                indexOfMax = 0;
+            int[] newArray = new int [originalArray.Length + 2];
+            for (int i = 1; i < originalArray.Length; i++)
+            {
+                if (originalArray[i] < minValue)
+                {
+                    minValue = originalArray[i];
+                    indexOfMin = i;
+                }
+
+                if (originalArray[i] > maxValue)
+                {
+                    maxValue = originalArray[i];
+                    indexOfMax = i;
+                }
+            }
+
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                if (i == indexOfMin)
+                {
+                    newArray[i] = 11111111;
+                    newArray[i + 1] = originalArray[i];
+                }
+
+                else if (i == indexOfMax + 2)
+                    newArray[i] = 2222222;
+                
+                else if (i <= indexOfMin)
+                    newArray[i] = originalArray[i];
+
+                else if (i > indexOfMin && i < indexOfMax+1)
+                    newArray[i] = originalArray[i-1];               
+            
+                else if (i > indexOfMax +1 )
+                    newArray[i] = originalArray[i-2];
+                
+            }
+
+            Show(newArray);
+        }
+
+        // */
+        /// <summary>
+        /// Array104. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). Перед элементом массива с
+        /// номером K вставить M новых элементов с нулевыми значениями.
+        /// </summary>
+        static void Array104()
+        {
+            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 2, m = 4;
+            int[] newArray = new int[originalArray.Length + m];
+            for (int i = 0, j = 0; i < newArray.Length; i++)
+            {
+                if (i < k || i >= k + m)
+                    newArray[i] = originalArray[j++];
+                else
+                    newArray[i] = 0;
+            }
+
+            Show(newArray);
         }
 
         static void Main()
         {
-            Array96();
+            Array103();
         }
     }
 }
