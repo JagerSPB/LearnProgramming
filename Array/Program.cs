@@ -1154,11 +1154,15 @@
         /// </summary>
         static void Array89()
         {
-            int[] array = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11 };
-            for (int i = array.Length - 1; i > 0; i--)
+            int[] array = { 10, 9, 7, 6, 8, 5, 4, 3, 2, 1 };
+
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] > array[i - 1])
-                    (array[i - 1], array[i]) = (array[i], array[i - 1]);
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                        (array[i], array[j]) = (array[j], array[i]);
+                }
             }
 
             Show(array);
@@ -1311,43 +1315,47 @@
         /// </summary>
         static void Array95()
         {
-            int[] array = { 1, 2, 2, 3, 3, 3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7 };
-            int[] arrayB = new int[array.Length];
-            int newIndex = 0;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (i == 0 || array[i] != array[i - 1])
-                    arrayB[newIndex++] = array[i];
+            int[] array = { 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7 };
+            int notSameAdjacentCount = 1;
+            for (int i = 0; i < array.Length - 1; i++) {
+                if (array[i] != array[i + 1])
+                    notSameAdjacentCount++;
             }
 
-            MyResize(ref arrayB, newIndex);
-            Show(arrayB);
-        }
+            int[] newArray = new int[notSameAdjacentCount];
+            newArray[0] = array[0];
+            for (int i = 0, j = 0; i < array.Length - 1; i++) {
+                if (array[i] != array[i + 1])
+                    newArray[++j] = array[i + 1];
+            }
 
+            Console.WriteLine(notSameAdjacentCount);
+            Show(newArray);
+        }
         /// <summary>
         /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
         /// первые вхождения.
         /// </summary>
         static void Array96()
         {
-            int?[] array = { 10, 7, 3, 4, 4, 6, 7, 8, 9, 10 };
+            int[] array = { 10, 7, 3, 4, 4, 6, 7, 8, 9, 10 };
             int countOfSame = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (array[i] == array[j] && array[j] != null)
+                    if (array[i] == array[j] && array[j] != Int32.MinValue + 1)
                     {
-                        array[j] = null;
+                        array[j] = Int32.MinValue + 1;
                         countOfSame++;
                     }
                 }
             }
 
-            int?[] arrayB = new int?[array.Length - countOfSame];
+            int[] arrayB = new int[array.Length - countOfSame];
             for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (array[i] != null)
+                if (array[i] != Int32.MinValue + 1)
                     arrayB[j++] = array[i];
             }
 
@@ -1360,25 +1368,25 @@
         /// </summary>
         static void Array97()
         {
-            int?[] array = { 10, 2, 3, 4, 4, 6, 7, 2, 9, 10 };
+            int[] array = { 10, 2, 3, 4, 4, 6, 7, 2, 9, 10 };
             int countOfSame = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (array[i] == array[j] && array[j] != null)
+                    if (array[i] == array[j] && array[j] != Int32.MinValue + 1)
                     {
                         array[i] = array[j];
-                        array[i] = null;
+                        array[i] = Int32.MinValue + 1;
                         countOfSame++;
                     }
                 }
             }
 
-            int?[] arrayB = new int?[array.Length - countOfSame];
+            int[] arrayB = new int[array.Length - countOfSame];
             for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (array[i] != null)
+                if (array[i] != Int32.MinValue + 1)
                     arrayB[j++] = array[i];
             }
 
@@ -1512,50 +1520,30 @@
         /// после максимального элемента массива.
         /// </summary>
         ///*
-        static void Array103()// НЕ ГОТОВО 
+        static void Array103() // НЕ ГОТОВО 
         {
             int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 90, 10 };
-            int minValue = originalArray[0],
-                maxValue = originalArray[0],
-                indexOfMin = 0,
-                indexOfMax = 0;
+            int indexOfMin = 0, indexOfMax = 0;
             int[] newArray = new int [originalArray.Length + 2];
             for (int i = 1; i < originalArray.Length; i++)
             {
-                if (originalArray[i] < minValue)
+                if (originalArray[i] < originalArray[indexOfMin])
                 {
-                    minValue = originalArray[i];
+                    originalArray[indexOfMin] = originalArray[i];
                     indexOfMin = i;
                 }
 
-                if (originalArray[i] > maxValue)
+                if (originalArray[i] > originalArray[indexOfMax])
                 {
-                    maxValue = originalArray[i];
+                    originalArray[indexOfMax] = originalArray[i];
                     indexOfMax = i;
                 }
             }
 
-            for (int i = 0; i < newArray.Length; i++)
+            for (int i = 0; i < indexOfMax; i++)
             {
-                if (i == indexOfMin)
-                {
-                    newArray[i] = 11111111;
-                    newArray[i + 1] = originalArray[i];
-                }
-
-                else if (i == indexOfMax + 2)
-                    newArray[i] = 2222222;
-                
-                else if (i <= indexOfMin)
-                    newArray[i] = originalArray[i];
-
-                else if (i > indexOfMin && i < indexOfMax+1)
-                    newArray[i] = originalArray[i-1];               
-            
-                else if (i > indexOfMax +1 )
-                    newArray[i] = originalArray[i-2];
-                
             }
+
 
             Show(newArray);
         }
@@ -1581,9 +1569,10 @@
             Show(newArray);
         }
 
+
         static void Main()
         {
-            Array103();
+            Array95();
         }
     }
 }
