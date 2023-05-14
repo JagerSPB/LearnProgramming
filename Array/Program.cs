@@ -1317,14 +1317,16 @@
         {
             int[] array = { 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7 };
             int notSameAdjacentCount = 1;
-            for (int i = 0; i < array.Length - 1; i++) {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
                 if (array[i] != array[i + 1])
                     notSameAdjacentCount++;
             }
 
             int[] newArray = new int[notSameAdjacentCount];
             newArray[0] = array[0];
-            for (int i = 0, j = 0; i < array.Length - 1; i++) {
+            for (int i = 0, j = 0; i < array.Length - 1; i++)
+            {
                 if (array[i] != array[i + 1])
                     newArray[++j] = array[i + 1];
             }
@@ -1332,6 +1334,7 @@
             Console.WriteLine(notSameAdjacentCount);
             Show(newArray);
         }
+
         /// <summary>
         /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
         /// первые вхождения.
@@ -1520,31 +1523,54 @@
         /// после максимального элемента массива.
         /// </summary>
         ///*
-        static void Array103() // НЕ ГОТОВО 
+        static void Array103()
         {
-            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 90, 10 };
+            int[] originalArray = { 10, 20, 30, 40, 50, 60, 70, 80, -90, 100 };
             int indexOfMin = 0, indexOfMax = 0;
             int[] newArray = new int [originalArray.Length + 2];
-            for (int i = 1; i < originalArray.Length; i++)
+            for (int i = 0; i < originalArray.Length; i++) // в этом цикле находим максимальный и минимальный индекс элементов массива
             {
                 if (originalArray[i] < originalArray[indexOfMin])
-                {
-                    originalArray[indexOfMin] = originalArray[i];
                     indexOfMin = i;
-                }
 
                 if (originalArray[i] > originalArray[indexOfMax])
-                {
-                    originalArray[indexOfMax] = originalArray[i];
                     indexOfMax = i;
-                }
             }
-
-            for (int i = 0; i < indexOfMax; i++)
+            // заполняем массив сначала, min max, затем остальные элементы в зависимости от располажения min max в массиве
+            if (indexOfMin < indexOfMax) 
             {
+                newArray[indexOfMin + 1] = originalArray[indexOfMin];
+               // newArray[indexOfMin] = 0;
+                newArray[indexOfMax + 1] = originalArray[indexOfMax];
+               // newArray[indexOfMax + 2] = 0;
+               for (int i = 0; i <= indexOfMin - 1; i++)
+                   newArray[i] = originalArray[i];
+               
+                for (int i = indexOfMin; i < indexOfMax; i++)
+                    newArray[i + 1] = originalArray[i];
+
+                for (int i = indexOfMax + 1; i < newArray.Length - 2; i++)
+                    newArray[i + 2] = originalArray[i];
+                
             }
+            else if (indexOfMin > indexOfMax)
+            {
+                newArray[indexOfMin + 2] = originalArray[indexOfMin];
+              //  newArray[indexOfMin + 1] = 0;
+                newArray[indexOfMax] = originalArray[indexOfMax];
+              //  newArray[indexOfMax + 1] = 0;
 
-
+                for (int i = 0; i <= indexOfMax; i++)
+                    newArray[i] = originalArray[i];
+                
+                for (int i = indexOfMax+1; i <= indexOfMin-1; i++)
+                    newArray[i + 1] = originalArray[i];
+                
+                for (int i = indexOfMin + 1; i < newArray.Length - 2; i++)
+                    newArray[i + 2] = originalArray[i];
+                
+            }
+            
             Show(newArray);
         }
 
@@ -1572,7 +1598,7 @@
 
         static void Main()
         {
-            Array95();
+            Array103();
         }
     }
 }
