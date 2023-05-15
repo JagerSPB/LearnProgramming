@@ -1528,7 +1528,9 @@
             int[] originalArray = { 10, 20, 30, 40, 50, 60, 70, 80, -90, 100 };
             int indexOfMin = 0, indexOfMax = 0;
             int[] newArray = new int [originalArray.Length + 2];
-            for (int i = 0; i < originalArray.Length; i++) // в этом цикле находим максимальный и минимальный индекс элементов массива
+            for (int i = 0;
+                 i < originalArray.Length;
+                 i++) // в этом цикле находим максимальный и минимальный индекс элементов массива
             {
                 if (originalArray[i] < originalArray[indexOfMin])
                     indexOfMin = i;
@@ -1536,41 +1538,40 @@
                 if (originalArray[i] > originalArray[indexOfMax])
                     indexOfMax = i;
             }
+
             // заполняем массив сначала, min max, затем остальные элементы в зависимости от располажения min max в массиве
-            if (indexOfMin < indexOfMax) 
+            if (indexOfMin < indexOfMax)
             {
                 newArray[indexOfMin + 1] = originalArray[indexOfMin];
-               // newArray[indexOfMin] = 0;
+                // newArray[indexOfMin] = 0;
                 newArray[indexOfMax + 1] = originalArray[indexOfMax];
-               // newArray[indexOfMax + 2] = 0;
-               for (int i = 0; i <= indexOfMin - 1; i++)
-                   newArray[i] = originalArray[i];
-               
+                // newArray[indexOfMax + 2] = 0;
+                for (int i = 0; i <= indexOfMin - 1; i++)
+                    newArray[i] = originalArray[i];
+
                 for (int i = indexOfMin; i < indexOfMax; i++)
                     newArray[i + 1] = originalArray[i];
 
                 for (int i = indexOfMax + 1; i < newArray.Length - 2; i++)
                     newArray[i + 2] = originalArray[i];
-                
             }
             else if (indexOfMin > indexOfMax)
             {
                 newArray[indexOfMin + 2] = originalArray[indexOfMin];
-              //  newArray[indexOfMin + 1] = 0;
+                //  newArray[indexOfMin + 1] = 0;
                 newArray[indexOfMax] = originalArray[indexOfMax];
-              //  newArray[indexOfMax + 1] = 0;
+                //  newArray[indexOfMax + 1] = 0;
 
                 for (int i = 0; i <= indexOfMax; i++)
                     newArray[i] = originalArray[i];
-                
-                for (int i = indexOfMax+1; i <= indexOfMin-1; i++)
+
+                for (int i = indexOfMax + 1; i <= indexOfMin - 1; i++)
                     newArray[i + 1] = originalArray[i];
-                
+
                 for (int i = indexOfMin + 1; i < newArray.Length - 2; i++)
                     newArray[i + 2] = originalArray[i];
-                
             }
-            
+
             Show(newArray);
         }
 
@@ -1579,10 +1580,37 @@
         /// Array104. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). Перед элементом массива с
         /// номером K вставить M новых элементов с нулевыми значениями.
         /// </summary>
-        static void Array104()
+        static void Array104() // not correct
         {
             int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int k = 2, m = 4;
+            int k = 4, m = 3;
+            int[] newArray = new int[originalArray.Length + m];
+            for (int i = 0; i < k - m; i++)
+            {
+                newArray[i] = originalArray[i];
+            }
+
+            for (int i = k - m; i < k; i++)
+            {
+                newArray[i] = 0;
+            }
+
+            for (int i = k; i < newArray.Length; i++)
+            {
+                newArray[i] = originalArray[i - m];
+            }
+
+            Show(newArray);
+        }
+        
+        /// <summary>
+        /// Array105. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). После элемента массива с
+        /// номером K вставить M новых элементов с нулевыми значениями.
+        /// </summary>
+        static void Array105()
+        {
+            int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int k = 5, m = 4;
             int[] newArray = new int[originalArray.Length + m];
             for (int i = 0, j = 0; i < newArray.Length; i++)
             {
@@ -1595,10 +1623,9 @@
             Show(newArray);
         }
 
-
         static void Main()
         {
-            Array103();
+            Array104();
         }
     }
 }
