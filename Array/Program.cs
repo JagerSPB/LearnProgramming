@@ -1528,9 +1528,7 @@
             int[] originalArray = { 10, 20, 30, 40, 50, 60, 70, 80, -90, 100 };
             int indexOfMin = 0, indexOfMax = 0;
             int[] newArray = new int [originalArray.Length + 2];
-            for (int i = 0;
-                 i < originalArray.Length;
-                 i++) // в этом цикле находим максимальный и минимальный индекс элементов массива
+            for (int i = 0; i < originalArray.Length; i++)
             {
                 if (originalArray[i] < originalArray[indexOfMin])
                     indexOfMin = i;
@@ -1543,9 +1541,9 @@
             if (indexOfMin < indexOfMax)
             {
                 newArray[indexOfMin + 1] = originalArray[indexOfMin];
-                // newArray[indexOfMin] = 0;
+                // newArray[indexOfMin] = 0;  // закоментил потому что, на этом месте и так будет "0" 
                 newArray[indexOfMax + 1] = originalArray[indexOfMax];
-                // newArray[indexOfMax + 2] = 0;
+                // newArray[indexOfMax + 2] = 0;  // закоментил потому что, на этом месте и так будет "0" 
                 for (int i = 0; i <= indexOfMin - 1; i++)
                     newArray[i] = originalArray[i];
 
@@ -1558,9 +1556,9 @@
             else if (indexOfMin > indexOfMax)
             {
                 newArray[indexOfMin + 2] = originalArray[indexOfMin];
-                //  newArray[indexOfMin + 1] = 0;
+                //  newArray[indexOfMin + 1] = 0; // закоментил потому что, на этом месте и так будет "0" 
                 newArray[indexOfMax] = originalArray[indexOfMax];
-                //  newArray[indexOfMax + 1] = 0;
+                //  newArray[indexOfMax + 1] = 0; // закоментил потому что, на этом месте и так будет "0" 
 
                 for (int i = 0; i <= indexOfMax; i++)
                     newArray[i] = originalArray[i];
@@ -1602,7 +1600,7 @@
 
             Show(newArray);
         }
-        
+
         /// <summary>
         /// Array105. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). После элемента массива с
         /// номером K вставить M новых элементов с нулевыми значениями.
@@ -1623,9 +1621,33 @@
             Show(newArray);
         }
 
+        /// <summary>
+        /// Array106. Дан массив размера N. Продублировать в нем элементы с четными номерами (2, 4, . . .).
+        /// Условный оператор не использовать.
+        /// </summary>
+        static void Array106()
+        {
+            int[] array = { 1, 2, 30, 4, 50, 6, 70, 8, 90, 10 };
+            int[] newArray = new int [array.Length + array.Length /2];
+            for (int i = 0, j = 0; i < array.Length; i += 2, j += 3)
+            {
+                newArray[j] = array[i];
+            }
+            for (int i = 1, j = 1; i < array.Length; i+= 2, j+=3)
+            {
+                newArray[j] = array[i];
+            }
+            for (int i = 2, j = 2; i < array.Length; i+= 2, j+=3)
+            {
+                newArray[j] = array[i];
+            }
+
+            Show(newArray);
+        }
+
         static void Main()
         {
-            Array104();
+            Array106();
         }
     }
 }
