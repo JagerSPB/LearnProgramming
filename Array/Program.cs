@@ -1522,7 +1522,6 @@
         /// Array103. Дан массив размера N. Вставить элемент с нулевым значением перед минимальным и
         /// после максимального элемента массива.
         /// </summary>
-        ///*
         static void Array103()
         {
             int[] originalArray = { 10, 20, 30, 40, 50, 60, 70, 80, -90, 100 };
@@ -1578,24 +1577,18 @@
         /// Array104. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). Перед элементом массива с
         /// номером K вставить M новых элементов с нулевыми значениями.
         /// </summary>
-        static void Array104() // not correct
+        static void Array104() //готово
         {
             int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int k = 4, m = 3;
+            int k = 6, m = 2;
             int[] newArray = new int[originalArray.Length + m];
-            for (int i = 0; i < k - m; i++)
+            for (int i = originalArray.Length - 1, j = newArray.Length - 1; i >= k; i--)
+            {
+                newArray[j--] = originalArray[i];
+            }
+            for (int i = 0 ; i < k; i++)
             {
                 newArray[i] = originalArray[i];
-            }
-
-            for (int i = k - m; i < k; i++)
-            {
-                newArray[i] = 0;
-            }
-
-            for (int i = k; i < newArray.Length; i++)
-            {
-                newArray[i] = originalArray[i - m];
             }
 
             Show(newArray);
@@ -1627,17 +1620,50 @@
         /// </summary>
         static void Array106()
         {
-            int[] array = { 1, 2, 30, 4, 50, 6, 70, 8, 90, 10 };
-            int[] newArray = new int [array.Length + array.Length /2];
+            int[] array = { 1, 2, 30, 4, 50, 6, 70, 8, 90, 10, 110 };
+            int[] newArray = new int [array.Length + array.Length / 2];
             for (int i = 0, j = 0; i < array.Length; i += 2, j += 3)
             {
                 newArray[j] = array[i];
             }
-            for (int i = 1, j = 1; i < array.Length; i+= 2, j+=3)
+
+            for (int i = 1, j = 1; i < array.Length; i += 2, j += 3)
             {
                 newArray[j] = array[i];
             }
-            for (int i = 2, j = 2; i < array.Length; i+= 2, j+=3)
+
+            for (int i = 2, j = 2; i < array.Length; i += 2, j += 3)
+            {
+                newArray[j] = array[i];
+            }
+
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array107. Дан массив размера N. Утроить в нем вхождения всех элементов с нечетными номерами (1, 3, . . .).
+        /// Условный оператор не использовать.
+        /// </summary>
+        static void Array107()
+        {
+            int[] array = { 1, 22, 3, 44, 5, 66, 7, 88, 9, 10 };
+            int[] newArray = new int[array.Length * 2];
+            for (int i = 0, j = 0; i < array.Length; i += 2, j += 4)
+            {
+                newArray[j] = array[i];
+            }
+
+            for (int i = 1, j = 1; i < array.Length; i += 2, j += 4)
+            {
+                newArray[j] = array[i];
+            }
+
+            for (int i = 1, j = 2; i < array.Length; i += 2, j += 4)
+            {
+                newArray[j] = array[i];
+            }
+
+            for (int i = 1, j = 3; i < array.Length; i += 2, j += 4)
             {
                 newArray[j] = array[i];
             }
@@ -1647,7 +1673,7 @@
 
         static void Main()
         {
-            Array106();
+            Array104();
         }
     }
 }
