@@ -1586,7 +1586,8 @@
             {
                 newArray[j--] = originalArray[i];
             }
-            for (int i = 0 ; i < k; i++)
+
+            for (int i = 0; i < k; i++)
             {
                 newArray[i] = originalArray[i];
             }
@@ -1671,9 +1672,129 @@
             Show(newArray);
         }
 
+        /// <summary>
+        /// Array108. Дан массив размера N. Перед каждым положительным элементо массива вставить элемент с нулевым
+        /// значением.
+        /// </summary>
+        static void Array108()
+        {
+            int[] array = { 1, -2, 3, 4, -5, 6, 7, 8, -9 };
+            int positiveCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > 0)
+                    positiveCount++;
+            }
+
+            int[] newArray = new int[array.Length + positiveCount];
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] > 0)
+                {
+                    newArray[j] = 0;
+                    newArray[j + 1] = array[i];
+                    j++;
+                }
+
+                newArray[j++] = array[i];
+            }
+
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array109. Дан массив размера N. После каждого отрицательного элемента массива вставить
+        /// элемент с нулевым значением.
+        /// </summary>
+        static void Array109()
+        {
+            int[] array = { -1, -2, 3, 4, -5, 6, 7, 8, -9 };
+            int negativeCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                    negativeCount++;
+            }
+
+            int[] newArray = new int[array.Length + negativeCount];
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                {
+                    newArray[j] = array[i];
+                    newArray[j + 1] = 0;
+                    j += 2;
+                }
+                else newArray[j++] = array[i];
+            }
+            
+            Show(newArray);
+        }
+
+        /// <summary>
+        /// Array110. Дан целочисленный массив размера N. Продублировать в нем все четные числа.
+        /// </summary>
+        static void Array110()
+        {
+            int[] array = { 1, 2, 4, 4, 5, 6, 7, 8, 9 };
+            int evenCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] %2 ==0)
+                {
+                    evenCount++;
+                }
+            }
+
+            int[] newArray = new int[array.Length + evenCount];
+            for (int i = 0, j = 0 ; i < array.Length; i++)
+            {
+                if (array[i] %2 ==0)
+                {
+                    newArray[j++] = array[i];
+                    newArray[j] = array[i];
+                }
+                newArray[j++] = array[i];
+            }
+            
+            Show(newArray);
+        }
+        /// <summary>
+        ///Array111. Дан целочисленный массив размера N. Утроить в нем вхождения всех нечетных чисел.
+        /// </summary>
+        static void Array111()
+        {
+            int[] array = { 1, 2, 4, 4, 5, 6, 7, 8, 9 ,10,1};
+            int oddCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] %2 !=0)
+                {
+                    oddCount++;
+                }
+            }
+
+            int[] newArray = new int[array.Length + (oddCount*2)];
+            for (int i = 0, j = 0 ; i < array.Length; i++)
+            {
+                if (array[i] %2 !=0)
+                {
+                    newArray[j++] = array[i];
+                    newArray[j++] = array[i];
+                    newArray[j++] = array[i];
+                }
+                else
+                {
+                    newArray[j++] = array[i];
+                }
+                
+            }
+            
+            Show(newArray);
+        }
         static void Main()
         {
-            Array104();
+            Array111();
         }
     }
 }
