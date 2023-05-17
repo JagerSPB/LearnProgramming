@@ -1727,7 +1727,7 @@
                 }
                 else newArray[j++] = array[i];
             }
-            
+
             Show(newArray);
         }
 
@@ -1740,44 +1740,46 @@
             int evenCount = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] %2 ==0)
+                if (array[i] % 2 == 0)
                 {
                     evenCount++;
                 }
             }
 
             int[] newArray = new int[array.Length + evenCount];
-            for (int i = 0, j = 0 ; i < array.Length; i++)
+            for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (array[i] %2 ==0)
+                if (array[i] % 2 == 0)
                 {
                     newArray[j++] = array[i];
                     newArray[j] = array[i];
                 }
+
                 newArray[j++] = array[i];
             }
-            
+
             Show(newArray);
         }
+
         /// <summary>
         ///Array111. Дан целочисленный массив размера N. Утроить в нем вхождения всех нечетных чисел.
         /// </summary>
         static void Array111()
         {
-            int[] array = { 1, 2, 4, 4, 5, 6, 7, 8, 9 ,10,1};
+            int[] array = { 1, 2, 4, 4, 5, 6, 7, 8, 9, 10, 1 };
             int oddCount = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] %2 !=0)
+                if (array[i] % 2 != 0)
                 {
                     oddCount++;
                 }
             }
 
-            int[] newArray = new int[array.Length + (oddCount*2)];
-            for (int i = 0, j = 0 ; i < array.Length; i++)
+            int[] newArray = new int[array.Length + (oddCount * 2)];
+            for (int i = 0, j = 0; i < array.Length; i++)
             {
-                if (array[i] %2 !=0)
+                if (array[i] % 2 != 0)
                 {
                     newArray[j++] = array[i];
                     newArray[j++] = array[i];
@@ -1787,14 +1789,49 @@
                 {
                     newArray[j++] = array[i];
                 }
-                
             }
-            
+
             Show(newArray);
         }
+
+        /// <summary>
+        /// Array112◦. Дан массив A размера N (≤ 6). Упорядочить его по возрастанию методом сортировки простым обменом
+        /// («пузырьковой» сортировкой): просматривать массив, сравнивая его соседние элементы (A1 и A2, A2 и A3 и т.д.)
+        /// и меняя их местами, если левый элемент пары больше правого; повторить описанные действия N − 1 раз.
+        /// Для контроля за выполняемыми действиями выводить содержимое массива после каждого просмотра.
+        /// Учесть, что при каждом просмотре количество анализируемых пар можно уменьшить на 1.
+        /// </summary>
+        static void Array112()
+        {
+            int[] array = { 1, 3, 5, 4, 2, 6 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] < array[j])
+                    {
+                        (array[i], array[j]) = (array[j], array[i]);
+                    }
+                }
+
+                Show(array);
+                Console.WriteLine("======");
+            }
+        }
+
+        /// <summary>
+        /// Array113. Дан массив A размера N (≤6). Упорядочить его по возрастанию методом сортировки простым выбором:
+        /// найти максимальный элемент массива и поменять его местами с последним (N-м) элементом; выполнить описанные
+        /// действия N − 1 раз, каждый раз уменьшая на 1 количествоанализируемых элементов и выводя содержимое массива.
+        /// </summary>
+        static void Array113()
+        {
+  
+        }
+
         static void Main()
         {
-            Array111();
+            Array113();
         }
     }
 }
