@@ -1767,7 +1767,7 @@
         static void Array111()
         {
             int[] array = { 1, 2, 4, 4, 5, 6, 7, 8, 9, 10, 1 };
-            int oddCount = 0;
+            int oddCount = 0, multiplier = 3;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] % 2 != 0)
@@ -1781,9 +1781,10 @@
             {
                 if (array[i] % 2 != 0)
                 {
-                    newArray[j++] = array[i];
-                    newArray[j++] = array[i];
-                    newArray[j++] = array[i];
+                    for (int k = 1; k <= multiplier; k++)
+                    {
+                        newArray[j++] = array[i];
+                    }
                 }
                 else
                 {
@@ -1820,18 +1821,65 @@
         }
 
         /// <summary>
-        /// Array113. Дан массив A размера N (≤6). Упорядочить его по возрастанию методом сортировки простым выбором:
-        /// найти максимальный элемент массива и поменять его местами с последним (N-м) элементом; выполнить описанные
-        /// действия N − 1 раз, каждый раз уменьшая на 1 количествоанализируемых элементов и выводя содержимое массива.
+        /// Array116◦. Дан целочисленный массив A размера N. Назовем серией группу подряд идущих одинаковых элементов,
+        /// а длиной серии — количество этих элементов (длина серии может быть равна 1). Сформировать два
+        /// новых целочисленных массива B и C одинакового размера, записав в массив B длины всех серий исходного
+        /// массива, а в массив C — значения элементов, образующих эти серии.
         /// </summary>
-        static void Array113()
+        static void Array116()
         {
-  
+            int[] arrayA = { 10, 10, 2, 2, 2, 3, 4, 5, 5, 5, 5, 5, 5, 8, 8 };
+            int seriesCount = 1, seriesLength = 0;
+            for (int i = 1; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] != arrayA[i - 1])
+                    seriesCount++;
+            }
+
+            int[] arrayB = new int[seriesCount];
+            int[] arrayC = new int[seriesCount];
+
+            for (int i = 1, j = 0; i < arrayA.Length; i++)
+            {
+                seriesLength++;
+                if (arrayA[i] != arrayA[i - 1])
+                {
+                    arrayB[j++] = seriesLength;
+                    seriesLength = 0;
+                }
+
+                else if (i == arrayA.Length - 1)
+                {
+                    arrayB[j++] = seriesLength + 1;
+                }
+            }
+            arrayC[seriesCount-1] = arrayA[arrayA.Length-1];
+            for (int i = 1, j = 0; i < arrayA.Length; i++)
+            {
+                if (arrayA[i] != arrayA[i - 1])
+                {
+                    arrayC[j++] = arrayA[i - 1];
+                }
+            }
+            
+            
+            // arrayC[0] = arrayA[0];
+            // for (int i = 0, j = 1; i < arrayA.Length - 1; i++)
+            // {
+            //     if (arrayA[i] != arrayA[i + 1])
+            //     {
+            //         arrayC[j++] = arrayA[i + 1];
+            //     }
+            // }
+
+            Show(arrayB);
+            Console.WriteLine("==========");
+            Show(arrayC);
         }
 
         static void Main()
         {
-            Array113();
+            Array116();
         }
     }
 }
