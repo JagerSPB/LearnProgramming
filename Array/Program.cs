@@ -1821,6 +1821,52 @@
         }
 
         /// <summary>
+        /// Array113. Дан массив A размера N (≤6). Упорядочить его по возрастанию методом сортировки простым выбором:
+        /// найти максимальный элемент массива и поменять его местами с последним (N-м) элементом; выполнить описанные
+        /// действия N − 1 раз, каждый раз уменьшая на 1 количество анализируемых элементов и выводя содержимое массива.
+        /// </summary>
+        static void Array113()
+        {
+            int[] array = { -10, 6, 2, 5, 4, 5, -30 };
+            for (int i = array.Length-1 ; i > 0; i--)
+            {
+              int maxIndex = 0;
+                for (int j = 1 ; j <= i; j++)
+                {
+                    if (array[j] > array[maxIndex])
+                    {
+                        maxIndex = j;
+                    }
+                }
+                (array[maxIndex], array[i]) = (array[i], array[maxIndex]);
+            }
+
+            Show(array);
+        }
+        // static void Array113()
+        // {
+        //     int[] array = { -10, 6, 2, 5, 4, 5, -30 };
+        //     int minIndex = 0;
+        //     for (int i = 0; i < array.Length; i++)
+        //     {
+        //         minIndex = i;
+        //         for (int j = i + 1; j < array.Length; j++)
+        //         {
+        //             if (array[j] < array[minIndex])
+        //             {
+        //                 minIndex = j;
+        //             }
+        //         }
+        //
+        //         (array[minIndex], array[i]) = (array[i], array[minIndex]);
+        //     }
+        //
+        //     Console.WriteLine(minIndex);
+        //
+        //     Show(array);
+        // }
+
+        /// <summary>
         /// Array116◦. Дан целочисленный массив A размера N. Назовем серией группу подряд идущих одинаковых элементов,
         /// а длиной серии — количество этих элементов (длина серии может быть равна 1). Сформировать два
         /// новых целочисленных массива B и C одинакового размера, записав в массив B длины всех серий исходного
@@ -1828,7 +1874,7 @@
         /// </summary>
         static void Array116()
         {
-            int[] arrayA = { 10, 10, 2, 2, 2, 3, 4, 5, 5, 5, 5, 5, 5, 8, 8 };
+            int[] arrayA = { 10, 2, 2, 2, 3, 4, 5, 5, 5, 5, 5, 5, 8, 1, 1 };
             int seriesCount = 1, seriesLength = 0;
             for (int i = 1; i < arrayA.Length; i++)
             {
@@ -1838,40 +1884,24 @@
 
             int[] arrayB = new int[seriesCount];
             int[] arrayC = new int[seriesCount];
-
+            arrayC[seriesCount - 1] = arrayA[arrayA.Length - 1];
             for (int i = 1, j = 0; i < arrayA.Length; i++)
             {
                 seriesLength++;
                 if (arrayA[i] != arrayA[i - 1])
                 {
-                    arrayB[j++] = seriesLength;
+                    arrayC[j] = arrayA[i - 1];
+                    arrayB[j] = seriesLength;
+                    j++;
                     seriesLength = 0;
                 }
 
-                else if (i == arrayA.Length - 1)
+                if (i == arrayA.Length - 1)
                 {
-                    arrayB[j++] = seriesLength + 1;
-                }
-            }
-            arrayC[seriesCount-1] = arrayA[arrayA.Length-1];
-            for (int i = 1, j = 0; i < arrayA.Length; i++)
-            {
-                if (arrayA[i] != arrayA[i - 1])
-                {
-                    arrayC[j++] = arrayA[i - 1];
+                    arrayB[j] = seriesLength + 1;
                 }
             }
             
-            
-            // arrayC[0] = arrayA[0];
-            // for (int i = 0, j = 1; i < arrayA.Length - 1; i++)
-            // {
-            //     if (arrayA[i] != arrayA[i + 1])
-            //     {
-            //         arrayC[j++] = arrayA[i + 1];
-            //     }
-            // }
-
             Show(arrayB);
             Console.WriteLine("==========");
             Show(arrayC);
@@ -1879,7 +1909,7 @@
 
         static void Main()
         {
-            Array116();
+            Array113();
         }
     }
 }
