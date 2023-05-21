@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/bin/Debug/net7.0/MartixLearn
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/bin/Debug/net7.0/MartixLearn.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/bin/Debug/net7.0/MartixLearn.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/refint/MartixLearn.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/MartixLearn/obj/Debug/net7.0/MartixLearn.pdb
