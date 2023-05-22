@@ -162,9 +162,26 @@
             
             ShowMatrix(matrix);
         }
+        /// <summary>
+        /// Matrix8. Дана матрица размера M × N и целое число K (1 ≤ K ≤ N). Вывести элементы K-го столбца данной матрицы.
+        /// </summary>
+        public static void Matrix8()
+        {
+            int[,] matrix = new int[5, 6];
+            int k = 3;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j <  matrix.GetLength(1); j++)
+                {
+                    matrix[i, k-1] = rnd.Next(1,10);
+                }
+            }
+            
+            ShowMatrix(matrix);
+        }
         static void Main()
         {
-            Matrix7();
+            Matrix8();
         }
     }
 }
