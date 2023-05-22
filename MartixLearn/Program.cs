@@ -61,13 +61,13 @@
         /// </summary>
         public static void Matrix3()
         {
-            int[] array = { 2, 3, 4, 5 };
-            int[,] matrix = new int[6, array.Length];
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            int[] array = { 2, 3, 4};
+            int[,] matrix = new int[array.Length, 5];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[j, i] = array[i];
+                    matrix[i, j] = array[i];
                 }
             }
 
@@ -81,12 +81,12 @@
         public static void Matrix4()
         {
             int[] array = { 2, 3, 4, 5 };
-            int[,] matrix = new int[6,array.Length];
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            int[,] matrix = new int[5,array.Length];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[j, i] = array[i];
+                    matrix[i, j] = array[j];
                 }
             }
 
@@ -102,15 +102,15 @@
         {
             int[] array = { 2, 3, 4, 5 };
             int d = 5;
-            int[,] matrix = new int[4, 4 ];
+            int[,] matrix = new int[4, 6 ];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 matrix[i, 0] = array[i];
             }
             
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 1; j < matrix.GetLength(0); j++)
+                for (int j = 1; j < matrix.GetLength(1); j++)
                 {
                     matrix[i, j] =  matrix[i, j-1]*2 + d;
                 }
@@ -128,15 +128,15 @@
         {
             int[] array = { 2, 3, 4, 5 };
             int q = 10;
-            int[,] matrix = new int[array.Length, 4];
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            int[,] matrix = new int[5, array.Length];
+            for (int i = 0; i < array.Length; i++)
             {
                 matrix[0, i] = array[i];
             }
             
-            for (int i = 1; i < matrix.GetLength(1); i++)
+            for (int i = 1; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     matrix[i, j] =  matrix[i-1, j]*q;
                 }
@@ -145,9 +145,26 @@
             ShowMatrix(matrix);
         }
 
+        /// <summary>
+        /// Matrix7◦. Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Вывести элементы K-й строки данной матрицы.
+        /// </summary>
+        public static void Matrix7()
+        {
+            int[,] matrix = new int[5, 6];
+            int k = 4;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j <  matrix.GetLength(1); j++)
+                {
+                    matrix[k-1, j] = rnd.Next(1,10);
+                }
+            }
+            
+            ShowMatrix(matrix);
+        }
         static void Main()
         {
-            Matrix6();
+            Matrix7();
         }
     }
 }
