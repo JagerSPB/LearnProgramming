@@ -290,8 +290,8 @@
 
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            
-            for (int i = 0,k=0; i < matrix.GetLength(0); i ++)
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 Console.Write("[ ");
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -309,12 +309,48 @@
 
                 Console.WriteLine("]");
             }
-            
         }
-        
+
+        /// <summary>
+        /// Matrix12. Дана матрица размера M × N. Вывести ее элементы в следующем порядке: первый столбец сверху вниз, второй
+        /// столбец снизу вверх, третий столбец сверху вниз, четвертый столбец снизу вверх и т. д.
+        /// </summary>
+        public static void Matrix12()
+        {
+            int[,] matrix = new int[6, 4];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                Console.Write("[ ");
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    Console.Write($"{matrix[j, i]} ");
+                }
+
+                Console.WriteLine("]");
+                i++;
+                Console.Write("[ ");
+                for (int j = matrix.GetLength(0) - 1; j >= 0; j--)
+                {
+                    Console.Write($"{matrix[j, i]} ");
+                }
+
+                Console.WriteLine("]");
+            }
+        }
+
         static void Main()
         {
-            Matrix11();
+            Matrix12();
         }
     }
 }
