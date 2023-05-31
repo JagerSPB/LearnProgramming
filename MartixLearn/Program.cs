@@ -317,7 +317,9 @@
         /// </summary>
         public static void Matrix12()
         {
-            int[,] matrix = new int[6, 4];
+            int[,] matrix = new int[4, 4];
+            Random rnd = new Random();
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -328,29 +330,137 @@
 
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
+
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
+                if (i % 2 == 0)
+                {
+                    for (int j = 0; j < matrix.GetLength(0); j++)
+                    {
+                        Console.Write($"{matrix[j, i]} ");
+                    }
+                }
+                else
+                {
+                    for (int j = matrix.GetLength(0) - 1; j >= 0; j--)
+                    {
+                        Console.Write($"{matrix[j, i]} ");
+                    }
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// Matrix13. Дана квадратная матрица A порядка M. Начиная с элемента A1,1, вывести ее элементы следующим
+        /// образом («уголками»): все элементы первой строки; элементы последнего столбца, кроме первого
+        /// (уже выведенного) элемента; оставшиеся элементы второй строки; оставшиеся элементы предпоследнего столбца
+        /// и т. д.; последним выводится элемент AM,1.
+        /// </summary>
+        public static void Matrix13()
+        {
+            int[,] matrix = new int[4, 4];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+
+            // for (int i = 0; i < matrix.GetLength(0); i++)
+            // {
+            //     Console.Write("[ ");
+            //     for (int j = 0; j < matrix.GetLength(1)-i; j++)
+            //     {
+            //         Console.Write($"{matrix[i, j]} ");
+            //     }
+            //
+            //     // for (int j = matrix.GetLength(0)-1-i; j >0 ; j--)
+            //     // {
+            //     //     Console.Write($"{matrix[j, i]} ");
+            //     // }
+            //     
+            //     
+            //     Console.WriteLine("]");
+            //
+            // }
+            for (int i = matrix.GetLength(0) - 1; i >= 0; i--)
+            {
                 Console.Write("[ ");
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = +1; j < matrix.GetLength(1); j++)
                 {
                     Console.Write($"{matrix[j, i]} ");
                 }
 
-                Console.WriteLine("]");
-                i++;
-                Console.Write("[ ");
-                for (int j = matrix.GetLength(0) - 1; j >= 0; j--)
-                {
-                    Console.Write($"{matrix[j, i]} ");
-                }
 
                 Console.WriteLine("]");
             }
         }
 
+        /// <summary>
+        /// Matrix17. Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Найти сумму и произведение элементов K-й строки
+        /// данной матриц
+        /// </summary>
+        public static void Matrix17()
+        {
+            int[,] matrix = new int[3, 4];
+            int k = 2, sum = 0, product = 1;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                sum += matrix[k - 1, i];
+                product *= matrix[k - 1, i];
+            }
+
+            Console.WriteLine($"Сумма:{sum}, произведение:{product}");
+        }
+
+        /// <summary>
+        /// Matrix18. Дана матрица размера M × N и целое число K (1 ≤ K ≤ N). Найти сумму и произведение элементов
+        /// K-го столбца данной матрицы.
+        /// </summary>
+        public static void Matrix18()
+        {
+            int[,] matrix = new int[3, 5];
+            int k = 3, sum = 0, product = 1;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                sum += matrix[i, k - 1];
+                product *= matrix[i, k - 1];
+            }
+
+
+            Console.WriteLine($"Сумма:{sum}, произведение:{product}");
+        }
+
         static void Main()
         {
-            Matrix12();
+            Matrix18();
         }
     }
 }
