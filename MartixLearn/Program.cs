@@ -457,10 +457,64 @@
 
             Console.WriteLine($"Сумма:{sum}, произведение:{product}");
         }
+        /// <summary>
+        /// Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов.
+        /// </summary>
+        public static void Matrix19()
+        {
+            int[,] matrix = new int[3,4];
+            int sum = 0;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i,j] = rnd.Next(1, 10);
+                }
+            }
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    sum += matrix[i, j];
+                }
+                Console.WriteLine($"сумма элементов строки {i} = {sum}");
+                sum = 0;
+            }
+            
 
+        }
+        /// <summary>
+        /// Matrix20. Дана матрица размера M × N. Для каждого столбца матрицы найти произведение его элементов.
+        /// </summary>
+        public static void Matrix20()
+        {
+            int[,] matrix = new int[3,4];
+            int sum = 0;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i,j] = rnd.Next(1, 10);
+                }
+            }
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    sum += matrix[j, i];
+                }
+                Console.WriteLine($"сумма элементов столбца {i} = {sum}");
+                sum = 0;
+            }
+            
+        }
         static void Main()
         {
-            Matrix18();
+            Matrix20();
         }
     }
 }
