@@ -594,9 +594,39 @@
                 min = matrix[matrix.GetLength(0)-1,matrix.GetLength(1)-1];
             }
         }
+        /// <summary>
+        /// Matrix24◦. Дана матрица размера M × N. В каждом столбце матрицы найти максимальный элемент.
+        /// </summary>
+        public static void Matrix24()
+        {
+            int[,] matrix = new int[4,5];
+            
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i,j] = rnd.Next(1, 10);
+                }
+            }
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            int max = matrix[0,0];
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    if (matrix[j,i] > max)
+                    {
+                        (matrix[j, i], max) = (max, matrix[j, i]);
+                    }
+                }
+                Console.WriteLine($"максимальный элемент столбца {i} = {max}");
+                max = matrix[0,0];
+            }
+        }
         static void Main()
         {
-            Matrix23();
+            Matrix24();
         }
     }
 }
