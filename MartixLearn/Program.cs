@@ -706,7 +706,8 @@
                 }
                 product = 1;
             }
-            Console.WriteLine($"колонка с наименьшим произведением элементов: {minColumn} = {minProduct}");
+            Console.WriteLine($"колонка с наименьшим произведением элементов = '{minColumn}'," +
+                              $"\nминимальное произведение = {minProduct}");
         }
         static void Main()
         {
