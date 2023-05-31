@@ -457,20 +457,22 @@
 
             Console.WriteLine($"Сумма:{sum}, произведение:{product}");
         }
+
         /// <summary>
         /// Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов.
         /// </summary>
         public static void Matrix19()
         {
-            int[,] matrix = new int[3,4];
+            int[,] matrix = new int[3, 4];
             int sum = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -479,24 +481,27 @@
                 {
                     sum += matrix[i, j];
                 }
+
                 Console.WriteLine($"сумма элементов строки {i} = {sum}");
                 sum = 0;
             }
         }
+
         /// <summary>
         /// Matrix20. Дана матрица размера M × N. Для каждого столбца матрицы найти произведение его элементов.
         /// </summary>
         public static void Matrix20()
         {
-            int[,] matrix = new int[3,4];
+            int[,] matrix = new int[3, 4];
             int sum = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
             for (int i = 0; i < matrix.GetLength(1); i++)
@@ -505,128 +510,210 @@
                 {
                     sum += matrix[j, i];
                 }
+
                 Console.WriteLine($"сумма элементов столбца {i} = {sum}");
                 sum = 0;
             }
-            
         }
+
         /// <summary>
         /// Matrix21. Дана матрица размера M × N. Для каждой строки матрицы с нечетным номером (1, 3, ...)
         /// найти среднее арифметическое ее элементов. Условный оператор не использовать.
         /// </summary>
         public static void Matrix21()
         {
-            int[,] matrix = new int[8,4];
+            int[,] matrix = new int[8, 4];
             int sum = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            for (int i = 1; i < matrix.GetLength(0); i+=2)
+            for (int i = 1; i < matrix.GetLength(0); i += 2)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     sum += matrix[i, j];
                 }
+
                 Console.WriteLine($"среднее арифметическое строки {i} = {sum / matrix.GetLength(1)}");
                 sum = 0;
             }
         }
+
         /// <summary>
         /// Matrix22. Дана матрица размера M × N. Для каждой строки матрицы с нечетным номером (1, 3, ...)
         /// найти среднее арифметическое ее элементов. Условный оператор не использовать.
         /// </summary>
         public static void Matrix22()
         {
-            int[,] matrix = new int[4,7];
+            int[,] matrix = new int[4, 7];
             int sum = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            for (int i = 2; i < matrix.GetLength(1); i+=2)
+            for (int i = 2; i < matrix.GetLength(1); i += 2)
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
                     sum += matrix[j, i];
                 }
+
                 Console.WriteLine($"сумма столбца {i} = {sum}");
                 sum = 0;
             }
         }
+
         /// <summary>
         /// Matrix23. Дана матрица размера M × N. В каждой строке матрицы найти минимальный элемент.
         /// </summary>
         public static void Matrix23()
         {
-            int[,] matrix = new int[4,4];
-            
+            int[,] matrix = new int[4, 4];
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            int min = matrix[matrix.GetLength(0)-1,matrix.GetLength(1)-1];
+            int min = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    if (matrix[i,j]< min)
+                    if (matrix[i, j] < min)
                     {
                         (matrix[i, j], min) = (min, matrix[i, j]);
                     }
                 }
+
                 Console.WriteLine($"минимальный элемент строки {i} = {min}");
-                min = matrix[matrix.GetLength(0)-1,matrix.GetLength(1)-1];
+                min = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
             }
         }
+
         /// <summary>
         /// Matrix24◦. Дана матрица размера M × N. В каждом столбце матрицы найти максимальный элемент.
         /// </summary>
         public static void Matrix24()
         {
-            int[,] matrix = new int[4,5];
-            
+            int[,] matrix = new int[4, 5];
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i,j] = rnd.Next(1, 10);
+                    matrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            int max = matrix[0,0];
+            int max = matrix[0, 0];
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    if (matrix[j,i] > max)
+                    if (matrix[j, i] > max)
                     {
                         (matrix[j, i], max) = (max, matrix[j, i]);
                     }
                 }
+
                 Console.WriteLine($"максимальный элемент столбца {i} = {max}");
-                max = matrix[0,0];
+                max = matrix[0, 0];
             }
+        }
+        /// <summary>
+        /// Matrix25. Дана матрица размера M × N. Найти номер ее строки с наибольшей суммой элементов и вывести данный
+        /// номер, а также значение наибольшей суммы.
+        /// </summary>
+        public static void Matrix25()
+        {
+            int[,] matrix = new int[4, 5];
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            int sum = 0, maxSumOfRow = 0, maxRow = 0;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    sum += matrix[i, j];
+                }
+                if (sum > maxSumOfRow)
+                {
+                    maxSumOfRow = sum;
+                    maxRow = i;
+                }
+                sum = 0;
+            }
+            Console.WriteLine($"максимальная сумма строки {maxRow} = {maxSumOfRow}");
+        }
+        /// <summary>
+        /// Matrix26. Дана матрица размера M × N. Найти номер ее столбца с наименьшим произведением элементов и
+        /// вывести данный номер, а также значение наименьшего произведения.
+        /// </summary>
+        public static void Matrix26()
+        {
+            int[,] matrix = new int[3, 4];
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+
+            ShowMatrix(matrix);
+            Console.WriteLine(" =============");
+            int product = 1, minProduct = Int32.MaxValue, minColumn = 0;
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    product *= matrix[j, i];
+                }
+                if (minProduct > product)
+                {
+                    minProduct = product;
+                    minColumn = i+1;
+                }
+
+                product = 1;
+
+            }
+            Console.WriteLine($"колонка с наименьшим произведением элементов: {minColumn} = {minProduct}");
         }
         static void Main()
         {
-            Matrix24();
+            Matrix26();
         }
     }
 }
