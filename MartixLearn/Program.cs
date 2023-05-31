@@ -427,7 +427,7 @@
                 product *= matrix[k - 1, i];
             }
 
-            Console.WriteLine($"Сумма:{sum}, произведение:{product}");
+            Console.WriteLine($"cумма чисел в строке '{k}'= {sum}, произведение = {product}.");
         }
 
         /// <summary>
@@ -455,7 +455,7 @@
             }
 
 
-            Console.WriteLine($"Сумма:{sum}, произведение:{product}");
+            Console.WriteLine($"cумма чисел в столбце '{k}'= {sum}, произведение = {product}.");
         }
 
         /// <summary>
@@ -482,7 +482,7 @@
                     sum += matrix[i, j];
                 }
 
-                Console.WriteLine($"сумма элементов строки {i} = {sum}");
+                Console.WriteLine($"сумма элементов строки: {i+1} = {sum}");
                 sum = 0;
             }
         }
@@ -493,7 +493,7 @@
         public static void Matrix20()
         {
             int[,] matrix = new int[3, 4];
-            int sum = 0;
+            int product = 1;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -508,11 +508,11 @@
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    sum += matrix[j, i];
+                    product *= matrix[j, i];
                 }
 
-                Console.WriteLine($"сумма элементов столбца {i} = {sum}");
-                sum = 0;
+                Console.WriteLine($"произведение элементов столбца: {i+1} = {product}");
+                product = 1;
             }
         }
 
@@ -534,14 +534,14 @@
 
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            for (int i = 1; i < matrix.GetLength(0); i += 2)
+            for (int i = 0; i < matrix.GetLength(0); i += 2)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     sum += matrix[i, j];
                 }
 
-                Console.WriteLine($"среднее арифметическое строки {i} = {sum / matrix.GetLength(1)}");
+                Console.WriteLine($"среднее арифметическое строки: {i+1} = {sum / matrix.GetLength(1)}");
                 sum = 0;
             }
         }
@@ -564,14 +564,13 @@
 
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            for (int i = 2; i < matrix.GetLength(1); i += 2)
+            for (int i = 0; i < matrix.GetLength(1); i += 2)
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
                     sum += matrix[j, i];
                 }
-
-                Console.WriteLine($"сумма столбца {i} = {sum}");
+                Console.WriteLine($"сумма столбца: {i+1} = {sum}");
                 sum = 0;
             }
         }
@@ -604,7 +603,7 @@
                     }
                 }
 
-                Console.WriteLine($"минимальный элемент строки {i} = {min}");
+                Console.WriteLine($"минимальный элемент строки: {i+1} = {min}");
                 min = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
             }
         }
@@ -637,7 +636,7 @@
                     }
                 }
 
-                Console.WriteLine($"максимальный элемент столбца {i} = {max}");
+                Console.WriteLine($"максимальный элемент столбца: {i+1} = {max}");
                 max = matrix[0, 0];
             }
         }
@@ -669,11 +668,11 @@
                 if (sum > maxSumOfRow)
                 {
                     maxSumOfRow = sum;
-                    maxRow = i;
+                    maxRow = i+1;
                 }
                 sum = 0;
             }
-            Console.WriteLine($"максимальная сумма строки {maxRow} = {maxSumOfRow}");
+            Console.WriteLine($"максимальная сумма строки: {maxRow} = {maxSumOfRow}");
         }
         /// <summary>
         /// Matrix26. Дана матрица размера M × N. Найти номер ее столбца с наименьшим произведением элементов и
@@ -705,9 +704,7 @@
                     minProduct = product;
                     minColumn = i+1;
                 }
-
                 product = 1;
-
             }
             Console.WriteLine($"колонка с наименьшим произведением элементов: {minColumn} = {minProduct}");
         }
