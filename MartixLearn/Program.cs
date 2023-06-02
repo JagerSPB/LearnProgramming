@@ -18,7 +18,11 @@
             }
         }
 
-        public static void RndMatrix(int[,]nameOfMatrix)
+        /// <summary>
+        /// заполняет матрицу рандомными числами и выводит её
+        /// </summary>
+        /// <param name="nameOfMatrix"></param>
+        public static void RndMatrix(int[,] nameOfMatrix)
         {
             for (int i = 0; i < nameOfMatrix.GetLength(0); i++)
             {
@@ -27,11 +31,11 @@
                     nameOfMatrix[i, j] = rnd.Next(1, 10);
                 }
             }
+
             ShowMatrix(nameOfMatrix);
         }
 
-        
-        
+
         /// <summary>
         /// Matrix1. Даны целые положительные числа M и N. Сформировать целочисленную матрицу размера M × N, у которой
         /// все элементы I-й строки имеют значение 10·I (I = 1,...,M).
@@ -687,7 +691,7 @@
         /// </summary>
         public static void Matrix26()
         {
-            int[,] matrix = new int[4,5];
+            int[,] matrix = new int[4, 5];
             RndMatrix(matrix);
             Console.WriteLine(" =============");
             int product = 1, minProduct = Int32.MaxValue, minColumn = 0;
@@ -716,13 +720,65 @@
         /// </summary>
         public static void Matrix27()
         {
+            int[,] matrix = new int[4, 5];
+            RndMatrix(matrix);
+            int row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            int minItem = Int32.MaxValue, maxItem = Int32.MinValue;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (matrix[i, j] < minItem)
+                    {
+                        minItem = matrix[i, j];
+                    }
+                }
+
+                Console.WriteLine($"Минимальный элемент в строке {i + 1} = {minItem}");
+                if (minItem > maxItem)
+                {
+                    maxItem = minItem;
+                }
+            }
+
+            Console.WriteLine($"Максимальный элемент из минимальных = {maxItem}");
+        }
+
+        /// <summary>
+        /// Matrix28. Дана матрица размера M × N. Найти минимальный среди максимальных элементов ее столбцов.
+        /// </summary>
+        public static void Matrix28()
+        {
             int[,] matrix = new int[4,5];
             RndMatrix(matrix);
+            int row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            int minItem = Int32.MaxValue, maxItem = Int32.MinValue;
+            for (int i = 0; i < columns; i++)
+            {
+                for (int j = 0; j < row; j++)
+                {
+                    if (matrix[j, i] > maxItem)
+                    {
+                        maxItem = matrix[j, i];
+                    }
+                }
+
+                Console.WriteLine($"Максимальный элемент в строке {i + 1} = {maxItem}");
+                
+                if (minItem > maxItem)
+                {
+                    minItem = maxItem;
+                }
+                maxItem = Int32.MinValue;
+            }
+
+            Console.WriteLine($"Минимальный элемент из максимальных = {minItem}");
         }
+        
 
         static void Main()
         {
-            Matrix26();
+            Matrix28();
         }
     }
 }
