@@ -18,19 +18,20 @@
             }
         }
 
-        // public static int[,] FullRndMatrix(int rows, int columns, int lower, int upper)
-        // {
-        //     int[,]matrix = new int[rows, columns];
-        //     for (int i = 0; i < matrix.GetLength(0); i++)
-        //     {
-        //         for (int j = 0; j < matrix.GetLength(1); j++)
-        //         {
-        //             matrix[i, j] = rnd.Next(lower, upper);
-        //         }
-        //     }
-        //     return matrix;
-        // }
+        public static void RndMatrix(int[,]nameOfMatrix)
+        {
+            for (int i = 0; i < nameOfMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < nameOfMatrix.GetLength(1); j++)
+                {
+                    nameOfMatrix[i, j] = rnd.Next(1, 10);
+                }
+            }
+            ShowMatrix(nameOfMatrix);
+        }
 
+        
+        
         /// <summary>
         /// Matrix1. Даны целые положительные числа M и N. Сформировать целочисленную матрицу размера M × N, у которой
         /// все элементы I-й строки имеют значение 10·I (I = 1,...,M).
@@ -482,7 +483,7 @@
                     sum += matrix[i, j];
                 }
 
-                Console.WriteLine($"сумма элементов строки: {i+1} = {sum}");
+                Console.WriteLine($"сумма элементов строки: {i + 1} = {sum}");
                 sum = 0;
             }
         }
@@ -511,7 +512,7 @@
                     product *= matrix[j, i];
                 }
 
-                Console.WriteLine($"произведение элементов столбца: {i+1} = {product}");
+                Console.WriteLine($"произведение элементов столбца: {i + 1} = {product}");
                 product = 1;
             }
         }
@@ -541,7 +542,7 @@
                     sum += matrix[i, j];
                 }
 
-                Console.WriteLine($"среднее арифметическое строки: {i+1} = {sum / matrix.GetLength(1)}");
+                Console.WriteLine($"среднее арифметическое строки: {i + 1} = {sum / matrix.GetLength(1)}");
                 sum = 0;
             }
         }
@@ -570,7 +571,8 @@
                 {
                     sum += matrix[j, i];
                 }
-                Console.WriteLine($"сумма столбца: {i+1} = {sum}");
+
+                Console.WriteLine($"сумма столбца: {i + 1} = {sum}");
                 sum = 0;
             }
         }
@@ -592,7 +594,7 @@
 
             ShowMatrix(matrix);
             Console.WriteLine(" =============");
-            int min = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+            int min = matrix[0, 0];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -603,8 +605,8 @@
                     }
                 }
 
-                Console.WriteLine($"минимальный элемент строки: {i+1} = {min}");
-                min = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+                Console.WriteLine($"минимальный элемент строки: {i + 1} = {min}");
+                min = matrix[i, 0];
             }
         }
 
@@ -636,10 +638,11 @@
                     }
                 }
 
-                Console.WriteLine($"максимальный элемент столбца: {i+1} = {max}");
-                max = matrix[0, 0];
+                Console.WriteLine($"максимальный элемент столбца: {i + 1} = {max}");
+                max = matrix[0, i];
             }
         }
+
         /// <summary>
         /// Matrix25. Дана матрица размера M × N. Найти номер ее строки с наибольшей суммой элементов и вывести данный
         /// номер, а также значение наибольшей суммы.
@@ -665,32 +668,27 @@
                 {
                     sum += matrix[i, j];
                 }
+
                 if (sum > maxSumOfRow)
                 {
                     maxSumOfRow = sum;
-                    maxRow = i+1;
+                    maxRow = i + 1;
                 }
+
                 sum = 0;
             }
+
             Console.WriteLine($"максимальная сумма строки: {maxRow} = {maxSumOfRow}");
         }
+
         /// <summary>
         /// Matrix26. Дана матрица размера M × N. Найти номер ее столбца с наименьшим произведением элементов и
         /// вывести данный номер, а также значение наименьшего произведения.
         /// </summary>
         public static void Matrix26()
         {
-            int[,] matrix = new int[3, 4];
-
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    matrix[i, j] = rnd.Next(1, 10);
-                }
-            }
-
-            ShowMatrix(matrix);
+            int[,] matrix = new int[4,5];
+            RndMatrix(matrix);
             Console.WriteLine(" =============");
             int product = 1, minProduct = Int32.MaxValue, minColumn = 0;
             for (int i = 0; i < matrix.GetLength(1); i++)
@@ -699,16 +697,29 @@
                 {
                     product *= matrix[j, i];
                 }
+
                 if (minProduct > product)
                 {
                     minProduct = product;
-                    minColumn = i+1;
+                    minColumn = i + 1;
                 }
+
                 product = 1;
             }
+
             Console.WriteLine($"колонка с наименьшим произведением элементов = '{minColumn}'," +
                               $"\nминимальное произведение = {minProduct}");
         }
+
+        /// <summary>
+        /// Matrix27. Дана матрица размера M × N. Найти максимальный среди минимальных элементов ее строк.
+        /// </summary>
+        public static void Matrix27()
+        {
+            int[,] matrix = new int[4,5];
+            RndMatrix(matrix);
+        }
+
         static void Main()
         {
             Matrix26();
