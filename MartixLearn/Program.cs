@@ -749,7 +749,7 @@
         /// </summary>
         public static void Matrix28()
         {
-            int[,] matrix = new int[4,5];
+            int[,] matrix = new int[4, 5];
             RndMatrix(matrix);
             int row = matrix.GetLength(0), columns = matrix.GetLength(1);
             int minItem = Int32.MaxValue, maxItem = Int32.MinValue;
@@ -764,21 +764,83 @@
                 }
 
                 Console.WriteLine($"Максимальный элемент в строке {i + 1} = {maxItem}");
-                
+
                 if (minItem > maxItem)
                 {
                     minItem = maxItem;
                 }
+
                 maxItem = Int32.MinValue;
             }
 
             Console.WriteLine($"Минимальный элемент из максимальных = {minItem}");
         }
-        
 
+        /// <summary>
+        /// Matrix29. Дана матрица размера M × N. В каждой ее строке найти количество элементов, меньших среднего
+        /// арифметического всех элементов этой строки.
+        /// </summary>
+        public static void Matrix29()
+        {
+            int[,] matrix = new int[3, 7];
+            int sum = 0, average = 0, count = 0;
+            int row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            RndMatrix(matrix);
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    sum += matrix[i, j];
+                    average = sum / columns;
+                    
+                }
+                for (int j = 0; j < columns; j++)
+                {
+                    if (matrix[i, j] < average)
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine($"Ср. арифм: {average}, кол-во элементов строки: {i + 1} меньше ср. арифм-ого {count}");
+                sum = 0;
+                average = 0;
+                count = 0;
+            }
+        }
+        /// <summary>
+        /// Matrix30. Дана матрица размера M × N. В каждом ее столбце найти количе- ство элементов, больших среднего
+        /// арифметического всех элементов этого столбца.
+        /// </summary>
+        public static void Matrix30()
+        {
+            int[,] matrix = new int[8, 3];
+            int sum = 0, average = 0, count = 0;
+            int row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            RndMatrix(matrix);
+            for (int i = 0; i < columns; i++)
+            {
+                for (int j = 0; j < row; j++)
+                {
+                    sum += matrix[j, i];
+                    average = sum / row;
+                    
+                }
+                for (int j = 0; j < row; j++)
+                {
+                    if (matrix[j, i] > average)
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine($"Ср. арифм: {average}, кол-во элементов столбца: {i + 1} больше ср. арифм-ого {count}");
+                sum = 0;
+                average = 0;
+                count = 0;
+            }
+        }
         static void Main()
         {
-            Matrix28();
+            Matrix30();
         }
     }
 }
