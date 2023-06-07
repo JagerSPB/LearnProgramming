@@ -906,7 +906,7 @@
                 if (countPositive == countNegative)
                 {
                     Console.WriteLine($"Строка {i+1} содержит одинаковое кол-во отр. и положительных эллементов");
-                    Console.WriteLine($"Положительных {countPositive}, отрицательных {countNegative}");
+                    Console.WriteLine($"Положительных: {countPositive}, отрицательных: {countNegative}");
                     break;
                 }
 
@@ -917,6 +917,7 @@
             if (countPositive == 0|| countNegative==0)
             {
                 Console.WriteLine($"Тебе не повезло, тут нет строк, с одинаковым кол-вом отр. и полож. эллементов");
+                Console.WriteLine("Результат: 0");
             }
         }
 
