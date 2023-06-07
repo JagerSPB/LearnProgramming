@@ -11,7 +11,7 @@
                 Console.Write("[ ");
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i, j] + " ");
+                    Console.Write(matrix[i, j] +"\t");
                 }
 
                 Console.WriteLine("]");
@@ -28,7 +28,7 @@
             {
                 for (int j = 0; j < nameOfMatrix.GetLength(1); j++)
                 {
-                    nameOfMatrix[i, j] = rnd.Next(1, 10);
+                    nameOfMatrix[i, j] = rnd.Next(-10, 10);
                 }
             }
 
@@ -792,8 +792,8 @@
                 {
                     sum += matrix[i, j];
                     average = sum / columns;
-                    
                 }
+
                 for (int j = 0; j < columns; j++)
                 {
                     if (matrix[i, j] < average)
@@ -801,12 +801,15 @@
                         count++;
                     }
                 }
-                Console.WriteLine($"Ср. арифм: {average}, кол-во элементов строки: {i + 1} меньше ср. арифм-ого {count}");
+
+                Console.WriteLine(
+                    $"Ср. арифм: {average}, кол-во элементов строки: {i + 1} меньше ср. арифм-ого {count}");
                 sum = 0;
                 average = 0;
                 count = 0;
             }
         }
+
         /// <summary>
         /// Matrix30. Дана матрица размера M × N. В каждом ее столбце найти количе- ство элементов, больших среднего
         /// арифметического всех элементов этого столбца.
@@ -823,8 +826,8 @@
                 {
                     sum += matrix[j, i];
                     average = sum / row;
-                    
                 }
+
                 for (int j = 0; j < row; j++)
                 {
                     if (matrix[j, i] > average)
@@ -832,15 +835,94 @@
                         count++;
                     }
                 }
-                Console.WriteLine($"Ср. арифм: {average}, кол-во элементов столбца: {i + 1} больше ср. арифм-ого {count}");
+
+                Console.WriteLine(
+                    $"Ср. арифм: {average}, кол-во элементов столбца: {i + 1} больше ср. арифм-ого {count}");
                 sum = 0;
                 average = 0;
                 count = 0;
             }
         }
+
+        /// <summary>
+        /// Matrix31. Дана матрица размера M × N. Найти номера строки и столбца для элемента матрицы, наиболее близкого
+        /// к среднему значению всех ее элементов.
+        /// </summary>
+        public static void Matrix31()
+        {
+            int[,] matrix = new int[3, 3];
+            RndMatrix(matrix);
+            int sum = 0, average = 0, row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            int minDiff = int.MaxValue, diff = 0, minRow = 0, minCol = 0;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    sum += matrix[i, j];
+                    average = sum / (row * columns);
+                }
+            }
+
+            Console.WriteLine($"сум = {sum}, средн = {average}");
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    diff = Math.Abs(matrix[i, j] - average);
+                    if (diff < minDiff)
+                    {
+                        minDiff = diff;
+                        minRow = i;
+                        minCol = j;
+                    }
+                }
+            }
+
+            Console.WriteLine(
+                $"Элемент матрицы, наиболее близкий к среднему значению всех ее элементов: {matrix[minRow, minCol]}");
+            Console.WriteLine($"Номер строки: {minRow}, номер столбца: {minCol}");
+        }
+
+        /// <summary>
+        /// Matrix32. Дана целочисленная матрица размера M × N. Найти номер первой из ее строк, содержащих равное
+        /// количество положительных и отрицательных элементов (нулевые элементы матрицы не учитываются).
+        /// Если таких строк нет, то вывести 0.
+        /// </summary>
+        public static void Matrix32()
+        {
+            int[,] matrix = new int[6, 6];
+            RndMatrix(matrix);
+            int row = matrix.GetLength(0), columns = matrix.GetLength(1);
+            int countPositive = 0, countNegative = 0;
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (matrix[i, j] > 0) countPositive++;
+                    if (matrix[i, j] < 0) countNegative++;
+                }
+
+                if (countPositive == countNegative)
+                {
+                    Console.WriteLine($"Строка {i+1} содержит одинаковое кол-во отр. и положительных эллементов");
+                    Console.WriteLine($"Положительных {countPositive}, отрицательных {countNegative}");
+                    break;
+                }
+
+                countPositive = 0;
+                countNegative = 0;
+
+            }
+            if (countPositive == 0|| countNegative==0)
+            {
+                Console.WriteLine($"Тебе не повезло, тут нет строк, с одинаковым кол-вом отр. и полож. эллементов");
+            }
+        }
+
         static void Main()
         {
-            Matrix30();
+            Matrix32();
         }
     }
 }
