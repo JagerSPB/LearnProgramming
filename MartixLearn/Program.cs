@@ -4,6 +4,13 @@
     {
         private static Random rnd = new Random(DateTime.Now.Millisecond);
 
+        public static void Show(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine($"[{i}] = {array[i]}");
+        }
+
+
         public static void ShowMatrix(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -11,7 +18,7 @@
                 Console.Write("[ ");
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i, j] +"\t");
+                    Console.Write(matrix[i, j] + "\t");
                 }
 
                 Console.WriteLine("]");
@@ -905,25 +912,58 @@
 
                 if (countPositive == countNegative)
                 {
-                    Console.WriteLine($"Строка {i+1} содержит одинаковое кол-во отр. и положительных эллементов");
+                    Console.WriteLine($"Строка {i + 1} содержит одинаковое кол-во отр. и положительных эллементов");
                     Console.WriteLine($"Положительных: {countPositive}, отрицательных: {countNegative}");
                     break;
                 }
 
                 countPositive = 0;
                 countNegative = 0;
-
             }
-            if (countPositive == 0|| countNegative==0)
+
+            if (countPositive == 0 || countNegative == 0)
             {
                 Console.WriteLine($"Тебе не повезло, тут нет строк, с одинаковым кол-вом отр. и полож. эллементов");
                 Console.WriteLine("Результат: 0");
             }
         }
 
+        /// <summary>
+        ///Array90. Дан массив размера N и целое число K (1 ≤ K ≤ N). Удалить из массива элемент с порядковым номером K.
+        /// </summary>
+        public static void RemoveElementByIndex(int[] array, int itemToDelete)
+        {
+            if (itemToDelete < 0 || itemToDelete > array.Length)
+            {
+                Console.WriteLine("Ошибка: выбран индекс для удаления вне пределов массива");
+                return;
+            }
+            Console.Write("[ ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+
+            Console.WriteLine("]");
+            int[] newArray = new int[array.Length - 1];
+
+            for (int i = 0; i < itemToDelete; i++)
+            {
+                newArray[i] = array[i];
+            }
+
+            for (int i = itemToDelete + 1; i < array.Length; i++)
+            {
+                newArray[i - 1] = array[i];
+            }
+
+            Show(newArray);
+        }
+
         static void Main()
         {
-            Matrix32();
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            RemoveElementByIndex(array, 0);
         }
     }
 }
