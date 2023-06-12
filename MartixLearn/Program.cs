@@ -928,42 +928,117 @@
             }
         }
 
+//=====================================================================================
         /// <summary>
         ///Array90. Дан массив размера N и целое число K (1 ≤ K ≤ N). Удалить из массива элемент с порядковым номером K.
         /// </summary>
-        public static void RemoveElementByIndex(int[] array, int itemToDelete)
+        public static void RemoveByIndex(ref int[] array, int index)
         {
-            if (itemToDelete < 0 || itemToDelete > array.Length)
-            {
-                Console.WriteLine("Ошибка: выбран индекс для удаления вне пределов массива");
-                return;
-            }
-            Console.Write("[ ");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]} ");
-            }
-
-            Console.WriteLine("]");
             int[] newArray = new int[array.Length - 1];
 
-            for (int i = 0; i < itemToDelete; i++)
+            for (int i = 0; i < index; i++)
             {
                 newArray[i] = array[i];
             }
 
-            for (int i = itemToDelete + 1; i < array.Length; i++)
+            for (int i = index + 1; i < array.Length; i++)
             {
                 newArray[i - 1] = array[i];
             }
 
-            Show(newArray);
+            array = newArray;
         }
 
+        /// <summary>
+        /// Дан массив размера N и целые числа K и L (1 ≤ K < L ≤ N). Удалить из массива элементы с номерами от K до L
+        /// включительно и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="firstIndex"></param>
+        /// <param name="secondIndex"></param>
+        public static void RemoveTwoElementByIndex(ref int[] array, int firstIndex, int secondIndex)
+        {
+            int[] newArray = new int[array.Length - 2];
+
+            for (int i = 0; i < firstIndex; i++)
+            {
+                newArray[i] = array[i];
+            }
+
+            for (int i = firstIndex + 1; i < secondIndex; i++)
+            {
+                newArray[i - 1] = array[i];
+            }
+
+            for (int i = secondIndex + 1; i < array.Length; i++)
+            {
+                newArray[i - 2] = array[i];
+            }
+
+            array = newArray;
+        }
+
+        /// <summary>
+        /// Array92. Дан целочисленный массив размера N. Удалить из массива все нечетные числа и вывести размер полученного
+        /// массива и его содержимое.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveOdd(ref int[] array)
+        {
+            int oddCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 != 0)
+                {
+                    oddCount++;
+                }
+            }
+
+            int[] newArray = new int[array.Length - oddCount];
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                    newArray[j++] = array[i];
+            }
+
+            array = newArray;
+        }
+
+        /// <summary>
+        /// Array93. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с четными номерами
+        /// (2, 4, . . .). Условный оператор не использовать.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveOddIndex(ref int[] array)
+        {
+            int[] newArray = new int[array.Length / 2];
+            for (int i = 0, j = 0; i < array.Length; i += 2)
+            {
+                newArray[j++] = array[i+1];
+            }
+
+            array = newArray;
+        }
+        /// <summary>
+        /// Array93. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с четными номерами
+        /// (2, 4, . . .). Условный оператор не использовать.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveEvenIndex(ref int[] array)
+        {
+            int[] newArray = new int[array.Length / 2];
+            for (int i = 0, j = 0; i < array.Length; i += 2)
+            {
+                newArray[j++] = array[i];
+            }
+
+            array = newArray;
+        }
         static void Main()
         {
             int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            RemoveElementByIndex(array, 0);
+            RemoveEvenIndex(ref array);
+            Show(array);
         }
     }
 }
