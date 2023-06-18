@@ -1,4 +1,6 @@
-﻿namespace Matrix
+﻿using System.Runtime.Serialization.Formatters;
+
+namespace Matrix
 {
     internal static class Program
     {
@@ -1168,10 +1170,49 @@
 
             array = newArray;
         }
+
+        /// <summary>
+        /// Array98. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся менее трех раз,
+        /// и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveItemsWithLessThanThreeOccurrences(ref int[] array)
+        {
+            int length = array.Length;
+            int[] newArray = new int[length];
+            int item = 0, countFlagged = 0, flag = Int32.MinValue + 1;
+            for (int i = 0; i < length; i++) {
+                newArray[i] = flag;
+            }
+            
+            for (int i = 0; i < length; i++) {
+                int countMoreThanThree = 0;
+                for (int j = 0; j < length; j++) {
+                    if (array[i] == array[j]) 
+                        countMoreThanThree++;
+                }
+
+                if (countMoreThanThree >= 3)
+                    newArray[item++] = array[i];
+            }
+
+            for (int i = 0; i < length; i++) {
+                if (newArray[i] == flag)
+                    countFlagged++;
+            }
+
+            int[] lastArray = new int[length - countFlagged];
+            for (int i = 0, j = 0; i < lastArray.Length; i++) {
+                lastArray[j++] = newArray[i];
+            }
+
+            array = lastArray;
+        }
+        
         static void Main()
         {
-            int[] array = { 1, 5, 5, 5, 5, 3, 4, 5, 7, 1, 8, 9, 10 };
-            RemoveDuplicatesLastEntry(ref array);
+            int[] array = { 8, 1, 5, 5, 5, 5, 2, 6, 3, 4, 5, 7, 1, 8, 9, 1, 8 };
+            RemoveItemsWithLessThanThreeOccurrences(ref array);
             Show(array);
         }
     }
