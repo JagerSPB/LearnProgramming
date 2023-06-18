@@ -1014,14 +1014,15 @@
             int[] newArray = new int[array.Length / 2];
             for (int i = 0, j = 0; i < array.Length; i += 2)
             {
-                newArray[j++] = array[i+1];
+                newArray[j++] = array[i + 1];
             }
 
             array = newArray;
         }
+
         /// <summary>
-        /// Array93. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с четными номерами
-        /// (2, 4, . . .). Условный оператор не использовать.
+        /// Array94. Дан целочисленный массив размера N (> 2). Удалить из массива всеэлементы с нечетными номерами
+        /// (1, 3, ...). Условный оператор не использовать.
         /// </summary>
         /// <param name="array"></param>
         public static void RemoveEvenIndex(ref int[] array)
@@ -1034,10 +1035,143 @@
 
             array = newArray;
         }
+
+        /// <summary>
+        /// Array95. Дан целочисленный массив размера N. Удалить из массива все соседние одинаковые элементы,
+        /// оставив их первые вхождения.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveAdjacentDuplicates(ref int[] array)
+        {
+            int dublicatesCount = 0;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] == array[i + 1])
+                {
+                    dublicatesCount++;
+                }
+            }
+
+            int[] newArray = new int[array.Length - dublicatesCount];
+            newArray[0] = array[0];
+            for (int i = 1, j = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] != array[i])
+                {
+                    newArray[j++] = array[i];
+                }
+            }
+
+            array = newArray;
+        }
+
+        /// <summary>
+        /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
+        /// первые вхождения.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveDuplicates(ref int[] array)
+        {
+            int length = array.Length;
+            int duplicatesCount = 0;
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (array[i] == array[j] && array[j] != Int32.MinValue + 1)
+                    {
+                        array[j] = Int32.MinValue + 1;
+                        duplicatesCount++;
+                    }
+                }
+            }
+
+            int[] newArray = new int[length - duplicatesCount];
+            for (int i = 0, j = 0; i < length; i++)
+            {
+                if (array[i] != Int32.MinValue + 1)
+                {
+                    newArray[j++] = array[i];
+                }
+            }
+
+            array = newArray;
+        }
+        // public static void RemoveDuplicates(ref int[] array)
+        // {
+        //     int length = array.Length;
+        //     int duplicatesCount = 0;
+        //     for (int i = 0; i < length; i++)
+        //     {
+        //         for (int j = i + 1; j < length; j++)
+        //         {
+        //             if (array[i] == array[j])
+        //             {
+        //                 duplicatesCount++;
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //
+        //     int[] newArray = new int[length - duplicatesCount];
+        //     int newIndex = 0;
+        //     for (int i = 0; i < length; i++)
+        //     {
+        //         bool isDuplicate = false;
+        //         for (int j = i + 1; j < length; j++)
+        //         {
+        //             if (array[i] == array[j])
+        //             {
+        //                 isDuplicate = true;
+        //                 break;
+        //             }
+        //         }
+        //
+        //         if (!isDuplicate)
+        //         {
+        //             newArray[newIndex++] = array[i];
+        //         }
+        //     }
+        //
+        //     array = newArray;
+        // }
+
+        /// <summary>
+        /// Array97. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы,
+        /// оставив их последние вхождения.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveDuplicatesLastEntry(ref int[] array)
+        {
+            int length = array.Length;
+            int duplicatesCount = 0;
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (array[i] == array[j] && array[j] != Int32.MinValue + 1)
+                    {
+                        array[i] = Int32.MinValue + 1;
+                        duplicatesCount++;
+                    }
+                }
+            }
+
+            int[] newArray = new int[length - duplicatesCount];
+            for (int i = 0, j = 0; i < length; i++)
+            {
+                if (array[i] != Int32.MinValue + 1)
+                {
+                    newArray[j++] = array[i];
+                }
+            }
+
+            array = newArray;
+        }
         static void Main()
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            RemoveEvenIndex(ref array);
+            int[] array = { 1, 5, 5, 5, 5, 3, 4, 5, 7, 1, 8, 9, 10 };
+            RemoveDuplicatesLastEntry(ref array);
             Show(array);
         }
     }
