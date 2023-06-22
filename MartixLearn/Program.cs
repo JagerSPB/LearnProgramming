@@ -1208,11 +1208,42 @@ namespace Matrix
 
             array = lastArray;
         }
-        
+        /// <summary>
+        /// Array99. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся более двух раз,
+        /// и вывести размер полученного массива и его содержимое.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveNonUniqueItems(ref int[] array)
+        {
+            int length = array.Length;
+            int nonUniqueCount = 0, flagged = Int32.MinValue +1;
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = i+1; j < length; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        array[i] = flagged;
+                        nonUniqueCount++;
+                    }
+                        
+                }
+            }
+
+            int[] newArray = new int[length-nonUniqueCount];
+            for (int i = 0, j = 0; i < length; i++)
+            {
+                if (array[i]!= flagged)
+                {
+                    newArray[j++] = array[i];
+                }
+            }
+            array = newArray;
+        }
         static void Main()
         {
             int[] array = { 8, 1, 5, 5, 5, 5, 2, 6, 3, 4, 5, 7, 1, 8, 9, 1, 8 };
-            RemoveItemsWithLessThanThreeOccurrences(ref array);
+            RemoveNonUniqueItems(ref array);
             Show(array);
         }
     }
