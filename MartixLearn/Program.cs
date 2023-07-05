@@ -1181,14 +1181,17 @@ namespace Matrix
             int length = array.Length;
             int[] newArray = new int[length];
             int item = 0, countFlagged = 0, flag = Int32.MinValue + 1;
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length; i++)
+            {
                 newArray[i] = flag;
             }
-            
-            for (int i = 0; i < length; i++) {
+
+            for (int i = 0; i < length; i++)
+            {
                 int countMoreThanThree = 0;
-                for (int j = 0; j < length; j++) {
-                    if (array[i] == array[j]) 
+                for (int j = 0; j < length; j++)
+                {
+                    if (array[i] == array[j])
                         countMoreThanThree++;
                 }
 
@@ -1196,54 +1199,63 @@ namespace Matrix
                     newArray[item++] = array[i];
             }
 
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length; i++)
+            {
                 if (newArray[i] == flag)
                     countFlagged++;
             }
 
             int[] lastArray = new int[length - countFlagged];
-            for (int i = 0, j = 0; i < lastArray.Length; i++) {
+            for (int i = 0, j = 0; i < lastArray.Length; i++)
+            {
                 lastArray[j++] = newArray[i];
             }
 
             array = lastArray;
         }
+
         /// <summary>
         /// Array99. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся более двух раз,
         /// и вывести размер полученного массива и его содержимое.
         /// </summary>
         /// <param name="array"></param>
-        public static void RemoveNonUniqueItems(ref int[] array)
+        public static void removeDuplicatesMoreThanTwo(ref int[] array)
         {
             int length = array.Length;
-            int nonUniqueCount = 0, flagged = Int32.MinValue +1;
+            int removeCount = 0, duplicateCount = 0, markToRemove = Int32.MinValue + 1;
             for (int i = 0; i < length; i++)
             {
-                for (int j = i+1; j < length; j++)
+                
+                for (int j = i + 1; j < length; j++)
                 {
                     if (array[i] == array[j])
                     {
-                        array[i] = flagged;
-                        nonUniqueCount++;
+                        duplicateCount++;
                     }
-                        
+                    if (array[i] == array[j] && duplicateCount >= 2)
+                    {
+                        array[i] = markToRemove;
+                        removeCount++;
+                    }
                 }
             }
 
-            int[] newArray = new int[length-nonUniqueCount];
+            int[] newArray = new int[length - removeCount];
             for (int i = 0, j = 0; i < length; i++)
             {
-                if (array[i]!= flagged)
+                if (array[i] != markToRemove)
                 {
                     newArray[j++] = array[i];
                 }
             }
+
             array = newArray;
         }
+        
         static void Main()
         {
             int[] array = { 8, 1, 5, 5, 5, 5, 2, 6, 3, 4, 5, 7, 1, 8, 9, 1, 8 };
-            RemoveNonUniqueItems(ref array);
+            removeDuplicatesMoreThanTwo(ref array);
             Show(array);
         }
     }
