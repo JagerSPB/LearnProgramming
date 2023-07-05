@@ -1225,7 +1225,7 @@ namespace Matrix
             int removeCount = 0, duplicateCount = 0, markToRemove = Int32.MinValue + 1;
             for (int i = 0; i < length; i++)
             {
-                
+                duplicateCount = 0;
                 for (int j = i + 1; j < length; j++)
                 {
                     if (array[i] == array[j])
