@@ -1251,12 +1251,68 @@ namespace Matrix
 
             array = newArray;
         }
-        
+        /// <summary>
+        /// Array100. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся ровно два раза,
+        /// и вывести размер полученногомассива и его содержимое.
+        /// </summary>
+        /// <param name="array"></param>
+        public static void RemoveDoubleElements(ref int[] array)
+        {
+            int length = array.Length;
+            int removeCount = 0, duplicateCount = 0, markToRemove = Int32.MinValue + 1;
+            for (int i = 0; i < length; i++)
+            {
+                duplicateCount = 0;
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        duplicateCount++;
+                        array[j] = markToRemove;
+                    }
+                    if (duplicateCount == 1)
+                    {
+                        array[i] = markToRemove;
+                       break;
+                    }
+                }
+            }
+            
+            for(int i = 0; i < length; i++)
+            {
+                if(array[i] == markToRemove)
+                {
+                    removeCount++;
+                }
+            }
+            
+            
+            int[] newArray = new int[length - removeCount];
+            for (int i = 0, j = 0; i < length; i++)
+            {
+                if (array[i] != markToRemove)
+                {
+                    newArray[j++] = array[i];
+                }
+            }
+
+            array = newArray;
+        }
+
         static void Main()
         {
-            int[] array = { 8, 1, 5, 5, 5, 5, 2, 6, 3, 4, 5, 7, 1, 8, 9, 1, 8 };
-            removeDuplicatesMoreThanTwo(ref array);
-            Show(array);
+            // int[] array = { 1,2,3,2,4,5,6,7,8,9,2 };
+            // RemoveDoubleElements(ref array);
+            // Show(array);
+            
+            // char c = 'й'; // замените 'A' на символ, который вам требуется
+            // int code = c;
+            // Console.WriteLine(code);
+
+            int n = 35;
+            char c = (char)n;
+            Console.WriteLine(c);
+
         }
     }
 }

@@ -1,0 +1,11 @@
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/bin/Debug/net7.0/Array try 2
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb
