@@ -29,7 +29,7 @@
         int[] array = new int[n];
         for (int i = 0; i < array.Length; i++)
         {
-            array[i] = 2*i;
+            array[i] = 2 * i;
         }
 
         for (int i = 1; i < array.Length; i++)
@@ -38,8 +38,27 @@
         }
     }
 
+    /// <summary>
+    /// Array3. Дано целое число N (> 1), а также первый член A и разность D арифметической прогрессии. Сформировать
+    /// и вывести массив размера N, содержащий N первых членов данной прогрессии A, A+D, A+2·D, A+3·D, ....
+    /// </summary>
+    public static void Array3()
+    {
+        int n = 10, a = 2, d = 5;
+        int[] array = new int[n];
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = a + i*d ;
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
     public static void Main()
     {
-        Array2();
+        Array3();
     }
 }
