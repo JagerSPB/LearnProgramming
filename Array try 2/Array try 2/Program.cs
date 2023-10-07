@@ -122,8 +122,19 @@
         }
     }
 
+    /// <summary>
+    /// Array7◦. Дан массив размера N. Вывести его элементы в обратном порядке.
+    /// </summary>
+    public static void Array7()
+    {
+        int[] array = new int[]{1, 12, 55, 40, 25, 64, 78, 933};
+        for (int i = array.Length -1; i >= 0; i--)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
     public static void Main()
     {
-        Array6();
+        Array7();
     }
 }
