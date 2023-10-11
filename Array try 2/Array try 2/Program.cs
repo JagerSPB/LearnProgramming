@@ -1,5 +1,13 @@
 ﻿class Program
 {
+    public static void Show(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine($"[{i}] = {array[i]}");
+        }
+    }
+
     /// <summary>
     /// Array1. Дано целое число N (>0). Сформировать и вывести целочисленный массив размера N, содержащий N первых
     /// положительных нечетных чисел: 1, 3, 5, . . . .
@@ -27,12 +35,13 @@
     {
         int n = 10;
         int[] array = new int[n];
-        for (int i = 0; i < array.Length; i++)
+        array[0] = 2;
+        for (int i = 1; i < array.Length; i++)
         {
-            array[i] = 2 * i;
+            array[i] = array[i - 1] * 2;
         }
 
-        for (int i = 1; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)
         {
             Console.WriteLine(array[i]);
         }
@@ -66,12 +75,13 @@
     {
         int n = 10, a = 3, d = 5;
         int[] array = new int[n];
+        array[0] = a;
         for (int i = 1; i < array.Length; i++)
         {
-            array[i] = a * (d * i);
+            array[i] = a * (int)Math.Pow(d, i);
         }
 
-        for (int i = 1; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)
         {
             Console.WriteLine(array[i]);
         }
@@ -86,7 +96,7 @@
     {
         int n = 10;
         int[] array = new int[n];
-        array[0] = 1;
+        array[0] = 0;
         array[1] = 1;
         for (int i = 2; i < array.Length; i++)
         {
@@ -105,21 +115,18 @@
     /// </summary>
     public static void Array6()
     {
-        int n = 10, a = 2, b = 3;
+        int n = 10, a = 2, b = 5;
         int[] array = new int[n];
         array[0] = a;
         array[1] = b;
         int sum = a + b;
         for (int i = 2; i < array.Length; i++)
         {
-            array[i] = sum + array[i];
+            array[i] = sum;
             sum += array[i];
         }
 
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.WriteLine(array[i]);
-        }
+        Show(array);
     }
 
     /// <summary>
@@ -127,14 +134,79 @@
     /// </summary>
     public static void Array7()
     {
-        int[] array = new int[]{1, 12, 55, 40, 25, 64, 78, 933};
-        for (int i = array.Length -1; i >= 0; i--)
+        int[] array = new int[] { 1, 12, 55, 40, 25, 64, 78, 933 };
+        for (int i = array.Length - 1; i >= 0; i--)
         {
             Console.WriteLine(array[i]);
         }
     }
+
+    /// <summary>
+    /// Array8. Дан целочисленный массив размера N. Вывести все содержащиеся в данном массиве нечетные числа в порядке
+    /// возрастания их индексов, а также их количество K.
+    /// </summary>
+    public static void Array8()
+    {
+        int count = 0;
+        int[] array = new int[] { 1, 2, 30, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 != 0)
+            {
+                Console.WriteLine(array[i]);
+                count++;
+            }
+        }
+
+        Console.WriteLine($"кол-во: {count}");
+    }
+
+    /// <summary>
+    /// Array9. Дан целочисленный массив размера N. Вывести все содержащиеся в данном массиве четные числа в порядке
+    /// убывания их индексов, а также их количество K.
+    /// </summary>
+    public static void Array9()
+    {
+        int count = 0;
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            if (array[i] % 2 == 0)
+            {
+                Console.WriteLine(array[i]);
+                count++;
+            }
+        }
+
+        Console.WriteLine($"кол-во: {count}");
+    }
+
+    /// <summary>
+    /// Array10. Дан целочисленный массив размера N. Вывести вначале все содержащиеся в данном массиве четные числа
+    /// в порядке возрастания их индексов,а затем — все нечетные числа в порядке убывания их индексов.
+    /// </summary>
+    public static void Array10()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                Console.WriteLine(array[i]);
+            }
+        }
+        Console.WriteLine("===========");
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            if (array[i] % 2 != 0)
+            {
+                Console.WriteLine(array[i]);
+            }
+        }
+    }
+
     public static void Main()
     {
-        Array7();
+        Array10();
     }
 }
