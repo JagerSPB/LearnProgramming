@@ -195,6 +195,7 @@
                 Console.WriteLine(array[i]);
             }
         }
+
         Console.WriteLine("===========");
         for (int i = array.Length - 1; i >= 0; i--)
         {
@@ -205,8 +206,70 @@
         }
     }
 
+    /// <summary>
+    /// Array11. Дан массив A размера N и целое число K (1 ≤ K ≤ N). Вывести элементы массива с порядковыми номерами,
+    /// кратными K : AK , A2·K , A3·K , . . . .Условный оператор не использовать.
+    /// </summary>
+    public static void Array11()
+    {
+        int k = 2;
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i += k)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
+    ///=============== 11 10 2023 ==============
+    ///
+    ///Array12. Дан массив A размера N (N — четное число). Вывести его элементыс четными номерами в порядке возрастания
+    /// номеров: A2, A4, A6, . . ., AN .Условный оператор не использовать.
+    /// 
+    public static void Array12()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i += 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
+    /// <summary>
+    /// Array13. Дан массив A размера N (N — нечетное число). Вывести его элементы
+    /// с нечетными номерами в порядке убывания номеров: AN, AN−2, AN−4, ...,
+    /// A1. Условный оператор не использовать.
+    /// </summary>
+    public static void Array13()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = array.Length - 1; i >= 0; i -= 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
+    /// <summary>
+    /// Array14. Дан массив A размера N. Вывести вначале его элементы с четными номерами (в порядке возрастания номеров),
+    /// а затем — элементы с нечетными номерами (также в порядке возрастания номеров):
+    /// A2, A4, A6, ..., A1, A3, A5, .... Условный оператор не использовать.
+    /// </summary>
+    public static void Array14()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i += 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+
+        Console.WriteLine("===========");
+        for (int i = array.Length - 1; i >= 0; i -= 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
     public static void Main()
     {
-        Array10();
+        Array14();
     }
 }
