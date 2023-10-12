@@ -262,10 +262,10 @@
         }
 
         Console.WriteLine("===========");
-        for (int i = array.Length - 1; i >= 0; i -= 2)
+        for (int i = 1; i < array.Length; i += 2)
         {
             Console.WriteLine(array[i]);
-        }
+        }  
     }
 
     public static void Main()
