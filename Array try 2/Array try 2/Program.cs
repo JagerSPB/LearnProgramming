@@ -265,11 +265,57 @@
         for (int i = 1; i < array.Length; i += 2)
         {
             Console.WriteLine(array[i]);
-        }  
+        }
     }
 
+    /// <summary>
+    /// Array15. Дан массив A размера N. Вывести вначале его элементы с нечетными номерами в порядке возрастания
+    /// номеров, а затем — элементы с четными номерами в порядке убывания номеров: A1, A3, A5, ..., A6, A4, A2.
+    /// Условный оператор не использовать.
+    /// </summary>
+    public static void Array15()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < array.Length; i += 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+
+        Console.WriteLine("===========");
+        for (int i = array.Length - 1; i >= 0; i -= 2)
+        {
+            Console.WriteLine(array[i]);
+        }
+    }
+
+    /// <summary>
+    /// Array16. Дан массив A размера N. Вывести его элементы в следующем порядке:
+    /// A1, AN, A2, AN−1, A3, AN−2, ....
+    /// </summary>
+    public static void Array16()
+    {
+        int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0, j = array.Length - 1; i < array.Length; i++,j--)
+        {
+            Console.WriteLine(array[i]);
+            Console.WriteLine(array[j]);
+        }
+    }
+    /// <summary>
+    /// Array17. Дан массив A размера N. Вывести его элементы в следующем порядке:
+    /// A1, A2, AN, AN−1, A3, A4, AN−2, AN−3, ....
+    /// </summary>
+    public static void Array17()
+    {
+        int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0, j = array.Length - 1; i < array.Length; i+=2,j-=2)
+        {
+            Console.WriteLine($"{array[i]}\n{array[i+1]}");
+            Console.WriteLine($"{array[j]}\n{array[j-1]}");
+        }
+    }
     public static void Main()
     {
-        Array14();
+        Array17();
     }
 }
