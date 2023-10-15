@@ -310,8 +310,8 @@
         int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         for (int i = 0, j = array.Length - 1; i < array.Length; i+=2,j-=2)
         {
-            Console.WriteLine($"{array[i]}\n{array[i+1]}");
-            Console.WriteLine($"{array[j]}\n{array[j-1]}");
+            Console.WriteLine($"{array[i]}\n{array[i+1]}\n{array[j]}\n{array[j-1]}");
+            //Console.WriteLine($"{array[j]}\n{array[j-1]}");
         }
     }
     public static void Main()
