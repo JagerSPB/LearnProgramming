@@ -9,3 +9,18 @@
 /Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll
 /Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll
 /Users/vaysmans/Downloads/Учёба/C#Alexey/Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\bin\Debug\net7.0\Array try 2.exe
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\bin\Debug\net7.0\Array try 2.deps.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\bin\Debug\net7.0\Array try 2.runtimeconfig.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\bin\Debug\net7.0\Array try 2.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\bin\Debug\net7.0\Array try 2.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.csproj.AssemblyReference.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.AssemblyInfoInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.AssemblyInfo.cs
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.csproj.CoreCompileInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\refint\Array try 2.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\Array try 2.genruntimeconfig.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Array try 2\Array try 2\obj\Debug\net7.0\ref\Array try 2.dll

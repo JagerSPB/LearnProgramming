@@ -1,11 +1,32 @@
 ﻿class Program
 {
+    private static Random rnd = new Random();
+
     public static void Show(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {
             Console.WriteLine($"[{i}] = {array[i]}");
         }
+    }
+
+    public static void RandomFill(int[] array, int from = 0, int to = 101)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = rnd.Next(from, to);
+        }
+    }
+
+    public static int[] RandomFill(int size, int from = 0, int to = 101)
+    {
+        int[] array = new int[size];
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = rnd.Next(from, to);
+        }
+
+        return array;
     }
 
     /// <summary>
@@ -295,12 +316,13 @@
     public static void Array16()
     {
         int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        for (int i = 0, j = array.Length - 1; i < array.Length; i++,j--)
+        for (int i = 0, j = array.Length - 1; i < array.Length; i++, j--)
         {
             Console.WriteLine(array[i]);
             Console.WriteLine(array[j]);
         }
     }
+
     /// <summary>
     /// Array17. Дан массив A размера N. Вывести его элементы в следующем порядке:
     /// A1, A2, AN, AN−1, A3, A4, AN−2, AN−3, ....
@@ -308,14 +330,52 @@
     public static void Array17()
     {
         int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        for (int i = 0, j = array.Length - 1; i < array.Length; i+=2,j-=2)
+        for (int i = 0, j = array.Length - 1; i < array.Length; i += 2, j -= 2)
         {
-            Console.WriteLine($"{array[i]}\n{array[i+1]}\n{array[j]}\n{array[j-1]}");
+            Console.WriteLine($"{array[i]}\n{array[i++]}\n{array[j]}\n{array[j--]}");
             //Console.WriteLine($"{array[j]}\n{array[j-1]}");
         }
     }
+
+    /// <summary>
+    /// Array18. Дан массив A ненулевых целых чисел размера 10. Вывести значение первого из тех его элементов AK,
+    /// которые удовлетворяют неравенству AK &lt; A10. Если таких элементов нет, то вывести 0.
+    /// </summary>
+    public static void Array18()
+    {
+        int[] array = new[] { 6, 2, 3, 4, 5, 6, 7, 8, 9, 5 };
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] < array[array.Length - 1])
+            {
+                Console.WriteLine(array[i]);
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Array19. Дан целочисленный массив A размера 10. Вывести порядковый номер последнего из тех его элементов AK,
+    /// которые удовлетворяют двойномунеравенству A1 &lt; AK &lt; A10. Если таких элементов нет, то вывести 0.
+    /// </summary>
+    public static void Array19()
+    {
+        int[] array = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 5 };
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] < array[array.Length - 1] && array[i] > array[0])
+            {
+                Console.WriteLine(array[i]);
+                return;
+            }
+        }
+
+        Console.WriteLine(0);
+    }
+
     public static void Main()
     {
-        Array17();
+        int[] array = RandomFill(7);
+        Show(array);
     }
 }
