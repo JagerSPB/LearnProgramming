@@ -373,9 +373,123 @@
         Console.WriteLine(0);
     }
 
+    //========закончен урок от 15. 10=======
+    /// <summary>
+    /// Array20.Дан массив размера N ицелые числа K  и L(1≤K ≤L≤N).Найти сумму элементов массива с номерами
+    /// от K до L включительно.
+    /// </summary>
+    public static void Array20()
+    {
+        int n = 10, k = 2, l = 5, sum = 0;
+        int[] array = RandomFill(n);
+        Show(array);
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i >= k && i <= l)
+            {
+                sum += array[i];
+            }
+        }
+
+        Console.WriteLine($"cумма: {sum}");
+    }
+
+    /// <summary>
+    /// Array21. Дан массив размера N и целые числа K и L (1 ≤ K ≤ L ≤ N). Найти среднее арифметическое элементов массива
+    /// с номерами от K до L включительно.
+    /// </summary>
+    public static void Array21()
+    {
+        int n = 10, k = 2, l = 6, sum = 0, count = 0;
+        int[] array = RandomFill(n);
+        Show(array);
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i >= k && i <= l)
+            {
+                sum += array[i];
+                count++;
+            }
+        }
+
+        Console.WriteLine($"среднне арифметическое: {sum / count}");
+    }
+
+    /// <summary>
+    /// Array22. Дан массив размера N и целые числа K и L (1 &lt; K ≤ L ≤ N). Найти сумму всех элементов массива,
+    /// кроме элементов с номерами от K до L включительно.
+    /// </summary>
+    public static void Array22()
+    {
+        int n = 10, k = 1, l = 8, sum = 0;
+        int[] array = RandomFill(n);
+        Show(array);
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i < k || i > l)
+            {
+                sum += array[i];
+            }
+        }
+
+        Console.WriteLine($"cумма: {sum}");
+    }
+
+    /// <summary>
+    /// Array23. Дан массив размера N и целые числа K и L (1 &lt; K ≤ L ≤ N). Найти среднее арифметическое всех
+    /// элементов массива, кроме элементов с номерами от K до L включительно.
+    /// </summary>
+    public static void Array23()
+    {
+        int n = 10, k = 1, l = 8, sum = 0, count = 0;
+        int[] array = RandomFill(n);
+        Show(array);
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i < k || i > l)
+            {
+                sum += array[i];
+                count++;
+            }
+        }
+
+        Console.WriteLine($"среднне арифметическое: {sum / count}");
+    }
+
+    /// <summary>
+    /// Array24. Дан целочисленный массив размера N, не содержащий одинаковых чисел. Проверить, образуют ли его элементы
+    /// арифметическую прогрессию (см. задание Array3). Если образуют, то вывести разность прогрессии, если нет — вывести 0.
+    /// </summary>
+    public static void Array24()
+    {
+        int[] array = RandomFill(10, 1, 11);
+        Show(array);
+        int diff = array[1] - array[0];
+        for (int i = 2; i < array.Length; i++)
+        {
+            diff = array[i] - array[i - 1] != diff ? 0 : diff;
+        }
+
+        Console.WriteLine(diff);
+    }
+    /// <summary>
+    /// Array25. Дан массив ненулевых целых чисел размера N. Проверить, образуют ли его элементы геометрическую
+    /// прогрессию (см. задание Array4). Если образуют, то вывести знаменатель прогрессии, если нет — вывести 0.
+    /// </summary>
+    // public static void Array25()
+    // {
+    //     int[] array = RandomFill(10, 1, 11);
+    //     Show(array);
+    //     int diff = array[1] / array[0];
+    //     for (int i = 2; i < array.Length; i++)
+    //     {
+    //         diff = array[i] - array[i - 1] != diff ? 0 : diff;
+    //     }
+    //
+    //     Console.WriteLine(diff);
+    // }
     public static void Main()
     {
-        int[] array = RandomFill(7);
-        Show(array);
+        Array25();
     }
 }
