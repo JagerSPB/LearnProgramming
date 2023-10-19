@@ -80,7 +80,7 @@
                 Thread.Sleep(4000);
                 Console.WriteLine("шутка всё уже готово!");
                 Thread.Sleep(1000);
-                Console.WriteLine($"результат вычитания из {num1} цифры {num2} будет: {num1 - num2}");
+                Console.WriteLine($"результат вычитания из {num1} числа {num2} будет: {num1 - num2}");
                 break;
             case 3:
                 Console.WriteLine("хотите, умножить одно число на другое?");
