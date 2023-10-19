@@ -2,6 +2,7 @@
 {
     public static void Calculator()
     {
+        
         double result = 0;
         Console.WriteLine("Введите первое число: ");
         double num1 = double.Parse(Console.ReadLine());
