@@ -400,23 +400,20 @@
     /// </summary>
     public static void Array21()
     {
-        int n = 10, k = 2, l = 6, sum = 0, count = 0;
+        int n = 10, k = 2, l = 3, sum = 0, count = 0;
         int[] array = RandomFill(n);
         Show(array);
-        for (int i = 0; i < array.Length; i++)
+        for (int i = k; i <= l; i++)
         {
-            if (i >= k && i <= l)
-            {
-                sum += array[i];
-                count++;
-            }
+            sum += array[i];
+            count++;
         }
 
         Console.WriteLine($"среднне арифметическое: {sum / count}");
     }
 
     /// <summary>
-    /// Array22. Дан массив размера N и целые числа K и L (1 &lt; K ≤ L ≤ N). Найти сумму всех элементов массива,
+    /// Array22. Дан массив размера N и целые числа K и L (1 < K ≤ L ≤ N). Найти сумму всех элементов массива,
     /// кроме элементов с номерами от K до L включительно.
     /// </summary>
     public static void Array22()
@@ -424,13 +421,11 @@
         int n = 10, k = 1, l = 8, sum = 0;
         int[] array = RandomFill(n);
         Show(array);
-        for (int i = 0; i < array.Length; i++)
-        {
-            if (i < k || i > l)
-            {
-                sum += array[i];
-            }
-        }
+        for (int i = 0; i < k; i++)
+            sum += array[i];
+
+        for (int i = k + 1; i < array.Length; i++)
+            sum += array[i];
 
         Console.WriteLine($"cумма: {sum}");
     }
@@ -467,29 +462,69 @@
         int diff = array[1] - array[0];
         for (int i = 2; i < array.Length; i++)
         {
-            diff = array[i] - array[i - 1] != diff ? 0 : diff;
+            diff = (array[i] - array[i - 1] != diff) ? 0 : diff;
         }
 
         Console.WriteLine(diff);
     }
+
     /// <summary>
-    /// Array25. Дан массив ненулевых целых чисел размера N. Проверить, образуют ли его элементы геометрическую
-    /// прогрессию (см. задание Array4). Если образуют, то вывести знаменатель прогрессии, если нет — вывести 0.
+    /// Array26. Дан целочисленный массив размера N. Проверить, чередуются ли внем четные и нечетные числа.
+    /// Если чередуются, то вывести 0, если нет,то вывести порядковый номер первого элемента, нарушающего закономерность
     /// </summary>
-    // public static void Array25()
-    // {
-    //     int[] array = RandomFill(10, 1, 11);
-    //     Show(array);
-    //     int diff = array[1] / array[0];
-    //     for (int i = 2; i < array.Length; i++)
-    //     {
-    //         diff = array[i] - array[i - 1] != diff ? 0 : diff;
-    //     }
-    //
-    //     Console.WriteLine(diff);
-    // }
+    public static void Array26()
+    {
+        int[] array = RandomFill(10, 1, 11);
+        Show(array);
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] % 2 == 0 ^ array[i + 1] % 2 != 0)
+            {
+                Console.WriteLine(i + 1);
+                return;
+            }
+        }
+
+        Console.WriteLine(0);
+    }
+
+    //========================УРОК 18.10 ЗАКОНЧЕН==============
+    public static void Calculator()
+    {
+        double result = 0;
+        Console.WriteLine("Введите первое число: ");
+        double num1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Введите первое число: ");
+        double num2 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Введите 1 для суммирования");
+        Console.WriteLine("Введите 2 для вычитания");
+        Console.WriteLine("Введите 3 для умножения");
+        Console.WriteLine("Введите 4 для деления");
+        int action = int.Parse(Console.ReadLine());
+        switch (action)
+        {
+            case 1:
+                result = num1 + num2;
+                break;
+            case 2:
+                result = num1 - num2;
+                break;
+            case 3:
+                result = num1 * num2;
+                break;
+            case 4:
+                result = num1 / num2;
+                break;
+        }
+
+        Console.WriteLine($"результат вычисления: {result}");
+    }
+
     public static void Main()
     {
-        Array25();
+        Calculator();
+        Console.ReadLine();
     }
 }
