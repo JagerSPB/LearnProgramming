@@ -8,7 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="Lazy Calc done">
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697705904107</updated>
-      <workItem from="1697705905168" duration="3482000" />
+      <workItem from="1697705905168" duration="4844000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />

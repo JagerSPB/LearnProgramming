@@ -1,13 +1,29 @@
 ﻿class Program
 {
+    public static double GetUserInput()
+    {
+        double number;
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (double.TryParse(input, out number))
+            {
+                return number;
+            }
+            else
+            {
+                Console.WriteLine("принимаем только цифры, попробуйте еще раз");
+            }
+        }
+    }
     public static void Calculator()
     {
         double result = 0;
         Console.WriteLine("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
+        double num1 = GetUserInput();
 
         Console.WriteLine("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
+        double num2 = GetUserInput();
 
         Console.WriteLine("Введите 1 для суммирования");
         Console.WriteLine("Введите 2 для вычитания");
@@ -36,10 +52,10 @@
     public static void CalculatorV2()
     {
         Console.WriteLine("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
+        double num1 = GetUserInput();
 
         Console.WriteLine("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
+        double num2 = GetUserInput();
 
         Console.WriteLine("Введите ифру \"1\" для суммирования");
         Console.WriteLine("Введите ифру \"2\" для вычитания");
@@ -84,7 +100,8 @@
                 Thread.Sleep(1000);
                 Console.WriteLine($"результат деления {num1} на {num2} будет: {num1 / num2}");
                 break;
-            default: Console.WriteLine("я вами разачарован, вы не попали в нужную клавишу");
+            default:
+                Console.WriteLine("я вами разачарован, вы не попали в нужную клавишу");
                 Thread.Sleep(2000);
                 Console.WriteLine("вычислительный центр закрывается. До новых и плодотворных встреч!");
                 break;
