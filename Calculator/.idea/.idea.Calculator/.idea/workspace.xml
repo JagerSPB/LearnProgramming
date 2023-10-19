@@ -7,22 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="Calculator v1">
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/Calculator.dll" afterDir="false" />
+    <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="Calc v2">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697705904107</updated>
-      <workItem from="1697705905168" duration="1018000" />
+      <workItem from="1697705905168" duration="2931000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />
@@ -119,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697706132290</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Calc v2">
+      <option name="closed" value="true" />
+      <created>1697706996951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697706996951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +130,7 @@
     <MESSAGE value="Calc start" />
     <MESSAGE value="Calc done" />
     <MESSAGE value="Calculator v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Calculator v1" />
+    <MESSAGE value="Calc v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calc v2" />
   </component>
 </project>
