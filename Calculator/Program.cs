@@ -24,6 +24,7 @@
 
         Console.WriteLine($"результат вычисления: {result}");
     }
+    
 
     public static void Main()
     {
