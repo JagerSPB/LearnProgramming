@@ -7,8 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="Clalc input exeption">
+    <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="ready">
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697705904107</updated>
-      <workItem from="1697705905168" duration="5338000" />
+      <workItem from="1697705905168" duration="7989000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />
@@ -129,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697711184293</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ready">
+      <option name="closed" value="true" />
+      <created>1697711469347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697711469347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +164,7 @@
     <MESSAGE value="Calc v2" />
     <MESSAGE value="Lazy Calc done" />
     <MESSAGE value="Clalc input exeption" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clalc input exeption" />
+    <MESSAGE value="ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready" />
   </component>
 </project>

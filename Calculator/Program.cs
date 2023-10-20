@@ -32,18 +32,10 @@
         int action = int.Parse(Console.ReadLine());
         switch (action)
         {
-            case 1:
-                result = num1 + num2;
-                break;
-            case 2:
-                result = num1 - num2;
-                break;
-            case 3:
-                result = num1 * num2;
-                break;
-            case 4:
-                result = num1 / num2;
-                break;
+            case 1: result = num1 + num2; break;
+            case 2: result = num1 - num2; break;
+            case 3: result = num1 * num2; break;
+            case 4: result = num1 / num2; break;
         }
 
         Console.WriteLine($"результат вычисления: {result}");

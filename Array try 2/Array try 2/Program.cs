@@ -18,6 +18,23 @@
         }
     }
 
+    public static double OnlyNumInput()
+    {
+        double number;
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (double.TryParse(input, out number))
+            {
+                return number;
+            }
+            else
+            {
+                Console.WriteLine("принимаем только цифры, попробуйте еще раз");
+            }
+        }
+    }
+
     public static int[] RandomFill(int size, int from = 0, int to = 101)
     {
         int[] array = new int[size];
@@ -521,13 +538,14 @@
 
         Console.WriteLine($"результат вычисления: {result}");
     }
-     public static void CalculatorV2()
+
+    public static void CalculatorV2()
     {
         Console.WriteLine("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
+        double num1 = OnlyNumInput();
 
         Console.WriteLine("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
+        double num2 = OnlyNumInput();
 
         Console.WriteLine("Введите ифру \"1\" для суммирования");
         Console.WriteLine("Введите ифру \"2\" для вычитания");
@@ -552,7 +570,7 @@
                 Thread.Sleep(4000);
                 Console.WriteLine("шутка всё уже готово!");
                 Thread.Sleep(1000);
-                Console.WriteLine($"результат вычитания из {num1} цифры {num2} будет: {num1 - num2}");
+                Console.WriteLine($"результат вычитания из {num1} числа {num2} будет: {num1 - num2}");
                 break;
             case 3:
                 Console.WriteLine("хотите, умножить одно число на другое?");
@@ -572,16 +590,57 @@
                 Thread.Sleep(1000);
                 Console.WriteLine($"результат деления {num1} на {num2} будет: {num1 / num2}");
                 break;
-            default: Console.WriteLine("я вами разачарован, вы не попали в нужную клавишу");
+            default:
+                Console.WriteLine("я вами разачарован, вы не попали в нужную клавишу");
                 Thread.Sleep(2000);
                 Console.WriteLine("вычислительный центр закрывается. До новых и плодотворных встреч!");
                 break;
         }
     }
 
+    /// <summary>
+    /// Array27. Дан массив ненулевых целых чисел размера N. Проверить, чередуются ли в нем положительные и
+    /// отрицательные числа. Если чередуются,то вывести 0, если нет, то вывести порядковый номер первого элемента,
+    /// нарушающего закономерность.
+    /// </summary>
+    public static void Array27()
+    {
+        int[] array = RandomFill(10, -5, 6);
+        Show(array);
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] >= 0 ^ array[i + 1] < 0)
+            {
+                Console.WriteLine($"первый элемент нарушающий закономерность: {i + 1}");
+                return;
+            }
+        }
+
+        Console.WriteLine(0);
+    }
+
+    /// <summary>
+    /// Array28. Дан массив A размера N. Найти минимальный элемент из его элементов с четными номерами:
+    /// A2, A4, A6, . . . .
+    /// </summary>
+    public static void Array28()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int minElement = array[0];
+        for (int i = 2; i < array.Length - 1; i+=2)
+        {
+            if (array[i] < minElement)
+            {
+                (array[i], minElement) = (minElement, array[i]);
+            }
+        }
+
+        Console.WriteLine($"минимальный элемент из четных: {minElement}");
+    }
     public static void Main()
     {
-        CalculatorV2();
+        Array28();
         Console.ReadLine();
     }
 }
