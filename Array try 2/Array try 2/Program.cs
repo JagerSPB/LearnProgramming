@@ -689,7 +689,7 @@
         int[] array = RandomFill(10, 0, 100);
         Show(array);
         int count = 0;
-        for (int i = array.Length-1; i > 1; i--)
+        for (int i = array.Length - 1; i > 1; i--)
         {
             if (array[i] > array[i - 1])
             {
@@ -700,9 +700,45 @@
 
         Console.WriteLine($"Количество элементов: {count}");
     }
+
+    /// <summary>
+    /// Array32. Дан массив размера N. Найти номер его первого локального минимума (локальный минимум — это элемент,
+    /// который меньше любого из своих соседей).
+    /// </summary>
+    public static void Array32()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] < array[i + 1] && array[i] < array[i - 1])
+            {
+                Console.WriteLine($"элемент [{i}] первый локальный минимум: {array[i]}");
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Array33. Дан массив размера N. Найти номер его последнего локального масимума (локальный максимум — это элемент,
+    /// который больше любого из своих соседей).
+    /// </summary>
+    public static void Array33()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        for (int i = array.Length - 2; i > 1 ; i--)
+        {
+            if (array[i] > array[i + 1] && array[i] > array[i - 1])
+            {
+                Console.WriteLine($"элемент [{i}] последний локальный максимум: {array[i]}");
+                break;
+            }
+        }
+    }
     public static void Main()
     {
-        Array31();
+        Array33();
         Console.ReadLine();
     }
 }
