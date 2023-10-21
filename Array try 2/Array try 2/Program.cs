@@ -628,7 +628,7 @@
         int[] array = RandomFill(10, 0, 100);
         Show(array);
         int minElement = array[0];
-        for (int i = 2; i < array.Length - 1; i+=2)
+        for (int i = 2; i < array.Length - 1; i += 2)
         {
             if (array[i] < minElement)
             {
@@ -638,9 +638,71 @@
 
         Console.WriteLine($"минимальный элемент из четных: {minElement}");
     }
+
+    /// <summary>
+    /// Array29. Дан массив A размера N. Найти максимальный элемент из его элементов с нечетными номерами:
+    /// A1, A3, A5, . . . .
+    /// </summary>
+    public static void Array29()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int maxElement = array[1];
+        for (int i = 1; i < array.Length - 1; i += 2)
+        {
+            if (array[i] > maxElement)
+            {
+                (array[i], maxElement) = (maxElement, array[i]);
+            }
+        }
+
+        Console.WriteLine($"максимальный элемент из нечетных: {maxElement}");
+    }
+
+    /// <summary>
+    /// Array30. Дан массив размера N. Найти номера тех элементов массива, которые больше своего правого соседа,
+    /// и количество таких элементов. Найденные номера выводить в порядке их возрастания.
+    /// </summary>
+    public static void Array30()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int count = 0;
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                Console.WriteLine($"элемент [{i}] больше своего правого соседа: {array[i]}");
+                count++;
+            }
+        }
+
+        Console.WriteLine($"Количество элементов: {count}");
+    }
+
+    /// <summary>
+    /// Array31. Дан массив размера N. Найти номера тех элементов массива, которые больше своего левого соседа,
+    /// и количество таких элементов. Найденные номера выводить в порядке их убывания
+    /// </summary>
+    public static void Array31()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int count = 0;
+        for (int i = array.Length-1; i > 1; i--)
+        {
+            if (array[i] > array[i - 1])
+            {
+                Console.WriteLine($"элемент [{i}] больше своего левого соседа: {array[i]}");
+                count++;
+            }
+        }
+
+        Console.WriteLine($"Количество элементов: {count}");
+    }
     public static void Main()
     {
-        Array28();
+        Array31();
         Console.ReadLine();
     }
 }
