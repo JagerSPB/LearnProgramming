@@ -506,100 +506,8 @@
     }
 
     //========================УРОК 18.10 ЗАКОНЧЕН==============
-    public static void Calculator()
-    {
-        double result = 0;
-        Console.WriteLine("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
-
-        Console.WriteLine("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
-
-        Console.WriteLine("Введите 1 для суммирования");
-        Console.WriteLine("Введите 2 для вычитания");
-        Console.WriteLine("Введите 3 для умножения");
-        Console.WriteLine("Введите 4 для деления");
-        int action = int.Parse(Console.ReadLine());
-        switch (action)
-        {
-            case 1:
-                result = num1 + num2;
-                break;
-            case 2:
-                result = num1 - num2;
-                break;
-            case 3:
-                result = num1 * num2;
-                break;
-            case 4:
-                result = num1 / num2;
-                break;
-        }
-
-        Console.WriteLine($"результат вычисления: {result}");
-    }
-
-    public static void CalculatorV2()
-    {
-        Console.WriteLine("Введите первое число: ");
-        double num1 = OnlyNumInput();
-
-        Console.WriteLine("Введите второе число: ");
-        double num2 = OnlyNumInput();
-
-        Console.WriteLine("Введите ифру \"1\" для суммирования");
-        Console.WriteLine("Введите ифру \"2\" для вычитания");
-        Console.WriteLine("Введите ифру \"3\" для умножения");
-        Console.WriteLine("Введите ифру \"4\" для деления");
-        int action = int.Parse(Console.ReadLine());
-        switch (action)
-        {
-            case 1:
-                Console.WriteLine("замечательно, вы выбрали операцию суммирования? ");
-                Thread.Sleep(2000);
-                Console.WriteLine("занимаюсь вычислением, можете пока попить кофейку....");
-                Thread.Sleep(4000);
-                Console.WriteLine("шутка всё уже готово!");
-                Thread.Sleep(1000);
-                Console.WriteLine($"результат сложения {num1} и {num2} будет: {num1 + num2}");
-                break;
-            case 2:
-                Console.WriteLine("замечательно, вы собрались вычесть из одного числа другое?");
-                Thread.Sleep(2000);
-                Console.WriteLine("занимаюсь вычислением, можете пока попить кофейку....");
-                Thread.Sleep(4000);
-                Console.WriteLine("шутка всё уже готово!");
-                Thread.Sleep(1000);
-                Console.WriteLine($"результат вычитания из {num1} числа {num2} будет: {num1 - num2}");
-                break;
-            case 3:
-                Console.WriteLine("хотите, умножить одно число на другое?");
-                Thread.Sleep(2000);
-                Console.WriteLine("занимаюсь вычислением, можете пока попить кофейку....");
-                Thread.Sleep(4000);
-                Console.WriteLine("шутка всё уже готово!");
-                Thread.Sleep(1000);
-                Console.WriteLine($"результат множения {num1} на {num2} будет: {num1 * num2}");
-                break;
-            case 4:
-                Console.WriteLine("Деление одного числа на другое? Легко");
-                Thread.Sleep(2000);
-                Console.WriteLine("хотя нет, это будет тяжелое вычисление, можете пока попить кофейку....");
-                Thread.Sleep(4000);
-                Console.WriteLine("шутка всё уже готово!");
-                Thread.Sleep(1000);
-                Console.WriteLine($"результат деления {num1} на {num2} будет: {num1 / num2}");
-                break;
-            default:
-                Console.WriteLine("я вами разачарован, вы не попали в нужную клавишу");
-                Thread.Sleep(2000);
-                Console.WriteLine("вычислительный центр закрывается. До новых и плодотворных встреч!");
-                break;
-        }
-    }
-
     /// <summary>
-    /// Array27. Дан массив ненулевых целых чисел размера N. Проверить, чередуются ли в нем положительные и
+    /// Array27. Дан массив ненулевых целых чисел размера N. Проверить, чередуются ли в нем положительные и
     /// отрицательные числа. Если чередуются,то вывести 0, если нет, то вывести порядковый номер первого элемента,
     /// нарушающего закономерность.
     /// </summary>
@@ -632,7 +540,7 @@
         {
             if (array[i] < minElement)
             {
-                (array[i], minElement) = (minElement, array[i]);
+                minElement = array[i];
             }
         }
 
@@ -727,7 +635,7 @@
     {
         int[] array = RandomFill(10, 0, 100);
         Show(array);
-        for (int i = array.Length - 2; i > 1 ; i--)
+        for (int i = array.Length - 2; i > 1; i--)
         {
             if (array[i] > array[i + 1] && array[i] > array[i - 1])
             {
@@ -736,9 +644,151 @@
             }
         }
     }
+
+    /// <summary>
+    /// Array34. Дан массив размера N. Найти максимальный из его локальных минимумов.
+    /// </summary>
+    public static void Array34()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int maxOfmin = Int32.MinValue;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] < array[i + 1] && array[i] < array[i - 1] && array[i] > maxOfmin)
+            {
+                maxOfmin = array[i];
+            }
+        }
+
+        Console.WriteLine($"максимальный локальный минимум: {maxOfmin}");
+    }
+
+    /// <summary>
+    /// Array35. Дан массив размера N. Найти минимальный из его локальных масимумов.
+    /// </summary>
+    public static void Array35()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int minOfmax = Int32.MaxValue;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i + 1] && array[i] > array[i - 1] && array[i] < minOfmax)
+            {
+                minOfmax = array[i];
+            }
+        }
+
+        Console.WriteLine($"Минимальный локальный максимум: {minOfmax}");
+    }
+
+    /// <summary>
+    ///Array36. Дан массив размера N. Найти максимальный из его элементов, не являющихся ни локальным минимумом,
+    /// ни локальным максимумом . Если таких элементов в массиве нет, то вывести 0
+    /// </summary>
+    public static void Array36()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int maxOfNotMinMax = 0;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if ((array[i] < array[i + 1] && array[i] > array[i - 1]) ||
+                (array[i] > array[i + 1] && array[i] < array[i - 1])
+                && array[i] > maxOfNotMinMax)
+            {
+                maxOfNotMinMax = array[i];
+            }
+        }
+
+        Console.WriteLine($"максимальный элемент ни локальный мин, ни локальный мин {maxOfNotMinMax}");
+    }
+
+    //====================Урок 22.10.2023 окончен =========================
+    /// <summary>
+    /// Array37. Дан массив размера N. Найти количество участков, на которых егоэлементы монотонно возрастают
+    /// </summary>
+    public static void Array37()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int count = 0;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] < array[i + 1] && array[i] > array[i - 1])
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine($"в массиве {count} монотонно возрастающих участков");
+    }
+
+    /// <summary>
+    /// Array38. Дан массив размера N. Найти количество участков, на которых егоэлементы монотонно убывают.
+    /// </summary>
+    public static void Array38()
+    {
+        int[] array = RandomFill(15, 0, 100);
+        Show(array);
+        int count = 0;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i + 1] && array[i] < array[i - 1])
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine($"в массиве {count} монотонно убывающих участков");
+    }
+
+    /// <summary>
+    /// Array39. Дан массив размера N. Найти количество его промежутков монотонности (то есть участков,
+    /// на которых его элементы возрастают или убывают).
+    /// </summary>
+    public static void Array39()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int count = 0;
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i + 1] && array[i] < array[i - 1] ||
+                array[i] < array[i + 1] && array[i] > array[i - 1])
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine($"в массиве {count} промежутков монотонности");
+    }
+
+    /// <summary>
+    /// Array40. Дано число R и массив A размера N. Найти элемент массива, который наиболее близок к числу R
+    /// (то есть такой элемент AK, для которого величина |AK − R| является минимальной).
+    /// </summary>
+    public static void Array40()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int r = 55, minDiff = Math.Abs(r - array[0]), minElement = array[0];
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (Math.Abs(r - array[i]) < minDiff)
+            {
+                minDiff = Math.Abs(r - array[i]);
+                minElement = array[i];
+            }
+        }
+
+        Console.WriteLine($"самое близкое к {r} -> {minElement}, их разница {minDiff}");
+    }
+
     public static void Main()
     {
-        Array33();
+        Array40();
         Console.ReadLine();
     }
 }
