@@ -774,7 +774,7 @@
         int[] array = RandomFill(10, 0, 100);
         Show(array);
         int r = 55, minDiff = Math.Abs(r - array[0]), minElement = array[0];
-        for (int i = 0; i < array.Length - 1; i++)
+        for (int i = 1; i < array.Length - 1; i++)
         {
             if (Math.Abs(r - array[i]) < minDiff)
             {
@@ -786,9 +786,144 @@
         Console.WriteLine($"самое близкое к {r} -> {minElement}, их разница {minDiff}");
     }
 
+    /// <summary>
+    /// Array41. Дан массив размера N. Найти два соседних элемента, сумма которых максимальна, и вывести эти элементы
+    /// в порядке возрастания их индексов.
+    /// </summary>
+    public static void Array41()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int maxSumOfTwo = array[0] + array[1], maxElement1 = array[0], maxElement2 = array[1];
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] + array[i + 1] > maxSumOfTwo)
+            {
+                maxElement1 = array[i];
+                maxElement2 = array[i + 1];
+            }
+        }
+
+        Console.WriteLine($"Елемент 1 -> {maxElement1}, Елемент 2 -> {maxElement2}");
+    }
+
+    /// <summary>
+    /// Array42. Дано число R и массив размера N. Найти два соседних элемента массива, сумма которых наиболее близка
+    /// к числу R, и вывести эти элементыв порядке возрастания их индексов
+    /// </summary>
+    public static void Array42()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int r = 70, minDiff = Math.Abs(r - (array[0] + array[1])), maxElement1 = array[0], maxElement2 = array[1];
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (Math.Abs(r - (array[i] + array[i + 1])) < minDiff)
+            {
+                minDiff = Math.Abs(r - (array[i] + array[i + 1]));
+                maxElement1 = array[i];
+                maxElement2 = array[i + 1];
+            }
+        }
+
+        Console.WriteLine($"самое близкая к {r} -> сумма {maxElement1} и {maxElement2} ");
+    }
+
+    /// <summary>
+    /// Array43. Дан целочисленный массив размера N, все элементы которого упорядочены (по возрастанию или по убыванию).
+    /// Найти количество различных элементов в данном массиве
+    /// </summary>
+    public static void Array43()
+    {
+        // int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int[] array = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+        Show(array);
+        int countUniqe = 0;
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] < array[i + 1] ^ array[i] > array[i + 1])
+            {
+                countUniqe++;
+            }
+        }
+
+        Console.WriteLine($"{countUniqe} различных элементов в данном массиве");
+    }
+
+    /// <summary>
+    /// Array44. Дан целочисленный массив размера N, содержащий ровно два одинаковых элемента. Найти номера одинаковых
+    /// элементов и вывести эти номера в порядке возрастания.
+    /// </summary>
+    public static void Array44()
+    {
+        int[] array = new int[] { 1, 9, 8, 7, 6, 10, 4, 3, 10, 1 };
+        Show(array);
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            for (int j = i + 1; j < array.Length - 1; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    Console.WriteLine($"[{i}] {array[i]} и [{j}] {array[j]} одинаковы ");
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Array45. Дан массив размера N. Найти номера двух ближайших элементов из этого массива (то есть элементов с
+    /// наименьшим модулем разности) и вывести эти номера в порядке возрастания.
+    /// </summary>
+    public static void Array45()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int elment1 = array[0], elment2 = array[1], minDiff = Math.Abs(elment1 - elment2);
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            for (int j = i + 1; j < array.Length - 1; j++)
+            {
+                if (Math.Abs(array[i] - array[j]) < minDiff)
+                {
+                    elment1 = array[i];
+                    elment2 = array[j];
+                    minDiff = Math.Abs(elment1 - elment2);
+                }
+            }
+        }
+
+        Console.WriteLine($"[{elment1}] и [{elment2}] разница  {minDiff} ");
+    }
+
+    /// <summary>
+    /// Array46. Дано число R и массив размера N. Найти два различных элемента массива, сумма которых наиболее близка к
+    /// числу R, и вывести эти элементы в порядке возрастания их индексов 
+    /// </summary>
+    public static void Array46()
+    {
+        int[] array = RandomFill(10, 0, 100);
+        Show(array);
+        int r = 70, elment1 = array[0], elment2 = array[1], minDiff = Math.Abs(r - (elment1 + elment2));
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            for (int j = i + 1; j < array.Length - 1; j++)
+            {
+                if (Math.Abs(r - (array[i] + array[j])) < minDiff)
+                {
+                    elment1 = array[i];
+                    elment2 = array[j];
+                    minDiff = Math.Abs(r - (array[i] + array[j]));
+                }
+            }
+        }
+
+        Console.WriteLine($"числа сумма которых наиболее близка к {r}, будут {elment1} и {elment2}");
+    }
+
     public static void Main()
     {
-        Array40();
+        Array46();
         Console.ReadLine();
     }
 }
