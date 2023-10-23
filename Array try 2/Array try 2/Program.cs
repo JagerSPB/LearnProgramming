@@ -913,7 +913,7 @@
                 {
                     elment1 = array[i];
                     elment2 = array[j];
-                    minDiff = Math.Abs(r - (array[i] + array[j]));
+                    minDiff = Math.Abs(r - (elment1 + elment2));
                 }
             }
         }
@@ -921,9 +921,32 @@
         Console.WriteLine($"числа сумма которых наиболее близка к {r}, будут {elment1} и {elment2}");
     }
 
+    /// <summary>
+    /// Array47◦ Дан целочисленный массив размера N. Найти количество различных элементов в данном массиве.      
+    /// </summary>
+    public static void Array47()
+    {
+        int[] array = RandomFill(10, 0, 10);
+        Show(array);
+        int sameItemCount = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    sameItemCount++;
+                    break;
+                }
+            }
+        }
+
+        Console.WriteLine($"в массиве {array.Length - sameItemCount} различных элементов");
+    }
+
     public static void Main()
     {
-        Array46();
+        Array47();
         Console.ReadLine();
     }
 }
