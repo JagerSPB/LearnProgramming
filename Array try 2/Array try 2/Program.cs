@@ -10,6 +10,14 @@
         }
     }
 
+    public static void ShowInRow(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write($"[{i}] = {array[i]} ");
+        }
+    }
+
     public static void RandomFill(int[] array, int from = 0, int to = 101)
     {
         for (int i = 0; i < array.Length; i++)
@@ -18,22 +26,6 @@
         }
     }
 
-    public static double OnlyNumInput()
-    {
-        double number;
-        while (true)
-        {
-            string input = Console.ReadLine();
-            if (double.TryParse(input, out number))
-            {
-                return number;
-            }
-            else
-            {
-                Console.WriteLine("принимаем только цифры, попробуйте еще раз");
-            }
-        }
-    }
 
     public static int[] RandomFill(int size, int from = 0, int to = 101)
     {
@@ -944,9 +936,104 @@
         Console.WriteLine($"в массиве {array.Length - sameItemCount} различных элементов");
     }
 
+    /// <summary>
+    /// Array48. Дан целочисленный массив размера N. Найти максимальное количество его одинаковых элементов
+    /// </summary>
+    public static void Array48()
+    {
+        int[] array = RandomFill(10, 0, 10);
+        Show(array);
+        int sameItemCount = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    sameItemCount++;
+                    break;
+                }
+            }
+        }
+
+        Console.WriteLine($"в массиве {sameItemCount} одинаковых элементов");
+    }
+
+    /// <summary>
+    /// Array49. Дан целочисленный массив размера N. Если он является перестановкой, то есть содержит все числа
+    /// от 1 до N, то вывести 0; в противном случае вывести номер первого недопустимого элемента
+    /// </summary>
+    public static void Array49()
+    {
+        // int[] array = RandomFill(10, 0, 10);
+        int[] array = new[] { 1, 2, 3, 4, 6, 80, 5, 7, 9 };
+        Show(array);
+        int isPermutation = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] == array[j] || array[i] > array.Length - 1)
+                {
+                    isPermutation = array[i];
+                    break;
+                }
+            }
+        }
+
+        Console.WriteLine($" {isPermutation} ");
+    }
+
+    /// <summary>
+    /// Array50. Дан целочисленный массив A размера N, являющийся перестановкой. Найти количество инверсий в данной
+    /// перестановке, то есть таких пар элементов AI и AJ , вкоторых большее число находится слева от меньшего:
+    /// AI > AJ при I < J
+    /// </summary>
+    public static void Array50()
+    {
+        int[] array = new[] { 1, 3, 2, 4, 6, 8, 5, 7, 9 };
+        Show(array);
+        int inversionCount = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] > array[j])
+                {
+                    inversionCount++;
+                }
+            }
+        }
+
+        Console.WriteLine($" {inversionCount} ");
+    }
+
+    /// <summary>
+    /// Array51. Даны массивы A и B одинакового размера N. Поменять местами их содержимое и вывести вначале элементы
+    /// преобразованного массива A, азатем — элементы преобразованного массива B.
+    /// </summary>
+    public static void Array51()
+    {
+        int[] arrayA = RandomFill(10, 0, 10);
+        ShowInRow(arrayA);
+        Console.WriteLine();
+        int[] arrayB = RandomFill(10, 0, 10);
+        ShowInRow(arrayB);
+        Console.WriteLine();
+
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            (arrayA[i], arrayB[i]) = (arrayB[i], arrayA[i]);
+        }
+
+        ShowInRow(arrayA);
+        Console.WriteLine();
+        ShowInRow(arrayB);
+    }
+
     public static void Main()
     {
-        Array47();
+        Array51();
         Console.ReadLine();
     }
 }
