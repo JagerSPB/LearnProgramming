@@ -14,7 +14,7 @@
     {
         for (int i = 0; i < array.Length; i++)
         {
-            Console.Write($"[{i}] = {array[i]} ");
+            Console.Write($"[{array[i]}] ");
         }
     }
 
@@ -1031,9 +1031,50 @@
         ShowInRow(arrayB);
     }
 
+    /// <summary>
+    /// Array52. Дан массив A размера N. Сформировать новый массив B того же размера, элементы которого определяются
+    /// следующим образом:BK = 2·AK, если AK < 5,AK/2 в противном случае.
+    /// </summary>
+    public static void Array52()
+    {
+        int[] arrayA = RandomFill(10, 0, 11);
+        Show(arrayA);
+        Console.WriteLine();
+        int[] arrayB = new int[arrayA.Length];
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            arrayB[i] = arrayA[i] < 5 ? arrayA[i] * 2 : arrayA[i] / 2;
+        }
+
+        Console.WriteLine();
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array53. Даны два массива A и B одинакового размера N. Сформировать новыймассив C того же размера, каждый
+    /// элемент которого равен максимальномуиз элементов массивов A и B с тем же индексом.
+    /// </summary>
+    public static void Array53()
+    {
+        int[] arrayA = RandomFill(10, 0, 10);
+        ShowInRow(arrayA);
+        Console.WriteLine();
+        int[] arrayB = RandomFill(10, 0, 10);
+        ShowInRow(arrayB);
+        Console.WriteLine();
+        int[] arrayC = new int[arrayA.Length];
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            arrayC[i] = arrayA[i] > arrayB[i] ? arrayA[i] : arrayB[i];
+        }
+
+        Console.WriteLine();
+        ShowInRow(arrayC);
+    }
+
     public static void Main()
     {
-        Array51();
+        Array53();
         Console.ReadLine();
     }
 }
