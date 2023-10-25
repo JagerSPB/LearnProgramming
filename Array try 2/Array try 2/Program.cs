@@ -707,7 +707,7 @@
 
     //====================Урок 22.10.2023 окончен =========================
     /// <summary>
-    /// Array37. Дан массив размера N. Найти количество участков, на которых егоэлементы монотонно возрастают
+    /// Array37. Дан массив размера N. Найти количество участков, на которых его элементы монотонно возрастают
     /// </summary>
     public static void Array37()
     {
@@ -1301,29 +1301,54 @@
     /// Array63. Даны два массива A и B размера 5, элементы которых упорядочены по возрастанию. Объединить эти массивы так,
     /// чтобы результирующий массив C (размера 10) остался упорядоченным по возрастанию.
     /// </summary>
+    // public static void Array63()
+    // {
+    //     int[] arrayA = new int[] { 1, 20, 50, 60, 90 };
+    //     Show(arrayA);
+    //     Console.WriteLine();
+    //     int[] arrayB = new int[] { 3, 4, 6, 8, 9 };
+    //     Show(arrayB);
+    //     int[] arrayC = new int [arrayA.Length + arrayB.Length];
+    //     for (int i = 0, j = arrayA.Length; i < arrayA.Length; i++)
+    //     {
+    //         arrayC[i] = arrayA[i];
+    //         arrayC[j++] = arrayB[i];
+    //     }
+    //
+    //     for (int i = 0; i < arrayC.Length; i++)
+    //     {
+    //         for (int j = i + 1; j < arrayC.Length ; j++)
+    //         {
+    //             if (arrayC[j] < arrayC[i])
+    //             {
+    //                 (arrayC[j], arrayC[i]) = (arrayC[i], arrayC[j]);
+    //             }
+    //         }
+    //     }
+    //
+    //     Console.WriteLine();
+    //     Show(arrayC);
+    // }
     public static void Array63()
     {
-        int[] arrayA = new int[] { 1, 20, 50, 60, 90 };
+        int[] arrayA = new int[] { 1, 4, 5, 7, 9 };
         Show(arrayA);
         Console.WriteLine();
-        int[] arrayB = new int[] { 3, 4, 6, 8, 9 };
+        int[] arrayB = new int[] { 2, 3, 6, 8, 10 };
         Show(arrayB);
         int[] arrayC = new int [arrayA.Length + arrayB.Length];
-        for (int i = 0, j = arrayA.Length; i < arrayA.Length; i++)
+        for (int i = 0, j = 0, k = 0; i < arrayC.Length; i++)
         {
-            arrayC[i] = arrayA[i];
-            arrayC[j++] = arrayB[i];
-        }
-
-        for (int i = 0; i < arrayC.Length; i++)
-        {
-            for (int j = i + 1; j < arrayC.Length ; j++)
+            if (j < arrayA.Length && k < arrayB.Length)
             {
-                if (arrayC[j] < arrayC[i])
-                {
-                    (arrayC[j], arrayC[i]) = (arrayC[i], arrayC[j]);
-                }
+                arrayC[i] = arrayA[j] < arrayB[k] ? arrayA[j++] : arrayC[i] = arrayB[k++];
             }
+            else if (j < arrayA.Length)
+                arrayC[i] = arrayA[j++];
+            
+            else if (k < arrayB.Length)
+                arrayC[i] = arrayB[k++];
+            
         }
 
         Console.WriteLine();
