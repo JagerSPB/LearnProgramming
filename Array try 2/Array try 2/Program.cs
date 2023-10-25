@@ -10,6 +10,14 @@
         }
     }
 
+    public static void Show(double[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine($"[{i}] = {array[i]}");
+        }
+    }
+
     public static void ShowInRow(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -1072,9 +1080,259 @@
         ShowInRow(arrayC);
     }
 
+    /// <summary>
+    /// Array54. Дан целочисленный массив A размера N. Переписать в новый целочисленный массив B все четные числа из
+    /// исходного массива (в том жепорядке) и вывести размер полученного массива B и его содержимое
+    /// </summary>
+    public static void Array54()
+    {
+        int[] arrayA = RandomFill(10, 0, 20);
+        Show(arrayA);
+        int countEven = 0;
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            if (arrayA[i] % 2 == 0)
+                countEven++;
+        }
+
+        int[] arrayB = new int[countEven];
+        for (int i = 0, j = 0; i < arrayA.Length; i++)
+        {
+            if (arrayA[i] % 2 == 0)
+                arrayB[j++] = arrayA[i];
+        }
+
+        Console.WriteLine($"Чисел в новом массиве: {countEven}");
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array55. Дан целочисленный массив A размера N (≤ 15). Переписать в новый целочисленный массив B все элементы с
+    /// нечетными порядковыми номерами (1, 3, . . .) и вывести размер полученного массива B и его содержимое.
+    /// Условный оператор не использовать.
+    /// </summary>
+    public static void Array55()
+    {
+        int[] arrayA = RandomFill(15, 0, 50);
+        Show(arrayA);
+        Console.WriteLine();
+        int[] arrayB = new int[arrayA.Length / 2];
+        for (int i = 1, j = 0; i < arrayA.Length; i += 2)
+        {
+            arrayB[j++] = arrayA[i];
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array56. Дан целочисленный массив A размера N (≤ 15). Переписать в новый целочисленный массив B все элементы с
+    /// порядковыми номерами, кратными трем (3, 6, . . .), и вывести размер полученного массива B и егосодержимое.
+    /// Условный оператор не использовать
+    /// </summary>
+    public static void Array56()
+    {
+        int[] arrayA = RandomFill(15, 0, 50);
+        Show(arrayA);
+        Console.WriteLine();
+        int[] arrayB = new int[arrayA.Length / 3];
+        for (int i = 2, j = 0; i < arrayA.Length; i += 3)
+        {
+            arrayB[j++] = arrayA[i];
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array57. Дан целочисленный массив A размера N. Переписать в новый целочисленный массив B того же размера вначале
+    /// все элементы исходного массива с четными номерами, а затем — с нечетными: A2, A4, A6, . . ., A1, A3, A5, . . . .
+    /// </summary>
+    public static void Array57()
+    {
+        int[] arrayA = RandomFill(10, 0, 50);
+        Show(arrayA);
+        Console.WriteLine();
+        int[] arrayB = new int[arrayA.Length];
+        for (int i = 0; i < arrayA.Length; i += 2)
+        {
+            arrayB[i] = arrayA[i];
+        }
+
+        for (int i = 1; i < arrayA.Length; i += 2)
+        {
+            arrayB[i] = arrayA[i];
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array58. Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу: элемент
+    /// BK равен сумме элементов массива A с номерами от 1 до K
+    /// </summary>
+    public static void Array58()
+    {
+        int[] arrayA = RandomFill(10, 0, 10);
+        Show(arrayA);
+        Console.WriteLine();
+        int sum = 0;
+        int[] arrayB = new int[arrayA.Length];
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            sum += arrayA[i];
+            arrayB[i] = sum;
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array59. Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу: элемент
+    /// BK равен среднему арифметическому элементов массива A с номерами от 1 до K.
+    /// </summary>
+    public static void Array59()
+    {
+        int[] arrayA = RandomFill(10, 0, 10);
+        Show(arrayA);
+        Console.WriteLine();
+        int sum = 0;
+        double[] arrayB = new double[arrayA.Length];
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            sum += arrayA[i];
+            arrayB[i] = sum / (i + 1);
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array60◦. Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу: элемент
+    /// BK равен сумме элементов массива A с номерами от K до N.
+    /// </summary>
+    public static void Array60()
+    {
+        int[] arrayA = RandomFill(10, 0, 10);
+        Show(arrayA);
+        Console.WriteLine();
+        int sum = 0;
+        int[] arrayB = new int[arrayA.Length];
+        // for (int i = 0, j = arrayB.Length-1; i < arrayA.Length; i++)
+        // {
+        //     sum += arrayA[i];
+        //     arrayB[j--] = sum;
+        // }
+        for (int i = arrayA.Length - 1; i >= 0; i--)
+        {
+            sum += arrayA[i];
+            arrayB[i] = sum;
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array61. Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу: элемент
+    /// BK равен среднему арифметическому элементов массива A с номерами от K до N.
+    /// </summary>
+    public static void Array61()
+    {
+        int[] arrayA = RandomFill(6, 1, 10);
+        Show(arrayA);
+        Console.WriteLine();
+        int sum = 0;
+        int[] arrayB = new int[arrayA.Length];
+        // for (int i = 0, j = arrayA.Length-1; i < arrayA.Length ; i++)
+        // {
+        //     sum += arrayA[i];
+        //     arrayB[j--] = sum / (i+1);
+        // }
+        for (int i = arrayA.Length - 1, j = 1; i >= 0; i--, j++)
+        {
+            sum += arrayA[i];
+            arrayB[i] = sum / j;
+        }
+
+        Show(arrayB);
+    }
+
+    /// <summary>
+    /// Array62. Дан массив A размера N. Сформировать два новых массива B и C: в массив B записать все положительные
+    /// элементы массива A, в массив C —все отрицательные (сохраняя исходный порядок следования элементов).
+    /// Вывести вначале размер и содержимое массива B, а затем — размер и содержимое массива C
+    /// </summary>
+    public static void Array62()
+    {
+        int[] arrayA = RandomFill(10, -10, 10);
+        Show(arrayA);
+        Console.WriteLine();
+        int countPositive = 0, countNegative = 0;
+        for (int i = 0; i < arrayA.Length; i++)
+        {
+            if (arrayA[i] >= 0)
+                countPositive++;
+            else
+                countNegative++;
+        }
+
+        int[] arrayB = new int[countPositive];
+        int[] arrayC = new int[countNegative];
+        for (int i = 0, j = 0, k = 0; i < arrayA.Length; i++)
+        {
+            if (arrayA[i] >= 0)
+            {
+                arrayB[j++] = arrayA[i];
+            }
+            else if (arrayA[i] < 0)
+            {
+                arrayC[k++] = arrayA[i];
+            }
+        }
+
+        Console.WriteLine($"элементов в массиве B: {countPositive}");
+        Show(arrayB);
+
+        Console.WriteLine($"элементов в массиве С: {countNegative}");
+        Show(arrayC);
+    }
+
+    /// <summary>
+    /// Array63. Даны два массива A и B размера 5, элементы которых упорядочены по возрастанию. Объединить эти массивы так,
+    /// чтобы результирующий массив C (размера 10) остался упорядоченным по возрастанию.
+    /// </summary>
+    public static void Array63()
+    {
+        int[] arrayA = new int[] { 1, 20, 50, 60, 90 };
+        Show(arrayA);
+        Console.WriteLine();
+        int[] arrayB = new int[] { 3, 4, 6, 8, 9 };
+        Show(arrayB);
+        int[] arrayC = new int [arrayA.Length + arrayB.Length];
+        for (int i = 0, j = arrayA.Length; i < arrayA.Length; i++)
+        {
+            arrayC[i] = arrayA[i];
+            arrayC[j++] = arrayB[i];
+        }
+
+        for (int i = 0; i < arrayC.Length; i++)
+        {
+            for (int j = i + 1; j < arrayC.Length ; j++)
+            {
+                if (arrayC[j] < arrayC[i])
+                {
+                    (arrayC[j], arrayC[i]) = (arrayC[i], arrayC[j]);
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Show(arrayC);
+    }
+
     public static void Main()
     {
-        Array53();
+        Array63();
         Console.ReadLine();
     }
 }
