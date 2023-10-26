@@ -1670,9 +1670,45 @@
         Show(array);
     }
 
+    /// <summary>
+    /// Array78. Дан массив размера N. Заменить каждый элемент массива на среднее арифметическое этого
+    /// элемента и его соседей.
+    /// </summary>
+    static void Array78()
+    {
+        int[] array = RandomFill(10, 1, 50);
+        Show(array);
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            array[i] = (array[i] + array[i - 1] + array[i + 1]) / 3;
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array79. Дан массив размера N. Осуществить сдвиг элементов массива вправона одну позицию (при этом A1 перейдет
+    /// в A2, A2 — в A3, . . ., AN−1 — в AN , aисходное значение последнего элемента будет потеряно).
+    /// Первый элемент полученного массива положить равным 0.
+    /// </summary>
+    static void Array79()
+    {
+        int[] array = RandomFill(10, 1, 50);
+        Show(array);
+        int tempNum = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            (array[i], tempNum) = (tempNum, array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
     public static void Main()
     {
-        Array77();
+        Array79();
         Console.ReadLine();
     }
 }
