@@ -801,6 +801,7 @@
             {
                 maxElement1 = array[i];
                 maxElement2 = array[i + 1];
+                maxSumOfTwo = maxElement1 + array[i + 1];
             }
         }
 
@@ -926,7 +927,7 @@
     /// </summary>
     public static void Array47()
     {
-        int[] array = RandomFill(10, 0, 10);
+        int[] array = RandomFill(10, 0, 20);
         Show(array);
         int sameItemCount = 0;
         for (int i = 0; i < array.Length; i++)
@@ -936,7 +937,6 @@
                 if (array[i] == array[j])
                 {
                     sameItemCount++;
-                    break;
                 }
             }
         }
@@ -1018,9 +1018,9 @@
 
     /// <summary>
     /// Array51. Даны массивы A и B одинакового размера N. Поменять местами их содержимое и вывести вначале элементы
-    /// преобразованного массива A, азатем — элементы преобразованного массива B.
+    /// преобразованного массива A, а затем — элементы преобразованного массива B.
     /// </summary>
-    public static void Array51()
+    static void Array51()
     {
         int[] arrayA = RandomFill(10, 0, 10);
         ShowInRow(arrayA);
@@ -1028,11 +1028,7 @@
         int[] arrayB = RandomFill(10, 0, 10);
         ShowInRow(arrayB);
         Console.WriteLine();
-
-        for (int i = 0; i < arrayA.Length; i++)
-        {
-            (arrayA[i], arrayB[i]) = (arrayB[i], arrayA[i]);
-        }
+        (arrayA, arrayB) = (arrayB, arrayA);
 
         ShowInRow(arrayA);
         Console.WriteLine();
@@ -1060,7 +1056,7 @@
 
     /// <summary>
     /// Array53. Даны два массива A и B одинакового размера N. Сформировать новыймассив C того же размера, каждый
-    /// элемент которого равен максимальномуиз элементов массивов A и B с тем же индексом.
+    /// элемент которого равен максимальному из элементов массивов A и B с тем же индексом.
     /// </summary>
     public static void Array53()
     {
@@ -1270,9 +1266,9 @@
         int countPositive = 0, countNegative = 0;
         for (int i = 0; i < arrayA.Length; i++)
         {
-            if (arrayA[i] >= 0)
+            if (arrayA[i] > 0)
                 countPositive++;
-            else
+            else if (arrayA[i] < 0)
                 countNegative++;
         }
 
@@ -1280,7 +1276,7 @@
         int[] arrayC = new int[countNegative];
         for (int i = 0, j = 0, k = 0; i < arrayA.Length; i++)
         {
-            if (arrayA[i] >= 0)
+            if (arrayA[i] > 0)
             {
                 arrayB[j++] = arrayA[i];
             }
@@ -1329,7 +1325,7 @@
     //     Console.WriteLine();
     //     Show(arrayC);
     // }
-    public static void Array63()
+    static void Array63()
     {
         int[] arrayA = new int[] { 1, 4, 5, 7, 9 };
         Show(arrayA);
@@ -1345,19 +1341,189 @@
             }
             else if (j < arrayA.Length)
                 arrayC[i] = arrayA[j++];
-            
+
             else if (k < arrayB.Length)
                 arrayC[i] = arrayB[k++];
-            
         }
 
         Console.WriteLine();
         Show(arrayC);
     }
 
+    //========================= урок 25.10.23 окончен=============================
+    /// <summary>
+    /// Array65. Дан массив A размера N и целое число K (1 ≤ K ≤ N). Преобразовать массив, увеличив каждый его элемент
+    /// на исходное значение элемента AK.
+    /// </summary>
+    static void Array65()
+    {
+        int[] array = RandomFill(10, 0, 10);
+        Show(array);
+        int k = 3;
+        for (int i = 0; i < k; i++)
+        {
+            array[i] += array[k];
+        }
+
+        for (int i = k + 1; i < array.Length; i++)
+        {
+            array[i] += array[k];
+        }
+
+        array[k] += array[k];
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array66. Дан целочисленный массив размера N. Увеличить все четные числа, содержащиеся в массиве, на исходное
+    /// значение первого четного числа. Если четные числа в массиве отсутствуют, то оставить массив без изменений.
+    /// </summary>
+    static void Array66()
+    {
+        int[] array = RandomFill(10, 1, 10);
+        Show(array);
+        int firstEvenItem = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                firstEvenItem = array[i];
+                break;
+            }
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                array[i] += firstEvenItem;
+            }
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array67. Дан целочисленный массив размера N. Увеличить все нечетные числа, содержащиеся в массиве, на исходное
+    /// значение последнего нечетногочисла. Если нечетные числа в массиве отсутствуют, то оставить массив без изменений.
+    /// </summary>
+    static void Array67()
+    {
+        int[] array = RandomFill(10, 1, 10);
+        Show(array);
+        int lastOddItem = 0;
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            if (array[i] % 2 != 0)
+            {
+                lastOddItem = array[i];
+                break;
+            }
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 != 0)
+            {
+                array[i] += lastOddItem;
+            }
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array68◦. Дан массив размера N. Поменять местами его минимальный и максимальный элементы.
+    /// </summary>
+    static void Array68()
+    {
+        int[] array = RandomFill(10, 0, 50);
+        Show(array);
+        int maxItem = array[0], maxIndex = 0, minItem = array[0], minIndex = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[j] > maxItem)
+                {
+                    maxItem = array[j];
+                    maxIndex = j;
+                }
+                else if (array[j] < minItem)
+                {
+                    minItem = array[j];
+                    minIndex = j;
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"max: {maxItem}   min: {minItem}");
+
+        (array[maxIndex], array[minIndex]) = (array[minIndex], array[maxIndex]);
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array69. Дан массив размера N (N — четное число). Поменять местами его первый элемент со вторым,
+    /// третий — с четвертым и т. д.
+    /// </summary>
+    static void Array69()
+    {
+        int[] array = RandomFill(10, 0, 20);
+        Show(array);
+        for (int i = 0; i < array.Length; i += 2)
+        {
+            (array[i], array[i + 1]) = (array[i + 1], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array70. Дан массив размера N (N — четное число). Поменять местами первую и вторую половины массива.
+    /// </summary>
+    static void Array70()
+    {
+        int[] array = RandomFill(10, 0, 20);
+        Show(array);
+        for (int i = 0, j = array.Length / 2; i < array.Length / 2; i++, j++)
+        {
+            (array[i], array[j]) = (array[j], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array71. Дан массив размера N. Поменять порядок его элементов на обратный.
+    /// </summary>
+    static void Array71()
+    {
+        int[] array = RandomFill(10, 0, 20);
+        Show(array);
+        for (int i = 0, j = array.Length - 1; i < array.Length / 2; i++, j--)
+        {
+            (array[i], array[j]) = (array[j], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array72. Дан массив A размера N и целые числа K и L (1 ≤ K &lt; L ≤ N). Переставить в обратном порядке элементы
+    /// массива, расположенные междуэлементами AK и AL, включая эти элементы.
+    /// </summary>
     public static void Main()
     {
-        Array63();
+        Array71();
         Console.ReadLine();
     }
 }
