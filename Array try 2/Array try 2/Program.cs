@@ -1521,9 +1521,22 @@
     /// Array72. Дан массив A размера N и целые числа K и L (1 ≤ K &lt; L ≤ N). Переставить в обратном порядке элементы
     /// массива, расположенные междуэлементами AK и AL, включая эти элементы.
     /// </summary>
+    static void Array72()
+    {
+        int[] array = RandomFill(10, 0, 20);
+        Show(array);
+        int k = 3, l = 9;
+        for (int i = k, j = l-1; i < l/2 ; i++, j--)
+        {
+            (array[i], array[j]) = (array[j], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
     public static void Main()
     {
-        Array71();
+        Array72();
         Console.ReadLine();
     }
 }
