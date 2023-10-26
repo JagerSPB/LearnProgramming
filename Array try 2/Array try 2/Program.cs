@@ -1508,7 +1508,7 @@
     {
         int[] array = RandomFill(10, 0, 20);
         Show(array);
-        for (int i = 0, j = array.Length - 1; i < array.Length / 2; i++, j--)
+        for (int i = 0, j = array.Length - 1; i < j; i++, j--)
         {
             (array[i], array[j]) = (array[j], array[i]);
         }
@@ -1518,15 +1518,15 @@
     }
 
     /// <summary>
-    /// Array72. Дан массив A размера N и целые числа K и L (1 ≤ K &lt; L ≤ N). Переставить в обратном порядке элементы
+    /// Array72. Дан массив A размера N и целые числа K и L (1 ≤ K < L ≤ N). Переставить в обратном порядке элементы
     /// массива, расположенные междуэлементами AK и AL, включая эти элементы.
     /// </summary>
     static void Array72()
     {
-        int[] array = RandomFill(10, 0, 20);
+        int[] array = RandomFill(10, 0, 50);
         Show(array);
-        int k = 3, l = 9;
-        for (int i = k, j = l-1; i < l/2 ; i++, j--)
+        int k = 3, l = 7;
+        for (int i = k, j = l; i <= j; i++, j--)
         {
             (array[i], array[j]) = (array[j], array[i]);
         }
@@ -1534,9 +1534,106 @@
         Console.WriteLine();
         Show(array);
     }
+
+    /// <summary>
+    /// Array73. Дан массив A размера N и целые числа K и L (1 ≤ K < L ≤ N). Переставить в обратном порядке элементы
+    /// массива, расположенные междуэлементами AK и AL, не включая эти элементы.
+    /// </summary>
+    static void Array73()
+    {
+        int[] array = RandomFill(10, 0, 50);
+        Show(array);
+        int k = 2, l = 5;
+        for (int i = k + 1, j = l - 1; i <= j; i++, j--)
+        {
+            (array[i], array[j]) = (array[j], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array74. Дан массив размера N. Обнулить элементы массива, расположенные между его минимальным и максимальным
+    /// элементами (не включая минимальный и максимальный элементы)
+    /// </summary>
+    static void Array74()
+    {
+        int[] array = RandomFill(10, 0, 50);
+        Show(array);
+        int maxItem = array[0], indexOfMax = 0, minItem = array[0], indexOfMin = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[j] > maxItem)
+                {
+                    maxItem = array[j];
+                    indexOfMax = j;
+                }
+                else if (array[j] < minItem)
+                {
+                    minItem = array[j];
+                    indexOfMin = j;
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"max:[{indexOfMax}]   min:[{indexOfMin}]");
+        if (indexOfMax < indexOfMin)
+            (indexOfMax, indexOfMin) = (indexOfMin, indexOfMax);
+        {
+            for (int i = indexOfMin + 1; i < indexOfMax; i++)
+            {
+                array[i] = 0;
+            }
+        }
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array75. Дан массив размера N. Переставить в обратном порядке элементы массива, расположенные между его
+    /// минимальным и максимальным элементами, включая минимальный и максимальный элементы.
+    /// </summary>
+    static void Array75()
+    {
+        int[] array = RandomFill(10, 0, 50);
+        Show(array);
+        int maxItem = array[0], indexOfMax = 0, minItem = array[0], indexOfMin = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[j] > maxItem)
+                {
+                    maxItem = array[j];
+                    indexOfMax = j;
+                }
+                else if (array[j] < minItem)
+                {
+                    minItem = array[j];
+                    indexOfMin = j;
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"max:[{indexOfMax}]   min:[{indexOfMin}]");
+        if (indexOfMax < indexOfMin)
+            (indexOfMax, indexOfMin) = (indexOfMin, indexOfMax);
+
+        for (int i = indexOfMin, j = indexOfMax; i < j; i++, j--)
+            (array[i], array[j]) = (array[j], array[i]);
+
+        Console.WriteLine();
+        Show(array);
+    }
+
     public static void Main()
     {
-        Array72();
+        Array75();
         Console.ReadLine();
     }
 }
