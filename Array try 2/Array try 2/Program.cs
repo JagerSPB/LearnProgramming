@@ -1631,9 +1631,48 @@
         Show(array);
     }
 
+    /// <summary>
+    /// Array76. Дан массив размера N. Обнулить все его локальные максимумы (то есть числа, большие своих соседей).
+    /// </summary>
+    static void Array76()
+    {
+        int[] array = RandomFill(10, 1, 50);
+        Show(array);
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i - 1] && array[i] > array[i + 1])
+            {
+                array[i++] = 0;
+            }
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array77. Дан массив размера N. Возвести в квадрат все его локальные минимумы (то есть числа, меньшие своих соседей).
+    /// </summary>
+    static void Array77()
+    {
+        int[] array = RandomFill(10, 1, 50);
+        Show(array);
+        for (int i = 1; i < array.Length - 1; i++)
+        {
+            if (array[i] < array[i - 1] && array[i] < array[i + 1])
+            {
+                array[i] *= array[i];
+                i++;
+            }
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
     public static void Main()
     {
-        Array75();
+        Array77();
         Console.ReadLine();
     }
 }
