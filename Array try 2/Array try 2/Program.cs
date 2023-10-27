@@ -1858,7 +1858,7 @@
         for (int i = 0; i < array.Length - k; i++)
             array[i] = array[i + k];
 
-        for (int i = array.Length - k, j = 0; i < array.Length ; i++)
+        for (int i = array.Length - k, j = 0; i < array.Length; i++)
         {
             array[i] = arrayB[j++];
         }
@@ -1869,9 +1869,92 @@
         Show(array);
     }
 
+    /// <summary>
+    /// Array87. Дан массив размера N, все элементы которого, кроме первого, упорядочены по возрастанию.
+    /// Сделать массив упорядоченным, переместив первый элемент на новую позицию.
+    /// </summary>
+    static void Array87()
+    {
+        int[] array = new int[] { 8, 1, 2, 3, 4, 5, 6, 7, 9, 10 };
+        Show(array);
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i + 1])
+                (array[i], array[i + 1]) = (array[i + 1], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array88. Дан массив размера N, все элементы которого, кроме последнего, упорядочены по возрастанию.
+    /// Сделать массив упорядоченным, переместив последний элемент на новую позицию.
+    /// </summary>
+    static void Array88()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 9, 10, 8 };
+        Show(array);
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            if (array[i] < array[i - 1])
+                (array[i], array[i - 1]) = (array[i - 1], array[i]);
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array89. Дан массив размера N, все элементы которого, кроме одного, упорядочены по убыванию. Сделать массив
+    /// упорядоченным, переместив элемент, нарушающий упорядоченность, на новую позицию.
+    /// </summary>
+    static void Array89()
+    {
+        int[] array = new int[] { 10, 3, 8, 7, 6, 5, 4, 9, 2, 1 };
+        Show(array);
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] < array[j])
+                {
+                    (array[i], array[j]) = (array[j], array[i]);
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array90. Дан массив размера N и целое число K (1 ≤ K ≤ N). Удалить из массива элемент с порядковым номером K.
+    /// </summary>
+    static void Array90()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int[] newArray = new int [array.Length - 1];
+        int k = 4;
+        for (int i = 0; i < k - 1; i++)
+            newArray[i] = array[i];
+        for (int i = k, j = k - 1; i < array.Length; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array91. Дан массив размера N и целые числа K и L (1 ≤ K < L ≤ N). Удалить из массива элементы с номерами от K
+    /// до L включительно и вывести размер полученного массива и его содержимое.
+    /// </summary>
     public static void Main()
     {
-        Array86();
+        Array90();
         Console.ReadLine();
     }
 }
