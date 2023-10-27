@@ -1694,21 +1694,184 @@
     /// </summary>
     static void Array79()
     {
-        int[] array = RandomFill(10, 1, 50);
+        int[] array = RandomFill(10, 1, 100);
         Show(array);
-        int tempNum = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = array.Length - 1; i > 0; i--)
         {
-            (array[i], tempNum) = (tempNum, array[i]);
+            array[i] = array[i - 1];
+        }
+
+        array[0] = 0;
+
+        // int tempNum = 0;
+        // for (int i = 0; i < array.Length; i++)
+        // {
+        //     (array[i], tempNum) = (tempNum, array[i]);
+        // }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array80. Дан массив размера N. Осуществить сдвиг элементов массива влево на одну позицию (при этом AN перейдет
+    /// в AN−1, AN−1 — в AN−2, . . ., A2 —в A1, a исходное значение первого элемента будет потеряно).
+    /// Последний элемент полученного массива положить равным 0
+    /// </summary>
+    static void Array80()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            array[i] = array[i + 1];
+        }
+
+        array[array.Length - 1] = 0;
+
+        // int tempNum = 0;
+        // for (int i = array.Length - 1; i >= 0; i--)
+        // {
+        //     (array[i], tempNum) = (tempNum, array[i]);
+        // }
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array81. Дан массив размера N и целое число K (1 ≤ K < N). Осуществить сдвиг элементов массива вправо на K
+    /// позиций (при этом A1 перейдетв AK+1, A2 — в AK+2, . . ., AN−K — в AN , а исходное значение K последнихэлементов
+    /// будет потеряно). Первые K элементов полученного массива положить равными 0.
+    /// </summary>
+    static void Array81()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 2;
+        for (int i = array.Length - 1; i >= k; i--)
+            array[i] = array[i - k];
+
+        for (int i = 0; i < k; i++)
+            array[i] = 0;
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array82. Дан массив размера N и целое число K (1 ≤ K < N). Осуществить сдвиг элементов массива влево на K позиций
+    /// (при этом AN перейдет в AN−K, AN−1 — в AN−K−1, . . ., AK+1 — в A1, а исходное значение K первых элементов будет
+    /// потеряно). Последние K элементов полученного массива положить равными 0.
+    /// </summary>
+    static void Array82()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 6;
+        for (int i = 0; i < array.Length - k; i++)
+            array[i] = array[i + k];
+
+        for (int i = array.Length - 1; i >= array.Length - k; i--)
+            array[i] = 0;
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array83. Дан массив размера N. Осуществить циклический сдвиг элементов массива вправо на одну позицию
+    /// (при этом A1 перейдет в A2, A2 — в A3, . . .,AN — в A1).
+    /// </summary>
+    static void Array83()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int safeLast = array[^1];
+        for (int i = array.Length - 1; i > 0; i--)
+            array[i] = array[i - 1];
+
+        array[0] = safeLast;
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array84. Дан массив размера N. Осуществить циклический сдвиг элементов массива влево на одну позицию
+    /// (при этом AN перейдет в AN−1, AN−1 — в AN−2, . . ., A1 — в AN ).
+    /// </summary>
+    static void Array84()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int safeFirst = array[0];
+        for (int i = 0; i < array.Length - 1; i++)
+            array[i] = array[i + 1];
+
+        array[^1] = safeFirst;
+
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array85. Дан массив A размера N и целое число K (1 ≤ K ≤ 4, K < N). Осуществить циклический сдвиг элементов
+    /// массива вправо на K позиций (при этом A1 перейдет в AK+1, A2 — в AK+2, . . ., AN — в AK).
+    /// Допускается использовать вспомогательный массив из 4 элементов.
+    /// </summary>
+    static void Array85()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 3;
+        int[] arrayB = new int[k];
+        for (int i = array.Length - 1, j = k - 1; i >= array.Length - k; i--)
+            arrayB[j--] = array[i];
+
+        for (int i = array.Length - 1; i >= k; i--)
+            array[i] = array[i - k];
+
+        for (int i = 0; i < k; i++)
+        {
+            array[i] = arrayB[i];
         }
 
         Console.WriteLine();
         Show(array);
     }
 
+    /// <summary>
+    /// Array86. Дан массив A размера N и целое число K (1 ≤ K ≤ 4, K &lt; N). Осуществить циклический сдвиг элементов
+    /// массива влево на K позиций(при этом AN перейдет в AN−K, AN−1 — в AN−K−1, . . ., A1 — в AN−K+1).
+    /// Допускается использовать вспомогательный массив из 4 элементов.
+    /// </summary>
+    static void Array86()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 4;
+        int[] arrayB = new int[k];
+        for (int i = 0, j = 0; i < k; i++)
+            arrayB[j++] = array[i];
+
+        for (int i = 0; i < array.Length - k; i++)
+            array[i] = array[i + k];
+
+        for (int i = array.Length - k, j = 0; i < array.Length ; i++)
+        {
+            array[i] = arrayB[j++];
+        }
+
+        Console.WriteLine();
+        Show(arrayB);
+        Console.WriteLine();
+        Show(array);
+    }
+
     public static void Main()
     {
-        Array79();
+        Array86();
         Console.ReadLine();
     }
 }
