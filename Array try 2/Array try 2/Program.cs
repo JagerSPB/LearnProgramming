@@ -1952,9 +1952,24 @@
     /// Array91. Дан массив размера N и целые числа K и L (1 ≤ K < L ≤ N). Удалить из массива элементы с номерами от K
     /// до L включительно и вывести размер полученного массива и его содержимое.
     /// </summary>
+    static void Array91()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 4, l = 6;
+        int[] newArray = new int [array.Length - (l-k+1)];
+        for (int i = 0; i < k-1 ; i++)
+            newArray[i] = array[i];
+        for (int i = l, j = k-1; i < array.Length; i++)
+            newArray[j++] = array[i];
+        
+        Console.WriteLine();
+        Show(newArray);
+    }
+
     public static void Main()
     {
-        Array90();
+        Array91();
         Console.ReadLine();
     }
 }
