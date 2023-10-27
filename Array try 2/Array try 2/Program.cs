@@ -1957,19 +1957,124 @@
         int[] array = RandomFill(10, 1, 100);
         Show(array);
         int k = 4, l = 6;
-        int[] newArray = new int [array.Length - (l-k+1)];
-        for (int i = 0; i < k-1 ; i++)
+        int[] newArray = new int [array.Length - (l - k + 1)];
+        for (int i = 0; i < k - 1; i++)
             newArray[i] = array[i];
-        for (int i = l, j = k-1; i < array.Length; i++)
+        for (int i = l, j = k - 1; i < array.Length; i++)
             newArray[j++] = array[i];
-        
+
         Console.WriteLine();
         Show(newArray);
     }
 
+    /// <summary>
+    /// Array92. Дан целочисленный массив размера N. Удалить из массива все нечетные числа и вывести размер
+    /// полученного массива и его содержимое. 
+    /// </summary>
+    static void Array92()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int oddNumCount = 0;
+        for (int i = 0; i < array.Length; i++)
+            if (array[i] % 2 != 0)
+                oddNumCount++;
+
+        int[] newArray = new int [array.Length - oddNumCount];
+        for (int i = 0, j = 0; i < array.Length; i++)
+            if (array[i] % 2 == 0)
+                newArray[j++] = array[i];
+
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array93. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с четными
+    /// номерами (2, 4, . . .). Условный оператор не использовать
+    /// </summary>
+    static void Array93()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int[] newArray = new int [array.Length / 2];
+        for (int i = 1, j = 0; i < array.Length; i += 2)
+            newArray[j++] = array[i];
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array94. Дан целочисленный массив размера N (> 2). Удалить из массива все элементы с нечетными
+    /// номерами (1, 3, . . .). Условный оператор не использовать
+    /// </summary>
+    static void Array94()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int[] newArray = new int [array.Length / 2];
+        for (int i = 0, j = 0; i < array.Length; i += 2)
+            newArray[j++] = array[i];
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array95. Дан целочисленный массив размера N. Удалить из массива все соседние одинаковые элементы,
+    /// оставив их первые вхождения
+    /// </summary>
+    static void Array95()
+    {
+        int[] array = new int[] { 1, 1, 3, 3, 3, 5, 6, 6, 7, 8 };
+        Show(array);
+        int countOfSame = 0;
+        for (int i = 0; i < array.Length - 1; i++)
+            if (array[i] == array[i + 1])
+                countOfSame++;
+
+        int[] newArray = new int [array.Length - countOfSame];
+        newArray[0] = array[0];
+        for (int i = 1, j = 1; i < array.Length; i++)
+            if (array[i] != array[i - 1])
+                newArray[j++] = array[i];
+
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array96. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы, оставив их
+    /// первые вхождения.
+    /// </summary>
+    static void Array96()
+    {
+        int[] array = new int[] { 1, 2, 3, 3, 1, 5, 6, 6, 6, 8 };
+        Show(array);
+        int countOfSame = 0;
+        for (int i = 0; i < array.Length; i++)
+            for (int j = i+1; j < array.Length; j++)
+                if (array[i] == array[j]&& array[j] != Int32.MinValue) {
+                    array[j] = Int32.MinValue;
+                    countOfSame++;
+                }
+        
+        int[] newArray = new int [array.Length - countOfSame];
+        
+        for (int i = 0, j = 0; i < array.Length; i++)
+            if (array[i] != Int32.MinValue)
+                newArray[j++] = array[i];
+
+
+        Console.WriteLine(countOfSame);
+        Show(newArray);
+    }
     public static void Main()
     {
-        Array91();
+        Array96();
         Console.ReadLine();
     }
 }
