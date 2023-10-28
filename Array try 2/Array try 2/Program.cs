@@ -2056,25 +2056,176 @@
         Show(array);
         int countOfSame = 0;
         for (int i = 0; i < array.Length; i++)
-            for (int j = i+1; j < array.Length; j++)
-                if (array[i] == array[j]&& array[j] != Int32.MinValue) {
-                    array[j] = Int32.MinValue;
-                    countOfSame++;
-                }
-        
+        for (int j = i + 1; j < array.Length; j++)
+            if (array[i] == array[j] && array[j] != Int32.MinValue)
+            {
+                array[j] = Int32.MinValue;
+                countOfSame++;
+            }
+
         int[] newArray = new int [array.Length - countOfSame];
-        
+
         for (int i = 0, j = 0; i < array.Length; i++)
             if (array[i] != Int32.MinValue)
                 newArray[j++] = array[i];
 
+        Console.WriteLine(countOfSame);
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array97. Дан целочисленный массив размера N. Удалить из массива все одинаковые элементы,
+    /// оставив их последние вхождения.
+    /// </summary>
+    static void Array97()
+    {
+        int[] array = new int[] { 1, 2, 3, 3, 1, 5, 6, 6, 6, 8 };
+        Show(array);
+        int countOfSame = 0;
+        for (int i = 0; i < array.Length; i++)
+        for (int j = i + 1; j < array.Length; j++)
+            if (array[i] == array[j] && array[j] != Int32.MinValue)
+            {
+                array[i] = Int32.MinValue;
+                countOfSame++;
+            }
+
+        int[] newArray = new int [array.Length - countOfSame];
+
+        for (int i = 0, j = 0; i < array.Length; i++)
+            if (array[i] != Int32.MinValue)
+                newArray[j++] = array[i];
 
         Console.WriteLine(countOfSame);
         Show(newArray);
     }
+
+    /// <summary>
+    /// Array98. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся менее трех раз,
+    /// и вывести размер полученного массива и его содержимое
+    /// </summary>
+    static void Array98()
+    {
+        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 6, 6, 6, 1 };
+        Show(array);
+        int[] newArray = new int [array.Length];
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            int threeTimeCount = 0;
+            for (int j = 0; j < array.Length; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    threeTimeCount++;
+                }
+            }
+
+            if (threeTimeCount >= 3)
+            {
+                newArray[count++] = array[i];
+            }
+        }
+
+        int[] newArrayB = new int [count];
+        for (int i = 0, j = 0; i < array.Length - 1; i++)
+        {
+            if (newArray[i] != 0)
+                newArrayB[j++] = newArray[i];
+        }
+
+        (newArrayB, array) = (array, newArrayB);
+        Console.WriteLine();
+        Console.WriteLine(count);
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array99. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся более двух раз,
+    /// и вывести размер полученного массива и его содержимое.
+    /// </summary>
+    static void Array99()
+    {
+        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 5, 6, 6, 7 };
+        Show(array);
+        int[] newArray = new int [array.Length];
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            int twoTimeCount = 0;
+            for (int j = 0; j < array.Length; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    twoTimeCount++;
+                }
+            }
+
+            if (twoTimeCount >= 2)
+            {
+                newArray[count++] = array[i];
+            }
+        }
+
+        int[] newArrayB = new int [count];
+        for (int i = 0, j = 0; i < array.Length - 1; i++)
+        {
+            if (newArray[i] != 0)
+                newArrayB[j++] = newArray[i];
+        }
+
+        (newArrayB, array) = (array, newArrayB);
+        Console.WriteLine();
+        Console.WriteLine(count);
+        Console.WriteLine();
+        Show(array);
+    }
+
+    /// <summary>
+    /// Array100. Дан целочисленный массив размера N. Удалить из массива все элементы, встречающиеся ровно два раза,
+    /// и вывести размер полученногомассива и его содержимое.
+    /// </summary>
+    static void Array100()
+    {
+        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 5, 6, 6, 6 };
+        Show(array);
+        int[] newArray = new int [array.Length];
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            int twoTimeCount = 0;
+            for (int j = 0; j < array.Length; j++)
+            {
+                if (array[i] == array[j])
+                {
+                    twoTimeCount++;
+                }
+            }
+
+            if (twoTimeCount < 2 || twoTimeCount > 2)
+            {
+                newArray[count++] = array[i];
+            }
+        }
+
+        int[] newArrayB = new int [count];
+        for (int i = 0, j = 0; i < array.Length - 1; i++)
+        {
+            if (newArray[i] != 0)
+                newArrayB[j++] = newArray[i];
+        }
+
+        (newArrayB, array) = (array, newArrayB);
+        Console.WriteLine();
+        Console.WriteLine(count);
+        Console.WriteLine();
+        Show(array);
+    }
+
     public static void Main()
     {
-        Array96();
+        Array100();
         Console.ReadLine();
     }
 }
