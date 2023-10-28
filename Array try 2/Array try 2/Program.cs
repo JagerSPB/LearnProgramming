@@ -2280,66 +2280,71 @@
     static void Array103()
     {
         int[] array = RandomFill(10, 1, 100);
-        //int[] array = new int[] { 1, 2, 3, 40, -70, 5, 6, 7, 8, 10 };
+        // int[] array = new int[] { 1, -2, 3, 4, 7, 5, 6, 7, 80, 10 };
         Show(array);
         int[] newArray = new int[array.Length + 2];
-        int maxItem = array[0], indexOfMax = 0, minItem = array[0], indexOfMin = 0;
+        int indexOfMax = 0, indexOfMin = 0;
         for (int i = 0; i < array.Length; i++)
         {
             if (array[i] < array[indexOfMin])
                 indexOfMin = i;
             if (array[i] > array[indexOfMax])
-                indexOfMax = i; 
+                indexOfMax = i;
         }
-        
 
         Console.WriteLine();
         Console.WriteLine($"Min [{indexOfMin}]");
         Console.WriteLine($"Max [{indexOfMax}]");
         if (indexOfMax > indexOfMin)
         {
-            for (int i = 0, j = 0; i < indexOfMin; i++)
-            {
-                newArray[j++] = array[i];
-            }
+            for (int i = 0; i < indexOfMin; i++)
+                newArray[i] = array[i];
 
             for (int i = indexOfMin, j = indexOfMin + 1; i <= indexOfMax; i++)
-            {
                 newArray[j++] = array[i];
-            }
 
             for (int i = indexOfMax + 1, j = indexOfMax + 3; i < array.Length; i++)
-            {
                 newArray[j++] = array[i];
-            }
         }
         else if (indexOfMax < indexOfMin)
         {
-            for (int i = 0, j = 0; i <= indexOfMax; i++)
-            {
-                newArray[j++] = array[i];
-            }
+            for (int i = 0; i <= indexOfMax; i++)
+                newArray[i] = array[i];
 
             for (int i = indexOfMax + 1, j = indexOfMax + 2; i < indexOfMin; i++)
-            {
                 newArray[j++] = array[i];
-            }
 
             for (int i = indexOfMin, j = indexOfMin + 2; i < array.Length; i++)
-            {
                 newArray[j++] = array[i];
-            }
         }
 
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array104. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). Перед элементом массива с
+    /// номером K вставить M новых элементов с нулевыми значениями.
+    /// </summary>
+    static void Array104()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 2, m = 5;
+        int[] newArray = new int[array.Length + m];
+        for (int i = array.Length - 1, j = newArray.Length - 1; i >= k; i--)
+            newArray[j--] = array[i];
+
+        for (int i = k - 1; i >= 0; i--)
+            newArray[i] = array[i];
 
         Console.WriteLine();
-
         Show(newArray);
     }
 
     public static void Main()
     {
-        Array103();
+        Array104();
         Console.ReadLine();
     }
 }
