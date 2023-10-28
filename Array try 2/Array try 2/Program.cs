@@ -2264,7 +2264,7 @@
             newArray[j++] = array[i];
         }
 
-        for (int i = k , j = k + 1; i < array.Length; i++)
+        for (int i = k, j = k + 1; i < array.Length; i++)
         {
             newArray[j++] = array[i];
         }
@@ -2272,9 +2272,73 @@
         Console.WriteLine();
         Show(newArray);
     }
+
+    /// <summary>
+    /// Array103. Дан массив размера N. Вставить элемент с нулевым значением перед минимальным и после максимального
+    /// элемента массива
+    /// </summary>
+    static void Array103()
+    {
+        // int[] array = RandomFill(10, 1, 100);
+        int[] array = new int[] { 1, 2, 3, 4, 7, 5, 5, 6, 80, 10 };
+        Show(array);
+        int[] newArray = new int[array.Length + 2];
+        int maxItem = array[0], indexOfMax = 0, minItem = array[0], indexOfMin = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[j] > maxItem)
+                {
+                    maxItem = array[j];
+                    indexOfMax = j;
+                }
+                else if (array[j] < minItem)
+                {
+                    minItem = array[j];
+                    indexOfMin = j;
+                }
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"Min [{indexOfMin}]");
+        Console.WriteLine($"Max [{indexOfMax}]");
+        // if (indexOfMax > indexOfMin)
+        //{
+        //newArray[indexOfMin] = 0;
+        for (int i = 0, j = 0; i < indexOfMin; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        for (int i = indexOfMin, j = indexOfMin + 1; i <= indexOfMax; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        // newArray[indexOfMax] = 0;
+        // for (int i = indexOfMax + 1, j = 0; i < array.Length; i++)
+        // {
+        //     newArray[j++] = array[i];
+        // }
+        //
+        // for (int i = indexOfMax+1, j = indexOfMax + 2; i < array.Length; i++)
+        // {
+        //     newArray[j++] = array[i];
+        // }
+
+
+        //}
+
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
     public static void Main()
     {
-        Array102();
+        Array103();
         Console.ReadLine();
     }
 }
