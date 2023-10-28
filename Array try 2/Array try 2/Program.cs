@@ -2223,9 +2223,58 @@
         Show(array);
     }
 
+    /// <summary>
+    /// Array101. Дан массив размера N и целое число K (1 ≤ K ≤ N). Перед элементом массива с порядковым номером K
+    /// вставить новый элемент с нулевым значением.
+    /// </summary>
+    static void Array101()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int[] newArray = new int[array.Length + 1];
+        int k = 4;
+        newArray[k - 2] = 0;
+        for (int i = 0, j = 0; i < k - 2; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        for (int i = k - 2, j = k - 1; i < array.Length; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
+    /// <summary>
+    /// Array102. Дан массив размера N и целое число K (1 ≤ K ≤ N). После элементамассива с порядковым номером K
+    /// вставить новый элемент с нулевымзначением.
+    /// </summary>
+    static void Array102()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int[] newArray = new int[array.Length + 1];
+        int k = 4;
+        newArray[k] = 0;
+        for (int i = 0, j = 0; i < k; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        for (int i = k , j = k + 1; i < array.Length; i++)
+        {
+            newArray[j++] = array[i];
+        }
+
+        Console.WriteLine();
+        Show(newArray);
+    }
     public static void Main()
     {
-        Array100();
+        Array102();
         Console.ReadLine();
     }
 }
