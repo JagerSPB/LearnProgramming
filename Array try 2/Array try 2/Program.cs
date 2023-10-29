@@ -4,6 +4,7 @@
 
     public static void Show(int[] array)
     {
+        Console.WriteLine();
         for (int i = 0; i < array.Length; i++)
         {
             Console.WriteLine($"[{i}] = {array[i]}");
@@ -1442,26 +1443,18 @@
     {
         int[] array = RandomFill(10, 0, 50);
         Show(array);
-        int maxItem = array[0], maxIndex = 0, minItem = array[0], minIndex = 0;
+        int maxIndex = 0, minIndex = 0;
         for (int i = 0; i < array.Length; i++)
         {
-            for (int j = i + 1; j < array.Length; j++)
-            {
-                if (array[j] > maxItem)
-                {
-                    maxItem = array[j];
-                    maxIndex = j;
-                }
-                else if (array[j] < minItem)
-                {
-                    minItem = array[j];
-                    minIndex = j;
-                }
-            }
+            if (array[maxIndex] < array[i])
+                maxIndex = i;
+
+            if (array[minIndex] > array[i])
+                minIndex = i;
         }
 
         Console.WriteLine();
-        Console.WriteLine($"max: {maxItem}   min: {minItem}");
+        Console.WriteLine($"max: {maxIndex}   min: {minIndex}");
 
         (array[maxIndex], array[minIndex]) = (array[minIndex], array[maxIndex]);
         Console.WriteLine();
@@ -1787,11 +1780,11 @@
     {
         int[] array = RandomFill(10, 1, 100);
         Show(array);
-        int safeLast = array[^1];
+        int saveLast = array[^1];
         for (int i = array.Length - 1; i > 0; i--)
             array[i] = array[i - 1];
 
-        array[0] = safeLast;
+        array[0] = saveLast;
 
         Console.WriteLine();
         Show(array);
@@ -1925,6 +1918,21 @@
         }
 
         Console.WriteLine();
+        Show(array);
+    }
+
+    static void Array89_1()
+    {
+        int[] array = new int[] { 0, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+        for (int i = 0; i < array.Length - 1; i++)
+            if (array[i] < array[i + 1])
+                (array[i], array[i + 1]) = (array[i + 1], array[i]);
+
+        for (int i = array.Length - 1; i > 0; i--)
+            if (array[i] > array[i - 1])
+                (array[i], array[i - 1]) = (array[i - 1], array[i]);
+
         Show(array);
     }
 
@@ -2106,7 +2114,7 @@
     /// </summary>
     static void Array98()
     {
-        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 6, 6, 6, 1 };
+        int[] array = new int[] { 1, 1, 1, 1, 4, 7, 5, 6, 6, 6, 1 };
         Show(array);
         int[] newArray = new int [array.Length];
         int count = 0;
@@ -2147,7 +2155,7 @@
     /// </summary>
     static void Array99()
     {
-        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 5, 6, 6, 7 };
+        int[] array = new int[] { 1, 2, 1, 4, 7, 5, 5, 6, 6, 1 };
         Show(array);
         int[] newArray = new int [array.Length];
         int count = 0;
@@ -2171,14 +2179,15 @@
         int[] newArrayB = new int [count];
         for (int i = 0, j = 0; i < array.Length - 1; i++)
         {
-            if (newArray[i] != 0)
+            if (newArray[i] == 0)
                 newArrayB[j++] = newArray[i];
         }
 
-        (newArrayB, array) = (array, newArrayB);
-        Console.WriteLine();
+        // array = newArrayB;
+
+        Show(newArrayB);
         Console.WriteLine(count);
-        Console.WriteLine();
+
         Show(array);
     }
 
@@ -2203,7 +2212,7 @@
                 }
             }
 
-            if (twoTimeCount < 2 || twoTimeCount > 2)
+            if (twoTimeCount != 2)
             {
                 newArray[count++] = array[i];
             }
@@ -2219,7 +2228,6 @@
         (newArrayB, array) = (array, newArrayB);
         Console.WriteLine();
         Console.WriteLine(count);
-        Console.WriteLine();
         Show(array);
     }
 
@@ -2233,16 +2241,17 @@
         Show(array);
         int[] newArray = new int[array.Length + 1];
         int k = 4;
-        newArray[k - 2] = 0;
-        for (int i = 0, j = 0; i < k - 2; i++)
+        newArray[k - 1] = 0;
+        for (int i = array.Length - 1; i >= k; i--)
         {
-            newArray[j++] = array[i];
+            newArray[i + 1] = array[i];
         }
 
-        for (int i = k - 2, j = k - 1; i < array.Length; i++)
+        for (int i = k - 1; i >= 0; i--)
         {
-            newArray[j++] = array[i];
+            newArray[i] = array[i];
         }
+
 
         Console.WriteLine();
         Show(newArray);
@@ -2292,31 +2301,19 @@
                 indexOfMax = i;
         }
 
-        Console.WriteLine();
         Console.WriteLine($"Min [{indexOfMin}]");
         Console.WriteLine($"Max [{indexOfMax}]");
-        if (indexOfMax > indexOfMin)
-        {
-            for (int i = 0; i < indexOfMin; i++)
-                newArray[i] = array[i];
+        if (indexOfMax < indexOfMin)
+            (indexOfMax, indexOfMin) = (indexOfMin, indexOfMax);
 
-            for (int i = indexOfMin, j = indexOfMin + 1; i <= indexOfMax; i++)
-                newArray[j++] = array[i];
+        for (int i = 0; i < indexOfMin; i++)
+            newArray[i] = array[i];
 
-            for (int i = indexOfMax + 1, j = indexOfMax + 3; i < array.Length; i++)
-                newArray[j++] = array[i];
-        }
-        else if (indexOfMax < indexOfMin)
-        {
-            for (int i = 0; i <= indexOfMax; i++)
-                newArray[i] = array[i];
+        for (int i = indexOfMin, j = indexOfMin + 1; i <= indexOfMax; i++)
+            newArray[j++] = array[i];
 
-            for (int i = indexOfMax + 1, j = indexOfMax + 2; i < indexOfMin; i++)
-                newArray[j++] = array[i];
-
-            for (int i = indexOfMin, j = indexOfMin + 2; i < array.Length; i++)
-                newArray[j++] = array[i];
-        }
+        for (int i = indexOfMax + 1, j = indexOfMax + 3; i < array.Length; i++)
+            newArray[j++] = array[i];
 
         Console.WriteLine();
         Show(newArray);
@@ -2342,9 +2339,29 @@
         Show(newArray);
     }
 
+    /// <summary>
+    /// Array105. Дан массив размера N и два целых числа K и M (1 ≤ K ≤ N, 1 ≤ M ≤ 10). После элемента массива
+    /// с номером K вставить M новых элементов с нулевыми значениями.
+    /// </summary>
+    static void Array105()
+    {
+        int[] array = RandomFill(10, 1, 100);
+        Show(array);
+        int k = 4, m = 5;
+        int[] newArray = new int[array.Length + m];
+        for (int i = 0; i <= k; i++)
+            newArray[i] = array[i];
+
+        for (int i = k + 1, j = k + m + 1; i < array.Length; i++)
+            newArray[j++] = array[i];
+
+        Console.WriteLine();
+        Show(newArray);
+    }
+
     public static void Main()
     {
-        Array104();
+        Array105();
         Console.ReadLine();
     }
 }

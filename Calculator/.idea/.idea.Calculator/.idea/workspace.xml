@@ -8,26 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/Release/net7.0/Calculator.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Release/net7.0/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Release/net7.0/Calculator.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Release/net7.0/Calculator.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Release/net7.0/Calculator.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/Calculator.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/ref/Calculator.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Release/net7.0/refint/Calculator.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/.idea/.idea.Print/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/.idea/.idea.Print/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/Print.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.GlobalUsings.g.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.assets.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.AssemblyReference.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.dgspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.g.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.g.targets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.assets.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.nuget.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.packagespec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" afterDir="false" />
@@ -35,12 +34,6 @@
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Calculator.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/Calculator.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,28 +59,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Game PC\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Game PC\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Game PC\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Game PC\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Game PC\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Game PC\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Calculator" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Release/net7.0/Calculator.exe" />
@@ -119,6 +112,7 @@
       <workItem from="1697705905168" duration="8122000" />
       <workItem from="1697990899382" duration="1133000" />
       <workItem from="1697992041649" duration="497000" />
+      <workItem from="1698587549648" duration="109000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />
