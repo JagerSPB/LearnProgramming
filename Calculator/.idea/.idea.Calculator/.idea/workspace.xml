@@ -8,32 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Print/.idea/.idea.Print/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/.idea/.idea.Print/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/Print.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Print.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/bin/Debug/net7.0/Array try 2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/Array try 2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/ref/Array try 2.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Array try 2/Array try 2/obj/Debug/net7.0/refint/Array try 2.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.genruntimeconfig.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/apphost.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/ref/Print.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/refint/Print.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Print/Print/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +102,7 @@
       <workItem from="1697990899382" duration="1133000" />
       <workItem from="1697992041649" duration="497000" />
       <workItem from="1698587549648" duration="109000" />
+      <workItem from="1698592978345" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />
