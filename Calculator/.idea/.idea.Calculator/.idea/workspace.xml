@@ -8,21 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/ref/Print.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/refint/Print.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Print/Print/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +92,7 @@
       <workItem from="1697990899382" duration="1133000" />
       <workItem from="1697992041649" duration="497000" />
       <workItem from="1698587549648" duration="109000" />
-      <workItem from="1698592978345" duration="2007000" />
+      <workItem from="1698592978345" duration="2011000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />

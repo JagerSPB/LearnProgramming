@@ -52,7 +52,7 @@
         string yesOrNo = Console.ReadLine();
         if (yesOrNo.ToLower() == "yes")
         {
-            Console.WriteLine("Спасибо за доверие, Вы очень смелый и состоятельный человек, начнём...");
+            Console.WriteLine("Спасибо за доверие, Вы очень смелый человек, начнём...");
         }
         else
         {
@@ -73,7 +73,7 @@
         while (count != half)
         {
             Console.WriteLine($" \"{text}\"   (осталось ещё строк {count-1})");
-            Thread.Sleep(500);
+            Thread.Sleep(400);
             count--;
         }
         Console.WriteLine($"секунду необходимо заправить чернила в картридж ...");
@@ -82,11 +82,11 @@
         while (count != 1)
         {
             Console.WriteLine($" \"{text}\"   (осталось ещё строк {count-1})");
-            Thread.Sleep(500);
+            Thread.Sleep(400);
             count--;
         }
         
-        Thread.Sleep(1500);
+        Thread.Sleep(1000);
         Console.WriteLine($"\"{text}\"... это была последняя строчка  ");
         Thread.Sleep(1000);
         Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет текста в красный
@@ -96,13 +96,7 @@
         Console.WriteLine($"Спасибо, что воспользовались нашей программой, оставайтесь на месте,\n" +
                           $"группа мобильных нотариусов уже выехала!");
     }
-
-
-    // public static void Main()
-    // {
-    //     Print();
-    //     Console.ReadLine();
-    // }
+    
     public static void Main()
     {
         bool exit = false; // флаг для определения, когда нужно выйти из цикла
