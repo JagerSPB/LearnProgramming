@@ -2358,10 +2358,11 @@
         Console.WriteLine();
         Show(newArray);
     }
+    
 
     public static void Main()
     {
-        Array105();
+        Array104();
         Console.ReadLine();
     }
 }

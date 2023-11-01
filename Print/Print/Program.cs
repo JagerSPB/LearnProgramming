@@ -33,15 +33,13 @@
         Console.WriteLine("Пожалуйста, внимательно прочитайте лицензионное соглашение!\n");
         Console.ResetColor(); // сбрасываем цвет на стандартный
         Thread.Sleep(2000);
-        Console.WriteLine("Программа разработана специалистами NASA, для выполнения очень сложной задачи \n" +
+        Console.WriteLine("Программа разработана специалистами NASA, для выполнения очень сложной задачи, \n" +
                           "используя эту программу вы даёте согласие на то, что она не будет использована \n" +
                           "в коммерческих целях, так же вы даёте согласие на использование вашего движимого и \n" +
                           "не очень имущества с целью обогащения создателя этой программы. ");
         Thread.Sleep(5000);
-        Console.WriteLine("\nВы принимаете условия использования этой программы?");
-        // Console.ForegroundColor = ConsoleColor.Red; // устанавливаем цвет текста в красный
-        // Console.WriteLine("Yes/NO");
-        // Console.ResetColor(); // сбрасываем цвет на стандартный
+        Console.WriteLine("\nВы соглашаетесь с условиями использования данной программы?");
+
         Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет текста в зелёный
         Console.Write("Yes /");
         Console.ForegroundColor = ConsoleColor.Red; // устанавливаем цвет текста в красный
@@ -52,11 +50,11 @@
         string yesOrNo = Console.ReadLine();
         if (yesOrNo.ToLower() == "yes")
         {
-            Console.WriteLine("Спасибо за доверие, Вы очень смелый человек, начнём...");
+            Console.WriteLine("Спасибо за доверие, Вы очень смелый человек Авазбек Рустамович, начнём...");
         }
         else
         {
-            Console.WriteLine("Извините связь прерывалась вы напечатали Yes ?");
+            Console.WriteLine("Извините связь прерывалась, вы напечатали Yes ?");
             Thread.Sleep(1500);
             Console.WriteLine("Ок \nСпасибо за доверие начнём...");
         }
@@ -72,22 +70,22 @@
         int half = count / 2;
         while (count != half)
         {
-            Console.WriteLine($" \"{text}\"   (осталось ещё строк {count-1})");
+            Console.WriteLine($"\"{text}\"   (осталось ещё строк {count-1})");
             Thread.Sleep(400);
             count--;
         }
         Console.WriteLine($"секунду необходимо заправить чернила в картридж ...");
-        Thread.Sleep(3000);
-        Console.WriteLine($"Печатаю \"{text}\", дальше {count} раз, ожидайте ...");
+        Thread.Sleep(4000);
+        Console.WriteLine($"Продолжим ещё осталось, {count} раз, ожидайте ...");
         while (count != 1)
         {
-            Console.WriteLine($" \"{text}\"   (осталось ещё строк {count-1})");
+            Console.WriteLine($"\"{text}\"   (осталось ещё строк {count-1})");
             Thread.Sleep(400);
             count--;
         }
         
         Thread.Sleep(1000);
-        Console.WriteLine($"\"{text}\"... это была последняя строчка  ");
+        Console.WriteLine($"\"{text}\"...ух это была последняя строчка  ");
         Thread.Sleep(1000);
         Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет текста в красный
         Console.WriteLine($"Заказ выполнен!");
