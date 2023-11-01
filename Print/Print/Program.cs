@@ -3,26 +3,29 @@
 {
     public static int GetUserInput()
     {
-        int number;
-        while (true)
+        int count = 0;
+        try
         {
-            string input = Console.ReadLine();
-            if (int.TryParse(input, out number))
+            count = int.Parse(Console.ReadLine()!);
+
+            if (count <= 0)
             {
-                if (number <= 50)
-                {
-                    return number; 
-                }
-                else if (number > 50)
-                {
-                    Console.WriteLine("вяглядит слишком много, начните с тиража < 50 ");
-                }
+                Console.WriteLine($"Вы ввели плохое число, давайте другое!");
+                return GetUserInput();
             }
-       
-            else
+
+            if (count > 50)
             {
-                Console.WriteLine("принимаем только цифры, попробуйте еще раз");
+                Console.WriteLine("вяглядит слишком много, начните с тиража < 50 ");
+                return GetUserInput();
             }
+
+            return count;
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("принимаем только цифры, попробуйте еще раз");
+            return GetUserInput();
         }
     }
 
@@ -32,12 +35,12 @@
 
         Console.WriteLine("Пожалуйста, внимательно прочитайте лицензионное соглашение!\n");
         Console.ResetColor(); // сбрасываем цвет на стандартный
-        Thread.Sleep(2000);
+        Thread.Sleep(1000);
         Console.WriteLine("Программа разработана специалистами NASA, для выполнения очень сложной задачи, \n" +
                           "используя эту программу вы даёте согласие на то, что она не будет использована \n" +
                           "в коммерческих целях, так же вы даёте согласие на использование вашего движимого и \n" +
                           "не очень имущества с целью обогащения создателя этой программы. ");
-        Thread.Sleep(5000);
+        Thread.Sleep(1000);
         Console.WriteLine("\nВы соглашаетесь с условиями использования данной программы?");
 
         Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет текста в зелёный
@@ -45,7 +48,7 @@
         Console.ForegroundColor = ConsoleColor.Red; // устанавливаем цвет текста в красный
         Console.WriteLine(" No");
         Console.ResetColor(); // сбрасываем цвет на стандартный
-        
+
 
         string yesOrNo = Console.ReadLine();
         if (yesOrNo.ToLower() == "yes")
@@ -68,25 +71,18 @@
         int count = GetUserInput();
         Console.WriteLine($"Отправляю в тираж \"{text}\", {count} раз, ожидайте ...");
         int half = count / 2;
-        while (count != half)
+
+        for (int i = 0; i < count; i++)
         {
-            Console.WriteLine($"\"{text}\"   (осталось ещё строк {count-1})");
-            Thread.Sleep(400);
-            count--;
-        }
-        Console.WriteLine($"секунду необходимо заправить чернила в картридж ...");
-        Thread.Sleep(4000);
-        Console.WriteLine($"Продолжим ещё осталось, {count} раз, ожидайте ...");
-        while (count != 1)
-        {
-            Console.WriteLine($"\"{text}\"   (осталось ещё строк {count-1})");
-            Thread.Sleep(400);
-            count--;
+            for (int j = 0; j < text.Length; j++)
+            {
+                Console.Write(text[j]);
+                Thread.Sleep(50);
+            }
+
+            Console.WriteLine();
         }
         
-        Thread.Sleep(1000);
-        Console.WriteLine($"\"{text}\"...ух это была последняя строчка  ");
-        Thread.Sleep(1000);
         Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет текста в красный
         Console.WriteLine($"Заказ выполнен!");
         Console.ResetColor(); // сбрасываем цвет на стандартный
@@ -94,7 +90,7 @@
         Console.WriteLine($"Спасибо, что воспользовались нашей программой, оставайтесь на месте,\n" +
                           $"группа мобильных нотариусов уже выехала!");
     }
-    
+
     public static void Main()
     {
         bool exit = false; // флаг для определения, когда нужно выйти из цикла
