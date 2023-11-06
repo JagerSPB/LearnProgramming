@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix2", "Matrix2\Matrix2.csproj", "{B15AB891-26CF-4795-BAB4-0BF0E9DAF724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B15AB891-26CF-4795-BAB4-0BF0E9DAF724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15AB891-26CF-4795-BAB4-0BF0E9DAF724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15AB891-26CF-4795-BAB4-0BF0E9DAF724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15AB891-26CF-4795-BAB4-0BF0E9DAF724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
