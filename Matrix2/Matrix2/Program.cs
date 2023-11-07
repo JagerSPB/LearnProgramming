@@ -202,16 +202,48 @@
         int k = 2;
         int[,] matrix = MatrixRandomFill(6, 5, 0, 100);
         ShowMatrix(matrix);
-        Console.WriteLine();
+        Console.WriteLine($"\nЧисла в строке {k}\n");
 
         for (int i = 0; i < matrix.GetLength(1); i++)
-            Console.Write($"{matrix[k, i]} ");
+            Console.Write($"{matrix[k - 1, i]} ");
     }
 
+    /// <summary>
+    /// Matrix8. Дана матрица размера M × N и целое число K (1 ≤ K ≤ N). Вывести элементы K-го столбца данной матрицы.
+    /// </summary>
+    static void Matrix8()
+    {
+        int k = 2;
+        int[,] matrix = MatrixRandomFill(6, 5, 0, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine($"\nЧисла в столбце {k}\n");
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+            Console.Write($"{matrix[i, k - 1]} ");
+    }
+
+    /// <summary>
+    /// Matrix9. Дана матрица размера M × N. Вывести ее элементы, расположенныев строках с четными номерами (2, 4, . . .).
+    /// Вывод элементов производитьпо строкам, условный оператор не использовать.
+    /// </summary>
+    static void Matrix9()
+    {
+        int[,] matrix = MatrixRandomFill(8, 6, 0, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 1; i < matrix.GetLength(0); i += 2)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++) {
+                Console.Write($"{matrix[i, j]} ");
+            }
+
+            Console.WriteLine();
+        }
+    }
 
     public static void Main()
     {
-        Matrix7();
+        Matrix9();
         Console.ReadLine();
     }
 }
