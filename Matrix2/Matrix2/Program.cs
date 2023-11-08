@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System;
+
+class Program
 {
     private static Random rnd = new Random();
 
@@ -214,7 +216,7 @@
     static void Matrix8()
     {
         int k = 2;
-        int[,] matrix = MatrixRandomFill(6, 5, 0, 100);
+        int[,] matrix = MatrixRandomFill(6, 5, 10, 100);
         ShowMatrix(matrix);
         Console.WriteLine($"\nЧисла в столбце {k}\n");
 
@@ -233,7 +235,8 @@
         Console.WriteLine();
         for (int i = 1; i < matrix.GetLength(0); i += 2)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++) {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
                 Console.Write($"{matrix[i, j]} ");
             }
 
@@ -241,9 +244,204 @@
         }
     }
 
+    /// <summary>
+    /// Matrix10. Дана матрица размера M × N. Вывести ее элементы, расположенные в столбцах с нечетными номерами
+    /// (1, 3, . . .). Вывод элементов производить по столбцам, условный оператор не использовать.
+    /// </summary>
+    static void Matrix10()
+    {
+        int[,] matrix = MatrixRandomFill(8, 7, 0, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j += 2)
+            {
+                Console.Write($"{matrix[i, j]} ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+    /// <summary>
+    /// Matrix11. Дана матрица размера M × N. Вывести ее элементы в следующем порядке: первая строка слева направо,
+    /// вторая строка справа налево, третья строка слева направо, четвертая строка справа налево и т. д.
+    /// </summary>
+    static void Matrix11()
+    {
+        int[,] matrix = MatrixRandomFill(9, 7, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            if (i % 2 == 0)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i, j]} ");
+                }
+
+                Console.WriteLine();
+            }
+            else if (i % 2 != 0)
+            {
+                for (int j = matrix.GetLength(1) - 1; j >= 0; j--)
+                {
+                    Console.Write($"{matrix[i, j]} ");
+                }
+
+                Console.WriteLine();
+            }
+        }
+    }
+
+    // static void Matrix11()//Этот вариант работает только если Rows чётное
+    // {
+    //     int[,] matrix = MatrixRandomFill(6, 7, 0, 100);
+    //     ShowMatrix(matrix);
+    //     Console.WriteLine();
+    //     for (int i = 0; i < matrix.GetLength(0); i++)
+    //     {
+    //         for (int j = 0; j < matrix.GetLength(1); j++)
+    //         {
+    //             Console.Write($"{matrix[i, j]} ");
+    //         }
+    //
+    //         Console.WriteLine();
+    //
+    //         i++;
+    //         for (int j = matrix.GetLength(1) - 1; j >= 0; j--)
+    //         {
+    //             Console.Write($"{matrix[i, j]} ");
+    //         }
+    //
+    //         Console.WriteLine();
+    //     }
+    // }
+    /// <summary>
+    /// Matrix12. Дана матрица размера M × N. Вывести ее элементы в следующем порядке: первый столбец сверху вниз,
+    /// второй столбец снизу вверх, третий столбец сверху вниз, четвертый столбец снизу вверх и т. д.
+    /// </summary>
+    // static void Matrix12_1()
+    // {
+    //     int[,] matrix = MatrixRandomFill(7, 6, 10, 100);
+    //     ShowMatrix(matrix);
+    //     Console.WriteLine();
+    //     for (int i = 0; i < matrix.GetLength(0); i++)
+    //     {
+    //     
+    //             for (int j = 0; j < matrix.GetLength(1); j +=2)
+    //             {
+    //                 Console.Write($"{matrix[i, j]} ");
+    //             }
+    //             
+    //             Console.WriteLine();
+    //             
+    //     }
+    //     Console.WriteLine();
+    //     
+    //     for (int i = matrix.GetLength(0)-1; i >=0 ; i--)
+    //     {
+    //     
+    //         for (int j = 1; j < matrix.GetLength(1); j +=2)
+    //         {
+    //             Console.Write($"{matrix[i, j]} ");
+    //         }
+    //             
+    //         Console.WriteLine();
+    //         
+    //     }
+    //     
+    //     
+    // }
+    static void Matrix12()
+    {
+        int[,] matrix = MatrixRandomFill(7, 6, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (j % 2 == 0) //Если номер столбца четный, выводим с начала до конца
+            {
+                for (int i = 0; i < matrix.GetLength(0); i++)
+                    Console.Write($"{matrix[i, j]} ");
+            }
+            else //если номер столбца нечетный, выводим с конца до начала
+            {
+                for (int i = matrix.GetLength(0) - 1; i >= 0; i--)
+                    Console.Write($"{matrix[i, j]} ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+    /// <summary>
+    /// Matrix15. Дана квадратная матрица A порядка M (M — нечетное число). Начиная с элемента A1,1 и перемещаясь по
+    /// часовой стрелке, вывести всеее элементы по спирали: первая строка, последний столбец, последняястрока в обратном
+    /// порядке, первый столбец в обратном порядке, оставшиеся элементы второй строки и т. д.;
+    /// последним выводится центральныйэлемент матрицы.
+    /// </summary>
+    ///  
+    ///Matrix17. Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Найти сумму и произведение элементов
+    /// K-й строки данной матрицы
+    static void Matrix17()
+    {
+        int k = 2, sum = 0, product = 1;
+        int[,] matrix = MatrixRandomFill(4, 3, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < k - 1; i++)
+        {
+            sum += matrix[k - 1, i];
+            product *= matrix[k - 1, i];
+        }
+
+        Console.WriteLine($"Сумма элементов столбца {k} = {sum}, а произведение = {product}");
+    }
+
+    /// <summary>
+    /// Matrix18. Дана матрица размера M × N и целое число K (1 ≤ K ≤ N). Найти сумму и произведение элементов K-го
+    /// столбца данной матрицы.
+    /// </summary>
+    static void Matrix18()
+    {
+        int k = 2, sum = 0, product = 1;
+        int[,] matrix = MatrixRandomFill(4, 4, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            sum += matrix[i, k - 1];
+            product *= matrix[i, k - 1];
+        }
+
+        Console.WriteLine($"Сумма элементов строки {k} = {sum}, а произведение = {product}");
+    }
+
+    //===============================Урок 08.11.2023 закончен====================================
+    /// <summary>
+    /// Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов.
+    /// </summary>
+    static void Matrix19()
+    {
+        int k = 2, sum = 0;
+        int[,] matrix = MatrixRandomFill(4, 4, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            sum = 0;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                sum += matrix[i, j];
+            }
+
+            Console.WriteLine($"Сумма элементов строки {i} = {sum} ");
+        }
+    }
+
     public static void Main()
     {
-        Matrix9();
+        Matrix19();
         Console.ReadLine();
     }
 }
