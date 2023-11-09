@@ -422,6 +422,8 @@ class Program
     /// <summary>
     /// Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов.
     /// </summary>
+    ///
+    /// 
     static void Matrix19()
     {
         int k = 2, sum = 0;
@@ -439,9 +441,149 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Matrix20. Дана матрица размера M × N. Для каждого столбца матрицы найти произведение его элементов.
+    /// </summary>
+    static void Matrix20()
+    {
+        int product = 1;
+        int[,] matrix = MatrixRandomFill(3, 4, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < matrix.GetLength(1); i++)
+        {
+            product = 1;
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                product *= matrix[j, i];
+            }
+
+            Console.WriteLine($"Произведение элементов столбца {i} = {product}");
+        }
+
+        Console.WriteLine();
+    }
+
+    /// <summary>
+    /// Matrix21. Дана матрица размера M × N. Для каждой строки матрицы с нечетным номером (1, 3, . . .) найти
+    /// среднее арифметическое ее элементов.Условный оператор не использовать.
+    /// </summary>
+    static void Matrix21()
+    {
+        int m = 7, n = 3, sum = 0;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 1; i < matrix.GetLength(0); i += 2)
+        {
+            sum = 0;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                sum += matrix[i, j];
+            }
+
+            Console.WriteLine($"Среднее арифметическое строки {i} = {sum / n} ");
+        }
+    }
+
+    /// <summary>
+    /// Matrix22. Дана матрица размера M × N. Для каждого столбца матрицы с четным номером (2, 4, . . .) найти сумму его
+    /// элементов. Условный оператор не использовать.
+    /// </summary>
+    static void Matrix22()
+    {
+        int m = 4, n = 8, sum = 0;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 2; i < matrix.GetLength(1); i += 2)
+        {
+            sum = 0;
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                sum += matrix[j, i];
+            }
+
+            Console.WriteLine($"Сумма столбца {i} = {sum} ");
+        }
+    }
+
+    /// <summary>
+    ///Matrix23. Дана матрица размера M × N. В каждой строке матрицы найти минимальный элемент
+    /// </summary>
+    static void Matrix23()
+    {
+        int m = 7, n = 6;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        int minItem;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            minItem = matrix[i, 0];
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (minItem > matrix[i, j])
+                    minItem = matrix[i, j];
+            }
+
+            Console.WriteLine($"минимальный элемент строки {i} = {minItem} ");
+        }
+    }
+
+    /// <summary>
+    /// Matrix24◦. Дана матрица размера M × N. В каждом столбце матрицы найти максимальный элемент
+    /// </summary>
+    static void Matrix24()
+    {
+        int m = 7, n = 6;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        int maxItem;
+        for (int i = 0; i < matrix.GetLength(1); i++)
+        {
+            maxItem = matrix[i, 0];
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                if (maxItem < matrix[j, i])
+                    maxItem = matrix[j, i];
+            }
+
+            Console.WriteLine($"максимальный элемент столбца {i} = {maxItem} ");
+        }
+    }
+
+    /// <summary>
+    /// Matrix25. Дана матрица размера M × N. Найти номер ее строки с наибольшей суммой элементов и вывести данный
+    /// номер, а также значение наибольшей суммы
+    /// </summary>
+    static void Matrix25()
+    {
+        int m = 6, n = 3, rowOfmaxSum = 0, sum = 0, maxRow = 0;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            sum = 0;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                sum += matrix[i, j];
+            }
+
+            if (rowOfmaxSum < sum)
+            {
+                rowOfmaxSum = sum;
+                maxRow = i;
+            }
+        }
+
+        Console.WriteLine($"номер строки с максимальной суммой {rowOfmaxSum}  ->  {maxRow + 1} ");
+    }
+
     public static void Main()
     {
-        Matrix19();
+        Matrix25();
         Console.ReadLine();
     }
 }
