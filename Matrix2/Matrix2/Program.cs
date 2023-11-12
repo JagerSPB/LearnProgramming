@@ -18,6 +18,8 @@ class Program
 
             Console.WriteLine("]");
         }
+
+        Console.WriteLine();
     }
 
 
@@ -35,6 +37,8 @@ class Program
 
             Console.WriteLine();
         }
+
+        Console.WriteLine();
     }
 
     static int[,] MatrixRandomFill(int rows, int columns, int from = 1, int to = 100)
@@ -383,7 +387,60 @@ class Program
     /// порядке, первый столбец в обратном порядке, оставшиеся элементы второй строки и т. д.;
     /// последним выводится центральныйэлемент матрицы.
     /// </summary>
-    ///  
+    static void Matrix15()
+    {
+        int m = 7;
+        int[,] matrix = MatrixRandomFill(m, m, 10, 100);
+        ShowMatrix(matrix);
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            if (i == 0)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[0, j]} ");
+                }
+            }
+
+            Console.WriteLine();
+            if (i == 1)
+            {
+                for (int j = 1; j < matrix.GetLength(0); j++)
+                {
+                    Console.Write($"{matrix[j, m - 1]} ");
+                }
+            }
+
+            Console.WriteLine();
+            if (i == 2)
+            {
+                for (int j = matrix.GetLength(0) - i; j >= 0; j--)
+                {
+                    Console.Write($"{matrix[m - 1, j]} ");
+                }
+            }
+
+            Console.WriteLine();
+            if (i == 3)
+            {
+                for (int j = matrix.GetLength(0) - 2; j > 0; j--)
+                {
+                    Console.Write($"{matrix[j, 0]} ");
+                }
+            }
+
+            Console.WriteLine();
+            if (i == 4)
+            {
+                for (int j = 1; j < matrix.GetLength(1) - 1; j++)
+                {
+                    Console.Write($"{matrix[1, j]} ");
+                }
+            }
+        }
+    }
+
     ///Matrix17. Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Найти сумму и произведение элементов
     /// K-й строки данной матрицы
     static void Matrix17()
@@ -422,8 +479,6 @@ class Program
     /// <summary>
     /// Matrix19. Дана матрица размера M × N. Для каждой строки матрицы найти сумму ее элементов.
     /// </summary>
-    ///
-    /// 
     static void Matrix19()
     {
         int k = 2, sum = 0;
@@ -559,7 +614,7 @@ class Program
     /// </summary>
     static void Matrix25()
     {
-        int m = 6, n = 3, rowOfmaxSum = 0, sum = 0, maxRow = 0;
+        int m = 6, n = 3, rowMaxSum = 0, sum = 0, maxRow = 0;
         int[,] matrix = MatrixRandomFill(m, n, 10, 100);
         ShowMatrix(matrix);
         Console.WriteLine();
@@ -571,19 +626,50 @@ class Program
                 sum += matrix[i, j];
             }
 
-            if (rowOfmaxSum < sum)
+            if (rowMaxSum < sum)
             {
-                rowOfmaxSum = sum;
+                rowMaxSum = sum;
                 maxRow = i;
             }
         }
 
-        Console.WriteLine($"номер строки с максимальной суммой {rowOfmaxSum}  ->  {maxRow + 1} ");
+        Console.WriteLine($"номер строки с максимальной суммой {rowMaxSum}  ->  {maxRow + 1} ");
     }
 
+    /// <summary>
+    /// Matrix26. Дана матрица размера M × N. Найти номер ее столбца с наименьшим произведением элементов и вывести
+    /// данный номер, а также значение наименьшего произведения.
+    /// </summary>
+    static void Matrix26()
+    {
+        int[,] array = MatrixRandomFill(3, 5, 10, 100);
+        ShowMatrix(array);
+        Console.WriteLine();
+        int minProduct = int.MaxValue, minCol = 0, product = 1;
+        for (int i = 0; i < array.GetLength(1); i++)
+        {
+            product = 1;
+            for (int j = 0; j < array.GetLength(0); j++)
+            {
+                product *= array[j, i];
+            }
+
+            if (minProduct > product)
+            {
+                minProduct = product;
+                minCol = i;
+            }
+        }
+
+        Console.WriteLine($"номер столбца с минимальным произведением {minProduct}  ->  {minCol + 1} ");
+    }
+
+    /// <summary>
+    /// Matrix27. Дана матрица размера M × N. Найти максимальный среди минимальных элементов ее строк
+    /// </summary>
     public static void Main()
     {
-        Matrix25();
+        Matrix15();
         Console.ReadLine();
     }
 }
