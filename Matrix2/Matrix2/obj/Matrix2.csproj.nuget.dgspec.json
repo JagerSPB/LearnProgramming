@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\Matrix2.csproj": {}
+    "/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/Matrix2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\Matrix2.csproj": {
+    "/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/Matrix2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\Matrix2.csproj",
+        "projectUniqueName": "/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/Matrix2.csproj",
         "projectName": "Matrix2",
-        "projectPath": "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\Matrix2.csproj",
-        "packagesPath": "C:\\Users\\Game PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\obj\\",
+        "projectPath": "/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/Matrix2.csproj",
+        "packagesPath": "/Users/vaysmans/.nuget/packages/",
+        "outputPath": "/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Game PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/vaysmans/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Game PC\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
         }
       }
     }

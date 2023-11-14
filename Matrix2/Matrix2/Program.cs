@@ -686,15 +686,43 @@ class Program
             if (minItem > maxOfMinItem)
                 maxOfMinItem = minItem;
             Console.WriteLine(minItem);
-            
         }
+
         Console.WriteLine();
         Console.WriteLine($"максимальный элемент среди минимальных элементов строк ->  {maxOfMinItem} ");
     }
 
+    /// <summary>
+    /// Matrix28. Дана матрица размера M × N. Найти минимальный среди максимальных элементов ее столбцов.
+    /// </summary>
+    static void Matrix28()
+    {
+        int m = 5, n = 5;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        int maxItem = matrix[0, 0], minOfMaxItem = Int32.MaxValue;
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 0; i < matrix.GetLength(1); i++)
+        {
+            maxItem = 0;
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                if (matrix[j, i] > maxItem)
+                    maxItem = matrix[j, i];
+            }
+
+            if (maxItem < minOfMaxItem)
+                minOfMaxItem = maxItem;
+            Console.WriteLine(maxItem);
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"минимальный среди максимальных элементов столбцов ->  {minOfMaxItem} ");
+    }
+
     public static void Main()
     {
-        Matrix27();
+        Matrix28();
         Console.ReadLine();
     }
 }

@@ -1,15 +1,26 @@
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.csproj.AssemblyReference.cache
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.AssemblyInfoInputs.cache
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.AssemblyInfo.cs
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.csproj.CoreCompileInputs.cache
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.exe
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.deps.json
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.runtimeconfig.json
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.dll
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.pdb
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.dll
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\refint\Matrix2.dll
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.pdb
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.genruntimeconfig.cache
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\ref\Matrix2.dll
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.csproj.AssemblyReference.cache
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfoInputs.cache
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfo.cs
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.csproj.CoreCompileInputs.cache
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.exe
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.deps.json
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.runtimeconfig.json
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.dll
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.pdb
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.dll
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/refint/Matrix2.dll
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.pdb
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.genruntimeconfig.cache
+C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/ref/Matrix2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/bin/Debug/net7.0/Matrix2.pdb
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.csproj.AssemblyReference.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfoInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfo.cs
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.csproj.CoreCompileInputs.cache
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/refint/Matrix2.dll
+/Users/vaysmans/Downloads/Учёба/C#Alexey/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.pdb
