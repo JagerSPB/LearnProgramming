@@ -726,19 +726,22 @@ class Program
     /// </summary>
     static void Matrix29()
     {
-        int m = 7, n = 5,countMin = 0, sum = 0;
+        int m = 7, n = 5, countMin = 0, sum = 0;
         int[,] matrix = MatrixRandomFill(m, n, 10, 100);
         ShowMatrix(matrix);
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             countMin = 0;
             sum = 0;
-            for (int j = 0; j < matrix.GetLength(1); j++) {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
                 sum += matrix[i, j];
             }
-            
-            for (int j = 0; j < matrix.GetLength(1); j++) {
-                if (matrix[i, j] < sum / matrix.GetLength(1)) {
+
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] < sum / matrix.GetLength(1))
+                {
                     countMin++;
                 }
             }
@@ -747,9 +750,37 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Matrix30. Дана матрица размера M × N. В каждом ее столбце найти количество элементов, больших среднего
+    /// арифметического всех элементов этого столбца.
+    /// </summary>
+    static void Matrix30()
+    {
+        int m = 7, n = 5, countMax = 0, sum = 0;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < matrix.GetLength(1); i++)
+        {
+            countMax = 0;
+            sum = 0;
+            for (int j = 0; j < matrix.GetLength(0); j++) {
+                sum += matrix[j, i];
+            }
+
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                if (matrix[j, i] > sum / matrix.GetLength(0)) {
+                    countMax++;
+                }
+            }
+
+            Console.WriteLine($"Сумма столбца {sum} ср {sum / matrix.GetLength(0)} в столбце {i + 1} элементов больше среднего арифметического -> {countMax} ");
+        }
+    }
+  
     public static void Main()
     {
-        Matrix29();
+        Matrix30();
         Console.ReadLine();
     }
 }
