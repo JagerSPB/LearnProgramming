@@ -667,9 +667,34 @@ class Program
     /// <summary>
     /// Matrix27. Дана матрица размера M × N. Найти максимальный среди минимальных элементов ее строк
     /// </summary>
+    static void Matrix27()
+    {
+        int m = 6, n = 5;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        int minItem = matrix[0, 0], maxOfMinItem = matrix[0, 0];
+        ShowMatrix(matrix);
+        Console.WriteLine();
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            minItem = matrix[i, 0];
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] < minItem)
+                    minItem = matrix[i, j];
+            }
+
+            if (minItem > maxOfMinItem)
+                maxOfMinItem = minItem;
+            Console.WriteLine(minItem);
+            
+        }
+        Console.WriteLine();
+        Console.WriteLine($"максимальный элемент среди минимальных элементов строк ->  {maxOfMinItem} ");
+    }
+
     public static void Main()
     {
-        Matrix15();
+        Matrix27();
         Console.ReadLine();
     }
 }

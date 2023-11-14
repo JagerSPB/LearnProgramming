@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="388f2469-1a41-452f-9ae7-2ecbac0ca3ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Print/Print/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/bin/Debug/net7.0/Print.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Print/Print/obj/Debug/net7.0/Print.dll" afterDir="false" />
@@ -66,7 +66,7 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin/Release/net7.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="1" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Calculator.csproj" />
@@ -93,6 +93,7 @@
       <workItem from="1697992041649" duration="497000" />
       <workItem from="1698587549648" duration="109000" />
       <workItem from="1698592978345" duration="2011000" />
+      <workItem from="1699877363108" duration="701000" />
     </task>
     <task id="LOCAL-00001" summary="Calc start">
       <option name="closed" value="true" />
@@ -157,6 +158,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
