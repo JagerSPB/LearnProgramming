@@ -720,6 +720,16 @@ class Program
         Console.WriteLine($"минимальный среди максимальных элементов столбцов ->  {minOfMaxItem} ");
     }
 
+    /// <summary>
+    /// Matrix29. Дана матрица размера M × N. В каждой ее строке найти количество элементов, меньших среднего
+    /// арифметического всех элементов этой строки.
+    /// </summary>
+    static void Matrix29()
+    {
+        int m = 7, n = 3;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+    }
     public static void Main()
     {
         Matrix28();
