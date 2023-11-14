@@ -726,25 +726,19 @@ class Program
     /// </summary>
     static void Matrix29()
     {
-        int m = 7, n = 5;
+        int m = 7, n = 5,countMin = 0, sum = 0;
         int[,] matrix = MatrixRandomFill(m, n, 10, 100);
         ShowMatrix(matrix);
-        int countMin = 0, sum = 0, midleArithmetic = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             countMin = 0;
-            midleArithmetic = 0;
             sum = 0;
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
+            for (int j = 0; j < matrix.GetLength(1); j++) {
                 sum += matrix[i, j];
             }
-
-            midleArithmetic = sum / matrix.GetLength(1);
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                if (matrix[i, j] < midleArithmetic)
-                {
+            
+            for (int j = 0; j < matrix.GetLength(1); j++) {
+                if (matrix[i, j] < sum / matrix.GetLength(1)) {
                     countMin++;
                 }
             }
