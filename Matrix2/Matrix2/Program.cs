@@ -763,24 +763,61 @@ class Program
         {
             countMax = 0;
             sum = 0;
-            for (int j = 0; j < matrix.GetLength(0); j++) {
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
                 sum += matrix[j, i];
             }
 
             for (int j = 0; j < matrix.GetLength(0); j++)
             {
-                if (matrix[j, i] > sum / matrix.GetLength(0)) {
+                if (matrix[j, i] > sum / matrix.GetLength(0))
+                {
                     countMax++;
                 }
             }
 
-            Console.WriteLine($"Сумма столбца {sum} ср {sum / matrix.GetLength(0)} в столбце {i + 1} элементов больше среднего арифметического -> {countMax} ");
+            Console.WriteLine($"В столбце {i + 1} элементов больше среднего арифметического -> {countMax} ");
         }
     }
-  
+
+    /// <summary>
+    /// Matrix31. Дана матрица размера M × N. Найти номера строки и столбца для элемента матрицы, наиболее близкого к
+    /// среднему значению всех ее элементов. 
+    /// </summary>
+    static void Matrix31()
+    {
+        int m = 5, n = 6, sum = 0, midlOfAll, minDiff = int.MaxValue, minRow = 0, minCol = 0;
+        int[,] matrix = MatrixRandomFill(m, n, 10, 100);
+        ShowMatrix(matrix);
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                sum += matrix[i, j];
+            }
+        }
+
+        midlOfAll = sum / (m * n);
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (Math.Abs(matrix[i, j] - midlOfAll) < minDiff)
+                {
+                    minDiff = Math.Abs(matrix[i, j] - midlOfAll);
+                    minRow = i+1;
+                    minCol = j+1;
+                }
+            }
+        }
+
+        Console.WriteLine($"Среднее {midlOfAll} Ряд {minRow}, Колонка {minCol}");
+    }
+
     public static void Main()
     {
-        Matrix30();
+        Matrix31();
         Console.ReadLine();
     }
 }
