@@ -389,56 +389,112 @@ class Program
     /// </summary>
     static void Matrix15()
     {
-        int m = 7;
-        int[,] matrix = MatrixRandomFill(m, m, 10, 100);
-        ShowMatrix(matrix);
+        // int m = 7;
+        // int[,] matrix = MatrixRandomFill(m, m, 10, 100);
+        // ShowMatrix(matrix);
+        //
 
-        for (int i = 0; i < matrix.GetLength(0); i++)
+
+        int M = 5;
+
+        int[,] A = new int[M, M];
+
+        // Заполнение матрицы для примера
+        for (int i = 0; i < M; i++)
         {
-            if (i == 0)
+            for (int j = 0; j < M; j++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    Console.Write($"{matrix[0, j]} ");
-                }
-            }
-
-            Console.WriteLine();
-            if (i == 1)
-            {
-                for (int j = 1; j < matrix.GetLength(0); j++)
-                {
-                    Console.Write($"{matrix[j, m - 1]} ");
-                }
-            }
-
-            Console.WriteLine();
-            if (i == 2)
-            {
-                for (int j = matrix.GetLength(0) - i; j >= 0; j--)
-                {
-                    Console.Write($"{matrix[m - 1, j]} ");
-                }
-            }
-
-            Console.WriteLine();
-            if (i == 3)
-            {
-                for (int j = matrix.GetLength(0) - 2; j > 0; j--)
-                {
-                    Console.Write($"{matrix[j, 0]} ");
-                }
-            }
-
-            Console.WriteLine();
-            if (i == 4)
-            {
-                for (int j = 1; j < matrix.GetLength(1) - 1; j++)
-                {
-                    Console.Write($"{matrix[1, j]} ");
-                }
+                A[i, j] = i * M + j + 1;
             }
         }
+
+        ShowMatrix(A);
+        // Выводим элементы матрицы по спирали
+        int top = 0, bottom = M - 1;
+        int left = 0, right = M - 1;
+
+        while (true)
+        {
+            for (int i = left; i <= right; i++)
+            {
+                Console.Write(A[top, i]);
+            }
+
+            top++;
+            Console.WriteLine();
+            if (top > bottom) break;
+
+            for (int i = top; i <= bottom; i++)
+            {
+                Console.Write(A[i, right]);
+            }
+
+            right--;
+            Console.WriteLine();
+            if (left > right) break;
+
+            for (int i = right; i >= left; i--)
+            {
+                Console.Write(A[bottom, i]);
+            }
+
+            bottom--;
+            Console.WriteLine();
+            if (top > bottom) break;
+
+            for (int i = bottom; i >= top; i--)
+            {
+                Console.Write(A[i, left]);
+            }
+
+            left++;
+            if (left > right) break;
+        }
+
+
+        // if (i == 0)
+        // {
+        //     for (int j = 0; j < matrix.GetLength(1); j++)
+        //     {
+        //         Console.Write($"{matrix[0, j]} ");
+        //     }
+        // }
+        //
+        // Console.WriteLine();
+        // if (i == 1)
+        // {
+        //     for (int j = 1; j < matrix.GetLength(0); j++)
+        //     {
+        //         Console.Write($"{matrix[j, m - 1]} ");
+        //     }
+        // }
+        //
+        // Console.WriteLine();
+        // if (i == 2)
+        // {
+        //     for (int j = matrix.GetLength(0) - i; j >= 0; j--)
+        //     {
+        //         Console.Write($"{matrix[m - 1, j]} ");
+        //     }
+        // }
+        //
+        // Console.WriteLine();
+        // if (i == 3)
+        // {
+        //     for (int j = matrix.GetLength(0) - 2; j > 0; j--)
+        //     {
+        //         Console.Write($"{matrix[j, 0]} ");
+        //     }
+        // }
+        //
+        // Console.WriteLine();
+        // if (i == 4)
+        // {
+        //     for (int j = 1; j < matrix.GetLength(1) - 1; j++)
+        //     {
+        //         Console.Write($"{matrix[1, j]} ");
+        //     }
+        // }
     }
 
     ///Matrix17. Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Найти сумму и произведение элементов
@@ -688,7 +744,6 @@ class Program
             Console.WriteLine(minItem);
         }
 
-        Console.WriteLine();
         Console.WriteLine($"максимальный элемент среди минимальных элементов строк ->  {maxOfMinItem} ");
     }
 
@@ -806,18 +861,98 @@ class Program
                 if (Math.Abs(matrix[i, j] - midlOfAll) < minDiff)
                 {
                     minDiff = Math.Abs(matrix[i, j] - midlOfAll);
-                    minRow = i+1;
-                    minCol = j+1;
+                    minRow = i + 1;
+                    minCol = j + 1;
                 }
             }
         }
 
         Console.WriteLine($"Среднее {midlOfAll} Ряд {minRow}, Колонка {minCol}");
     }
+    //====================Урок окончен===================
+
+    /// <summary>
+    /// Matrix32. Дана целочисленная матрица размера M × N. Найти номер первой из ее строк, содержащих равное количество
+    /// положительных и отрицательных элементов (нулевые элементы матрицы не учитываются). Если таких строк нет, то вывести 0.
+    /// </summary>
+    static void Matrix32()
+    {
+        int[,] matrix = MatrixRandomFill(6, 6, -10, 10);
+        ShowMatrix(matrix);
+        int countPositive = 0, countNegative = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            countPositive = 0;
+            countNegative = 0;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] > 0)
+                {
+                    countPositive++;
+                }
+                else if (matrix[i, j] < 0)
+                {
+                    countNegative++;
+                }
+            }
+
+            if (countNegative == countPositive)
+            {
+                Console.WriteLine(
+                    $"В строке {i + 1} содератся одинаковое количество положительных и отрицательных элементов");
+                break;
+            }
+
+            if (i == matrix.GetLength(0) - 1)
+            {
+                Console.WriteLine($"\n0");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Matrix33. Дана целочисленная матрица размера M × N. Найти номер последнего из ее столбцов, содержащих равное
+    /// количество положительных иотрицательных элементов (нулевые элементы матрицы не учитываются).
+    /// Если таких столбцов нет, то вывести 0.
+    /// </summary>
+    static void Matrix33()
+    {
+        int[,] matrix = MatrixRandomFill(6, 6, -10, 10);
+        ShowMatrix(matrix);
+        int countPositive = 0, countNegative = 0;
+        for (int i = matrix.GetLength(1) - 1; i >= 0; i--)
+        {
+            countPositive = 0;
+            countNegative = 0;
+            for (int j = matrix.GetLength(0) - 1; j >= 0; j--)
+            {
+                if (matrix[j, i] > 0)
+                {
+                    countPositive++;
+                }
+                else if (matrix[j, i] < 0)
+                {
+                    countNegative++;
+                }
+            }
+
+            if (countNegative == countPositive)
+            {
+                Console.WriteLine(
+                    $"В столбце {i + 1} содержится одинаковое количество положительных и отрицательных элементов");
+                return;
+            }
+        }
+
+        if (countNegative != countPositive) ;
+        {
+            Console.WriteLine($"\n0");
+        }
+    }
 
     public static void Main()
     {
-        Matrix31();
+        Matrix33();
         Console.ReadLine();
     }
 }
