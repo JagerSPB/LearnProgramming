@@ -899,7 +899,7 @@ class Program
             if (countNegative == countPositive)
             {
                 Console.WriteLine(
-                    $"В строке {i + 1} содератся одинаковое количество положительных и отрицательных элементов");
+                    $"В строке {i + 1} содержатся одинаковое количество положительных и отрицательных элементов");
                 break;
             }
 
@@ -917,7 +917,7 @@ class Program
     /// </summary>
     static void Matrix33()
     {
-        int[,] matrix = MatrixRandomFill(6, 6, -10, 10);
+        int[,] matrix = MatrixRandomFill(6, 6, -100, 100);
         ShowMatrix(matrix);
         int countPositive = 0, countNegative = 0;
         for (int i = matrix.GetLength(1) - 1; i >= 0; i--)
@@ -950,9 +950,139 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Matrix34. Дана целочисленная матрица размера M × N. Найти номер последней из ее строк, содержащих только четные
+    /// числа. Если таких строк нет, то вывести 0.
+    /// </summary>
+    static void Matrix34()
+    {
+        int[,] matrix = MatrixRandomFill(4, 4, 4, 10);
+        ShowMatrix(matrix);
+        int evenCount = 0;
+        for (int i = matrix.GetLength(0) - 1; i >= 0; i--)
+        {
+            evenCount = 0;
+
+            for (int j = matrix.GetLength(1) - 1; j >= 0; j--)
+            {
+                if (matrix[i, j] % 2 == 0)
+                {
+                    evenCount++;
+                }
+            }
+
+            if (evenCount == matrix.GetLength(0))
+            {
+                Console.WriteLine(
+                    $"В строке {i + 1} содержатся только четные числа");
+                break;
+            }
+
+            if (i == 0)
+            {
+                Console.WriteLine($"\n0");
+            }
+        }
+    }
+
+    //====================Урок окончен===================
+    /// <summary>
+    /// Matrix35. Дана целочисленная матрица размера M × N. Найти номер первого из ее столбцов, содержащих только
+    /// нечетные числа. Если таких столбцовнет, то вывести 0.
+    /// </summary>
+    public static void Matrix35()
+    {
+        int[,] matrix = MatrixRandomFill(4, 4, 1, 10);
+        ShowMatrix(matrix);
+        int oddCount = 0;
+        for (int i = 0; i < matrix.GetLength(1); i++)
+        {
+            oddCount = 0;
+
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                if (matrix[j, i] % 2 != 0)
+                    oddCount++;
+            }
+
+            if (oddCount == matrix.GetLength(0))
+            {
+                Console.WriteLine($"В столбце {i + 1} содержатся только нечетные числа");
+                return;
+            }
+
+            if (i == matrix.GetLength(1) - 1)
+            {
+                Console.WriteLine($"\n0");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Matrix36. Дана целочисленная матрица размера M × N, элементы которой могут принимать значения от 0 до 100.
+    /// Различные строки матрицы назовем похожими, если совпадают множества чисел, встречающихся в этих строках.
+    /// Найти количество строк, похожих на первую строку данной матрицы
+    /// </summary>
+    // public static void Matrix36()
+    // {
+    //     int[,] matrix = MatrixRandomFill(4, 4, 1, 1);
+    //     ShowMatrix(matrix);
+    //     int countSameElements = 0;
+    //     for (int i = 1; i < matrix.GetLength(0); i++)
+    //     {
+    //         countSameElements = 0;
+    //         for (int j = 0; j < matrix.GetLength(1); j++)
+    //         {
+    //             if (matrix[i, j] == matrix[0, j])
+    //             {
+    //                 countSameElements++;
+    //             }
+    //         }
+    //
+    //         if (countSameElements == matrix.GetLength(0))
+    //         {
+    //             Console.WriteLine($"Строка {i + 1} похожа на первую строку данной матрицы");
+    //         }
+    //
+    //         if (i == matrix.GetLength(0) - 1 && countSameElements == 0)
+    //         {
+    //             Console.WriteLine($"\n0");
+    //         }
+    //     }
+    // }
+    public static void Matrix36()
+    {
+        int[,] matrix = MatrixRandomFill(6, 3, 1, 3);
+        ShowMatrix(matrix);
+        bool isSimilar = false, rowSimilar;
+        for (int i = 1; i < matrix.GetLength(0); i++)
+        {
+            rowSimilar = true;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] != matrix[0, j])
+                {
+                    rowSimilar = false;
+                    break;
+                }
+            }
+
+            if (rowSimilar)
+            {
+                Console.WriteLine($"Строка {i + 1} похожа на первую строку данной матрицы");
+                isSimilar = true;
+            }
+            
+        }
+        if (!isSimilar)
+        {
+            Console.WriteLine($"\n0");
+        }
+    }
+
     public static void Main()
     {
-        Matrix33();
+        Matrix36();
         Console.ReadLine();
     }
 }
