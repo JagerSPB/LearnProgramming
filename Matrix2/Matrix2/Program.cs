@@ -990,7 +990,7 @@ class Program
     /// Matrix35. Дана целочисленная матрица размера M × N. Найти номер первого из ее столбцов, содержащих только
     /// нечетные числа. Если таких столбцовнет, то вывести 0.
     /// </summary>
-    public static void Matrix35()
+    static void Matrix35()
     {
         int[,] matrix = MatrixRandomFill(4, 4, 1, 10);
         ShowMatrix(matrix);
@@ -1023,7 +1023,7 @@ class Program
     /// Различные строки матрицы назовем похожими, если совпадают множества чисел, встречающихся в этих строках.
     /// Найти количество строк, похожих на первую строку данной матрицы
     /// </summary>
-    // public static void Matrix36()
+    // static void Matrix36()
     // {
     //     int[,] matrix = MatrixRandomFill(4, 4, 1, 1);
     //     ShowMatrix(matrix);
@@ -1050,7 +1050,7 @@ class Program
     //         }
     //     }
     // }
-    public static void Matrix36()
+    static void Matrix36()
     {
         int[,] matrix = MatrixRandomFill(6, 3, 1, 3);
         ShowMatrix(matrix);
@@ -1072,17 +1072,43 @@ class Program
                 Console.WriteLine($"Строка {i + 1} похожа на первую строку данной матрицы");
                 isSimilar = true;
             }
-            
         }
+
         if (!isSimilar)
         {
             Console.WriteLine($"\n0");
         }
     }
 
+    /// <summary>
+    /// Matrix42. Дана матрица размера M × N. Найти количество ее строк, элементы которых упорядочены по возрастанию.
+    /// </summary>
+    static void Matrix42()
+    {
+        int[,] matrix = MatrixRandomFill(9, 4, 1, 10);
+        ShowMatrix(matrix);
+        int countGrowingRows = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            bool isGrowing = true;
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+            {
+                if (matrix[i, j] > matrix[i, j + 1]) isGrowing = false;
+            }
+
+            if (isGrowing)
+            {
+                Console.WriteLine($"строка {i + 1} упорядочена по возрастанию");
+                countGrowingRows++;
+            }
+        }
+
+        Console.WriteLine($"Всего упорядочено пр возрастанию строк -> {countGrowingRows}");
+    }
+
     public static void Main()
     {
-        Matrix36();
+        Matrix42();
         Console.ReadLine();
     }
 }
