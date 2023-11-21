@@ -1106,9 +1106,28 @@ class Program
         Console.WriteLine($"Всего упорядочено пр возрастанию строк -> {countGrowingRows}");
     }
 
+    /// <summary>
+    /// Matrix44. Дана матрица размера M × N. Найти минимальный среди элементов тех строк, которые упорядочены либо по
+    /// возрастанию, либо по убыванию. Если упорядоченные строки в матрице отсутствуют, то вывести 0.
+    /// </summary>
+    static void Matrix44()
+    {
+        int[,] matrix = MatrixRandomFill(9, 4, 1, 10);
+        ShowMatrix(matrix);
+        int countGrowingRows = 0, countDecreasingRows = 0;
+        bool isGrowing = true, isDecreasing = true;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1) - 1; j)
+            {
+
+            }
+        }
+
+    }
     public static void Main()
     {
-        Matrix42();
+        Matrix44();
         Console.ReadLine();
     }
 }
