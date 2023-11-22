@@ -1023,33 +1023,6 @@ class Program
     /// Различные строки матрицы назовем похожими, если совпадают множества чисел, встречающихся в этих строках.
     /// Найти количество строк, похожих на первую строку данной матрицы
     /// </summary>
-    // static void Matrix36()
-    // {
-    //     int[,] matrix = MatrixRandomFill(4, 4, 1, 1);
-    //     ShowMatrix(matrix);
-    //     int countSameElements = 0;
-    //     for (int i = 1; i < matrix.GetLength(0); i++)
-    //     {
-    //         countSameElements = 0;
-    //         for (int j = 0; j < matrix.GetLength(1); j++)
-    //         {
-    //             if (matrix[i, j] == matrix[0, j])
-    //             {
-    //                 countSameElements++;
-    //             }
-    //         }
-    //
-    //         if (countSameElements == matrix.GetLength(0))
-    //         {
-    //             Console.WriteLine($"Строка {i + 1} похожа на первую строку данной матрицы");
-    //         }
-    //
-    //         if (i == matrix.GetLength(0) - 1 && countSameElements == 0)
-    //         {
-    //             Console.WriteLine($"\n0");
-    //         }
-    //     }
-    // }
     static void Matrix36()
     {
         int[,] matrix = MatrixRandomFill(6, 3, 1, 3);
@@ -1093,7 +1066,8 @@ class Program
             bool isGrowing = true;
             for (int j = 0; j < matrix.GetLength(1) - 1; j++)
             {
-                if (matrix[i, j] > matrix[i, j + 1]) isGrowing = false;
+                if (matrix[i, j] > matrix[i, j + 1])
+                    isGrowing = false;
             }
 
             if (isGrowing)
@@ -1103,7 +1077,7 @@ class Program
             }
         }
 
-        Console.WriteLine($"Всего упорядочено пр возрастанию строк -> {countGrowingRows}");
+        Console.WriteLine($"Всего упорядочено по возрастанию строк -> {countGrowingRows}");
     }
 
     /// <summary>
@@ -1112,19 +1086,52 @@ class Program
     /// </summary>
     static void Matrix44()
     {
-        int[,] matrix = MatrixRandomFill(9, 4, 1, 10);
+        int[,] matrix = MatrixRandomFill(9, 4, 1, 20);
         ShowMatrix(matrix);
-        int countGrowingRows = 0, countDecreasingRows = 0;
+        int minElement = int.MaxValue;
         bool isGrowing = true, isDecreasing = true;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < matrix.GetLength(1) - 1; j)
+            isGrowing = true;
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
             {
+                if (matrix[i, j] > matrix[i, j + 1])
+                {
+                    isGrowing = false;
+                    break;
+                }
 
+                if (isGrowing)
+                {
+                    for (int k = 0; k < matrix.GetLength(1); k++)
+                    {
+                        if (matrix[i, k] < minElement)
+                            minElement = matrix[i, k];n
+                    }
+                }
+            }
+
+            isDecreasing = true;
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+            {
+                if (matrix[i, j] < matrix[i, j + 1])
+                {
+                    isDecreasing = false;
+                    break;
+                }
+
+                if (isDecreasing)
+                    for (int k = 0; k < matrix.GetLength(1); k++)
+                    {
+                        if (matrix[i, k] < minElement)
+                            minElement = matrix[i, k];
+                    }
             }
         }
 
+        Console.WriteLine($"Минимальный элемент в упорядоченных строках {minElement}");
     }
+
     public static void Main()
     {
         Matrix44();
