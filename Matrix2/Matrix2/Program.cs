@@ -1140,7 +1140,7 @@ class Program
     /// Matrix46. Дана целочисленная матрица размера M × N. Найти элемент, являющийся максимальным в своей строке и
     /// минимальным в своем столбце.Если такой элемент отсутствует, то вывести 0.
     /// </summary>
-    static void Matrix46()
+    static void Matrix46()//надо проверить
     {
         int[,] matrix = MatrixRandomFill(6, 5, 10, 100);
         ShowMatrix(matrix);
