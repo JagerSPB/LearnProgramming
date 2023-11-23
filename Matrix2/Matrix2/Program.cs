@@ -1136,9 +1136,37 @@ class Program
             Console.WriteLine($"Минимальный элемент в упорядоченных строках {minElement}");
     }
 
+    /// <summary>
+    /// Matrix46. Дана целочисленная матрица размера M × N. Найти элемент, являющийся максимальным в своей строке и
+    /// минимальным в своем столбце.Если такой элемент отсутствует, то вывести 0.
+    /// </summary>
+    static void Matrix46()
+    {
+        int[,] matrix = MatrixRandomFill(6, 5, 10, 100);
+        ShowMatrix(matrix);
+        int maxElement = int.MinValue, minElement = int.MaxValue;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] > maxElement)
+                    maxElement = matrix[i, j];
+
+                if (matrix[i, j] < minElement)
+                    minElement = matrix[i, j];
+            }
+        }
+
+        if (maxElement == int.MinValue || minElement == int.MaxValue)
+            Console.WriteLine($"\n0");
+        else
+            Console.WriteLine(
+                $"Максимальный элемент в своей строке {maxElement}\nМинимальный элемент в своем столбце {minElement}");
+    }
+
     public static void Main()
     {
-        Matrix44();
+        Matrix46();
         Console.ReadLine();
     }
 }
