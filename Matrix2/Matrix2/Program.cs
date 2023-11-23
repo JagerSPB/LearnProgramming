@@ -1084,53 +1084,6 @@ class Program
     /// Matrix44. Дана матрица размера M × N. Найти минимальный среди элементов тех строк, которые упорядочены либо по
     /// возрастанию, либо по убыванию. Если упорядоченные строки в матрице отсутствуют, то вывести 0.
     /// </summary>
-    // static void Matrix44()
-    // {
-    //     int[,] matrix = MatrixRandomFill(9, 4, 1, 20);
-    //     ShowMatrix(matrix);
-    //     int minElement = int.MaxValue;
-    //     bool isGrowing = true, isDecreasing = true;
-    //     for (int i = 0; i < matrix.GetLength(0); i++)
-    //     {
-    //         isGrowing = true;
-    //         for (int j = 0; j < matrix.GetLength(1) - 1; j++)
-    //         {
-    //             if (matrix[i, j] > matrix[i, j + 1])
-    //             {
-    //                 isGrowing = false;
-    //                 break;
-    //             }
-    //
-    //             if (isGrowing)
-    //             {
-    //                 for (int k = 0; k < matrix.GetLength(1); k++)
-    //                 {
-    //                     if (matrix[i, k] < minElement)
-    //                         minElement = matrix[i, k];
-    //                 }
-    //             }
-    //         }
-    //
-    //         isDecreasing = true;
-    //         for (int j = 0; j < matrix.GetLength(1) - 1; j++)
-    //         {
-    //             if (matrix[i, j] < matrix[i, j + 1])
-    //             {
-    //                 isDecreasing = false;
-    //                 break;
-    //             }
-    //
-    //             if (isDecreasing)
-    //                 for (int k = 0; k < matrix.GetLength(1); k++)
-    //                 {
-    //                     if (matrix[i, k] < minElement)
-    //                         minElement = matrix[i, k];
-    //                 }
-    //         }
-    //     }
-    //
-    //     Console.WriteLine($"Минимальный элемент в упорядоченных строках {minElement}");
-    // }
     static void Matrix44()
     {
         int[,] matrix = MatrixRandomFill(9, 4, 1, 20);
@@ -1177,8 +1130,10 @@ class Program
                 }
         }
 
-
-        Console.WriteLine($"Минимальный элемент в упорядоченных строках {minElement}");
+        if (minElement == int.MaxValue)
+            Console.WriteLine($"\n0");
+        else
+            Console.WriteLine($"Минимальный элемент в упорядоченных строках {minElement}");
     }
 
     public static void Main()
