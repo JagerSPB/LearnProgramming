@@ -1164,9 +1164,57 @@ class Program
                 $"Максимальный элемент в своей строке {maxElement}\nМинимальный элемент в своем столбце {minElement}");
     }
 
+    /// <summary>
+    /// Matrix47. Дана матрица размера M × N и целые числа K1 и K2 (1 ≤ K1; K2 ≤ M). Поменять местами строки
+    /// матрицы с номерами K1 и K2.
+    /// </summary>
+    static void Matrix47()
+    {
+        int[,] matrix = MatrixRandomFill(7, 5, 10, 100);
+        ShowMatrix(matrix);
+        int k1 = 2, k2 = 4;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            if (i == k1)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                
+                    {
+                        (matrix[k1, j], matrix[k2, j]) = (matrix[k2, j], matrix[k1, j]);
+                    }
+                } 
+            }
+
+        }
+        Console.WriteLine("\nМеняем местами строки матрицы с номерами K1 и K2\n");
+        ShowMatrix(matrix);
+    }
+    /// <summary>
+    /// Matrix48. Дана матрица размера M × N и целые числа K1 и K2 (1 ≤ K1; K2 ≤ N). Поменять местами столбцы
+    /// матрицы с номерами K1 и K2.
+    /// </summary>
+    static void Matrix48()
+    {
+        int[,] matrix = MatrixRandomFill(7, 5, 10, 100);
+        ShowMatrix(matrix);
+        int k1 = 2, k2 = 4;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (j == k1)
+                {
+                    (matrix[i, k1], matrix[i, k2]) = (matrix[i, k2], matrix[i, k1]);
+                }
+            }
+        }
+        Console.WriteLine("\nМеняем местами столбцы матрицы с номерами K1 и K2\n");
+        ShowMatrix(matrix);
+    }
     public static void Main()
     {
-        Matrix46();
+        Matrix48();
         Console.ReadLine();
     }
 }
