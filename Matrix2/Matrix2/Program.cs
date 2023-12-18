@@ -1140,7 +1140,7 @@ class Program
     /// Matrix46. Дана целочисленная матрица размера M × N. Найти элемент, являющийся максимальным в своей строке и
     /// минимальным в своем столбце.Если такой элемент отсутствует, то вывести 0.
     /// </summary>
-    static void Matrix46()//надо проверить
+    static void Matrix46() //надо проверить
     {
         int[,] matrix = MatrixRandomFill(6, 5, 10, 100);
         ShowMatrix(matrix);
@@ -1172,24 +1172,21 @@ class Program
     {
         int[,] matrix = MatrixRandomFill(7, 5, 10, 100);
         ShowMatrix(matrix);
-        int k1 = 2, k2 = 4;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        int k1 = 0, k2 = 6;
+        for (int i = k1; i < matrix.GetLength(0); i++)
         {
-            if (i == k1)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                
-                    {
-                        (matrix[k1, j], matrix[k2, j]) = (matrix[k2, j], matrix[k1, j]);
-                    }
-                } 
+                    (matrix[k1, j], matrix[k2, j]) = (matrix[k2, j], matrix[k1, j]);
+                }
             }
-
         }
-        Console.WriteLine("\nМеняем местами строки матрицы с номерами K1 и K2\n");
+        
+        Console.WriteLine($"Меняем местами строки матрицы с номерами {k1} и {k2}");
         ShowMatrix(matrix);
     }
+
     /// <summary>
     /// Matrix48. Дана матрица размера M × N и целые числа K1 и K2 (1 ≤ K1; K2 ≤ N). Поменять местами столбцы
     /// матрицы с номерами K1 и K2.
@@ -1201,17 +1198,16 @@ class Program
         int k1 = 2, k2 = 4;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            for (int j = k1; j < matrix.GetLength(1); j++)
             {
-                if (j == k1)
-                {
-                    (matrix[i, k1], matrix[i, k2]) = (matrix[i, k2], matrix[i, k1]);
-                }
+                (matrix[i, k1], matrix[i, k2]) = (matrix[i, k2], matrix[i, k1]);
             }
         }
-        Console.WriteLine("\nМеняем местами столбцы матрицы с номерами K1 и K2\n");
+
+        Console.WriteLine($"Меняем местами столбцы матрицы с номерами {k1} и {k2}");
         ShowMatrix(matrix);
     }
+
     public static void Main()
     {
         Matrix48();
