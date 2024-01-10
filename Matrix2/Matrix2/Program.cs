@@ -1142,27 +1142,79 @@ class Program
     /// </summary>
     static void Matrix46() //надо проверить
     {
-        int[,] matrix = MatrixRandomFill(6, 5, 10, 100);
-        ShowMatrix(matrix);
-        int maxElement = int.MinValue, minElement = int.MaxValue;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        // Задаем матрицу
+        int[,] matrix =
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                if (matrix[i, j] > maxElement)
-                    maxElement = matrix[i, j];
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+        };
 
-                if (matrix[i, j] < minElement)
-                    minElement = matrix[i, j];
+        // Получаем размеры матрицы
+        int rowCount = matrix.GetLength(0);
+        int colCount = matrix.GetLength(1);
+
+        // Находим максимальный элемент в своей строке и минимальный элемент в своем столбце
+        int maxInRow = 0;
+        int minInCol = 0;
+
+        bool found = false;
+
+        for (int i = 0; i < rowCount; i++)
+        {
+            int max = int.MinValue;
+
+            for (int j = 0; j < colCount; j++)
+            {
+                if (matrix[i, j] > max)
+                {
+                    max = matrix[i, j];
+                }
+            }
+
+            for (int j = 0; j < colCount; j++)
+            {
+                if (matrix[i, j] == max)
+                {
+                    bool isMinInCol = true;
+
+                    for (int k = 0; k < rowCount; k++)
+                    {
+                        if (matrix[k, j] < max)
+                        {
+                            isMinInCol = false;
+                            break;
+                        }
+                    }
+
+                    if (isMinInCol)
+                    {
+                        maxInRow = max;
+                        minInCol = matrix[i, j];
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            if (found)
+            {
+                break;
             }
         }
 
-        if (maxElement == int.MinValue || minElement == int.MaxValue)
-            Console.WriteLine($"\n0");
+        // Выводим результат
+        if (found)
+        {
+            Console.WriteLine($"Максимальный элемент в своей строке: {maxInRow}");
+            Console.WriteLine($"Минимальный элемент в своем столбце: {minInCol}");
+        }
         else
-            Console.WriteLine(
-                $"Максимальный элемент в своей строке {maxElement}\nМинимальный элемент в своем столбце {minElement}");
+        {
+            Console.WriteLine("0");
+        }
     }
+
 
     /// <summary>
     /// Matrix47. Дана матрица размера M × N и целые числа K1 и K2 (1 ≤ K1; K2 ≤ M). Поменять местами строки
@@ -1182,7 +1234,7 @@ class Program
                 }
             }
         }
-        
+
         Console.WriteLine($"Меняем местами строки матрицы с номерами {k1} и {k2}");
         ShowMatrix(matrix);
     }
@@ -1210,7 +1262,7 @@ class Program
 
     public static void Main()
     {
-        Matrix48();
+        Matrix46();
         Console.ReadLine();
     }
 }
