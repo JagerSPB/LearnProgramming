@@ -90,19 +90,22 @@ namespace Strings
         /// String10. Дана строка. Вывести строку, содержащую те же символы, но расположенные в обратном порядке.
         /// </summary>
         static void String10()
-        {Console.Write("Введите строку: ");
+        {
+            Console.Write("Введите строку: ");
             string s = Console.ReadLine();
             for (int i = s.Length - 1; i >= 0; i--)
             {
                 Console.Write($"{s[i]}");
             }
         }
+
         /// <summary>
         /// String12. Дана непустая строка S и целое число N (> 0). Вывести строку, содержащую символы строки S,
         /// между которыми вставлено по N символов «*» (звездочка).
         /// </summary>
         static void String12()
-        {Console.Write("Введите непустую строку: ");
+        {
+            Console.Write("Введите непустую строку: ");
             string s = Console.ReadLine();
             Console.Write("Введите целое число: ");
             int n = int.Parse(Console.ReadLine());
@@ -115,6 +118,7 @@ namespace Strings
                 }
             }
         }
+
         //==================Урок 14.01.24 Окончен===============
         /// <summary>
         /// String13. Дана строка. Подсчитать количество содержащихся в ней цифр.
@@ -128,11 +132,48 @@ namespace Strings
             {
                 if ((int)s[i] >= 48 && (int)s[i] <= 57) count++;
             }
+
             Console.WriteLine(count);
+        }
+
+        /// <summary>
+        /// String14. Дана строка. Подсчитать количество содержащихся в ней прописных латинских букв.
+        /// </summary>
+        static void String14()
+        {
+            Console.Write("Введите строку: ");
+            string s = Console.ReadLine();
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((int)s[i] >= 65 && (int)s[i] <= 90 || (int)s[i] >= 97 && (int)s[i] <= 122) count++;
+            }
+
+            Console.WriteLine(count);
+        }
+
+        /// <summary>
+        /// String16. Дана строка. Преобразовать в ней все прописные латинские буквы в строчные.
+        /// </summary>
+        static void String16()
+        {
+            Console.Write("Введите строку: ");
+            string s = Console.ReadLine();
+            Console.WriteLine(s.ToLower());
+        }
+
+        /// <summary>
+        /// String17. Дана строка. Преобразовать в ней все строчные буквы (как латинские, так и русские) в прописные.
+        /// </summary>
+        static void String17()
+        {
+            Console.Write("Введите строку: ");
+            string s = Console.ReadLine();
+            Console.WriteLine(s.ToUpper());
         }
         static void Main()
         {
-            String12();
+            String17();
             Console.ReadLine();
         }
     }
