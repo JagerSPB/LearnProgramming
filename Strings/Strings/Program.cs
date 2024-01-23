@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Strings
 {
@@ -130,7 +131,8 @@ namespace Strings
             int count = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if ((int)s[i] >= 48 && (int)s[i] <= 57) count++;
+                if (char.IsDigit(s[i]))
+                    count++;
             }
 
             Console.WriteLine(count);
@@ -146,7 +148,8 @@ namespace Strings
             int count = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if ((int)s[i] >= 65 && (int)s[i] <= 90 || (int)s[i] >= 97 && (int)s[i] <= 122) count++;
+                if (s[i] >= 'A' && s[i] <= 'Z')
+                    count++;
             }
 
             Console.WriteLine(count);
@@ -159,7 +162,15 @@ namespace Strings
         {
             Console.Write("Введите строку: ");
             string s = Console.ReadLine();
-            Console.WriteLine(s.ToLower());
+            char[] arr = s.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (arr[i] >= 'A' && arr[i] <= 'Z')
+                    arr[i] = char.ToLower(arr[i]);
+            }
+
+            s = new string(arr);
+            Console.WriteLine(s);
         }
 
         /// <summary>
@@ -171,9 +182,122 @@ namespace Strings
             string s = Console.ReadLine();
             Console.WriteLine(s.ToUpper());
         }
+
+        ///==================Урок 17.01.24 Окончен===============
+        /// <summary>
+        /// String18. Дана строка. Преобразовать в ней все строчные буквы (как латинские, так и русские) в прописные,
+        /// а прописные — в строчные.
+        /// </summary>
+        static void String18()
+        {
+            Console.Write("Введите строку: ");
+            string s = Console.ReadLine();
+            char[] arr = s.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (arr[i] >= 'A' && arr[i] <= 'Z' || arr[i] >= 'А' && arr[i] <= 'Я')
+                    arr[i] = char.ToLower(arr[i]);
+                else if (arr[i] >= 'a' && arr[i] <= 'z' || arr[i] >= 'а' && arr[i] <= 'я')
+                    arr[i] = char.ToUpper(arr[i]);
+            }
+
+            s = new string(arr);
+            Console.WriteLine(s);
+        }
+
+        /// <summary>
+        /// String19. Дана строка. Если она представляет собой запись целого числа, то вывести 1, если вещественного
+        /// (с дробной частью) — вывести 2; если строку нельзя преобразовать в число, то вывести 0. Считать, что дробная
+        /// часть вещественного числа отделяется от его целой части десятичной точкой «.».
+        /// </summary>
+        static void String19()
+        {
+            {
+                Console.Write("Введите строку: ");
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out _))
+                {
+                    Console.WriteLine(1); // строка является целым числом
+                }
+                else if (double.TryParse(input, out _))
+                {
+                    Console.WriteLine(2); // строка является вещественным числом
+                }
+                else
+                {
+                    Console.WriteLine(0); // строку нельзя преобразовать в число
+                }
+            }
+        }
+
+        /// <summary>
+        /// String20. Дано целое положительное число. Вывести символы, изображающие цифры этого числа
+        /// (в порядке слева направо).
+        /// </summary>
+        static void String20()
+        {
+            Console.Write("Введите целое положительное число: ");
+            string input = Console.ReadLine();
+            for (int i = 0; i < input.Length; i++)
+            {
+                Console.Write($"{input[i]}");
+            }
+        }
+
+        /// <summary>
+        /// String21. Дано целое положительное число. Вывести символы, изображающие цифры этого числа
+        /// (в порядке справа налево).
+        /// </summary>
+        static void String21()
+        {
+            Console.Write("Введите целое положительное число: ");
+            string input = Console.ReadLine();
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                Console.Write($"{input[i]}");
+            }
+        }
+
+        /// <summary>
+        /// String22. Дана строка, изображающая целое положительное число. Вывести сумму цифр этого числа.
+        /// </summary>
+        static void String22()
+        {
+            Console.WriteLine("введите строку: ");
+            string numbers = Console.ReadLine();
+            // string numbers = "12345";
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += int.Parse(numbers[i].ToString());
+            }
+
+            Console.WriteLine($"сумма числа: {sum}");
+        }
+
+        /// <summary>
+        /// String23. Дана строка, изображающая арифметическое выражение вида «<цифра>±<цифра>±. . .±<цифра>»,
+        /// где на месте знака операции «±» находится символ «+» или «−» (например, «4+7−2−8»).
+        /// Вывести значение данного выражения (целое число).
+        /// </summary>
+        static void String23()
+        {
+            string numbers = "1+2+3+4-5";
+            int result = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (char.IsDigit(numbers[i]) && numbers[i - 1] == "+")
+                    result += int.Parse(numbers[i].ToString());
+                else if (char.IsDigit(numbers[i]) && numbers[i - 1] == "-")
+                    result -= int.Parse(numbers[i].ToString()); 
+            }
+
+            Console.WriteLine($"результат: {result}");
+        }
+
         static void Main()
         {
-            String17();
+            String23();
             Console.ReadLine();
         }
     }
