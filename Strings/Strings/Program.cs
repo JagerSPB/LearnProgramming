@@ -282,14 +282,14 @@ namespace Strings
         /// </summary>
         static void String23()
         {
-            string numbers = "1+2+3+4-5";
-            int result = 0;
-            for (int i = 0; i < numbers.Length; i++)
+            string numbers = "1+2+3+4+5-9";
+            int result = int.Parse(numbers[0].ToString());
+            for (int i = 1; i < numbers.Length; i++)
             {
-                if (char.IsDigit(numbers[i]) && numbers[i - 1] == "+")
+                if (char.IsDigit(numbers[i]) && numbers[i - 1] == '+')
                     result += int.Parse(numbers[i].ToString());
-                else if (char.IsDigit(numbers[i]) && numbers[i - 1] == "-")
-                    result -= int.Parse(numbers[i].ToString()); 
+                else if (char.IsDigit(numbers[i]) && numbers[i - 1] == '-')
+                    result -= int.Parse(numbers[i].ToString());
             }
 
             Console.WriteLine($"результат: {result}");
