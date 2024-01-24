@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DHXqTUk/qIg5VKy2yUdteUafTsIQ1O+8s4l9aorBdnaqp4tmgj6CsdEnZ+H80rnZITVxmbQ7U47zC+nmBFYKEA==",
+  "dgSpecHash": "A1bheoBX+VpvphEUmo80cwPZgqAKnZTcXzMM+QY7+5sdJjuPdvBmQnmFNpTBvy9HID1/mVfv/070s20DWy3JmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Matrix2\\Matrix2\\Matrix2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }
