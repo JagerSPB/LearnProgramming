@@ -193,9 +193,9 @@ class Program
         char[] arr = s.ToCharArray();
         for (int i = 0; i < s.Length; i++)
         {
-            if (arr[i] >= 'A' && arr[i] <= 'Z' || arr[i] >= 'А' && arr[i] <= 'Я')
+            if (char.IsUpper(arr[i]))
                 arr[i] = char.ToLower(arr[i]);
-            else if (arr[i] >= 'a' && arr[i] <= 'z' || arr[i] >= 'а' && arr[i] <= 'я')
+            else if (char.IsLower(arr[i]))
                 arr[i] = char.ToUpper(arr[i]);
         }
 
@@ -238,7 +238,7 @@ class Program
         string input = Console.ReadLine();
         for (int i = 0; i < input.Length; i++)
         {
-            Console.Write($"{input[i]}");
+            Console.WriteLine($"{input[i]}");
         }
     }
 
@@ -274,20 +274,20 @@ class Program
     }
 
     /// <summary>
-    /// String23. Дана строка, изображающая арифметическое выражение вида «<цифра>±<цифра>±. . .±<цифра>»,
+    /// String23. Дана строка, изображающая арифметическое выражение вида «<цифра> ± <цифра> ±. . .± <цифра>»,
     /// где на месте знака операции «±» находится символ «+» или «−» (например, «4+7−2−8»).
     /// Вывести значение данного выражения (целое число).
     /// </summary>
     static void String23()
     {
         string numbers = "1+2-3+4+5-7";
-        int result = int.Parse(numbers[0].ToString());
+        int result = Convert.ToInt32(numbers[0]);
         for (int i = 1; i < numbers.Length; i++)
         {
             if (char.IsDigit(numbers[i]) && numbers[i - 1] == '+')
-                result += int.Parse(numbers[i].ToString());
+                result += Convert.ToInt32(numbers[i]);
             else if (char.IsDigit(numbers[i]) && numbers[i - 1] == '-')
-                result -= int.Parse(numbers[i].ToString());
+                result -= Convert.ToInt32(numbers[i]);
         }
 
         Console.WriteLine($"результат: {result}");
@@ -302,6 +302,7 @@ class Program
         string binary = "1101";
         Console.WriteLine(Convert.ToInt32(binary, 2));
     }
+
     /// <summary>
     /// String25. Дана строка, изображающая десятичную запись целого положительного числа. Вывести строку, изображающую
     /// двоичную запись этого же числа.
@@ -312,9 +313,46 @@ class Program
         int decimalNumber = int.Parse(decimalString);
         Console.WriteLine(Convert.ToString(decimalNumber, 2));
     }
+
+    /// <summary>
+    /// String26. Дано целое число N (> 0) и строка S. Преобразовать строку S в строку длины N следующим образом:
+    /// если длина строки S больше N, то отбросить первые символы, если длина строки S меньше N,
+    /// то в ее началодо бавить символы «.» (точка).
+    /// </summary>
+    static void String26()
+    {
+        Console.Write("Enter N: ");
+        int n = int.Parse(Console.ReadLine()!);
+        Console.Write("Enter text: ");
+        string text = Console.ReadLine()!;
+
+        if (text.Length > n)
+            text = text.Remove(0, text.Length - n);
+        else if (text.Length < n)
+        {
+            while (text.Length != n)
+                text = text.Insert(0, ".");
+        }
+
+        Console.WriteLine(text);
+    }
+
+    //==================Урок 24.01.24 Окончен===============
+    /// <summary>
+    /// String27. Даны целые положительные числа N1 и N2 и строки S1 и S2. Получить из этих строк новую строку,
+    /// содержащую первые N1 символов строки S1 и последние N2 символов строки S2 (в указанном порядке).
+    /// </summary>
+    static void String27()
+    {
+        int n1 = 2, n2 = 4;
+        string s1 = "Jager", s2 = "master";
+        Console.WriteLine(s1.Substring(0, n1) + s2.Substring(s2.Length - n2));
+  
+    }
+
     static void Main()
     {
-        String25();
+        String27();
         Console.ReadLine();
     }
 }
