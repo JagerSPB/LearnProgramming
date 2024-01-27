@@ -356,10 +356,11 @@ class Program
     {
         Console.Write("Введите символ: ");
         char symbol = char.Parse(Console.ReadLine()!);
-        Console.Write("Введите строку: ");
+        Console.Write("Введите строку S: ");
         string inputString = Console.ReadLine()!;
         Console.WriteLine(inputString.Replace(symbol.ToString(), symbol.ToString() + symbol.ToString()));
     }
+
     /// <summary>
     /// String29◦. Дан символ C и строки S, S0. Перед каждым вхождением символа C в строку S вставить строку S0.
     /// </summary>
@@ -367,16 +368,30 @@ class Program
     {
         Console.Write("Введите символ: ");
         char symbol = char.Parse(Console.ReadLine()!);
-        Console.Write("Введите строку: ");
+        Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
-        Console.Write("Введите строку: ");
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Replace(symbol.ToString(), inputStringS0 + symbol.ToString()));
+    }
+
+    /// <summary>
+    /// String30. Дан символ C и строки S, S0. После каждого вхождения символа C в строку S вставить строку S0.
+    /// </summary>
+    static void String30()
+    {
+        Console.Write("Введите символ: ");
+        char symbol = char.Parse(Console.ReadLine()!);
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
         string inputStringS0 = Console.ReadLine()!;
         Console.WriteLine(inputStringS.Replace(symbol.ToString(), symbol.ToString() + inputStringS0));
     }
 
     static void Main()
     {
-        String29();
+        String30();
         Console.ReadLine();
     }
 }
