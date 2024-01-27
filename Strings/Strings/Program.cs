@@ -401,9 +401,29 @@ class Program
         string inputStringS0 = Console.ReadLine()!;
         Console.WriteLine(inputStringS.Contains(inputStringS0));
     }
+
+    /// <summary>
+    /// String32. Даны строки S и S0. Найти количество вхождений строки S0 в строку S.
+    /// </summary>
+    static void String32()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        int count = 0;
+        for (int i = 0; i < inputStringS.Length- inputStringS0.Length+1 ; i++)
+        {
+            if (inputStringS.Substring(i, inputStringS0.Length) == inputStringS0)
+                count++;
+        }
+
+        Console.WriteLine(count);
+    }
+    
     static void Main()
     {
-        String31();
+        String32();
         Console.ReadLine();
     }
 }
