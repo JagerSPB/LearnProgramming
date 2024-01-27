@@ -389,9 +389,21 @@ class Program
         Console.WriteLine(inputStringS.Replace(symbol.ToString(), symbol.ToString() + inputStringS0));
     }
 
+    /// <summary>
+    /// String31. Даны строки S и S0. Проверить, содержится ли строка S0 в строке S. Если содержится, то вывести TRUE,
+    /// если не содержится, то вывести FALSE.
+    /// </summary>
+    static void String31()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Contains(inputStringS0));
+    }
     static void Main()
     {
-        String30();
+        String31();
         Console.ReadLine();
     }
 }
