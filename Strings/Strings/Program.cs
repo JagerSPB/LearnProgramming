@@ -347,12 +347,36 @@ class Program
         int n1 = 2, n2 = 4;
         string s1 = "Jager", s2 = "master";
         Console.WriteLine(s1.Substring(0, n1) + s2.Substring(s2.Length - n2));
-  
+    }
+
+    /// <summary>
+    /// String28. Дан символ C и строка S. Удвоить каждое вхождение символа C встроку S.
+    /// </summary>
+    static void String28()
+    {
+        Console.Write("Введите символ: ");
+        char symbol = char.Parse(Console.ReadLine()!);
+        Console.Write("Введите строку: ");
+        string inputString = Console.ReadLine()!;
+        Console.WriteLine(inputString.Replace(symbol.ToString(), symbol.ToString() + symbol.ToString()));
+    }
+    /// <summary>
+    /// String29◦. Дан символ C и строки S, S0. Перед каждым вхождением символа C в строку S вставить строку S0.
+    /// </summary>
+    static void String29()
+    {
+        Console.Write("Введите символ: ");
+        char symbol = char.Parse(Console.ReadLine()!);
+        Console.Write("Введите строку: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку: ");
+        string inputStringS0 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Replace(symbol.ToString(), symbol.ToString() + inputStringS0));
     }
 
     static void Main()
     {
-        String27();
+        String29();
         Console.ReadLine();
     }
 }
