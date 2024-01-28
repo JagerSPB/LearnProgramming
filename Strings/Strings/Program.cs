@@ -452,9 +452,42 @@ class Program
         else
             Console.WriteLine(inputStringS);
     }
+
+    /// <summary>
+    /// String35. Даны строки S и S0. Удалить из строки S все подстроки, совпадающие с S0.
+    /// Если совпадающих подстрок нет, то вывести строку S без изменений.
+    /// </summary>
+    static void String35()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        if (inputStringS.Contains(inputStringS0))
+            Console.WriteLine(inputStringS.Replace(inputStringS0, ""));
+        else
+            Console.WriteLine(inputStringS);
+    }
+
+    //==================Урок 28.01.24 Окончен===============
+    /// <summary>
+    /// String36. Даны строки S, S1 и S2. Заменить в строке S первое вхождение строки S1 на строку S2.
+    /// </summary>
+    static void String36()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S1: ");
+        string inputStringS1 = Console.ReadLine()!;
+        Console.Write("Введите строку S2: ");
+        string inputStringS2 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Remove(inputStringS.IndexOf(inputStringS1), inputStringS1.Length)
+            .Insert(inputStringS.IndexOf(inputStringS1), inputStringS2));
+    }
+
     static void Main()
     {
-        String34();
+        String36();
         Console.ReadLine();
     }
 }
