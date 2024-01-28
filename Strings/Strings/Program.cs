@@ -358,7 +358,7 @@ class Program
         char symbol = char.Parse(Console.ReadLine()!);
         Console.Write("Введите строку S: ");
         string inputString = Console.ReadLine()!;
-        Console.WriteLine(inputString.Replace(symbol.ToString(), symbol.ToString() + symbol.ToString()));
+        Console.WriteLine(inputString.Replace(symbol.ToString(), symbol + symbol.ToString()));
     }
 
     /// <summary>
@@ -412,7 +412,7 @@ class Program
         Console.Write("Введите строку S0: ");
         string inputStringS0 = Console.ReadLine()!;
         int count = 0;
-        for (int i = 0; i < inputStringS.Length- inputStringS0.Length+1 ; i++)
+        for (int i = 0; i < inputStringS.Length - inputStringS0.Length + 1; i++)
         {
             if (inputStringS.Substring(i, inputStringS0.Length) == inputStringS0)
                 count++;
@@ -420,10 +420,41 @@ class Program
 
         Console.WriteLine(count);
     }
-    
+
+    /// <summary>
+    /// String33. Даны строки S и S0. Удалить из строки S первую подстроку, совпадающую с S0.
+    /// Если совпадающих подстрок нет, то вывести строку S без изменений.
+    /// </summary>
+    static void String33()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        if (inputStringS.Contains(inputStringS0))
+            Console.WriteLine(inputStringS.Remove(inputStringS.IndexOf(inputStringS0), inputStringS0.Length));
+        else
+            Console.WriteLine(inputStringS);
+    }
+
+    /// <summary>
+    /// String34. Даны строки S и S0. Удалить из строки S последнюю подстроку, совпадающую с S0. Если совпадающих
+    /// подстрок нет, то вывести строку S без изменений.
+    /// </summary>
+    static void String34()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S0: ");
+        string inputStringS0 = Console.ReadLine()!;
+        if (inputStringS.Contains(inputStringS0))
+            Console.WriteLine(inputStringS.Remove(inputStringS.LastIndexOf(inputStringS0), inputStringS0.Length));
+        else
+            Console.WriteLine(inputStringS);
+    }
     static void Main()
     {
-        String32();
+        String34();
         Console.ReadLine();
     }
 }
