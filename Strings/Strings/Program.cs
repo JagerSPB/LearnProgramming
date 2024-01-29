@@ -485,9 +485,54 @@ class Program
             .Insert(inputStringS.IndexOf(inputStringS1), inputStringS2));
     }
 
+    /// <summary>
+    /// String37. Даны строки S, S1 и S2. Заменить в строке S последнее вхождение строки S1 на строку S
+    /// </summary>
+    static void String37()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S1: ");
+        string inputStringS1 = Console.ReadLine()!;
+        Console.Write("Введите строку S2: ");
+        string inputStringS2 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Remove(inputStringS.LastIndexOf(inputStringS1), inputStringS1.Length)
+            .Insert(inputStringS.LastIndexOf(inputStringS1), inputStringS2));
+    }
+
+    /// <summary>
+    /// String38. Даны строки S, S1 и S2. Заменить в строке S все вхождения строки S1 на строку S2.
+    /// </summary>
+    static void String38()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.Write("Введите строку S1: ");
+        string inputStringS1 = Console.ReadLine()!;
+        Console.Write("Введите строку S2: ");
+        string inputStringS2 = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Replace(inputStringS1, inputStringS2));
+    }
+
+    /// <summary>
+    /// String39. Дана строка, содержащая по крайней мере один символ пробела. Вывести подстроку, расположенную
+    /// между первым и вторым пробелом исходной строки. Если строка содержит только один пробел,
+    /// то вывести пустую строку.
+    /// </summary>
+    static void String39()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        if (inputStringS.IndexOf(' ') != -1 && inputStringS.LastIndexOf(' ') != inputStringS.IndexOf(' '))
+            Console.WriteLine(inputStringS.Substring(inputStringS.IndexOf(' ') + 1,
+                inputStringS.LastIndexOf(' ') - inputStringS.IndexOf(' ') - 1));
+        else
+            Console.WriteLine("тут находится очень грустная пустая строка");
+    }
+
     static void Main()
     {
-        String36();
+        String39();
         Console.ReadLine();
     }
 }
