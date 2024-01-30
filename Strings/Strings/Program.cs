@@ -523,16 +523,60 @@ class Program
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
+        int secondSpaceIndex = inputStringS.IndexOf(' ', inputStringS.IndexOf(' ') + 1);
         if (inputStringS.IndexOf(' ') != -1 && inputStringS.LastIndexOf(' ') != inputStringS.IndexOf(' '))
             Console.WriteLine(inputStringS.Substring(inputStringS.IndexOf(' ') + 1,
-                inputStringS.LastIndexOf(' ') - inputStringS.IndexOf(' ') - 1));
+                secondSpaceIndex - inputStringS.IndexOf(' ') - 1));
         else
             Console.WriteLine("тут находится очень грустная пустая строка");
     }
 
+    /// <summary>
+    /// String40. Дана строка, содержащая по крайней мере один символ пробела. Вывести подстроку, расположенную
+    /// между первым и последним пробелом исходной строки. Если строка содержит только один пробел,
+    /// то вывести пустую строку
+    /// </summary>
+    static void String40()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        if (inputStringS.IndexOf(' ') != -1 && inputStringS.LastIndexOf(' ') != inputStringS.IndexOf(' '))
+            Console.WriteLine(inputStringS.Substring(inputStringS.IndexOf(' ') + 1,
+                inputStringS.LastIndexOf(' ') - inputStringS.IndexOf(' ') - 1));
+        else
+            Console.WriteLine("тут то-же находится очень грустная пустая строка");
+    }
+
+    /// <summary>
+    /// String41◦. Дана строка, состоящая из русских слов, разделенных пробелами (одним или несколькими).
+    /// Найти количество слов в строке.
+    /// </summary>
+    static void String41()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        Console.WriteLine(inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length);
+    }
+
+    /// <summary>
+    /// String42. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных пробелами
+    /// (одним или несколькими). Найти количество слов, которые начинаются и заканчиваются одной и той же буквой.
+    /// </summary>
+    static void String42()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        int count = 0;
+        foreach (string word in words)
+            if (word[0] == word[word.Length - 1] && word.Length > 1)
+                count++;
+        Console.WriteLine(count);    
+    }
+
     static void Main()
     {
-        String39();
+        String42();
         Console.ReadLine();
     }
 }
