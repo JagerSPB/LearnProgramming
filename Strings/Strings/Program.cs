@@ -571,12 +571,43 @@ class Program
         foreach (string word in words)
             if (word[0] == word[word.Length - 1] && word.Length > 1)
                 count++;
-        Console.WriteLine(count);    
+        Console.WriteLine(count);
     }
 
+    /// <summary>
+    /// String43. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных пробелами
+    /// (одним или несколькими). Найти количество слов, которые содержат хотя бы одну букву «А»
+    /// </summary>
+    static void String43()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        int count = 0;
+        foreach (string word in words)
+            if (word.Contains("а"))
+                count++;
+        Console.WriteLine(count);
+    }
+
+    /// <summary>
+    /// String44. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных
+    /// пробелами (одним или несколькими). Найти количество слов, которые содержат ровно три буквы «А».
+    /// </summary>
+    static void String44()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        int count = 0;
+        foreach (string word in words)
+            if (word.Length == 3 && word.Contains("а"))
+                count++;
+        Console.WriteLine(count);
+    }
     static void Main()
     {
-        String42();
+        String44();
         Console.ReadLine();
     }
 }
