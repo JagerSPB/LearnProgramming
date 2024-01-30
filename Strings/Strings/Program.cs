@@ -599,11 +599,17 @@ class Program
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        int count = 0;
-        foreach (string word in words)
-            if (word.Length == 3 && word.Contains("а"))
-                count++;
-        Console.WriteLine(count);
+        int count = 0, countOfThree = 0;
+        for (int i = 0; i < words.Length; i++)
+        {
+            count = 0;
+            for (int j = 0; j < words[i].Length; j++)
+                if (words[i][j] == 'а')
+                    count++;
+            if (count == 3)
+                countOfThree++;
+        }
+        Console.WriteLine(countOfThree);
     }
     static void Main()
     {
