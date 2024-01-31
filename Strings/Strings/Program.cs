@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 class Program
 {
@@ -599,21 +601,31 @@ class Program
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        int count = 0, countOfThree = 0;
+        int countOfA = 0, countOfThreepleA = 0;
         for (int i = 0; i < words.Length; i++)
         {
-            count = 0;
+            countOfA = 0;
             for (int j = 0; j < words[i].Length; j++)
                 if (words[i][j] == 'а')
-                    count++;
-            if (count == 3)
-                countOfThree++;
+                    countOfA++;
+            if (countOfA == 3)
+                countOfThreepleA++;
         }
-        Console.WriteLine(countOfThree);
+
+        Console.WriteLine(countOfThreepleA);
     }
+
+    static void String44a()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.Count(word => word.Count(c => c == 'а') == 3));
+    }
+
     static void Main()
     {
-        String44();
+        String44a();
         Console.ReadLine();
     }
 }
