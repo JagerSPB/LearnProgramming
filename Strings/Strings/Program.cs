@@ -525,12 +525,13 @@ class Program
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
-        int secondSpaceIndex = inputStringS.IndexOf(' ', inputStringS.IndexOf(' ') + 1);
-        if (inputStringS.IndexOf(' ') != -1 && inputStringS.LastIndexOf(' ') != inputStringS.IndexOf(' '))
-            Console.WriteLine(inputStringS.Substring(inputStringS.IndexOf(' ') + 1,
-                secondSpaceIndex - inputStringS.IndexOf(' ') - 1));
-        else
-            Console.WriteLine("тут находится очень грустная пустая строка");
+        //  int secondSpaceIndex = inputStringS.IndexOf(' ', inputStringS.IndexOf(' ') + 1);
+        // if (inputStringS.IndexOf(' ') != -1 && inputStringS.LastIndexOf(' ') != inputStringS.IndexOf(' '))
+        //  Console.WriteLine(inputStringS.Substring(inputStringS.IndexOf(' ') + 1,
+        //   secondSpaceIndex - inputStringS.IndexOf(' ') - 1));
+        // else
+        Console.WriteLine(inputStringS.Split(' ')[1]);
+        // Console.WriteLine("тут находится очень грустная пустая строка");
     }
 
     /// <summary>
@@ -557,7 +558,9 @@ class Program
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
-        Console.WriteLine(inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length);
+        //Console.WriteLine(inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length);
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.Count());
     }
 
     /// <summary>
@@ -569,11 +572,13 @@ class Program
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        int count = 0;
-        foreach (string word in words)
-            if (word[0] == word[word.Length - 1] && word.Length > 1)
-                count++;
-        Console.WriteLine(count);
+        // int count = 0;
+        // foreach (string word in words)
+        //     if (word[0] == word[word.Length - 1])
+        //         count++;
+
+        Console.WriteLine(words.Count(word => word.First() == word.Last()));
+        //Console.WriteLine(words.Count(w => w.StartsWith(w.First()) && w.EndsWith(w.Last())));
     }
 
     /// <summary>
@@ -585,10 +590,7 @@ class Program
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        int count = 0;
-        foreach (string word in words)
-            if (word.Contains("а"))
-                count++;
+        int count = words.Count(word => word.Contains("а"));
         Console.WriteLine(count);
     }
 
@@ -615,7 +617,7 @@ class Program
         Console.WriteLine(countOfThreepleA);
     }
 
-    static void String44a()
+    static void String44a() //LINQ edition
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
@@ -623,9 +625,114 @@ class Program
         Console.WriteLine(words.Count(word => word.Count(c => c == 'а') == 3));
     }
 
+    /// <summary>
+    /// String45. Дана строка, состоящая из русских слов, разделенных пробелами (одним или несколькими).
+    /// Найти длину самого короткого слова.
+    /// </summary>
+    static void String45()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        int shortestWordLength = Int32.MaxValue;
+        foreach (string word in words)
+            if (word.Length < shortestWordLength)
+                shortestWordLength = word.Length;
+        Console.WriteLine(shortestWordLength);
+    }
+
+    static void String45a() //LINQ edition
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.Min(word => word.Length));
+    }
+
+    /// <summary>
+    /// String47. Дана строка, состоящая из русских слов, разделенных пробелами(одним или несколькими). Вывести строку,
+    /// содержащую эти же слова, разделенные одним символом «.» (точка). В конце строки точку не ставить.
+    /// </summary>
+    static void String47()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(".", words));
+    }
+
+    /// <summary>
+    /// String48. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных пробелами
+    /// (одним или несколькими). Преобразовать каждое слово в строке, заменив в нем все последующие вхождения его
+    /// первой буквы на символ «.» (точка). Например, слово «МИНИМУМ» надо преобразовать в «МИНИ.У.».
+    /// Количество пробелов между словами не изменять.
+    /// </summary>
+    static void String48()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        // Console.Write(string.Join(" ", inputStringS.Split().Select(word => word[0] + word.Substring(1).Replace(word[0], '.'))));
+        Console.WriteLine(string.Join(" ", words.Select(word => word[0] + word.Substring(1).Replace(word[0], '.'))));
+    }
+
+    //==============================урок 31.01.2024 окончен==============================
+    /// <summary>
+    /// String49. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных пробелами
+    /// (одним или несколькими). Преобразовать каждое слово в строке, заменив в нем все предыдущие вхождения его
+    /// последней буквы на символ «.» (точка). Например, слово «МИНИМУМ» надо преобразовать в «.ИНИ.УМ».
+    /// Количество пробелов между словами не изменять.
+    /// </summary>
+    static void String49()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ",
+            words.Select(word => word.Substring(0, word.Length - 1).Replace(word[^1], '.') + word[^1])));
+    }
+
+    /// <summary>
+    /// String50. Дана строка, состоящая из русских слов, разделенных пробелами(одним или несколькими). Вывести строку,
+    /// содержащую эти же слова, разделенные одним пробелом и расположенные в обратном порядке
+    /// </summary>
+    static void String50()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ", words.Reverse()));
+    }
+
+    /// <summary>
+    /// String51. Дана строка, состоящая из русских слов, набранных заглавными буквами и разделенных пробелами
+    /// (одним или несколькими). Вывести строку, содержащую эти же слова,
+    /// разделенные одним пробелом и расположенные в алфавитном порядке.
+    /// </summary>
+    static void String51()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ", words.OrderBy(word => word)));
+    }
+
+    /// <summary>
+    /// String52. Дана строка-предложение на русском языке. Преобразовать строку так, чтобы каждое слово начиналось
+    /// с заглавной буквы. Словом считать набор символов, не содержащий пробелов и ограниченный пробелами или
+    /// началом/концом строки. Слова, не начинающиеся с буквы, не изменять.
+    /// </summary>
+    static void String52()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ", words.Select(word => char.ToUpper(word[0]) + word.Substring(1))));
+        
+    }
     static void Main()
     {
-        String44a();
+        String52();
         Console.ReadLine();
     }
 }
