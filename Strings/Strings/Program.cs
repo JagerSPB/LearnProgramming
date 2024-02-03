@@ -804,9 +804,20 @@ class Program
         Console.WriteLine(words.OrderBy(word => word.Length).FirstOrDefault());
     }
 
+    /// <summary>
+    /// String57. Дана строка-предложение с избыточными пробелами между словами.
+    /// Преобразовать ее так, чтобы между словами был ровно один пробел.
+    /// </summary>
+    static void String57()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ", words.Select(word => word.Replace("  ", " "))));
+    }
     static void Main()
     {
-        String56();
+        String57();
         Console.ReadLine();
     }
 }
