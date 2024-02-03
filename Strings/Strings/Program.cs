@@ -815,6 +815,7 @@ class Program
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         Console.WriteLine(string.Join(" ", words.Select(word => word.Replace("  ", " "))));
     }
+    
     static void Main()
     {
         String57();
