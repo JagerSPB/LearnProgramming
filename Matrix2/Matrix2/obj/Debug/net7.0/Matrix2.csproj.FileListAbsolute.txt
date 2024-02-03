@@ -1,4 +1,3 @@
-C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.csproj.AssemblyReference.cache
 C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.GeneratedMSBuildEditorConfig.editorconfig
 C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfoInputs.cache
 C:/Users/Game PC/RiderProjects/LearnProgramming/Matrix2/Matrix2/obj/Debug/net7.0/Matrix2.AssemblyInfo.cs
@@ -29,7 +28,6 @@ C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.runtimeconfig.json
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.dll
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\bin\Debug\net7.0\Matrix2.pdb
-C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.csproj.AssemblyReference.cache
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.AssemblyInfoInputs.cache
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.AssemblyInfo.cs
@@ -39,3 +37,4 @@ C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.pdb
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.genruntimeconfig.cache
 C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\ref\Matrix2.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Matrix2\Matrix2\obj\Debug\net7.0\Matrix2.sourcelink.json

@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 class Program
 {
@@ -728,11 +730,83 @@ class Program
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         Console.WriteLine(string.Join(" ", words.Select(word => char.ToUpper(word[0]) + word.Substring(1))));
-        
     }
+
+    static void String522()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine();
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(words[i]))
+            {
+                words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+            }
+        }
+
+        Console.WriteLine(string.Join(" ", words));
+    }
+
+    /// <summary>
+    /// String53. Дана строка-предложение на русском языке. Подсчитать количество содержащихся в строке знаков препинания.
+    /// </summary>
+    static void String53()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.Count(word => word.Any(char.IsPunctuation)));
+    }
+
+    /// <summary>
+    /// String54. Дана строка-предложение на русском языке. Подсчитать количество содержащихся в строке гласных букв.
+    /// </summary>
+    static void String54()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        inputStringS = inputStringS.ToLower();
+        string vowels = "аеёиоуыэюя";
+        int vowelsCount = 0;
+        foreach (char letter in inputStringS)
+            if (vowels.Contains(letter))
+                vowelsCount++;
+        Console.WriteLine(vowelsCount);
+    }
+
+    /// <summary>
+    /// String55. Дана строка-предложение на русском языке. Вывести самое длинное слово в предложении. Если таких слов
+    /// несколько, то вывести первое из них. Словом считать набор символов, не содержащий пробелов, знаков препинания и
+    /// ограниченный пробелами, знаками препинания или началом/концом строки.
+    /// </summary>
+    static void String55()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(new[] { ' ', ',', '.', '!', '?', ':', ';' },
+            StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.OrderByDescending(word => word.Length).FirstOrDefault());
+    }
+
+    /// <summary>
+    /// String56. Дана строка-предложение на русском языке. Вывести самое короткоеслово в предложении. Если таких слов
+    /// несколько, то вывести последнееиз них. Словом считать набор символов, не содержащий пробелов, знаковпрепинания
+    /// и ограниченный пробелами, знаками препинания или началом/концом строки.
+    /// </summary>
+    static void String56()
+    {
+        Console.Write("Введите строку S: ");
+        string inputStringS = Console.ReadLine()!;
+        string[] words = inputStringS.Split(new[] { ' ', ',', '.', '!', '?', ':', ';' },
+            StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(words.OrderBy(word => word.Length).FirstOrDefault());
+    }
+
     static void Main()
     {
-        String52();
+        String56();
         Console.ReadLine();
     }
 }
