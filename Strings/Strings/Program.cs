@@ -867,6 +867,7 @@ class Program
         }
         else Console.WriteLine("\\");
     }
+
     /// <summary>
     /// String61. Дана строка, содержащая полное имя файла. Выделить из этой строки название последнего каталога
     /// (без символов «\»). Если файл содержится в корневом каталоге, то вывести символ «\».
@@ -880,10 +881,41 @@ class Program
             Console.WriteLine(words[^2]);
         }
         else Console.WriteLine("\\");
-    } 
+    }
+
+    /// <summary>
+    /// String62. Дана строка-предложение на русском языке. Зашифровать ее, выполнив циклическую замену каждой буквы
+    /// на следующую за ней в алфавите и сохранив при этом регистр букв («А» перейдет в «Б», «а» — в «б», «Б»— в «В»,
+    /// «я» — в «а» и т. д.). Букву «ё» в алфавите не учитывать («е»должна переходить в «ж»).
+    /// Знаки препинания и пробелы не изменять
+    /// </summary>
+    static void String62()
+    {
+        string str = "Дана строка-предложение На русском Языке. Зашифровать ее, выполнив циклическую замену.";
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (Char.IsLetter(str[i]) && str[i] != 'я' && str[i] != 'Я')
+            {
+                int encyptLetter = str[i] + 1;
+                char newLetter = (char)encyptLetter;
+                Console.Write(newLetter);
+            }
+            else if (str[i] == 'я' || str[i] == 'Я')
+            {
+                str = str.Replace(i.ToString(), (str[i] == 'я' ? "а" : "А"));
+                // str = str.Remove(i, 1).Insert(i, (str[i] == 'я' ? "а" : "А"));
+                Console.Write(str[i]);
+            }
+            else
+                Console.Write(str[i]);
+        }
+    }
+
+//Console.Write(str.Replace("я", "a").ToCharArray()[i]);
     static void Main()
     {
-        String61();
+        String62();
         Console.ReadLine();
     }
 }
