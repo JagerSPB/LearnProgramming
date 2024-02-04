@@ -716,7 +716,7 @@ class Program
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        Console.WriteLine(string.Join(" ", words.OrderBy(word => word)));
+        Console.WriteLine(string.Join(" ", words.Order()));
     }
 
     /// <summary>
@@ -740,10 +740,7 @@ class Program
 
         for (int i = 0; i < words.Length; i++)
         {
-            if (!string.IsNullOrEmpty(words[i]))
-            {
-                words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
-            }
+            words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
         }
 
         Console.WriteLine(string.Join(" ", words));
@@ -756,8 +753,7 @@ class Program
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
-        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        Console.WriteLine(words.Count(word => word.Any(char.IsPunctuation)));
+        Console.WriteLine(inputStringS.Where(c => char.IsPunctuation(c)).Count());
     }
 
     /// <summary>
@@ -766,14 +762,23 @@ class Program
     static void String54()
     {
         Console.Write("Введите строку S: ");
-        string inputStringS = Console.ReadLine()!;
-        inputStringS = inputStringS.ToLower();
-        string vowels = "аеёиоуыэюя";
-        int vowelsCount = 0;
-        foreach (char letter in inputStringS)
-            if (vowels.Contains(letter))
-                vowelsCount++;
-        Console.WriteLine(vowelsCount);
+        string str = Console.ReadLine()!;
+        str = str.ToLower();
+        string letters = "аеёиоуыэюя";
+        int count = 0;
+        foreach (char l in str)
+            if (letters.Contains(l))
+                count++;
+        Console.WriteLine(count);
+    }
+
+    static void String542()
+    {
+        Console.Write("Введите строку S: ");
+        string str = Console.ReadLine()!;
+        str = str.ToLower();
+        string letters = "аеёиоуыэюя";
+        Console.WriteLine(str.Where(l => letters.Contains(l)).Count());
     }
 
     /// <summary>
@@ -801,7 +806,7 @@ class Program
         string inputStringS = Console.ReadLine()!;
         string[] words = inputStringS.Split(new[] { ' ', ',', '.', '!', '?', ':', ';' },
             StringSplitOptions.RemoveEmptyEntries);
-        Console.WriteLine(words.OrderBy(word => word.Length).FirstOrDefault());
+        Console.WriteLine(words.MinBy(word => word.Length));
     }
 
     /// <summary>
@@ -812,13 +817,57 @@ class Program
     {
         Console.Write("Введите строку S: ");
         string inputStringS = Console.ReadLine()!;
-        string[] words = inputStringS.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        Console.WriteLine(string.Join(" ", words.Select(word => word.Replace("  ", " "))));
+        //Console.WriteLine(inputStringS.DistinctBy(c => ' ').ToArray().ToString());
+        Console.WriteLine(Regex.Replace(inputStringS, @"\s+", " "));
     }
-    
+
+    /// <summary>
+    ///Задача от Geek Brains Написать программу, которая из имеющегося массива строк формирует массив из строк,
+    /// длина которых меньше либо равна 3 символа
+    /// </summary>
+    static void String000()
+    {
+        string[] inputArray = { "Text1", "AnyText", "if", "false", "res", "var", "49" };
+        string[] shortStrings = inputArray.Where(s => s.Length <= 3).ToArray();
+        Console.WriteLine(string.Join(" ", shortStrings));
+    }
+
+    /// <summary>
+    /// String58. Дана строка, содержащая полное имя файла, то есть имя диска,список каталогов (путь),
+    /// собственно имя и расширение. Выделить из этойстроки имя файла (без расширения).
+    /// </summary>
+    static void String58()
+    {
+        string str = @"C:\Users\Game PC\Desktop\test1.txt";
+        Console.WriteLine(str.Remove(str.IndexOf('.')).Substring(str.LastIndexOf("\\") + 1));
+    }
+
+//========================Урок 04.02.24 окончен===============
+    /// <summary>
+    /// String59. Дана строка, содержащая полное имя файла, то есть имя диска список каталогов (путь),
+    /// собственно имя и расширение. Выделить из этой строки расширение файла (без предшествующей точки).
+    /// </summary>
+    static void String59()
+    {
+        string str = @"C:\Users\Game PC\Desktop\test1.txt";
+        Console.WriteLine(str.Substring(str.LastIndexOf(".") + 1));
+    }
+
+    /// <summary>
+    /// String60. Дана строка, содержащая полное имя файла. Выделить из этой строки название первого каталога
+    /// (без символов «\»). Если файл содержится в корневом каталоге, то вывести символ «\»
+    /// </summary>
+    static void String60()
+    {
+        string str = @"C:\Users\Game PC\Desktop\test1.txt";
+        string[] words = str.Split('\\', StringSplitOptions.RemoveEmptyEntries);
+
+        Console.WriteLine(words[1]);
+    }
+
     static void Main()
     {
-        String57();
+        String60();
         Console.ReadLine();
     }
 }
