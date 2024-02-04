@@ -860,9 +860,12 @@ class Program
     static void String60()
     {
         string str = @"C:\Users\Game PC\Desktop\test1.txt";
-        string[] words = str.Split('\\', StringSplitOptions.RemoveEmptyEntries);
-
-        Console.WriteLine(words[1]);
+        if (str.Count(sh => sh == '\\') > 1)
+        {
+            string[] words = str.Split('\\', StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine(words[1]);
+        }
+        else Console.WriteLine("\\");
     }
 
     static void Main()
