@@ -867,10 +867,23 @@ class Program
         }
         else Console.WriteLine("\\");
     }
-
+    /// <summary>
+    /// String61. Дана строка, содержащая полное имя файла. Выделить из этой строки название последнего каталога
+    /// (без символов «\»). Если файл содержится в корневом каталоге, то вывести символ «\».
+    /// </summary>
+    static void String61()
+    {
+        string str = @"C:\Users\Game PC\Desktop\test1.txt";
+        if (str.Count(sh => sh == '\\') > 1)
+        {
+            string[] words = str.Split('\\', StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine(words[^2]);
+        }
+        else Console.WriteLine("\\");
+    } 
     static void Main()
     {
-        String60();
+        String61();
         Console.ReadLine();
     }
 }
