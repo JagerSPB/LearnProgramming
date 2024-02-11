@@ -49,10 +49,10 @@
         Console.WriteLine("Введите второе число: ");
         double num2 = GetUserInput();
 
-        Console.WriteLine("Введите цифру \"+\" для суммирования");
-        Console.WriteLine("Введите цифру \"-\" для вычитания");
-        Console.WriteLine("Введите цифру \"*\" для умножения");
-        Console.WriteLine("Введите цифру \"/\" для деления");
+        Console.WriteLine("\"+\" для суммирования");
+        Console.WriteLine("\"-\" для вычитания");
+        Console.WriteLine(" \"*\" для умножения");
+        Console.WriteLine("\"/\" для деления");
         char action = char.Parse(Console.ReadLine()!);
         switch (action)
         {

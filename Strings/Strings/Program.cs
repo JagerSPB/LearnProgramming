@@ -860,7 +860,7 @@ class Program
     static void String60()
     {
         string str = @"C:\Users\Game PC\Desktop\test1.txt";
-        if (str.Count(sh => sh == '\\') > 1)
+        if (str.Count(ch => ch == '\\') > 1)
         {
             string[] words = str.Split('\\', StringSplitOptions.RemoveEmptyEntries);
             Console.WriteLine(words[1]);
@@ -897,14 +897,12 @@ class Program
         {
             if (Char.IsLetter(str[i]) && str[i] != 'я' && str[i] != 'Я')
             {
-                int encyptLetter = str[i] + 1;
-                char newLetter = (char)encyptLetter;
-                Console.Write(newLetter);
+                int encryptLetter = str[i] + 1;
+                Console.Write((char)encryptLetter);
             }
             else if (str[i] == 'я' || str[i] == 'Я')
             {
-                str = str.Replace(i.ToString(), (str[i] == 'я' ? "а" : "А"));
-                // str = str.Remove(i, 1).Insert(i, (str[i] == 'я' ? "а" : "А"));
+                str = str.Remove(i, 1).Insert(i, (str[i] == 'я' ? "а" : "А"));
                 Console.Write(str[i]);
             }
             else
@@ -912,10 +910,136 @@ class Program
         }
     }
 
-//Console.Write(str.Replace("я", "a").ToCharArray()[i]);
+    static void String622()
+    {
+        string str = "Дана строка-предложение яяЯяя На русском языке.";
+        Console.WriteLine(str.Select(x => (char)(x + 1)));
+        // str = str.Replace("я", "а").Replace("Я", "А");
+    }
+
+    /// <summary>
+    /// String63. Дана строка-предложение на русском языке и число K (0 < K < 10).Зашифровать строку,
+    /// выполнив циклическую замену каждой буквы набукву того же регистра, расположенную в алфавите на K-й позиции
+    /// после шифруемой буквы (например, для K = 2 «А» перейдет в «В», «а» — в «в», «Б» — в «Г», «я» — в «б» и т. д.).
+    /// Букву «ё» в алфавите не учитывать, знакипрепинания и пробелы не изменять.
+    /// </summary>
+    static void String63()
+    {
+        string str = "Дана строка-предложение На русском Языке. яЯя";
+        int k = 2;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            int encryptLetter = str[i] + k;
+            if (Char.IsLetter(str[i]))
+            {
+                Console.Write((char)encryptLetter);
+            }
+            else
+                Console.Write(str[i]);
+        }
+    }
+
+    static void String632()
+    {
+        Console.Write("Введите ключ: ");
+        int key = int.Parse(Console.ReadLine()!);
+        Console.Write("Введите текст: ");
+        string text = Console.ReadLine()!; // храню фразу, которую буду шифровать
+        string result = string.Empty; // храню результат шифрования
+        int letterNumber;
+        string rusLetters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"; // работаю с английским алфавитом
+        string engLetters = "abcdefghijklmnopqrstuvwxyz"; // // работаю с русским алфавитом
+        for (int i = 0; i < text.Length; i++) // цикл перебора букв шифруемого слова
+        {
+            for (int j = 0; j < engLetters.Length; j++) // цикл сравнения каждой буквы с алфавитом
+            {
+                if (text[i] == engLetters[
+                        j]) // в случае совпадения, создаю переменную, где храню номер буквы со сдвигом
+                {
+                    letterNumber = j + key; // номер буквы + сдвиг по ключу
+
+                    while (letterNumber >= engLetters.Length) // чтобы новая буква не уходила за рамки алфавита
+                        letterNumber -= engLetters.Length;
+
+                    result += engLetters[letterNumber]; // заношу зашифрованную букву в переменную, для ее хранения
+                }
+
+                else if (text[i] == ' ')
+                    result += " ";
+            }
+        }
+
+        Console.WriteLine("Зашифрованное слово: " + result);
+        Console.ReadLine();
+    }
+
+    /// <summary>
+    /// String64. Дано зашифрованное предложение на русском языке (способ шифрования описан в задании String63)
+    /// и кодовое смещение K (0 < K < 10). Расшифровать предложение.
+    /// </summary>
+    static void String64()
+    {
+        string str = "Жвпв уфтрмв-стзжнризпкз Пв тхуумро бйэмз. ёбё";
+        int k = 2;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            int encryptLetter = str[i] - k;
+            if (Char.IsLetter(str[i]))
+                Console.Write((char)encryptLetter);
+
+            else
+                Console.Write(str[i]);
+        }
+    }
+
+    /// <summary>
+    /// String66. Дана строка-предложение. Зашифровать ее, поместив вначале все символы,
+    /// расположенные на четных позициях строки, а затем, в обратном порядке, все символы,
+    /// расположенные на нечетных позициях (например,строка «Программа» превратится в «ргамамроП»).
+    /// </summary>
+    static void String66()
+    {
+        string str = "Программа Зашифровать ее";
+
+        for (int i = 0; i < str.Length; i++)
+            if (i % 2 != 0)
+                Console.Write(str[i]);
+
+        for (int i = str.Length - 1; i >= 0; i--)
+            if (i % 2 == 0)
+                Console.Write(str[i]);
+    }
+    // static void String661()
+    // {
+    //     string str = "Программа";
+    //     Console.WriteLine(str.Where(x => x % 2 == 0).ToArray());
+    // }
+
+    /// <summary>
+    /// String67. Дано предложение, зашифрованное по правилу, описанному в задании String66. Расшифровать это предложение.
+    /// </summary>
+    static void String67()
+    {
+        string str = "ргамамроП";
+    }
+
+    /// <summary>
+    /// String68. Дана строка, содержащая цифры и строчные латинские буквы. Если буквы в строке упорядочены по алфавиту,
+    /// то вывести 0; в противном случае вывести номер первого символа строки, нарушающего алфавитный порядок.
+    /// </summary>
+    static void String68()
+    {
+        Console.Write("Введите строку: ");
+        string str = Console.ReadLine()!;
+        int encryptLetter = str[0];
+        Console.Write(str.IndexOf(str.First(x => x > x+1)));
+    }
+
     static void Main()
     {
-        String62();
+        String68();
         Console.ReadLine();
     }
 }

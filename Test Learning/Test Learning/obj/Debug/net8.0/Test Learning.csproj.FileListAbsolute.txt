@@ -1,0 +1,15 @@
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\bin\Debug\net8.0\Test Learning.exe
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\bin\Debug\net8.0\Test Learning.deps.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\bin\Debug\net8.0\Test Learning.runtimeconfig.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\bin\Debug\net8.0\Test Learning.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\bin\Debug\net8.0\Test Learning.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.AssemblyInfoInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.AssemblyInfo.cs
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.csproj.CoreCompileInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.sourcelink.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\refint\Test Learning.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\Test Learning.genruntimeconfig.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\Test Learning\Test Learning\obj\Debug\net8.0\ref\Test Learning.dll

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "AhhCIWPC+/oakNbCrrBV9M3YiCcwlca7swxWbdKEBIWCP4vnxIt0PphdKB12wRmHEoQzQdQuNThbzZ2kmbFkug==",
+  "dgSpecHash": "NOqgr+2Y8uhvk173oh9MFdtCutv+rwzniKFUjLIwNED04bNNx156HG/cp1oW7ByIQ8H+DjMmu+lX/U43a3LmJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Game PC\\RiderProjects\\LearnProgramming\\Calculator\\Calculator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Game PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }
