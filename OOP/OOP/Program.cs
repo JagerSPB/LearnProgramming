@@ -4,25 +4,16 @@ class Program
 {
     static void Main()
     {
-        Client clientID1 = new Client("Semen","Vaysman");
-        
-        clientID1.id = clientID1.NewId(Client.Id);
-       
-        Console.WriteLine($"Имя: {clientID1.name} Id: {clientID1.id}");
-        Console.WriteLine($"Имя: {clientID1.name} Фамилия: {clientID1.secondName}");
-        Client clientID2 = new Client("Ali","Baba");
-        clientID2.id = clientID2.NewId(Client.Id);
-        Console.WriteLine($"Имя: {clientID2.name} Id: {clientID2.id}");
-        void ChangeClient()
-        {
-            Console.Write("Enter client's name: ");
-            clientID1.name = Console.ReadLine();
-            Console.Write("Enter client's Second name: ");
-            clientID1.secondName = Console.ReadLine();
-        }
+        Client clientID1 = new Client("Semen", "Vaysman");
 
-        ChangeClient();
-        Console.WriteLine($"Имя: {clientID1.name} Фамилия: {clientID1.secondName}");
+        //clientID1.id = clientID1.NewId(Client.Id);
+        Console.WriteLine(
+            $"Имя: {clientID1.Name} Фамилия: {clientID1.secondName} Id: {clientID1.id}");
+        Client clientID2 = new Client("Ali", "Baba");
+        // clientID2.id = clientID2.NewId(Client.Id);
+        Console.WriteLine($"Имя: {clientID2.Name} Фамилия: {clientID2.secondName} Id: {clientID2.id}");
+        clientID1.ChangeClientsData();
+        
         Console.ReadLine();
     }
 }
@@ -92,14 +83,16 @@ class Person
 
 class Client
 {
-    public Client()
+    public Client() //public Client() : this("1", "1") Вариант написания параметров конструктора
     {
+        NewId(Id);
     }
 
     public Client(string name, string secondName)
     {
-        this.name = name;
+        Name = name;
         this.secondName = secondName;
+        NewId(Id);
     }
 
     public Client(string name, string secondName, int phoneNumber)
@@ -113,26 +106,39 @@ class Client
         int dateOfBirth)
     {
         this.isActive = isActive;
-        this.discountValue = discountValue;
-        this.name = name;
+        Name = name;
         this.secondName = secondName;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
     }
 
-   
-    public static int Id { get; set; } = 10;
+
+    private static int Id { get; set; } = 10;
+
     public int NewId(int id)
     {
-        return ++Id;
+        Console.WriteLine($"Клиент {++Id} создан");
+        return Id;
     }
-    public int id { get; set; }
-    public bool isActive;
-    public int cardNumber { get; set; }
-    public int discountValue { get; set; }
-    public string name;
+
+    public int id;
+    private string name;
+    public string Name { get; private set; }
     public string secondName;
+    public bool isActive;
+    public int cardNumber;
     public int phoneNumber;
-    public string gender;
     public int dateOfBirth;
+
+    public void ChangeClientsData()
+    {
+        Console.Write("Enter new client's name: ");
+        Name = Console.ReadLine();
+        Console.Write("Enter new client's Second name: ");
+        secondName = Console.ReadLine();
+        Console.Write("Enter new client's phone number: ");
+        phoneNumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(
+            $"Новое имя: {Name} Новая фамилия: {secondName} новый телефон: {phoneNumber}");
+    }
 }
