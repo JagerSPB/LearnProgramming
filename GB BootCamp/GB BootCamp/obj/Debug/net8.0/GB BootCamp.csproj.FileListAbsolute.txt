@@ -1,0 +1,15 @@
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\bin\Debug\net8.0\GB BootCamp.exe
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\bin\Debug\net8.0\GB BootCamp.deps.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\bin\Debug\net8.0\GB BootCamp.runtimeconfig.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\bin\Debug\net8.0\GB BootCamp.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\bin\Debug\net8.0\GB BootCamp.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.AssemblyInfoInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.AssemblyInfo.cs
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.csproj.CoreCompileInputs.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.sourcelink.json
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\refint\GB BootCamp.dll
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.pdb
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\GB BootCamp.genruntimeconfig.cache
+C:\Users\Game PC\RiderProjects\LearnProgramming\GB BootCamp\GB BootCamp\obj\Debug\net8.0\ref\GB BootCamp.dll
